@@ -1,0 +1,745 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+5.6 The Normal Distribution
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.6.1: 
+\series default
+A random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ (
+\begin_inset Formula $-\infty<\mu<\infty$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma>0$
+\end_inset
+
+) if 
+\begin_inset Formula $X$
+\end_inset
+
+ has a continuous distribution with the following p.d.f:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x|\mu,\sigma^{2})=\frac{1}{(2\pi)^{\frac{1}{2}}\text{\ensuremath{\sigma}}}e^{\frac{-(x-\mu)^{2}}{2\sigma^{2}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.6.2: 
+\series default
+Moment Generating Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\psi(t)=exp(\mu t+\frac{1}{2}\sigma^{2}t^{2})$
+\end_inset
+
+ for 
+\begin_inset Formula $-\infty<t<\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.6.4: 
+\series default
+If 
+\begin_inset Formula $X$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ and if 
+\begin_inset Formula $Y=aX+b$
+\end_inset
+
+ , where 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are given constants and 
+\begin_inset Formula $a\neq0$
+\end_inset
+
+, then 
+\begin_inset Formula $Y$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $a\mu+b$
+\end_inset
+
+ variance 
+\begin_inset Formula $a^{2}\sigma^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.6.2 Standard Normal Distribution 
+\series default
+The normal distribution with mean 0 and variance 1 is called the standard
+ normal distribution.
+ The p.d.f of the standard normal distribution is usually denoted by the symbol
+ 
+\begin_inset Formula $\phi$
+\end_inset
+
+ and the c.d.f is denote by the sumbo 
+\begin_inset Formula $\Phi$
+\end_inset
+
+.
+ Thus,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phi(x)=f(x|0,1)=\frac{1}{(2\pi)^{\frac{1}{2}}}exp(\frac{-1}{2}x^{2})$
+\end_inset
+
+ and 
+\begin_inset Formula $\Phi(x)=\intop_{-\infty}^{x}\phi(u)du$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.6.5 
+\series default
+Consequences of Symmetry.
+ For all x and all 
+\begin_inset Formula $0<p<1$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Phi(-x)=1-\Phi(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\Phi^{-1}(p)=-\Phi^{-1}(1-p)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.6.6 
+\series default
+Converting Normal Distributions to Standard.
+ Let X has the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ .
+ Let 
+\begin_inset Formula $F$
+\end_inset
+
+ be the c.d.f of 
+\begin_inset Formula $X$
+\end_inset
+
+ .
+ Then 
+\begin_inset Formula $Z=(X-\mu)/\sigma$
+\end_inset
+
+ has the standard normal distribution.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.6.7 
+\series default
+If the random variables 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ are independent and if 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $\mu_{i}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma_{i}^{2}$
+\end_inset
+
+ then sum 
+\begin_inset Formula $X_{1}+...+X_{k}$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $\mu_{1}+...+\mu_{k}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma_{1}^{2}+...+\sigma_{k}^{2}$
+\end_inset
+
+.
+ (Prove that using moment generating function 
+\begin_inset Formula $\psi(t)$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Corollary 5.6.1 
+\series default
+If the random variables 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ are independent, if 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $\mu_{i}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma_{i}^{2}$
+\end_inset
+
+ 
+\begin_inset Formula $(i=1,...,k)$
+\end_inset
+
+ if 
+\begin_inset Formula $a_{1},...,a_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are constants for which at least one of the values 
+\begin_inset Formula $a_{1},...,a_{k}$
+\end_inset
+
+ is different from 0, then variable 
+\begin_inset Formula $a_{1}X_{1}+..+a_{k}X_{k}+b$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $a_{1}\mu_{1}+...+a_{k}\mu_{k}+b$
+\end_inset
+
+ and variance 
+\begin_inset Formula $a_{1}^{2}\sigma_{1}^{2}+...+a_{k}^{2}\sigma_{k}^{2}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.6.3 
+\series default
+Sample Mean.
+ Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be random variables.
+ The average of these 
+\begin_inset Formula $n$
+\end_inset
+
+ random variables, 
+\begin_inset Formula $\frac{1}{n}\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+ is called their sample mean and is commonly denoted 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Corollary 5.6.2.
+ 
+\series default
+Suppose that random variables 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, and let 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ denote their sample mean.
+ Then 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+has the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}/n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+5.7 The Gamma Distributions
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.7.1 The Gamma Function: 
+\series default
+For each positive number 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ , let the value 
+\begin_inset Formula $\Gamma(\alpha)$
+\end_inset
+
+ be defined by the following intergral: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Gamma(\alpha)=\int_{0}^{\infty}x^{\alpha-1}e^{-x}dx$
+\end_inset
+
+ .
+ The function 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+defined by Eq.
+ (5.7.2) for 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ is called the 
+\emph on
+gamma function.
+ 
+\end_layout
+
+\begin_layout Standard
+For example: 
+\begin_inset Formula $\Gamma(1)=\int_{0}^{\infty}e^{-x}dx=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.1 
+\series default
+If 
+\begin_inset Formula $\alpha>1$
+\end_inset
+
+, then: 
+\begin_inset Formula $\Gamma(\alpha)=(\alpha-1)\Gamma(\alpha-1).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.2 
+\series default
+For every positive integer 
+\begin_inset Formula $n$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Gamma(n)=\int_{0}^{\infty}x^{\alpha-1}e^{-x}dx=(n-1)!$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.3 
+\series default
+For each 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ and each 
+\begin_inset Formula $\beta>0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int_{0}^{\infty}x^{\alpha-1}exp(-\beta x)dx=\frac{\Gamma(\alpha)}{\beta^{\alpha}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.4 Stirling's Formula.
+ 
+\series default
+
+\begin_inset Formula $\lim_{x\rightarrow\infty}\frac{(2\pi)^{1/2}x^{x-1/2}e^{-x}}{\Gamma(x)}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The Gamma Distribution
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.7.2 
+\series default
+Gamma Distributions.
+ Let 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ be postitive numbers.
+ A random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ has the 
+\emph on
+gamma distribution with parameters 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ 
+\emph default
+if 
+\begin_inset Formula $X$
+\end_inset
+
+ has a continuous distribution for which the p.d.f is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x|\alpha,\beta)=\begin{cases}
+0 & x\leq0\\
+\text{\ensuremath{\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}}} & x>0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.5 
+\series default
+Moments.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ have the gamma distribution with parameters 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $k=1,2,...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E(X^{k})=\frac{\Gamma(\alpha+k)}{\beta^{k}\Gamma(\alpha)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[X]=\frac{\alpha}{\beta}$
+\end_inset
+
+ and 
+\begin_inset Formula $Var(X)=\frac{\alpha}{\beta^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.6 Moment Generating Function 
+\series default
+.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ have the gamma distribution with parameters 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ The m.g.f of 
+\begin_inset Formula $X$
+\end_inset
+
+ is :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\psi(t)=(\frac{\beta}{\beta-t})^{\alpha}$
+\end_inset
+
+ for 
+\begin_inset Formula $t<\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.7 
+\series default
+If the random variables 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ are independent, and if 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ has the gamma distribution with parameters 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ (
+\begin_inset Formula $i=1,..,k)$
+\end_inset
+
+, then the sum 
+\begin_inset Formula $X_{1}+...+X_{k}$
+\end_inset
+
+ has the gamma distribution with parameters 
+\begin_inset Formula $\alpha_{1}+...+\alpha_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The Exponential Distributions
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.7.3 
+\series default
+Exponential Distributions.
+ Let 
+\begin_inset Formula $\beta>0$
+\end_inset
+
+.
+ A random variable 
+\begin_inset Formula $X$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
