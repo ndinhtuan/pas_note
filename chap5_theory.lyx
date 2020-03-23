@@ -741,5 +741,166 @@ Exponential Distributions.
 
 \end_layout
 
+\begin_layout Subsection*
+The Beta Function 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.8.1 
+\series default
+The Beta Function.
+ For each positive 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ , define 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B(\alpha,\beta)=\int_{0}^{1}x^{\alpha-1}(1-x)^{\beta-1}dx.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset Formula $B$
+\end_inset
+
+ is called the 
+\emph on
+beta function.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.8.1 
+\series default
+For all 
+\begin_inset Formula $\alpha,\beta>0,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B(\alpha,\beta)=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition of the Beta Distributions
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.8.2 
+\series default
+Beta Distributions.
+ Let 
+\begin_inset Formula $\alpha,\beta>0$
+\end_inset
+
+ and let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable with p.d.f.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x|\alpha,\beta)=\begin{cases}
+\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1} & 0<x<1\\
+0 & otherwise
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\alpha=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta=1$
+\end_inset
+
+ then this distribution is uniform distribution on the interval 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.8.2 
+\series default
+Suppose that 
+\begin_inset Formula $P$
+\end_inset
+
+ has the beta distribution with parameters 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+, and the condiational distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ given 
+\begin_inset Formula $P=p$
+\end_inset
+
+ is the binomial distibution with parameters 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Then the conditional distribution of 
+\begin_inset Formula $P$
+\end_inset
+
+ given 
+\begin_inset Formula $X=x$
+\end_inset
+
+ is the beta distribution with parameters 
+\begin_inset Formula $\alpha+x$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta+n-x$
+\end_inset
+
+.
+ 
+\end_layout
+
 \end_body
 \end_document
