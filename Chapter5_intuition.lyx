@@ -75,8 +75,323 @@
 
 \begin_body
 
+\begin_layout Section*
+Gamma Distribution
+\end_layout
+
+\begin_layout Standard
+To Prove 
+\series bold
+Theorem 5.7.10, 
+\series default
+authors uses same-formular for 
+\begin_inset Formula $F(X>t)$
+\end_inset
+
+ to prove two distribution is same exponential distribution .
+ 
+\series bold
+How can understand this method ? 
+\end_layout
+
+\begin_layout Standard
+In 
+\series bold
+Theorem 5.7.10 
+\series default
+in explanation part, authors say that : Futhermore, regardless of the time
+ at which the first bulb failed or which bulb failed first, it follows from
+ memoryless property of the exponential distribution that the distribution
+ of the remaining lifetime of each of the other 
+\begin_inset Formula $n-1$
+\end_inset
+
+ bulbs is still the exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+ (
+\series bold
+why? 
+\series default
+Because like proving in theorem 5.7.9, 
+\series bold
+
+\begin_inset Formula $F(X2=X1+t|X1)=e^{-\beta t}>e^{-\beta(X1+t)}=F(X2=X1+t)$
+\end_inset
+
+ ( 
+\series default
+it shows that when we know after 
+\begin_inset Formula $X1$
+\end_inset
+
+time unit, bulb is not failed then bulb will be fail in 
+\begin_inset Formula $X2=X1+t$
+\end_inset
+
+
+\series bold
+ 
+\series default
+is bigger than when we dont know event 
+\begin_inset Formula $X1$
+\end_inset
+
+ occurs)
+\series bold
+~ 
+\series default
+Exponential Distribution, especialy, it doesn't depend on 
+\begin_inset Formula $X1$
+\end_inset
+
+
+\series bold
+)
+\series default
+.
+ 
+\emph on
+In other words, the situation is the same as it would be if we were starting
+ the test over again from time 
+\begin_inset Formula $t=0$
+\end_inset
+
+ with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ new bulbs
+\emph default
+.
+ 
+\series bold
+What is the point ?
+\end_layout
+
 \begin_layout Standard
 
+\series bold
+Answer:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note: 
+\series default
+This memoryless property will not strictly be satisfied in all practical
+ problems.
+ For example, suppose that 
+\begin_inset Formula $X$
+\end_inset
+
+ is the length of time for which a light bulb will burn before it fails.
+ The length of time for which the bulb can be expected to contunue to burn
+ in the future will depend on the length of time for which it has been burning
+ in the past.
+\end_layout
+
+\begin_layout Standard
+From Theorem 
+\series bold
+5.7.9 
+\series default
+to prove that we suppose that 
+\begin_inset Formula $n$
+\end_inset
+
+ bulb, lifetime is 
+\begin_inset Formula $X1,X2,...Xn$
+\end_inset
+
+ (sorted) if knowned
+\begin_inset Formula $X1$
+\end_inset
+
+is failed, then 
+\begin_inset Formula $(n-1)$
+\end_inset
+
+ remaining bulb is still exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $P(X\geq t+h|X\geq t)=P(X\geq h)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $X1=t$
+\end_inset
+
+, so event 
+\begin_inset Formula $X>t\Leftrightarrow X>X1$
+\end_inset
+
+, or 
+\begin_inset Formula $X1$
+\end_inset
+
+ fail, similar with 
+\begin_inset Formula $X2$
+\end_inset
+
+ , 
+\begin_inset Formula $X2=t+h$
+\end_inset
+
+, so 
+\begin_inset Formula $X>t+h$
+\end_inset
+
+ is event that second bulb is failed.
+ Like proved, 
+\begin_inset Formula $X2,X3,..Xn$
+\end_inset
+
+ is still exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ But if want to know how lenght of time for bulb will burn when it fails,
+ we need to apply above exponential distribution for time 
+\begin_inset Formula $-$
+\end_inset
+
+time have burned in the past.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Intuition about Memoryless property :
+\series default
+ 
+\emph on
+In exponential distribution 
+\begin_inset Formula $\beta$
+\end_inset
+
+, Probability of starting duration time 
+\begin_inset Formula $t+d$
+\end_inset
+
+, known already starting duration time 
+\begin_inset Formula $t$
+\end_inset
+
+ is exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+ from time 
+\begin_inset Formula $0$
+\end_inset
+
+ and duration is 
+\begin_inset Formula $d$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+To clear this point, we practice exercise 
+\begin_inset Formula $15.$
+\end_inset
+
+ Need to compute the probability that no two students will complete the
+ examination within 
+\begin_inset Formula $10$
+\end_inset
+
+ minutes of each other.
+\end_layout
+
+\begin_layout Standard
+To make clear this require, we explain that to no two students complet the
+ examination within 10 minutes each other 
+\begin_inset Formula $\Leftrightarrow$
+\end_inset
+
+ After 1st student finish, 2nd student finish with duration time 
+\begin_inset Formula $d$
+\end_inset
+
+ larger than 
+\begin_inset Formula $10$
+\end_inset
+
+ than 1st student.
+ And so on.
+\end_layout
+
+\begin_layout Standard
+If duration time to finish of 1st one is taken 
+\begin_inset Formula $t_{1}$
+\end_inset
+
+ then 2nd is 
+\begin_inset Formula $t_{2}=t_{1}+d_{1}$
+\end_inset
+
+ , ...,
+\begin_inset Formula $t_{5}=t_{4}+d_{4}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $t_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{2}$
+\end_inset
+
+ is exponential distribution, so after 
+\begin_inset Formula $t>t_{1}$
+\end_inset
+
+(1st one finish exam) them 
+\begin_inset Formula $d=t_{2}-t_{1}$
+\end_inset
+
+ is exponential distribution with paramter 
+\begin_inset Formula $(n+1-k)\beta$
+\end_inset
+
+, minimum of duration finish exam of students, know event first on finish.
+ So 
+\begin_inset Formula $P(d_{1}\geq10)=e^{\frac{-40}{80}}$
+\end_inset
+
+; 
+\begin_inset Formula $P(d_{2}\geq10)=e^{\frac{-30}{80}}$
+\end_inset
+
+;
+\begin_inset Formula $P(d_{3}\geq10)=e^{\frac{-20}{80}}$
+\end_inset
+
+; 
+\begin_inset Formula $P(d_{4}\geq10)=e^{\frac{-10}{80}}$
+\end_inset
+
+ .
+ We need compute 
+\begin_inset Formula $P(d_{1}\geq10)P(d_{2}\geq10)P(d_{3}\geq10)P(d_{4}\geq10)=e^{\frac{-5}{4}}$
+\end_inset
+
+.
 \end_layout
 
 \end_body

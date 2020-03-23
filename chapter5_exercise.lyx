@@ -170,5 +170,52 @@ for
  
 \end_layout
 
+\begin_layout Subsection*
+Gamma Distribution
+\end_layout
+
+\begin_layout Standard
+2.
+ Quantile function of the exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+: 
+\begin_inset Formula $\Phi(t)=\beta\int_{0}^{t}e^{-\beta t}dx=1-e^{-\beta t}=p$
+\end_inset
+
+, so 
+\begin_inset Formula $t=\Phi^{-1}(p)=\frac{-\log(1-p)}{\beta}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+6.
+ 
+\begin_inset Formula $X_{1},X_{2},...,X_{n}$
+\end_inset
+
+ form a random sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ from exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\bar{X_{n}}\sim\Gamma(\alpha,n\beta)$
+\end_inset
+
+ (Using 
+\begin_inset Formula $\psi$
+\end_inset
+
+ to prove that)
+\end_layout
+
 \end_body
 \end_document
