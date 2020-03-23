@@ -428,6 +428,48 @@ has the normal distribution with mean
 
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+Definition 5.6.4.
+ 
+\series default
+Lognomal
+\end_layout
+
+\begin_layout Standard
+Distribution.
+ If 
+\begin_inset Formula $\log(X)$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, we say that 
+\begin_inset Formula $X$
+\end_inset
+
+ has the 
+\emph on
+lognormal distribution 
+\emph default
+with parameter 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section*
 5.7 The Gamma Distributions
 \end_layout
@@ -505,7 +547,7 @@ For every positive integer
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\Gamma(n)=\int_{0}^{\infty}x^{\alpha-1}e^{-x}dx=(n-1)!$
+\begin_inset Formula $\Gamma(n)=\int_{0}^{\infty}x^{n-1}e^{-x}dx=(n-1)!$
 \end_inset
 
 .
@@ -738,7 +780,580 @@ Exponential Distributions.
 \begin_inset Formula $X$
 \end_inset
 
+ has the 
+\emph on
+exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
 
+ if 
+\begin_inset Formula $X$
+\end_inset
+
+ has a continuous 
+\emph default
+distribution with the p.d.f
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x|\beta)=\begin{cases}
+\beta e^{-\beta x} & x>0\\
+0 & x\leq0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see Exponential Distributions is special case of Gamma distribution
+ with 
+\begin_inset Formula $\alpha=1$
+\end_inset
+
+ so 
+\begin_inset Formula $\Gamma(\alpha)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.8 
+\series default
+The exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is the same as the gamma distribution with parameters 
+\begin_inset Formula $\alpha=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $X$
+\end_inset
+
+ has the exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+ , then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E(X)=\frac{1}{\beta}$
+\end_inset
+
+ and 
+\begin_inset Formula $Var(X)=\frac{1}{\beta^{2}}$
+\end_inset
+
+ and the m.g.f of 
+\begin_inset Formula $X$
+\end_inset
+
+ is : 
+\begin_inset Formula $\psi(t)=\frac{\beta}{\beta-t}$
+\end_inset
+
+ for 
+\begin_inset Formula $t<\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Exponetial distribution have a memoryless property similar to that stated
+ in Theorem 5.5.5 for geometric distributions.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.9 
+\series default
+Memoryless property of Exponential Distributions.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ have exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+ and let 
+\begin_inset Formula $t>0$
+\end_inset
+
+ .
+ Then for every number 
+\begin_inset Formula $h>0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(X\geq t+h|X\geq t)=P(X\geq h)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The exponential distribution has been used effectively as an approximate
+ distribution for such variables as the lengths of the lives of various
+ products.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.10 
+\series default
+Suppose that the variabels 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ Then the distribution of 
+\begin_inset Formula $Y_{1}=\min\{X_{1},...,X_{n}\}$
+\end_inset
+
+ will be the exponential distribution with parameter 
+\begin_inset Formula $n\beta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Because of memoryless property of exponential distribution, we have 
+\begin_inset Formula $Y_{2}=\min\{X_{1},...,X_{n-1})$
+\end_inset
+
+ will be the exponential distribution with parameter 
+\begin_inset Formula $(n-1)\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.11 
+\series default
+Suppose that the variables 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+, Let 
+\begin_inset Formula $Z_{1}\leq Z_{2}\leq...\leq Z_{n}$
+\end_inset
+
+ be the random variables 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ sorted from smallest to largest.
+ For each 
+\begin_inset Formula $k=2,...,n$
+\end_inset
+
+ , let 
+\begin_inset Formula $Y_{k}=Z_{k}-Z_{k-1}$
+\end_inset
+
+then distribution of 
+\begin_inset Formula $Y_{k}$
+\end_inset
+
+is the exponential distribution with parameter 
+\begin_inset Formula $(n+1-k)\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Relation to the Poisson Process.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.4.1 
+\series default
+Poisson Distribution .
+ Let 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+.
+ A random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ has the 
+\emph on
+Possion Distribution with mean 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ 
+\emph default
+if the p.d.f of 
+\begin_inset Formula $X$
+\end_inset
+
+ is as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x|\lambda)=\begin{cases}
+\frac{e^{-\lambda}\lambda^{x}}{x!} & x=0,1,2,...\\
+0 & otherwise
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.4.2 Poisson Process
+\series default
+.
+ A Poisson process with rate 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ per unite time is a process that satisfies the following two properties.
+\end_layout
+
+\begin_layout Standard
+i.
+ The number of arrivals in every fixed interval of time of length 
+\begin_inset Formula $t$
+\end_inset
+
+ has the Poisson distribution with mean 
+\begin_inset Formula $\lambda t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ii.
+ The numbers of arrivals in every collection of disjoint time intervals
+ are independent.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.7.12 
+\series default
+Times between Arrivals in a Poisson Process.
+ Suppose that arrivals occur according to a Poisson process with rate 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $Z_{k}$
+\end_inset
+
+ be the time until the kth arrival for 
+\begin_inset Formula $k=1,2,...$
+\end_inset
+
+ .
+ Define 
+\begin_inset Formula $Y_{1}=Z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y_{k}=Z_{k}-Z_{k-1}$
+\end_inset
+
+ for 
+\begin_inset Formula $k\geq2$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $Y_{1},Y_{2},...$
+\end_inset
+
+ are i.i.d.
+ and they each have the exponential distribution.
+\end_layout
+
+\begin_layout Standard
+An exponential distribution is often in a practical problem to represent
+ the distribution of the time that elapses before the occurence of some
+ event.
+\end_layout
+
+\begin_layout Standard
+If the events being considered occur in accordance with Poisson process,
+ then both the waiting time until an event occurs and the period of time
+ between any two successive events will have exponential distributions.
+\end_layout
+
+\begin_layout Standard
+Combine 
+\series bold
+Theorem 5.7.12 
+\series default
+with 
+\series bold
+Theorem 5.7.7 
+\series default
+to obtain the following:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Corollary 5.7.1 
+\series default
+Time until kth Arrial.
+ In the situation of Theorem 5.7.12, the distribution of 
+\begin_inset Formula $Z_{k}$
+\end_inset
+
+ is the gamma distribution with parameters 
+\begin_inset Formula $k$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+The Beta Distributions
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Moments of Beta Distributions
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.8.3.
+ Moments 
+\series default
+Suppose that 
+\begin_inset Formula $X$
+\end_inset
+
+ has the beta distribution with parameters 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+, Then for each positive integer 
+\begin_inset Formula $k$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[X^{k}]=\frac{\alpha(\alpha+1)...(\alpha+k-1)}{(\alpha+\beta)(\alpha+\beta+1)...(\alpha+\beta+k-1)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In particular: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[X]=\frac{\alpha}{\alpha+\beta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Var(X)=\frac{\alpha\beta}{(\alpha+\beta)^{2}(\alpha+\beta+1)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 4.7.1 Law of Total Probability for Expectations.
+ 
+\series default
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ be random variables such that 
+\begin_inset Formula $Y$
+\end_inset
+
+ has finite mean.
+ Then, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[E(Y|X)]=E[Y]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.8.4 
+\series default
+Let 
+\begin_inset Formula $U$
+\end_inset
+
+ and 
+\begin_inset Formula $V$
+\end_inset
+
+ be independent random variables with 
+\begin_inset Formula $U$
+\end_inset
+
+ having the gamma distribution with parameters 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $V$
+\end_inset
+
+ having the gamma distribution parameters 
+\begin_inset Formula $\beta$
+\end_inset
+
+ and 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ Then 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $X=U/(U+V)$
+\end_inset
+
+ and 
+\begin_inset Formula $Y=U+V$
+\end_inset
+
+ are independent
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $X$
+\end_inset
+
+ has the beta distribtion parameters 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ , and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Y$
+\end_inset
+
+ has the gamma distribution with parameters 
+\begin_inset Formula $\alpha+\beta$
+\end_inset
+
+ and 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Summary
+\end_layout
+
+\begin_layout Standard
+The family of beta distribution is a popular model for random variables
+ that lie in the interval 
+\begin_inset Formula $(0,1)$
+\end_inset
+
+, such as unknown proportions of success for sequences of Bernoulli trials.
+ The mean of the beta distribution with parameters 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is 
+\begin_inset Formula $\alpha/(\alpha+\beta)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection*

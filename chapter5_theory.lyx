@@ -81,44 +81,6 @@ Chapter 5.6 Normal Distribution
 
 \begin_layout Standard
 
-\series bold
-Definition 5.6.4.
- 
-\series default
-Lognomal
-\end_layout
-
-\begin_layout Standard
-Distribution.
- If 
-\begin_inset Formula $\log(X)$
-\end_inset
-
- has the normal distribution with mean 
-\begin_inset Formula $\mu$
-\end_inset
-
- and variance 
-\begin_inset Formula $\sigma^{2}$
-\end_inset
-
-, we say that 
-\begin_inset Formula $X$
-\end_inset
-
- has the 
-\emph on
-lognormal distribution 
-\emph default
-with parameter 
-\begin_inset Formula $\mu$
-\end_inset
-
- and 
-\begin_inset Formula $\sigma^{2}$
-\end_inset
-
-.
 \end_layout
 
 \end_body
