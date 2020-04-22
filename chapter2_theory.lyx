@@ -1,0 +1,469 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+2.1 Independent Events
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.2.1 
+\series default
+Independent Events.
+ Two events 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are independent if 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(A\cap B)=P(A)P(B)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose that 
+\begin_inset Formula $P(A)>0$
+\end_inset
+
+ and 
+\begin_inset Formula $P(B)>0$
+\end_inset
+
+.
+ Then it follows easily from the definitions of independence and conditional
+ probability that 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are independent if and only if 
+\begin_inset Formula $P(A|B)=P(A)$
+\end_inset
+
+ and 
+\begin_inset Formula $P(B|A)=P(B)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Example 2.2.3 
+\series medium
+is good example to review, which shows that two events 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+, which are physically related, can, nevertheless, satisfy the definition
+ of independence.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 2.2.1 
+\series default
+If two events 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are independent, then the events 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B^{c}$
+\end_inset
+
+ are also independent.
+\end_layout
+
+\begin_layout Subsubsection*
+Definition 2.2.2 
+\series medium
+(Mutually) Independent Events.
+ The 
+\begin_inset Formula $k$
+\end_inset
+
+ events 
+\begin_inset Formula $A_{1},...,A_{k}$
+\end_inset
+
+ are independent (or mutually independent) if, for every subset 
+\begin_inset Formula $A_{i_{1}},...,A_{i_{j}}$
+\end_inset
+
+ of 
+\begin_inset Formula $j$
+\end_inset
+
+ of these events (
+\begin_inset Formula $j=2,3,...,k$
+\end_inset
+
+),
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(A_{i_{1}}\cap...A_{i_{j}})=P(A_{i_{1}})...P(A_{i_{j}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As an example, in order to for three events 
+\begin_inset Formula $A,B$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ to be independent, the following four relations must be satisfied:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(A\cap B)=P(A)P(B);P(A\cap C)=P(A)P(B);P(B\cap C)=P(B)P(C)
+\]
+
+\end_inset
+
+(2.2.1)
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula 
+\[
+P(A\cap B\cap C)=P(A)P(B)P(C).
+\]
+
+\end_inset
+
+(2.2.2)
+\end_layout
+
+\begin_layout Standard
+It is possible that Eq.
+ (2.2.2) will be satisfied, but one or more of the three reations (2.2.1) will
+ not be satisfied.
+ On the other hand, maybe sometimes it is also possible that each of the
+ three relations (2.2.1) will be satisfied but Eq.
+ (2.2.2) will not be satisfied.
+ (like 
+\series bold
+example 2.2.4
+\series default
+)
+\end_layout
+
+\begin_layout Standard
+The results of example 2.2.4 says that the events 
+\begin_inset Formula $A,B,C$
+\end_inset
+
+ are 
+\emph on
+pairwise independent, 
+\emph default
+but all three events are not indepedent.
+\end_layout
+
+\begin_layout Subsubsection*
+Theorem 2.2.2 
+\series medium
+Let 
+\begin_inset Formula $A_{1},...,A_{k}$
+\end_inset
+
+ be events such that 
+\begin_inset Formula $P(A_{1}\cap...\cap A_{k})>0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $A_{1},...,A_{k}$
+\end_inset
+
+ are independent if and only if, for every two disjoint subsets 
+\begin_inset Formula $\{i_{1},...,j_{m}\}$
+\end_inset
+
+ and 
+\begin_inset Formula $\{j_{1},...,j_{l})$
+\end_inset
+
+ of 
+\begin_inset Formula $\{1,...,k\}$
+\end_inset
+
+ we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(A_{i_{1}}\cap...\cap A_{i_{m}}|A_{j_{1}}\cap...\cap A_{j_{l}})=P(A_{i_{1}}\cap...\cap A_{i_{m}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Theorem 2.2.2 says that 
+\begin_inset Formula $k$
+\end_inset
+
+ events are independent if and only if learning that some of the events
+ occur does not change the probability that any combination of the other
+ events occurs.
+\end_layout
+
+\begin_layout Paragraph*
+The meaning of Independent
+\end_layout
+
+\begin_layout Standard
+When deciding whether to model events as independent, try to answer the
+ following question: 
+\begin_inset Quotes eld
+\end_inset
+
+If I were to learn that some of these events occurred, would I change the
+ probabilities of any of the others?
+\begin_inset Quotes erd
+\end_inset
+
+ If we feel that we already know everything that we could learn from these
+ events about how likely the others should be, we can safely model them
+ as independent.
+ If, on the other hand, we feel that learning some of these events could
+ change our minds about how likely some of the others are, then we should
+ be more careful about determining the conditional probabilities and not
+ model the events as independet.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+To more specific, 
+\series default
+Suppose that we begin by thinking that the probability is 0.08 for (In example
+ 2.2.5) that an item will be defective.
+ If we observe one or zero defective items in the first nine, we might not
+ make much revision to the probability that the 10th item is defective.
+ On the other hand, if we observe eight or nine defectives in the first
+ nice items, we might be uncomfortable keep the probability at 0.08 that
+ the 10th item will be defective.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 2.2.3 
+\series medium
+Let 
+\begin_inset Formula $n>1$
+\end_inset
+
+ and let 
+\begin_inset Formula $A_{1},...,A_{n}$
+\end_inset
+
+ be events that are mutually exclusive.
+ The events are also mutually independent if and only if all the events
+ except possibly one of them has probability 0.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Conditional Independent
+\end_layout
+
+\begin_layout Paragraph*
+Definition 2.2.3 
+\series medium
+Conditional Independence.
+ We say that events 
+\begin_inset Formula $A_{1},..,A_{k}$
+\end_inset
+
+ are 
+\emph on
+conditionally independent given 
+\begin_inset Formula $B$
+\end_inset
+
+ if, 
+\emph default
+for every subcollection 
+\begin_inset Formula $A_{i_{1}},...,A_{i_{j}}$
+\end_inset
+
+ of 
+\begin_inset Formula $j$
+\end_inset
+
+ of these events 
+\begin_inset Formula $(j=2,3,...,k)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(A_{i_{1}}\cap...\cap A_{i_{j}}|B)=P(A_{i_{1}}|B)....P(A_{i_{j}}|B)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 2.2.4 
+\series medium
+Suppose that 
+\begin_inset Formula $A_{1},A_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are events such that 
+\begin_inset Formula $P(A_{1}\cap B)>0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+ are conditionally independent given 
+\begin_inset Formula $B$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $P(A_{2}|A_{1}\cap B)=P(A_{2}|B)$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

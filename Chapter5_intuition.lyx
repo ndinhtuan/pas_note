@@ -76,7 +76,110 @@
 \begin_body
 
 \begin_layout Section*
-Gamma Distribution
+5.6 Normal Distribution
+\end_layout
+
+\begin_layout Subsection*
+Exercise
+\end_layout
+
+\begin_layout Standard
+17.
+ Suppose 
+\begin_inset Formula $\log(X)\sim N(\mu,\sigma)$
+\end_inset
+
+ .
+ Find Distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Y=r(X)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The Change of Variables Formula 
+\end_layout
+
+\begin_layout Standard
+Suppose that r is strictly increasing on 
+\begin_inset Formula $S$
+\end_inset
+
+ .
+ for 
+\begin_inset Formula $y\in T$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+a.
+ 
+\begin_inset Formula $G(y)=F[r^{-1}(y)]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+ 
+\begin_inset Formula $g(y)=f[r^{-1}(y)]\frac{d}{dy}r^{-1}(y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y=r^{-1}(x)=log(x)$
+\end_inset
+
+, so 
+\begin_inset Formula $x=r(y)=e^{y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x)=g(r^{-1}(x))\frac{dr^{-1}(x)}{dx}=....$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+18.
+ 
+\series bold
+Cauchy Distribution 
+\begin_inset Formula $f(x)=\frac{1}{\pi(1+x^{2})}$
+\end_inset
+
+ 
+\series default
+for 
+\begin_inset Formula $-\infty<x<\infty$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section*
+5.8 Gamma Distribution
+\end_layout
+
+\begin_layout Subsection*
+Intuition
 \end_layout
 
 \begin_layout Standard
@@ -392,6 +495,257 @@ If duration time to finish of 1st one is taken
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection*
+Exercise
+\end_layout
+
+\begin_layout Standard
+2.
+ Quantile function of the exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+: 
+\begin_inset Formula $\Phi(t)=\beta\int_{0}^{t}e^{-\beta t}dx=1-e^{-\beta t}=p$
+\end_inset
+
+, so 
+\begin_inset Formula $t=\Phi^{-1}(p)=\frac{-\log(1-p)}{\beta}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+6.
+ 
+\begin_inset Formula $X_{1},X_{2},...,X_{n}$
+\end_inset
+
+ form a random sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ from exponential distribution with parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\bar{X_{n}}\sim\Gamma(\alpha,n\beta)$
+\end_inset
+
+ (Using 
+\begin_inset Formula $\psi$
+\end_inset
+
+ to prove that)
+\end_layout
+
+\begin_layout Section*
+5.10 The Bivariate Normal Distribution
+\end_layout
+
+\begin_layout Subsection*
+Intuition
+\end_layout
+
+\begin_layout Standard
+In 
+\series bold
+Theorem 5.10.4, 
+\series default
+we have 
+\begin_inset Formula $Var(X_{2}|x_{1})=(1-\rho^{2})\sigma_{2}^{2}$
+\end_inset
+
+ , so we can see don't need to know what is 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+, whenever joint of 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ is bivariate normal distribution, then whatever value of 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ then standard deviation of 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ will decrease (noise decrease), so we can have more confident.
+\end_layout
+
+\begin_layout Standard
+On beside, 
+\begin_inset Formula $E[X_{2}|x_{1}]=\mu_{2}+\rho\sigma_{2}(\frac{x_{1}-\mu_{1}}{\sigma_{1}})$
+\end_inset
+
+, in this formular have part 
+\begin_inset Formula $\rho(x_{1}-\mu_{1})$
+\end_inset
+
+, 
+\begin_inset Formula $\rho$
+\end_inset
+
+ represent correlated of 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ with 
+\begin_inset Formula $\mu_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ with 
+\begin_inset Formula $\mu_{2}$
+\end_inset
+
+.
+ For example, if 
+\begin_inset Formula $\rho<0$
+\end_inset
+
+, then 
+\begin_inset Formula $P[(X_{1}-\mu_{1})(X_{2}-\mu_{2})<0]$
+\end_inset
+
+ is larger.
+ And if we know 
+\begin_inset Formula $x_{1}-\mu_{1}<0$
+\end_inset
+
+, then we can know 
+\begin_inset Formula $E[X_{2}|x_{1}]=\mu_{2}+\rho\sigma_{2}(\frac{x_{1}-\mu_{1}}{\sigma_{1}})>\mu_{2}$
+\end_inset
+
+,and otherwise, so In intuition, if we know about 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+, it can contribute to value of 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ in posterior.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+If We say 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ have bivariate normal distribution, then joint p.d.f will be Eq.
+ (5.10.2), then Eq.
+ (5.10.1) holds.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Exercise
+\end_layout
+
+\begin_layout Standard
+10.
+ Using multiple transformation in section (4.6 Functions of two or more variables
+)
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+11.
+ We can easily derive normal distribution of 
+\begin_inset Formula $Y_{1}=X_{1}+X_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y_{2}=X_{1}-X_{2}$
+\end_inset
+
+ from 
+\series default
+Theorem 5.10.5 
+\series medium
+and we can prove 
+\begin_inset Formula $\rho=0$
+\end_inset
+
+ (But cannot assure that 
+\begin_inset Formula $Y_{1},Y_{2}$
+\end_inset
+
+ is independent, just imply 
+\begin_inset Formula $Y_{1},Y_{2}$
+\end_inset
+
+ is unrelated) (
+\series default
+We can stop here based on theorem 5.10.3
+\series medium
+)
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Apply 
+\series default
+Theorem 5.10.4: 
+\series medium
+
+\begin_inset Formula 
+\[
+E[X_{2}|x_{1}]=\mu_{2}+\rho\sigma_{2}(\frac{x_{1}-\mu_{1}}{\sigma_{1}}),Var(X_{2}|x_{1})=(1-\rho^{2})\sigma_{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we need to prove that distribution of 
+\begin_inset Formula $P(Y_{2}|Y_{1})=P(Y_{2})=N(\mu_{y_{2}},\sigma_{y_{2}})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+14.
+ From 
+\begin_inset Formula $f(X_{2}|X_{1}=x_{1})\sim N(ax_{1}+b,\tau);f(X_{1})\sim N(\mu,\sigma)$
+\end_inset
+
+.
+ Apply 
+\begin_inset Formula $f(x_{1},x_{2})=f(X_{2}|X_{1})f(X_{1})=...exp((x_{2}-ax_{1}-b)^{2}+(x_{1}-\mu)^{2})$
+\end_inset
+
+.
+ Following Exercise13, we can say that this is bivariate normal function.
 \end_layout
 
 \end_body

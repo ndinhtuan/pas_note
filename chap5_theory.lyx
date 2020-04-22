@@ -1514,7 +1514,826 @@ Suppose that
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Paragraph
+5.9 The Multinomial Distributions 
+\end_layout
+
+\begin_layout Standard
+This is general case of Binomial distribution (2 value), Multinomial ( >
+ 2 value possible).
+\end_layout
+
+\begin_layout Subsubsection*
+Definition and Derivation of Multinomial Distributions
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.9.1 Multinomial Distribution 
+\series default
+A disrete random vector 
+\series bold
+
+\begin_inset Formula $X=(X_{1},...,X_{k})$
+\end_inset
+
  
+\series default
+is given by Equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(\boldsymbol{x}|n,\boldsymbol{p})=P(\boldsymbol{X=x})=P(X_{1}=x_{1},...,X_{k}=x_{k})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\begin{cases}
+\tbinom{n}{x_{1},...,x_{k}}p_{1}^{x_{1}}...p_{k}^{x_{k}} & x_{1}+...+x_{k}=n,\\
+0 & otherwise
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Has the multinomial distribution with parameters 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\series bold
+p 
+\series default
+= 
+\begin_inset Formula $(p_{1},...,p_{k})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tbinom{n}{x_{1},...,x_{k}}=\frac{n!}{x_{1}!x_{2}!...x_{k}!}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Relation between the Multinomial and Binomial Distribution
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.9.1 
+\series default
+Suppose that the random vector 
+\begin_inset Formula $\boldsymbol{X}=(X_{1},X_{2})$
+\end_inset
+
+ has the multinomial distribution with parameters 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $\boldsymbol{p}=(p_{1},p_{2})$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ has the binomial distribution with parameters 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}=n-X_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Corollary 5.9.1 
+\series default
+Suppose that the random vector 
+\begin_inset Formula $X=(X_{1},...,X_{k})$
+\end_inset
+
+has the multinomial distribution with parameters 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $\boldsymbol{p}=(p_{1},...,p_{k})$
+\end_inset
+
+.
+ The marginal distribution of each variable 
+\begin_inset Formula $X_{i}(i=1,...,k)$
+\end_inset
+
+ is the binomial distribution with parameters 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.9.2 
+\series default
+Means, Variances, and Covariances.
+ Let the random vector 
+\begin_inset Formula $X$
+\end_inset
+
+ have the multinomial distributions with parameters 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+.
+ The means and variances of coordinates of 
+\begin_inset Formula $X$
+\end_inset
+
+ are 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[X_{i}]=np_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $Var(X_{i})=np_{i}(1-p_{i})$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also, the covariances between the coordinates are 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Cov(X_{i},X_{j})=-np_{i}p_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+5.10 The Bivariate Normal Distribution
+\end_layout
+
+\begin_layout Standard
+The first family of multivariate continuous distributions for which we have
+ a name is a generalization of the family of nomal distributions to two
+ coordinates.
+ There is more structure to a bivariate normal distribution than just a
+ pair of normal marginal distributions.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.10.1 
+\series default
+Suppose that 
+\begin_inset Formula $Z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $Z_{2}$
+\end_inset
+
+ are independent random variables, each of which has the standard normal
+ distribution.
+ Let 
+\begin_inset Formula $\mu_{1},\mu_{2},\sigma_{1},\sigma_{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $\rho$
+\end_inset
+
+ be constants such that 
+\begin_inset Formula $-\infty<\mu_{i}<\infty(i=1,2)$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{i}>0(i=1,2)$
+\end_inset
+
+, and 
+\begin_inset Formula $-1<\rho<1$
+\end_inset
+
+.
+ Defined two new random variabels 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X_{1}=\sigma_{1}Z_{1}+\mu_{1},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X_{2}=\sigma_{2}[\rho Z_{1}+(1-\rho^{2})^{1/2}Z_{2}]+\mu_{2}
+\]
+
+\end_inset
+
+(5.10.1) 
+\end_layout
+
+\begin_layout Standard
+The joint p.d.f.
+ of 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x_{1},x_{2})=\frac{1}{2\pi(1-\rho^{2})^{1/2}\sigma_{1}\sigma_{2}}exp\{-\frac{1}{2(1-\rho^{2})}[(\frac{x_{1}-\mu_{1}}{\sigma_{1}})^{2}-2\rho(\frac{x_{1}-\mu_{1}}{\sigma_{1}})(\frac{x_{2}-\mu_{2}}{\sigma_{2}})+(\frac{x_{2}-\mu_{2}}{\sigma_{2}})^{2}]\}$
+\end_inset
+
+ (5.10.2)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.10.2 
+\series default
+Suppose that 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ have the joint distribution whose p.d.f is given by Eq.
+ (5.10.2).
+ Then there exists independent standard normal random variables 
+\begin_inset Formula $Z_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $Z_{2}$
+\end_inset
+
+such that Eqs.
+ (5.10.1) hold.
+ Also, the mean of 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ is 
+\begin_inset Formula $\mu_{i}$
+\end_inset
+
+ and variance of 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ is 
+\begin_inset Formula $\sigma_{i}^{2}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,2$
+\end_inset
+
+.
+ Furthermore the correlation between 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+is 
+\begin_inset Formula $\rho$
+\end_inset
+
+.
+ Finally, the marginal distribution of 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ is the normal distribution with mean 
+\begin_inset Formula $\mu_{i}$
+\end_inset
+
+and variance 
+\begin_inset Formula $\sigma_{i}^{2}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Definition 5.10.1 
+\series medium
+Bivariate Normal Distributions.
+ When the joint p.d.f.
+ of two random variables 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ is of the form in Eq.
+ (5.10.2), it is said that 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ have the 
+\emph on
+bivariate normal distribution with means 
+\begin_inset Formula $\mu_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{2}$
+\end_inset
+
+, variances 
+\begin_inset Formula $\sigma_{1}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{2}^{2}$
+\end_inset
+
+ and correlation 
+\begin_inset Formula $\rho$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Properties of Bivariate Normal Distributions
+\end_layout
+
+\begin_layout Standard
+For random variables with a bivariate normal distribution, we find that
+ being independent is equivalent to being uncorrelated.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 5.10.3 
+\series medium
+Independence and Correlation.
+ Two random variables 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ that have a bivariate normal distribution are independent if and only if
+ they uncorrelated.
+\end_layout
+
+\begin_layout Standard
+We have already seen in Example 4.6.4 that two random variables 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+with an arbitrary joint distribution can be uncorrelated without being independe
+nt.
+ Theorem 5.10.3 says that no such examples exist in which 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+have a bivariate normal distribution\SpecialChar endofsentence
+
+\end_layout
+
+\begin_layout Standard
+When the corelation is not zero, Theorem 5.10.2 gives the marginal distributions
+ of bivariate normal random variabels.
+ Combining the marginal and joint distributions allows us to find the conditiona
+l distribution of each 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ given the other one.
+ The next theorem derives the conditional distributions using another technique.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 5.10.4 
+\series medium
+Conditional Distributions.
+ Let 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ have the bivariate normal distribution whose p.d.f.
+ is Eq.
+ (5.10.2).
+ The conditional distribution of 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ given that 
+\begin_inset Formula $X_{1}=x_{1}$
+\end_inset
+
+ is the normal distribution with mean and variance given by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[X_{2}|x_{1}]=\mu_{2}+\rho\sigma_{2}(\frac{x_{1}-\mu_{1}}{\sigma_{1}}),Var(X_{2}|x_{1})=(1-\rho^{2})\sigma_{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is seen from Eq.
+ (5.10.2) that the joint distribution of 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ is also bivariate normal with all of subscripts 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $2$
+\end_inset
+
+ switched on all the parameters.
+ Hence, we can apply Theorem 5.10.4 to 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ to conclude that the conditional distribution of 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+given that 
+\begin_inset Formula $X_{2}=x_{2}$
+\end_inset
+
+ must be the normal distribution with mean and variance.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[X_{1}|x_{2}]=\mu_{1}+\rho\sigma_{1}(\frac{x_{2}-\mu_{2}}{\sigma_{2}}),Var(X_{1}|x_{2})=(1-\rho^{2})\sigma_{1}^{2}$
+\end_inset
+
+ (5.10.8)
+\end_layout
+
+\begin_layout Standard
+We have now shown that each marginal distribution and each conditional distribut
+ion of a bivariate normal distribution is a univariate normal distribution.
+\end_layout
+
+\begin_layout Standard
+Some particular features of the conditional distribution of 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ given that 
+\begin_inset Formula $X_{1}=x_{1}$
+\end_inset
+
+ should be noted.
+ If 
+\begin_inset Formula $\rho\neq0$
+\end_inset
+
+, then 
+\begin_inset Formula $E[X_{2}|x_{1}]$
+\end_inset
+
+ is a linear function of 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\rho>0$
+\end_inset
+
+, the slope of this linear function is positive.
+ If 
+\begin_inset Formula $\rho<0$
+\end_inset
+
+, the slope of the function is negative.
+ However, the variance of the conditional distribution of 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ given that 
+\begin_inset Formula $X_{1}=x_{1}$
+\end_inset
+
+ is 
+\begin_inset Formula $(1-\rho^{2})\sigma_{2}^{2}$
+\end_inset
+
+ , which does not depend on 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ .
+ Furthermore, this variance of the conditional distribution of 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ is smaller than the variance 
+\begin_inset Formula $\sigma_{2}^{2}$
+\end_inset
+
+ of the marginal distribution of 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+.
+ (We can say 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ 
+\series bold
+is more confident (
+\begin_inset Formula $\sigma$
+\end_inset
+
+ smaller) when know 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+), 
+\series default
+In example 5.10.3, it says that MSE (=
+\begin_inset Formula $E[(X_{2}-\bar{X_{2})^{2}]}$
+\end_inset
+
+ decrease).
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Since the variance of the conditional distribution in Example 5.10.3 is 
+\begin_inset Formula $(1-\rho^{2})\sigma_{2}^{2}$
+\end_inset
+
+, regardless of the known height 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ of the person, it follows that the difficulty of predicting the person's
+ weight is the same for a tall person, a short person, or a person of medium
+ height.
+ Furthermore, since the variance 
+\begin_inset Formula $(1-\rho^{2})\sigma_{2}^{2}$
+\end_inset
+
+ decreases as 
+\begin_inset Formula $|\rho|$
+\end_inset
+
+ increases, 
+\series default
+it follows that it is easier to predict a person's weight from her height
+ when the person is selected from a population in which height and weight
+ are highly correlated
+\series medium
+.
+\end_layout
+
+\begin_layout Subsection*
+Linear Combinations 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 5.10.5 
+\series default
+Linear combination of Bivariate Normals.
+ Suppose that two random variables 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ have a bivariate normal distribution, for which the p.d.f.
+ is specified by Eq.
+ (5.10.2).
+ Let 
+\begin_inset Formula $Y=\alpha_{1}X_{1}+\alpha_{2}X_{2}+b$
+\end_inset
+
+, where 
+\begin_inset Formula $a_{1},a_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are arbitrary given constants.
+ Then 
+\begin_inset Formula $Y$
+\end_inset
+
+ has normal distribution with mean 
+\begin_inset Formula $a_{1}\mu_{1}+a_{2}\mu_{2}+b$
+\end_inset
+
+ and variance 
+\begin_inset Formula $a_{1}^{2}\sigma_{1}^{2}+a_{2}^{2}\sigma_{2}^{2}+2a_{1}a_{2}\rho\sigma_{1}\sigma_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof: 
+\series default
+Because joint of 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ is bivariate normals, so exists 
+\begin_inset Formula $Z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $Z_{2}$
+\end_inset
+
+ such that Eq.
+ 5.10.1 holds.
+\end_layout
+
+\begin_layout Paragraph*
+Summary 
+\end_layout
+
+\begin_layout Standard
+If a random vector 
+\begin_inset Formula $(X,Y)$
+\end_inset
+
+ has a bivariate normal distribution, then every linear combination 
+\begin_inset Formula $aX+bY+c$
+\end_inset
+
+ has a normal distribution.
+ In particular, the marginal distributions of 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are normal.
+ Also, the conditional distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ given 
+\begin_inset Formula $Y=y$
+\end_inset
+
+ is normal with the conditional mean being a linear function of 
+\begin_inset Formula $y$
+\end_inset
+
+ and the conditional variance being constant in 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ (Similarly, for the conditional distribution of 
+\begin_inset Formula $Y$
+\end_inset
+
+ given 
+\begin_inset Formula $X=x$
+\end_inset
+
+) A more thorough treatment of the bivariate normal distributions and higher-dim
+ensional generalizations can be found in this book by D.F.
+ Morrison (1990).
 \end_layout
 
 \end_body

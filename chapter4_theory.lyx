@@ -80,6 +80,767 @@ Chapter 4
 \end_layout
 
 \begin_layout Section*
+4.2 Properties of Expectations 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 4.2.1 
+\series default
+Linear Function.
+ If 
+\begin_inset Formula $Y=aX+b$
+\end_inset
+
+, where 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are finite constants, then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(Y)=aE(X)+b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series bold
+Theorem 4.2.2 
+\series default
+If there exists a constant such that 
+\begin_inset Formula $Pr(X\ge a)=1$
+\end_inset
+
+, then 
+\begin_inset Formula $E(X)\geq a$
+\end_inset
+
+.
+ If there exists a constant 
+\begin_inset Formula $b$
+\end_inset
+
+ such that 
+\begin_inset Formula $Pr(X\le b)=1$
+\end_inset
+
+, then 
+\begin_inset Formula $E(X)\le b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It follows from Theorem 4.2.2 that if 
+\begin_inset Formula $Pr(a\le X\leq b)=1$
+\end_inset
+
+, then 
+\begin_inset Formula $a\leq E(X)\leq b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Corollary 4.2.1 
+\series medium
+If 
+\begin_inset Formula $X=c$
+\end_inset
+
+ with probability 1, then 
+\begin_inset Formula $E(X)=c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.2.3 
+\series medium
+Suppose that 
+\begin_inset Formula $E(X)=a$
+\end_inset
+
+ and that either 
+\begin_inset Formula $Pr(X\geq a)=1$
+\end_inset
+
+ or 
+\begin_inset Formula $Pr(X\leq a)=1$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $Pr(X=a)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 4.2.4 
+\series default
+If 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are 
+\begin_inset Formula $n$
+\end_inset
+
+ random variables such that each expectation 
+\begin_inset Formula $E(X_{i})$
+\end_inset
+
+ is finite 
+\begin_inset Formula $(i=1,...,n)$
+\end_inset
+
+, then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(X_{1}+...+X_{n})=E(X_{1})+...+E(X_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Corollary 4.2.2 
+\series medium
+Assume that 
+\begin_inset Formula $E(X_{i})$
+\end_inset
+
+ is finite for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+ For all constants 
+\begin_inset Formula $a_{1},...,a_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(a_{1}X_{1}+...+a_{n}X_{n}+b)=a_{1}E(X_{1})+...+a_{n}E(X_{n})+b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Note: In General, 
+\begin_inset Formula $E[g(X)]\neq g(E(X)).$
+\end_inset
+
+ Theorems 4.2.1 and 4.2.4 imply that if 
+\begin_inset Formula $g$
+\end_inset
+
+ is a linear function of a random vector 
+\begin_inset Formula $X$
+\end_inset
+
+, then 
+\begin_inset Formula $E[g(X)]=g(E(X))$
+\end_inset
+
+.
+ For a nonlinear function 
+\begin_inset Formula $g$
+\end_inset
+
+, Jensen's inequality (Theorem 4.2.5) gives a relationship between 
+\begin_inset Formula $E[g(X)]$
+\end_inset
+
+ and 
+\begin_inset Formula $g(E(X))$
+\end_inset
+
+ for another special class of functions.
+\end_layout
+
+\begin_layout Paragraph*
+Definition 4.2.1 
+\series medium
+Convex Functions.
+ A function 
+\begin_inset Formula $g$
+\end_inset
+
+ of a vector argument is convex if, for every 
+\begin_inset Formula $\alpha\in(0,1)$
+\end_inset
+
+, and every 
+\series default
+x 
+\series medium
+and 
+\series default
+y
+\series medium
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g[\alpha\boldsymbol{x}+(1-\alpha)\boldsymbol{y}]\geq\alpha g(\boldsymbol{x})+(1-\alpha)g(\boldsymbol{y}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.2.5 
+\series medium
+Jensen's inequality.
+ Let 
+\begin_inset Formula $g$
+\end_inset
+
+ be a convex function, and let 
+\series default
+X 
+\series medium
+be a random vector with finite mean.
+ Then 
+\begin_inset Formula $E[g(X)]\geq g(E(X))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Provement of special case in Exercise 13
+\end_layout
+
+\begin_layout Subsection*
+Expectation of a Product of Independent Random Variables
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 4.2.6.
+ 
+\series default
+If 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are 
+\begin_inset Formula $n$
+\end_inset
+
+ independent random variables such that each expectation 
+\begin_inset Formula $E(X_{i})$
+\end_inset
+
+ is finite (
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+), then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(\prod_{i=1}^{n}X_{i})=\prod_{i=1}^{n}E(X_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The difference between Theorem 4.2.4 and Theorem 4.2.6 should be emphasized.
+ Expectation of the sum of a group of random variables is always equal to
+ the sum of their individual expectations.
+ However, the expectation of the product of a group of random variables
+ is 
+\series bold
+not always 
+\series default
+equal to the product of their individual expectations.
+ If the random variables are independent, then this equality will also hold.
+\end_layout
+
+\begin_layout Subsection*
+Expectation for Nonnegative Distributions.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 4.2.7 
+\series default
+Integer-Valued Random Variables.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable that can take only the values 
+\begin_inset Formula $0,1,2,...$
+\end_inset
+
+ Then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(X)=\sum_{n=1}^{\infty}Pr(X\ge n).(4.2.7)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.2.8 
+\series medium
+General Nonnegative Random Variable.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a nonnegative random variable with c.d.f 
+\begin_inset Formula $F$
+\end_inset
+
+ .
+ Then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(X)=\int_{0}^{\infty}[1-F(x)]dx.(4.2.9)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The proof of Theorem 4.2.8 is left in Exercises 1 and 2 in Sec.
+ 4.9.
+\end_layout
+
+\begin_layout Paragraph*
+Example 4.2.9 is good example applying Theorem 4.2.7 
+\series medium
+instead of using computing expectation in normal way.
+\end_layout
+
+\begin_layout Paragraph*
+Summary 
+\series medium
+The mean of a linear function of a random vector is the linear function
+ of the mean.
+ In particular, the mean of a sum is the sum of the means.
+ As an example, the mean of the binomial distribution with parameters n
+ and p is 
+\begin_inset Formula $np$
+\end_inset
+
+.
+ No such relationship holds in general for nonlinear functions.
+ For independent random variables, the mean of product is the product of
+ the means.
+\end_layout
+
+\begin_layout Section*
+4.3 Variance 
+\end_layout
+
+\begin_layout Standard
+....
+ The variance also plays an important role in the approximation methods
+ that arise in Chapter 6.
+\end_layout
+
+\begin_layout Paragraph*
+Definition 4.3.1 
+\series medium
+Variance/Standard Deivation.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable with finite mean 
+\begin_inset Formula $\mu=E(X)$
+\end_inset
+
+.
+ The variance of 
+\begin_inset Formula $X$
+\end_inset
+
+, denoted by 
+\begin_inset Formula $Var(X)$
+\end_inset
+
+, is defined as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Var(X)=E[(X-\mu)^{2}].(4.3.1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $X$
+\end_inset
+
+ has infinite mean or if the mean of 
+\begin_inset Formula $X$
+\end_inset
+
+ does not exist, we say that 
+\begin_inset Formula $Var(X)$
+\end_inset
+
+ does not exist.
+\end_layout
+
+\begin_layout Standard
+If the expectation in Eq.
+ (4.3.1) is finite, we say that 
+\begin_inset Formula $Var(X)$
+\end_inset
+
+ and the standard deviation of 
+\begin_inset Formula $X$
+\end_inset
+
+ are infinite.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.3.1 
+\series medium
+Alternative Method for Calculating the Variance.
+ For every random variable 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $Var(X)=E(X^{2})-[E(X)]^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The variance of a distribution, as well as the mean can be made arbitrarily
+ large by placing even a very small but positive amount of probability far
+ enough from the origin on the real line (Se 
+\series bold
+Example 4.3.5 
+\series default
+for detail).
+\end_layout
+
+\begin_layout Subsection*
+Properties of the Variance 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 4.3.2 
+\series default
+For each 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $Var(X)\geq0$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $X$
+\end_inset
+
+ is a bounded random variable, then 
+\begin_inset Formula $Var(X)$
+\end_inset
+
+ must exist and be finite.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.3.3 
+\series medium
+
+\begin_inset Formula $Var(X)=0$
+\end_inset
+
+ if and only if there exists a constant c such that 
+\begin_inset Formula $P(X=c)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 4.3.4 
+\series default
+For constants 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+, let 
+\begin_inset Formula $Y=aX+b$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $Var(Y)=a^{2}Var(X),$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{Y}=|a|\sigma_{y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It follows from Theorem 4.3.4 that 
+\begin_inset Formula $Var(-X)=Var(X)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.3.5 
+\series medium
+If 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are independent random variables with finite means, then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Var(X_{1}+...+X_{n})=Var(X_{1})+...+Var(X_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Corollary 4.3.1 
+\series medium
+If 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are independent random variables with finite means, and if 
+\begin_inset Formula $a_{1},...,a_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are arbitrary constant, then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Var(a_{1}X_{1}+...+a_{n}X_{n}+b)=a_{1}^{2}Var(X_{1})+...+a_{n}^{2}Var(X_{n}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+In Example 4.3.7 about portfolio 
+\series medium
+One method for comparing a class of portfolios is to say that portfolio
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ is at least as good as portfolio 
+\begin_inset Formula $B$
+\end_inset
+
+ if the mean return for 
+\begin_inset Formula $A$
+\end_inset
+
+ is at least as large as the mean return for 
+\begin_inset Formula $A$
+\end_inset
+
+ is at least as large as the mean return for 
+\begin_inset Formula $B$
+\end_inset
+
+ and if the variance for 
+\begin_inset Formula $A$
+\end_inset
+
+ is 
+\series default
+no larger than the variance of B.
+ (See Markowitz, 1987, for a classic treatmean of such methods).
+
+\series medium
+ The reason for preferring smaller variance is that large variance is associated
+ with large deviations from the mean, and for portfolios with common mean,
+ some of the large deviations are going to be below the mean, leading to
+ the rish of large losses.
+ Figure 4.7 is a plot of the pairs (mean, variance) for all of the possible
+ portfolios in this example.
+ That is, for each (
+\begin_inset Formula $s_{1},s_{2},s_{3}$
+\end_inset
+
+) that satisfy (4.3.2): 
+\begin_inset Formula $60s_{1}+48s_{2}+s_{3}=100000$
+\end_inset
+
+, there is a point in the outlined region of Fig.
+ 4.7.
+ The points to the right and toward the bottom are those that have the largest
+ mean return for a fixed variance, and the ones that have the smallest variance
+ for a fixed mean return.
+ These portfolios are called efficient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename portfolio_comparision.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Interquatile Range 
+\end_layout
+
+\begin_layout Standard
+There is a measure of spread that exists for every distribution, regardless
+ of whether or not the distribution has a mean or variance.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Definition 4.3.2 
+\series medium
+Interquartile Range (IQR).
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable with quantile function 
+\begin_inset Formula $F^{-1}(p)$
+\end_inset
+
+ for 
+\begin_inset Formula $0<p<1$
+\end_inset
+
+.
+ The 
+\emph on
+interquartile range 
+\emph default
+(IQR) is defined to be 
+\begin_inset Formula $F^{-1}(0.75)-F^{-1}(0.25)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In words, the IQR is the length of the interval that contains the middle
+ half of the distribution.
+\end_layout
+
+\begin_layout Standard
+IQR is 
+\series bold
+a measure of spread that exists for every distribution.
+\end_layout
+
+\begin_layout Section*
 4.4 Moments
 \end_layout
 
@@ -594,6 +1355,871 @@ has the binomial distribution with parameters
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection*
+4.6 Covariance and Correlation 
+\end_layout
+
+\begin_layout Standard
+When we are interested in the joint distribution of two random variables,
+ it is useful to have a summary of how much the two random variables depend
+ on each other.
+ The covariance and correlation are attempts to measure that dependence,
+ but they only capture a particular type of dependence, namely linear dependence.
+\end_layout
+
+\begin_layout Subsubsection*
+Covariance 
+\end_layout
+
+\begin_layout Standard
+When we consider the joint distribution of two random variables, the means,
+ the medians, and the variances of the variables provide useful information
+ about their marginal distributions.
+ However, these values do not provide any information about the relationship
+ between the two variables or about their tendency to vary together rather
+ than independently.
+ In this section, we shall introduce summaries of a joint distribution that
+ enable us to measure the association between two random variables, determine
+ the variance of the sum of an arbitrary number of dependent random variables
+ and 
+\series bold
+predict the value of one random variable by using the observed value of
+ some other related variable.
+\end_layout
+
+\begin_layout Paragraph*
+Definition 4.6.1.
+ 
+\series medium
+Covariance.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+and 
+\begin_inset Formula $Y$
+\end_inset
+
+ be random variabeles having finite means.
+ Let 
+\begin_inset Formula $E(X)=\mu_{X}$
+\end_inset
+
+ and 
+\begin_inset Formula $E(Y)=\mu_{Y}$
+\end_inset
+
+ .
+ The 
+\emph on
+covariance of 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ , 
+\emph default
+is defined as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Cov(X,Y)=E[(X-\mu_{X})(Y-\mu_{Y})]
+\]
+
+\end_inset
+
+ (4.6.1)
+\end_layout
+
+\begin_layout Standard
+It can be shown (Exercise 2) that if both 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ have finite variance, then the expectation in Eq.
+ (4.6.1) will exists and 
+\begin_inset Formula $Cov(X,Y)$
+\end_inset
+
+will be finite .
+ However, the value of 
+\begin_inset Formula $Cov(X,Y)$
+\end_inset
+
+ can be positive , negative, or zero.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.6.1 
+\series medium
+For all random variables 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ such that 
+\begin_inset Formula $\sigma_{X}^{2}<\infty$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{Y}^{2}<\infty$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Cov(X,Y)=E[XY]-E[X]E[Y]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The covariance between 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ is intended to measure the degree to which 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ tend to be large at the same time or the degree to which one tends to be
+ large while the other is small.
+ Some intution about this interpretation can be gathered from a care look
+ at Eq.
+ (4.6.1) .
+ For example, suppose that 
+\begin_inset Formula $Cov(X,Y)$
+\end_inset
+
+ is positive.
+ Then 
+\begin_inset Formula $X>\mu_{X}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y>\mu_{Y}$
+\end_inset
+
+ must occur together and/or 
+\begin_inset Formula $X<\mu_{X}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y<\mu_{Y}$
+\end_inset
+
+ must occur together to a larger extent than 
+\begin_inset Formula $X<\mu_{X}$
+\end_inset
+
+occurs with 
+\begin_inset Formula $Y>\mu_{Y}$
+\end_inset
+
+and 
+\begin_inset Formula $X>\mu_{X}$
+\end_inset
+
+occurs with 
+\begin_inset Formula $Y<\mu_{Y}$
+\end_inset
+
+.
+ Otherwise , the mean would be negative.
+ Similar for 
+\begin_inset Formula $Cov(X,Y)$
+\end_inset
+
+be negative.
+ If 
+\begin_inset Formula $Cov(X,Y)=0$
+\end_inset
+
+, then the extent to which 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are on the same sides of their respective means exactly balances the extent
+ to which they are on opposite sides of their means.
+\end_layout
+
+\begin_layout Subsubsection*
+Correlation 
+\end_layout
+
+\begin_layout Standard
+Although 
+\begin_inset Formula $Cov(X,Y)$
+\end_inset
+
+ gives a numerical measure of the degree to which 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+vary together, the magnitude of 
+\begin_inset Formula $Cov(X,y)$
+\end_inset
+
+ is also influenced by the overall magnitudes of 
+\begin_inset Formula $X,Y$
+\end_inset
+
+.
+ For example, in Exercise 5 in this section, you van prove that 
+\begin_inset Formula $Cov(2X,Y)=2Cov(X,y)$
+\end_inset
+
+.
+ In order to obtain a measure of association between 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ that is 
+\emph on
+not driven by arbitrary changes in the scales 
+\emph default
+of one or the other random variable, we define a slightly different quantity
+ next.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Definition 4.6.2 
+\series medium
+Correlation.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ be random variables with finite variances 
+\begin_inset Formula $\sigma_{X}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{Y}^{2}$
+\end_inset
+
+, respectively.
+ The the correlation of 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+, which is denoted by 
+\begin_inset Formula $\rho(X,Y)$
+\end_inset
+
+, is defined as follows: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho(X,Y)=\frac{Cov(X,Y)}{\sigma_{X}\sigma_{Y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to deter mine the range of possible values of the correlation 
+\begin_inset Formula $\rho(X,Y)$
+\end_inset
+
+, we shall need the following result 
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.6.2 
+\series medium
+Schwarz Inequality.
+ For all random variables 
+\begin_inset Formula $U$
+\end_inset
+
+ and 
+\begin_inset Formula $V$
+\end_inset
+
+ such that 
+\begin_inset Formula $E[UV]$
+\end_inset
+
+ exists, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+[E(UV)]^{2}\le E(U^{2})E(V^{2})
+\]
+
+\end_inset
+
+ (4.6.4)
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.6.3 
+\series medium
+Cauchy-Schwarz Inequality.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ be random variables with finite variance.
+ Then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+[Conv(X,Y)]^{2}\le\sigma_{X}^{2}\sigma_{Y}^{2},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-1\le\rho(X,Y)\le1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Definition 4.6.3 
+\series medium
+Positively/Negatively Correlated/Uncorrelated.
+ It is said that 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are positively correlated if 
+\begin_inset Formula $\rho(X,Y)>0$
+\end_inset
+
+, that 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are negatively correlated if 
+\begin_inset Formula $\rho(X,Y)<0$
+\end_inset
+
+.
+ And that 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are uncorrelated if 
+\begin_inset Formula $\rho(X,Y)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It can be seen from Eq.
+ (4.6.3) that 
+\begin_inset Formula $Cov(X,Y)$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho(X,Y)$
+\end_inset
+
+ must have the same sign, that is, both are positive, ot both are negative,
+ or both are zero.
+\end_layout
+
+\begin_layout Subsubsection*
+Properties of Covariance and Correlation 
+\end_layout
+
+\begin_layout Standard
+Now present four theorems pertainint to the basic properties of covariance
+ and correlation.
+ The first theorem shows that independent random variables must be uncorrelated.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.6.4 
+\series medium
+If 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are independent random variables with 
+\begin_inset Formula $0<\sigma_{X}^{2}<\infty$
+\end_inset
+
+ and 
+\begin_inset Formula $0<\sigma_{Y}^{2}<\infty$
+\end_inset
+
+, then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Cov(X,Y)=\rho(X,Y)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The converse of Theorem 4.6.4 is not true as a general rule.
+ Two dependent random variables can be uncorrelated.
+ Indeed, even though 
+\begin_inset Formula $Y$
+\end_inset
+
+ is an explicit function of 
+\begin_inset Formula $X$
+\end_inset
+
+, it is possible 
+\begin_inset Formula $\rho(X,Y)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 4.6.5 
+\series default
+Suppose that 
+\begin_inset Formula $X$
+\end_inset
+
+ is a random variable such that 
+\begin_inset Formula $0<\sigma_{X}^{2}<\infty$
+\end_inset
+
+, and 
+\begin_inset Formula $Y=aX+b$
+\end_inset
+
+ for some constants 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+, where 
+\begin_inset Formula $a\neq0.$
+\end_inset
+
+If 
+\begin_inset Formula $a>0$
+\end_inset
+
+, then 
+\begin_inset Formula $\rho(X,Y)=1$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $a<0$
+\end_inset
+
+, then 
+\begin_inset Formula $p(X,Y)=-1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is a converse to 
+\series bold
+Theorem 4.6.5.
+ 
+\series default
+That is, 
+\begin_inset Formula $|\rho(X,Y)|=1$
+\end_inset
+
+ implies that 
+\begin_inset Formula $X$
+\end_inset
+
+and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are linearly related (See Exercise 17).
+ In general, the value of 
+\begin_inset Formula $\rho(X,Y)$
+\end_inset
+
+ provides a measure of the extent to which two random variables 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are linearly related.
+ If the joint distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ is relatively concentrated around straight line in the xy-plane that has
+ postivie slope, then 
+\begin_inset Formula $\rho(X,Y)$
+\end_inset
+
+ close to 1.
+ Similar if concentraing aroud straight line in xy-plane has negative slope,
+ 
+\begin_inset Formula $\rho(X,Y)$
+\end_inset
+
+ close -1.
+ We shall consider them again when the bivariate normal distribution is
+ introduced and studied in Sec 5.10.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note: Correlation measures Only Linear Relationship.
+ 
+\series default
+A large value of 
+\begin_inset Formula $|\rho(X,Y)|$
+\end_inset
+
+ means that 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are close to being linearly related and hence are closely related.
+ But a small value of 
+\begin_inset Formula $|\rho(X,Y)|$
+\end_inset
+
+ does not mean that 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are not close to being related.
+ Indeed, Examlple 4.6.4 illustrates random variables that are functionally
+ related but have 0 correlation.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.6.6 
+\series medium
+If 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are random variables such that 
+\begin_inset Formula $Var(X)<\infty$
+\end_inset
+
+ anf 
+\begin_inset Formula $Var(Y)<\infty$
+\end_inset
+
+, then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Var(X+Y)=Var(X)+Var(Y)+2Cov(X,Y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Corollary 4.6.1 
+\series medium
+Let a,b, and c be constants.
+ Under the conditions of Theorem 4.6.6, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Var(aX+bY+c)=a^{2}Var(X)+b^{2}Var(Y)+2abCov(X,Y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A particularly useful special case of Corollary 4.6.1 is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Var(X-Y)=Var(X)+Var(Y)-2Cov(X,Y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.6.7 
+\series medium
+If 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are random variables such that 
+\begin_inset Formula $Var(X_{i})<\infty$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,2,...,n$
+\end_inset
+
+, then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Var(\sum_{i=1}^{n}X_{i})=\sum_{i=1}^{n}Var(X_{i})+2\sum\sum_{i<j}Cov(X_{i},X_{j}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Crollary 4.6.2 
+\series medium
+If 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are uncorrelated random variabltes (that is, if 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{j}$
+\end_inset
+
+ are uncorrelated whenever 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+), then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Var(\sum_{i=1}^{n}X_{i})=\sum_{i=1}^{n}Var(X_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Note: In General, Variances Add Only for Uncorrelated Random Variabels.
+ 
+\series medium
+The variance of a sum of random variables should be calculated using Theorem
+ 4.6.7 in general.
+ Corollary 4.6.2 applies only for uncorrelated random variabels.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Intuition from Exercise
+\end_layout
+
+\begin_layout Paragraph*
+From exercise 5: 
+\begin_inset Formula $Cov(aX+b,cY+d)=acCov(X,Y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+From exercise 8: 
+\begin_inset Formula $Cov(\sum_{i=1}^{m}a_{i}X_{i},\sum_{j=1}^{n}b_{j}Y_{j})=\sum_{i=1}^{m}\sum_{j=1}^{n}a_{i}b_{j}Cov(X_{i},Y_{j})$
+\end_inset
+
+.
+ 
+\series default
+Tinh chat ket hop
+\end_layout
+
+\begin_layout Section*
+4.7 Conditional Expectation 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 4.7.3 
+\series default
+The prediction 
+\begin_inset Formula $d(X)$
+\end_inset
+
+ that minimize 
+\begin_inset Formula $E\{[Y-d(X)]^{2}\}$
+\end_inset
+
+ is 
+\begin_inset Formula $d(X)=E[Y|X]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 4.7.4 
+\series medium
+Law of Total Probability for Variances.
+ If 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are arbitrary random vairables for which the necessary expectations and
+ variances exist, then 
+\begin_inset Formula $Var(Y)=E[Var(Y|X)]+Var[E(Y|X)]$
+\end_inset
+
+
 \end_layout
 
 \end_body

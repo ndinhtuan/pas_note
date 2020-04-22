@@ -76,192 +76,128 @@
 \begin_body
 
 \begin_layout Section*
-5.6 Normal Distribution
+Maximum of variance of a variable having non-determined pdf.
 \end_layout
 
 \begin_layout Standard
-17.
- Suppose 
-\begin_inset Formula $\log(X)\sim N(\mu,\sigma)$
+Let 
+\begin_inset Formula $f$
 \end_inset
 
- .
- Find Distribution of 
-\begin_inset Formula $X$
+ be p.f.
+ of discrete random variables Suppose that 
+\begin_inset Formula $f(x)=0$
 \end_inset
 
-.
- 
-\begin_inset Formula $Y=r(X)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-The Change of Variables Formula 
-\end_layout
-
-\begin_layout Standard
-Suppose that r is strictly increasing on 
-\begin_inset Formula $S$
-\end_inset
-
- .
  for 
-\begin_inset Formula $y\in T$
-\end_inset
-
-,
-\end_layout
-
-\begin_layout Standard
-a.
- 
-\begin_inset Formula $G(y)=F[r^{-1}(y)]$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-b.
- 
-\begin_inset Formula $g(y)=f[r^{-1}(y)]\frac{d}{dy}r^{-1}(y)$
+\begin_inset Formula $X\notin[x_{1},x_{2}]$
 \end_inset
 
 .
+ Find maximum value of variance of this distribution
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $y=r^{-1}(x)=log(x)$
+\begin_layout Paragraph
+Answer : 
+\series medium
+Suppose 
+\begin_inset Formula $x_{2}-x_{1}=a$
 \end_inset
 
 , so 
-\begin_inset Formula $x=r(y)=e^{y}$
+\begin_inset Formula $a$
 \end_inset
 
+ is length of range value of random variable 
+\begin_inset Formula $a$
+\end_inset
 
+ .
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $f(x)=g(r^{-1}(x))\frac{dr^{-1}(x)}{dx}=....$
-\end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-18.
- 
 \series bold
-Cauchy Distribution 
-\begin_inset Formula $f(x)=\frac{1}{\pi(1+x^{2})}$
-\end_inset
-
- 
+First
 \series default
-for 
-\begin_inset Formula $-\infty<x<\infty$
+, we prove there is a distribution supported on just two points 
+\begin_inset Formula $\{x_{1},x_{2}\}$
 \end_inset
 
- 
+, that has variance at least as large as 
+\begin_inset Formula $f$
+\end_inset
+
+ does.
 \end_layout
 
-\begin_layout Subsection*
-Gamma Distribution
+\begin_layout Paragraph
+Second
+\series medium
+, we find the highest value of variance of distribution 
+\begin_inset Formula $\{x_{1},x_{2}\}\sim\{p,1-p\}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-2.
- Quantile function of the exponential distribution with parameter 
-\begin_inset Formula $\beta$
-\end_inset
-
-: 
-\begin_inset Formula $\Phi(t)=\beta\int_{0}^{t}e^{-\beta t}dx=1-e^{-\beta t}=p$
-\end_inset
-
-, so 
-\begin_inset Formula $t=\Phi^{-1}(p)=\frac{-\log(1-p)}{\beta}$
+\begin_inset Formula $\mu=px_{1}+(1-p)x_{2}$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-6.
- 
-\begin_inset Formula $X_{1},X_{2},...,X_{n}$
-\end_inset
-
- form a random sample of size 
-\begin_inset Formula $n$
-\end_inset
-
- from exponential distribution with parameter 
-\begin_inset Formula $\beta$
+\begin_inset Formula $Var(X)=p(x_{1}-\mu)^{2}+(1-p)(x_{2}-\mu)^{2}=p[(1-p)(x_{1}-x_{2})]^{2}+(1-p)[p(x_{1}-x_{2})]^{2}=p(1-p)^{2}a^{2}+(1-p)p^{2}a^{2}=a^{2}p(1-p)$
 \end_inset
 
 .
- 
-\begin_inset Formula $\bar{X_{n}}\sim\Gamma(\alpha,n\beta)$
-\end_inset
-
- (Using 
-\begin_inset Formula $\psi$
-\end_inset
-
- to prove that)
-\end_layout
-
-\begin_layout Subsection*
-5.9 Multinomial distribution
 \end_layout
 
 \begin_layout Standard
-7.
- 
-\begin_inset Formula $X_{i}$
+Following Cauchy inequality, 
+\begin_inset Formula $\sqrt{p(1-p)}\leq\frac{p+1-p}{2}=\frac{1}{2}$
 \end_inset
 
- is Poisson Distribution, 
-\begin_inset Formula $X_{i}\sim\frac{\lambda_{i}e^{-\lambda_{i}}\lambda_{i}^{x}}{x!}$
-\end_inset
-
- 
-\begin_inset Formula $E[X_{i}]=\lambda_{i}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Because 
-\begin_inset Formula $X$
-\end_inset
-
- is multinomial distribution, 
-\begin_inset Formula $E[X_{i}]=np_{i}$
+, equality holds when 
+\begin_inset Formula $p=\frac{1}{2}$
 \end_inset
 
 .
- So 
-\begin_inset Formula $p_{i}=\frac{\lambda_{i}}{n}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $n=\sum_{i}X_{i}\Rightarrow E[n]=\sum_{i}E[X_{i}]\Rightarrow n=\sum_{i}\lambda_{i}$
+ And 
+\begin_inset Formula $Var_{max}(X)=\frac{a^{2}}{4}$
 \end_inset
 
 .
- So 
-\begin_inset Formula $p_{i}=\frac{\lambda_{i}}{\sum_{i}\lambda_{i}}$
+\end_layout
+
+\begin_layout Standard
+So the larger length of range of value of random variable be, the bigger
+ maximum variance can be.
+ 
+\end_layout
+
+\begin_layout Standard
+So in some deep learning technique, before using data, people usally normalizae
+ data to 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+, then 
+\begin_inset Formula $Var_{max}=\frac{1}{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If not normalizae data still in 
+\begin_inset Formula $[0,100]$
+\end_inset
+
+, then 
+\begin_inset Formula $Var_{max}=\frac{10000}{4}$
 \end_inset
 
 

@@ -1,0 +1,1253 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+3.7 Multivariate Distributions
+\end_layout
+
+\begin_layout Standard
+In this section, we shall extend the result of Bivariate distribution and
+ marginal distribution for two random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ to an arbitrary finite number 
+\begin_inset Formula $n$
+\end_inset
+
+ of random variables 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+.
+ In general, the joint distribution of more than two random variables is
+ called a multivariate distribution.
+ The theory of statistical inference (Chapter 7) relies on mathematical
+ models for observable data in which each observation is a random variable.
+ For this reason, multivariate distributions arise naturally in the mathematical
+ models for data.
+ The most commonly used model will be one in which the individual data random
+ variables are conditionally independent given one or two other random variables.
+\end_layout
+
+\begin_layout Subsection*
+3.8 Functions of a Random Variables
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 3.8.1 
+\series default
+Function of a Discrete Random Variable.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ have a discrete distribution with p.d.
+ 
+\begin_inset Formula $f$
+\end_inset
+
+, and let 
+\begin_inset Formula $Y=r(X)$
+\end_inset
+
+ for some function of 
+\begin_inset Formula $r$
+\end_inset
+
+ defined on the set of possible values of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ For each possible value 
+\begin_inset Formula $y$
+\end_inset
+
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+, the p.f.f 
+\begin_inset Formula $g$
+\end_inset
+
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y)=Pr(Y=y)=Pr[r(X)=y]=\sum_{x:r(x)=y}f(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Suppose that the p.d.f.
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+ is 
+\begin_inset Formula $f$
+\end_inset
+
+ and that another random variable is defined as 
+\begin_inset Formula $Y=r(X)$
+\end_inset
+
+.
+ For each real number 
+\begin_inset Formula $y$
+\end_inset
+
+, the c.d.f.
+ 
+\begin_inset Formula $G(y)$
+\end_inset
+
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+ can be derived as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G(y)=Pr(Y\leq y)=Pr[r(X)\leq y]=\int_{\{x:r(x)\leq y\}}f(x)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+If the random variable 
+\begin_inset Formula $Y$
+\end_inset
+
+ also has a continuous distribution, its p.d.f.
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ can be obtained from the relation 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y)=\frac{dG(y)}{dy}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+This relation is satisfied at every point 
+\begin_inset Formula $y$
+\end_inset
+
+ at which 
+\begin_inset Formula $G$
+\end_inset
+
+ is differentiable.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 3.8.2 
+\series default
+Linear Function.
+ Suppose 
+\begin_inset Formula $X$
+\end_inset
+
+ is a random variable for which the p.d.f.
+ is 
+\begin_inset Formula $f$
+\end_inset
+
+ and that 
+\begin_inset Formula $Y=aX+b(a\neq0).$
+\end_inset
+
+ Then the p.d.f.
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y)=\frac{1}{|a|}f(\frac{y-b}{a});for-\infty<y<\infty
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 0 otherwise.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 3.8.3 
+\series medium
+Probability Integral Transformation.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ have continuous c.d.f.
+ 
+\begin_inset Formula $F$
+\end_inset
+
+, and let 
+\begin_inset Formula $Y=F(X)$
+\end_inset
+
+.
+ (This transformation from 
+\begin_inset Formula $X$
+\end_inset
+
+ to 
+\begin_inset Formula $Y$
+\end_inset
+
+ is called the probability integral transformation.) The distribution of
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+ is the uniform distribution on the interval 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Corollary 3.8.1 
+\series default
+Let 
+\begin_inset Formula $Y$
+\end_inset
+
+ have the uniform distribution on the interval 
+\begin_inset Formula $[0,1],$
+\end_inset
+
+and let 
+\begin_inset Formula $F$
+\end_inset
+
+ be a continuous c.d.f with quantile function 
+\begin_inset Formula $F^{-1}$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $X=F^{-1}(Y)$
+\end_inset
+
+ has c.d.f.
+ 
+\begin_inset Formula $F$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 3.8.4 
+\series medium
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable for which the p.d.f.
+ is 
+\begin_inset Formula $f$
+\end_inset
+
+ and for which 
+\begin_inset Formula $Pr(a<X<b)=1$
+\end_inset
+
+.
+ (Here, a and/or b can be either finite or infinite).
+ Let 
+\begin_inset Formula $Y=r(X)$
+\end_inset
+
+, and suppose that 
+\begin_inset Formula $r(x)$
+\end_inset
+
+ is differentiable and one-to-one for 
+\begin_inset Formula $a<x<b$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $(\alpha,\beta)$
+\end_inset
+
+be the image of the interval 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ under the function 
+\begin_inset Formula $r$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $s(y)$
+\end_inset
+
+ be inverse function of 
+\begin_inset Formula $r(x)$
+\end_inset
+
+ for 
+\begin_inset Formula $\alpha<y<\beta.$
+\end_inset
+
+ The nthe p.d.f.
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(Y)=\begin{cases}
+f[s(y)]|\frac{ds(y)}{dy}| & for\alpha<y<\beta\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.9 Functions of Two or More Random Variables.
+\end_layout
+
+\begin_layout Standard
+The general method for solving problems like those of Example 3.9.1 is a straight
+ forwatd extension of 
+\series bold
+Theorem 3.8.1.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 3.9.1 
+\series default
+Functions of Discrete Random Variables.
+ Suppose that 
+\begin_inset Formula $n$
+\end_inset
+
+ random variables 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ have a discrete joint distribution for which the joint p.f.
+ is 
+\begin_inset Formula $f$
+\end_inset
+
+, and that 
+\begin_inset Formula $m$
+\end_inset
+
+ functions 
+\begin_inset Formula $Y_{1},...,Y_{m}$
+\end_inset
+
+ of these 
+\begin_inset Formula $n$
+\end_inset
+
+ random variables are defined as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y_{1}=r_{1}(X_{1},...,X_{n}),...,Y_{m}=r_{m}(X_{1},...,X_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For given values 
+\begin_inset Formula $y_{1},...,y_{m}$
+\end_inset
+
+ of the 
+\begin_inset Formula $m$
+\end_inset
+
+ random variables 
+\begin_inset Formula $Y_{1},...,Y_{m}$
+\end_inset
+
+, let 
+\begin_inset Formula $A$
+\end_inset
+
+ denote the set of all points 
+\begin_inset Formula $(x_{1},...,x_{n})$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r_{1}(x_{1},...,x_{n})=y_{1};...;r_{m}(x_{1},...,x_{n})=y_{m}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then the value of the joint p.f.
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ of 
+\begin_inset Formula $Y_{1},...,Y_{m}$
+\end_inset
+
+ is specified at the point 
+\begin_inset Formula $(y_{1},...,y_{m})$
+\end_inset
+
+ by the relation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y_{1},...,y_{m})=\sum_{(x_{1},...,x_{n})\in A}f(x_{1},...,x_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 3.9.2 
+\series default
+Binomial and Bernoulli Distributions Assume that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are i.i.d.
+ random variables having the Bernoulli distribution with parameter 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $Y=X_{1}+...+X_{n}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $Y$
+\end_inset
+
+ has the binomial distribution with parameters 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Question: 
+\series default
+In Binomial case is not equally likely intuition, so explain how it different
+ with equally likely as 
+\series bold
+Example 3.9.2.
+\end_layout
+
+\begin_layout Subsection*
+Random Variables with a Continuous Joint Distribution 
+\end_layout
+
+\begin_layout Standard
+Example 3.9.4 is an example of a brute-force method that is always availabel
+ for finding the distribution of a function of several random variables,
+ however, it might be difficult to apply in individual cases.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 3.9.3 
+\series medium
+Brute-Force Distribution of a Function.
+ Suppose that the joint p.d.f of 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ is 
+\begin_inset Formula $f(\boldsymbol{x})$
+\end_inset
+
+ and that 
+\begin_inset Formula $Y=r(\boldsymbol{X}).$
+\end_inset
+
+ For each real number 
+\begin_inset Formula $y$
+\end_inset
+
+, define 
+\begin_inset Formula $A_{y}=\{\boldsymbol{x:}r(\boldsymbol{x})\leq y\}.$
+\end_inset
+
+ Then the c.d.f 
+\begin_inset Formula $G(y)$
+\end_inset
+
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G(y)=\int\ldots_{A_{y}}\int f(x)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the distribution of 
+\begin_inset Formula $Y$
+\end_inset
+
+ also is continuous, then the p.d.f of 
+\begin_inset Formula $Y$
+\end_inset
+
+ can be found by differentiating the c.d.f.
+ 
+\begin_inset Formula $G(y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A popular special case of 
+\series bold
+Theorem 3.9.3 
+\series default
+is the following.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 3.9.4 Linear Function of Two Random Variables.
+ 
+\series medium
+Let 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ have joint p.d.f 
+\begin_inset Formula $f(x_{1},x_{2})$
+\end_inset
+
+, and let 
+\begin_inset Formula $Y=\alpha_{1}X_{1}+\alpha_{2}X_{2}+b$
+\end_inset
+
+ with 
+\begin_inset Formula $a_{1}\neq0$
+\end_inset
+
+.
+ The n 
+\begin_inset Formula $Y$
+\end_inset
+
+ has a continous distribution whose p.d.f is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y)=\int_{-\infty}^{\infty}f(\frac{y-b-a_{2}x_{2}}{a_{1}},x_{2})\frac{1}{|a_{1}|}dx_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Definition 3.9.1 Convolution.
+ 
+\series medium
+Let 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ be independent continuos random variables and let 
+\begin_inset Formula $Y=X_{1}+X_{2}$
+\end_inset
+
+.
+ The distribution of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is called the convolution of the distributions of 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+.
+ The p.d.f of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is sometime called the convolution of the p.d.f.'s of 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If we let the p.d.f of 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ be 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,2$
+\end_inset
+
+ in definition 3.9.1, then Theorem 3.9.4 (with 
+\begin_inset Formula $a_{1}=a_{2}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $b=0$
+\end_inset
+
+) says that the p.d.f of 
+\begin_inset Formula $Y=X_{1}+X_{2}$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y)=\int_{-\infty}^{\infty}f_{1}(y-z)f_{2}(z)dz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+A popular way to describe how spread out is a random sample is to use the
+ distance from the minimum to the maximum, which is called the range of
+ the random sample.
+ We can combine the result from the end of 
+\series default
+Example 3.9.6 
+\series medium
+with 
+\series default
+Theorem 3.9.4 
+\series medium
+to find the p.d.f of the range.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+Next, we state without proof a generalization of 
+\series default
+Theorem 3.8.4 
+\series medium
+to the case of several random variables.
+ The proof of 
+\series default
+Theorem 3.9.5 
+\series medium
+is based on the differentiable one-to-one transformations (strictly increasing
+ or decreasing function) in advanced calculus.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 3.9.5 
+\series default
+Multivariate Transformation.
+ Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ have a continuous joint distribution for which the joint p.d.f.
+ is 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Assume that there is a subset 
+\begin_inset Formula $S$
+\end_inset
+
+ of 
+\begin_inset Formula $R^{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $Pr[(X_{1},...,X_{n})\in S]=1$
+\end_inset
+
+.
+ Define 
+\begin_inset Formula $n$
+\end_inset
+
+ new random variabels 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y_{1}=r_{1}(X_{1},..,X_{n});Y_{2}=r_{2}(X_{1},..,X_{n});...;Y_{n}=r_{n}(X_{1},..,X_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where we assume that the 
+\begin_inset Formula $n$
+\end_inset
+
+ functions 
+\begin_inset Formula $r_{1},...,r_{n}$
+\end_inset
+
+ define a one-to-one differentiable transformation of 
+\begin_inset Formula $S$
+\end_inset
+
+ onto a subset 
+\begin_inset Formula $T$
+\end_inset
+
+ of 
+\begin_inset Formula $R^{n}$
+\end_inset
+
+.
+ Let the 
+\series bold
+inverse
+\series default
+ of this transformation be given as follows: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}=s_{1}(y_{1},...,y_{n});x_{2}=s_{2}(y_{1},...,y_{n});...;x_{n}=s_{n}(y_{1},...,y_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see 
+\begin_inset Formula $s_{i}$
+\end_inset
+
+ is also one-to-one differentiable transformation.
+\end_layout
+
+\begin_layout Standard
+Then the joint p.d.f.
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ of 
+\begin_inset Formula $Y_{1},..,Y_{n}$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y_{1},...,y_{n})=\begin{cases}
+f(s_{1},...,s_{n})|J| & (y_{1},...,y_{n})\in T\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where J is the deteminant 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 3.9.6 Linear Transformations 
+\series medium
+.
+ Let 
+\begin_inset Formula $\boldsymbol{X}=(X_{1},...,X_{n})$
+\end_inset
+
+ have a continuous joint distribution for which the joint p.d.f.
+ is 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Define 
+\begin_inset Formula $\boldsymbol{Y=}(Y_{1},...,Y_{n})$
+\end_inset
+
+ by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\boldsymbol{Y=AX}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+is nonsingular 
+\begin_inset Formula $nxn$
+\end_inset
+
+ matrix.
+ Then 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+has a continuous joint distribution with p.d.f.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y)=\frac{1}{|det\boldsymbol{A}|}f(\boldsymbol{A^{-1}}\boldsymbol{y})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{y}\in R^{n}$
+\end_inset
+
+.
+ Where 
+\series bold
+
+\begin_inset Formula $\boldsymbol{A^{-1}}$
+\end_inset
+
+
+\series default
+is the inverse of 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+In Example 3.9.5 An Investment Portfolio From, area condition at equation
+ (3.9.7), I cannot figure out why it turn out 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ like below equations system.
+ To make it clear (Viet's method): 
+\begin_inset Formula $1000\le z\leq4000$
+\end_inset
+
+ (1) and 
+\begin_inset Formula $800\leq y-z\leq1200$
+\end_inset
+
+ (2) .
+ From (2) 
+\begin_inset Formula $y-1200\leq z\leq y-800$
+\end_inset
+
+.
+ So we have 3 situations: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y-1200\leq1000\leq y-800$
+\end_inset
+
+.
+ So integration is : 
+\begin_inset Formula $\int_{1000}^{y-800}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $1000\leq y-1200\leq y-800\leq4200$
+\end_inset
+
+.
+ So integration is 
+\begin_inset Formula $\int_{y-1200}^{y-800}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y-1200\leq4200\leq y-800$
+\end_inset
+
+.
+ So intergratin is 
+\begin_inset Formula $\int_{y-1200}^{4000}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With each situation, we need to find out 
+\begin_inset Formula $y$
+\end_inset
+
+ correspond to condition.
+ And to make it clearer, we can imagine it like 2 lines, so we can see 3
+ intersects situations for 2 lines.
+\end_layout
+
+\begin_layout Paragraph*
+Summary 
+\end_layout
+
+\begin_layout Standard
+We extended the construction of the distribution of a function of a random
+ variable to the case of several functions of several random variables.
+ if one only wants the distribution of one function 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+of 
+\begin_inset Formula $n$
+\end_inset
+
+ random variables, the usual way to find this is to
+\series bold
+ first find 
+\begin_inset Formula $n-1$
+\end_inset
+
+ additional functions 
+\begin_inset Formula $r_{2},...,r_{n}$
+\end_inset
+
+ so that the 
+\begin_inset Formula $n$
+\end_inset
+
+ functions together compose a one-to-one transformation.
+ Then find the joint p.d.f.
+ of the 
+\begin_inset Formula $n$
+\end_inset
+
+ functions and finally find the marginal p.d.f.
+ of the first function by integrating out the extra 
+\begin_inset Formula $n-1$
+\end_inset
+
+ variables
+\series default
+.
+ The method is illustrated for the cases of the sum and the range of several
+ random variables.
+\end_layout
+
+\begin_layout Paragraph*
+One-to-One function 
+\series medium
+is function have one value in domain then exactly have one value in range
+ value 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename one-to-onefunction.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To prove the function is one-to-one function, we can use horizontal test
+ (horizontal line should cross function at exactly one spot 
+\begin_inset Formula $\forall$
+\end_inset
+
+ horizontal line)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename horizontal_line_test.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Question : 
+\series default
+In example 3.9.9 , 
+\begin_inset Formula $Y_{1},Y_{2}$
+\end_inset
+
+ is not one-to-one function, why ??
+\end_layout
+
+\end_body
+\end_document

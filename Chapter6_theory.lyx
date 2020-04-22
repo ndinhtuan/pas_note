@@ -1,0 +1,910 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Chapter 6 Large Random Samples
+\end_layout
+
+\begin_layout Section*
+6.1 Introdution
+\end_layout
+
+\begin_layout Section*
+6.2 The Law of Large Numbers 
+\end_layout
+
+\begin_layout Standard
+The average of a random sample of i.i.d.
+ random variables is called their sample mean.
+ The sample mean is useful for summarizing the information in a random sample
+ in much the same way that the mean of a probability distribution summarizes
+ the information in the distribution.
+ In this section, we present some results that illustrate that connection
+ between the sample mean and the expected value of the individual random
+ variables that comprise the random sample.
+\end_layout
+
+\begin_layout Subsection*
+The Markov and Chebyshev Inequalities 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 6.2.1 
+\series default
+Markov Inequality.
+ Suppose that 
+\begin_inset Formula $X$
+\end_inset
+
+ is a random variable such that 
+\begin_inset Formula $Pr(X\geq0)=1$
+\end_inset
+
+.
+ Then for every real number 
+\begin_inset Formula $t>0$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(X\geq t)\le\frac{E(X)}{t}
+\]
+
+\end_inset
+
+(6.2.1)
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The Chebyshev inequality is related to the idea that the variance of a random
+ variable is a measure of how spread out its distribution is.
+ The inequality says that the probability that 
+\begin_inset Formula $X$
+\end_inset
+
+ is far away from its mean is bounded by a quantity that 
+\series default
+increase as 
+\begin_inset Formula $Var(X)$
+\end_inset
+
+ increases.
+\end_layout
+
+\begin_layout Paragraph
+
+\series bold
+Theorem 6.2.2 Chebyshev Inequality
+\series default
+.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable for which 
+\begin_inset Formula $Var(X)$
+\end_inset
+
+ exists.
+ Then for every number 
+\begin_inset Formula $t>0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(|X-E(X)|\geq t)\leq\frac{Var(X)}{t^{2}}
+\]
+
+\end_inset
+
+(6.2.3)
+\end_layout
+
+\begin_layout Standard
+It can be seen from this proof that the Chebyshev inequality is simply a
+ special case of the Markov inequality.
+ Therefore, the comments that were given following the proof of the Markov
+ inequality canbe applied as well to the Chebyshev inequality.
+ Because of their generality, these inequalities are very useful.
+ For example, if 
+\begin_inset Formula $Var(X)=\sigma^{2}$
+\end_inset
+
+ and we let 
+\begin_inset Formula $t=3\sigma$
+\end_inset
+
+, then the Chebyshev inequality yields the result that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(|X-E(X)|\geq3\sigma)\leq\frac{1}{9}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In words, the probability that any given random variable will differ from
+ its mean by more than 3 standard deviation cannot exceed 1/9.
+ This probability will actually be much smaller than 1/9 for many of the
+ random variables and distributions that will be discussed in this book.
+ The Chebyshev inequality is useful because of the fact that this probability
+ must be 1/9 or less for every distribution.
+ It can also be shown that the upper bound in (6.2.3) is sharp in the sense
+ that it cannot be made any smaller and still hold for all distributions.
+\end_layout
+
+\begin_layout Subsection*
+Properties of the Sample Mean 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 6.2.3 
+\series default
+Mean and Variance of the Sample Mean.
+ Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be a random sample from a distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ be the sample mean.
+ Then 
+\begin_inset Formula $E(\bar{X_{n}})=\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $Var(\bar{X_{n}})=\sigma^{2}/n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In words, the mean of 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ is equal to the mean of the distribution from which the random sample was
+ drawn, but the variance of 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ is only 
+\begin_inset Formula $1/n$
+\end_inset
+
+ times the variance of that distribution.
+ 
+\series bold
+It follows that the probability distribution of 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+will be more concentrated around the man value 
+\begin_inset Formula $\mu$
+\end_inset
+
+ than was the original distribution.
+ 
+\series default
+In other words, the sample mean 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ is more likely to be close to 
+\begin_inset Formula $\mu$
+\end_inset
+
+ than is the value of just a single observation 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ from the given distribution.
+\end_layout
+
+\begin_layout Standard
+These statements can be made more precise by applying Chebyshev inequality
+ to 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $E(\bar{X_{n}})=\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $Var(\bar{X_{n}})=\sigma^{2}/n$
+\end_inset
+
+, it follows from the relation (6.2.3) that for every number 
+\begin_inset Formula $t>0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(|\bar{X_{n}}-\mu|\geq t)\le\frac{\sigma^{2}}{nt^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It should be emphasized that the use of the Chebyshev inequality in Example
+ 6.2.1 gaurantees that samples for which 
+\begin_inset Formula $n=400$
+\end_inset
+
+ will be large enough to meet the specified probability requirements, regardless
+ of the particular type of distribution from which the sample is to be taken.
+ It further information about this distribution is available, then it can
+ often be shown that a smaller value for 
+\begin_inset Formula $n$
+\end_inset
+
+ will be sufficient.
+ 
+\end_layout
+
+\begin_layout Subsection*
+The law of Large Numbers 
+\end_layout
+
+\begin_layout Standard
+The discussion in Example 5.2.3 indicates that the Chebyshev inequality may
+ not be a practical tool for determining the appropriate sample size in
+ a particular problem, because it may specify a much greater sample size
+ than is actually needed for the particular distribution from which the
+ sample is being taken.
+ However, the Chebyshev inequality is a valuable theoretical tool, and it
+ will be used here to prove an important result known as the 
+\series bold
+law of large numbers.
+\end_layout
+
+\begin_layout Standard
+Suppose that 
+\begin_inset Formula $Z_{1},Z_{2},...$
+\end_inset
+
+ is a sequence of random variables.
+ Roughly speaking, it is said that this sequence converges to a given number
+ 
+\begin_inset Formula $b$
+\end_inset
+
+ if the probability distribution of 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ becomes more and more concentrated around 
+\begin_inset Formula $b$
+\end_inset
+
+ as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+.
+ To be more precise, we give the following definition.
+\end_layout
+
+\begin_layout Paragraph
+Definition 6.2.1 
+\series medium
+Convergence in Probability.
+ A sequence 
+\begin_inset Formula $Z_{1},Z_{2},...$
+\end_inset
+
+ of random variables converges to 
+\begin_inset Formula $b$
+\end_inset
+
+ in probability if for every number 
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+lim_{n\rightarrow\infty}Pr(|Z_{n}-b|<\epsilon)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This property is denote by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z_{n}\underrightarrow{p}b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and is sometimes stated simply as 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $b$
+\end_inset
+
+ in pribability.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+In other words, 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $b$
+\end_inset
+
+ in probability if the probability that 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ lies in each given interval around 
+\begin_inset Formula $b$
+\end_inset
+
+, no matter how small this interval maybe, approaches 
+\begin_inset Formula $1$
+\end_inset
+
+ as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\begin_layout Paragraph
+Theorem 6.2.4 Law of Large Numbers
+\series medium
+.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a distribution for which the mean is 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and for which the variance is finite.
+ Let 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ denote the sample mean.
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{X_{n}}\underrightarrow{p}\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $\mu$
+\end_inset
+
+ in probability, it follows that there is high probability that 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ will be close to 
+\begin_inset Formula $\mu$
+\end_inset
+
+ if the sample size 
+\begin_inset Formula $n$
+\end_inset
+
+ is large.
+ Hence, if a large random sample is taken from a distribution for which
+ the mean is unknown, then the arithmetic average of the values in the sample
+ will usually be a close estimate of the unknown mean.
+ This topic will be discussed again in Sec.
+ 6.3, where we introduce the central limit theorem.
+ It will then be possible to present a more precise probability distribution
+ for the difference between 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+and 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The following result can be useful if we observe random variables with mean
+ 
+\begin_inset Formula $\mu$
+\end_inset
+
+ but are interested in 
+\begin_inset Formula $\mu^{2}$
+\end_inset
+
+ or 
+\begin_inset Formula $log(\mu)$
+\end_inset
+
+ or some other continuous function of 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Theorem 6.2.5 
+\series medium
+Continuous Functions of Random Variables.
+ If 
+\begin_inset Formula $Z_{n}\rightarrow_{p}b$
+\end_inset
+
+, and if 
+\begin_inset Formula $g(z)$
+\end_inset
+
+ is a function that is continuous at 
+\begin_inset Formula $z=b$
+\end_inset
+
+, then 
+\begin_inset Formula $g(Z_{n})\rightarrow_{p}g(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Theorem 6.2.5 extends to any finite number 
+\begin_inset Formula $k$
+\end_inset
+
+ of sequences that converge in probabiliy and a continuous function of 
+\begin_inset Formula $k$
+\end_inset
+
+ variables.
+\end_layout
+
+\begin_layout Standard
+The law of large numbers helps to explain why a histogram (Definition 3.7.9)
+ can be used as an approximation to an p.d.f.
+\end_layout
+
+\begin_layout Paragraph
+Theorem 6.2.6 
+\series medium
+Histograms.
+ Let 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ be a sequence of i.i.d.
+ random variables.
+ Let 
+\begin_inset Formula $c_{1}<c_{2}$
+\end_inset
+
+ be two constants.
+ Define 
+\begin_inset Formula $Y_{i}=1$
+\end_inset
+
+ if 
+\begin_inset Formula $c_{1}\leq X_{i}\leq c_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y_{i}=0$
+\end_inset
+
+ if not.
+ Then 
+\begin_inset Formula $\bar{Y_{n}}=\frac{1}{n}\sum_{i=1}^{n}Y_{i}$
+\end_inset
+
+ is the proportion of 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ that lie in the interval 
+\begin_inset Formula $[c_{1},c_{2})$
+\end_inset
+
+, and 
+\begin_inset Formula $\bar{Y_{n}}\rightarrow_{p}Pr(c_{1}\leq X_{1}\leq c_{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In words, Theorem 6.2.6 says the following: If we draw a histogram with the
+ area of the bar over each subinterval being the proportion of a random
+ sample that lies in the corresponding subinterval, then the area of each
+ bar converges in probability to the probability that a random variable
+ from the sequence lies in the subinterval, then the area of each bar converges
+ in probability to the probability that a random variable from the sequence
+ lies in the subinterval.
+ If the sample is large, we would then expect the area of each bar to be
+ close to the probability.
+ The same idea applies to a conditionally i.i.d.
+ (given 
+\begin_inset Formula $Z=z$
+\end_inset
+
+) sample, with 
+\begin_inset Formula $Pr(c_{1}\leq X_{1}\leq c_{2})$
+\end_inset
+
+ replaced by 
+\begin_inset Formula $Pr(c_{1}\leq X_{1}\leq c_{2}|Z=z)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Weak Laws and Strong Laws
+\end_layout
+
+\begin_layout Standard
+Other concepts of the convergence of a sequence of random variables:
+\end_layout
+
+\begin_layout Standard
+For example, it is said that a sequence 
+\begin_inset Formula $Z_{1},Z_{2},...$
+\end_inset
+
+ 
+\emph on
+converges to 
+\begin_inset Formula $a$
+\end_inset
+
+ constant 
+\begin_inset Formula $b$
+\end_inset
+
+ with probability 
+\begin_inset Formula $1$
+\end_inset
+
+ if 
+\begin_inset Formula $Pr(\lim_{n\rightarrow\infty}(Z_{n}=b))=1(1)$
+\end_inset
+
+ (
+\emph default
+It is different with 
+\begin_inset Formula $\lim_{n\rightarrow\infty}(Pr(Z_{n}=b))=1(2)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It can be shown that if a sequence 
+\begin_inset Formula $Z_{1},Z_{2},...$
+\end_inset
+
+ converges to 
+\begin_inset Formula $b$
+\end_inset
+
+ with probability 
+\begin_inset Formula $1$
+\end_inset
+
+ (1), then the sequence will also converge to 
+\begin_inset Formula $b$
+\end_inset
+
+ in probability (2).
+ For this reason, convergence with probability 
+\begin_inset Formula $1$
+\end_inset
+
+ is often called 
+\series bold
+\emph on
+strong convergence
+\series default
+, 
+\emph default
+whereas convergence in probability is called 
+\series bold
+weak convergence
+\series default
+ .
+ In order to emphasize the distinction between these two concepts of convergence
+, the result that here has been called simply the law of large numbers is
+ often called the 
+\series bold
+weak law of large numbers.
+\end_layout
+
+\begin_layout Paragraph
+The Strong law of large numbers: 
+\series medium
+If 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ is the sample mean of a random sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ from a distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+, then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(\lim_{n\rightarrow\infty}\bar{X_{n}}=\mu)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are examples of sequences of random variables that converge in probability
+ but that do not converge with probability 1.
+\end_layout
+
+\begin_layout Standard
+The choice of 
+\begin_inset Formula $s=1/2$
+\end_inset
+
+ in Example 6.2.6 was arbitrary.
+ Theorem 6.2.7 says that we can replace this arbitrary choice with the choice
+ that leads to the smallest possible bound.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Theorem 6.2.7 
+\series medium
+Chernoff Bounds.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable with moment generating function 
+\begin_inset Formula $\psi$
+\end_inset
+
+.
+ Then for every real 
+\begin_inset Formula $t$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(X\geq t)\leq\min_{s>0}exp(-st)\psi(s)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Theorem 6.2.7 is most useful when 
+\begin_inset Formula $X$
+\end_inset
+
+ is the sum of 
+\begin_inset Formula $n$
+\end_inset
+
+ i.i.d.
+ random variabels each with finite m.g.f and when 
+\begin_inset Formula $t=nu$
+\end_inset
+
+ for a large value of 
+\begin_inset Formula $n$
+\end_inset
+
+ and some fixed 
+\begin_inset Formula $u$
+\end_inset
+
+.
+ This was the case in Example 6.2.6.
+\end_layout
+
+\begin_layout Paragraph
+Summary 
+\end_layout
+
+\begin_layout Standard
+The law of large numbers says that the sample mean of a random sample converges
+ in probability to the mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ of the individual random variables, if the variance exists.
+ This means that the sample mean will be close to 
+\begin_inset Formula $\mu$
+\end_inset
+
+ if the size of the random sample is sufficiently large.
+ The Chebyshev inequality provides a (crude) bound on how hight the probability
+ is that the sample mean will be close to 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+ 
+\series bold
+Chernoff bounds 
+\series default
+can be sharper, but are harder to compute.
+\end_layout
+
+\end_body
+\end_document

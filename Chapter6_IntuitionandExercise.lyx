@@ -1,0 +1,1299 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Chapter 6 Large Random Samples
+\end_layout
+
+\begin_layout Section*
+6.1 Introdution
+\end_layout
+
+\begin_layout Subsubsection*
+Exercise
+\end_layout
+
+\begin_layout Standard
+1.
+ With 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ is uniform distribution in 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+, then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(x)=\begin{cases}
+1 & \in[0,1]\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, 
+\begin_inset Formula $P(|X_{1}-0.5|<0.1)=P(0.4<X_{1}<0.6)=\int_{0.4}^{0.6}1dx=0.2$
+\end_inset
+
+ (2)
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula $\bar{X_{2}}=\frac{X_{1}+X_{2}}{2}$
+\end_inset
+
+, following definition 3.9.1, 
+\begin_inset Formula $g(y)=\int_{-\infty}^{\infty}2f(y-x_{2})f(x_{2})dx_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $2f(y-x_{2})f(x_{2})=\begin{cases}
+2 & 0\le x_{2}\leq1;0\leq2\bar{x_{2}}-x_{2}\le1(1)\\
+0 & otherwise
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With condition of 
+\begin_inset Formula $(1)$
+\end_inset
+
+, we can imagine like (Viet's way: 2 line and see different situation in
+ 2 intersection of 2 lines):
+\end_layout
+
+\begin_layout Standard
+2 lines: 
+\begin_inset Formula $0\le x_{2}\le1$
+\end_inset
+
+ and 
+\begin_inset Formula $2\bar{x_{2}}-1\leq x_{2}\leq2\bar{x_{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have 2 situations: 
+\begin_inset Formula $2\bar{x_{2}}\le1$
+\end_inset
+
+, so 
+\begin_inset Formula $2\bar{x_{2}}-1\leq0$
+\end_inset
+
+, so we need to intergrate in interval 
+\begin_inset Formula $0\leq x_{2}\leq2\bar{x_{2}}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $2\bar{x_{2}}-1\leq1\leq2\bar{x_{2}}$
+\end_inset
+
+, then we need to intergrate in interval 
+\begin_inset Formula $(2\bar{x_{2}}-1,1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(\bar{x_{2}})=\begin{cases}
+\int_{0}^{2\bar{x_{2}}}2dx_{2}=4\bar{x_{2}} & \bar{x_{2}}\in[0,\frac{1}{2}]\\
+\int_{2\bar{x_{2}}-1}^{1}2dx_{2}=4\bar{x_{2}}-4 & \bar{x_{2}}\in[\frac{1}{2},1]
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Pr(|\bar{X_{2}}-0.5|\le0.1)=Pr(0.4\le\bar{X_{2}}\leq0.6)=\int_{0.4}^{0.5}4\bar{x_{2}}d\bar{x_{2}}+\int_{0.5}^{0.6}(4\bar{x_{2}}-4)d\bar{x_{2}}=0.36$
+\end_inset
+
+ (3)
+\end_layout
+
+\begin_layout Standard
+From (2) and (3) we can see 
+\begin_inset Formula $Pr(|\bar{X_{2}}-0.5|\le0.1)>P(|X_{1}-0.5|<0.1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+6.2 The law of Large number 
+\end_layout
+
+\begin_layout Standard
+1.
+ For each integer 
+\begin_inset Formula $n$
+\end_inset
+
+, let 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+ be a 
+\series bold
+nonnegative
+\series default
+ random variable with finite mean 
+\begin_inset Formula $\mu_{n}$
+\end_inset
+
+.
+ Prove that if 
+\begin_inset Formula $\lim_{n\rightarrow\infty}\mu_{n}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $X_{n}\rightarrow_{p}0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Answer: 
+\series medium
+We need prove 
+\begin_inset Formula $\lim_{n\rightarrow\infty}Pr(|X_{n}-0|\leq\epsilon)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Follow Markov inequality because 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+ is a nonnegative random variable so 
+\begin_inset Formula $P(X_{n}\geq0)=1$
+\end_inset
+
+ : 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P(X_{n}\geq\epsilon)\leq\frac{E[X_{n}]}{\epsilon}$
+\end_inset
+
+, so 
+\begin_inset Formula $P(X_{n}\leq\epsilon)\geq1-\frac{E[X_{n}]}{\epsilon}$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{n\rightarrow\infty}P(X_{n}\leq\epsilon)=1$
+\end_inset
+
+(1)
+\end_layout
+
+\begin_layout Itemize
+We have 
+\begin_inset Formula $E[-X_{n}]=E[X_{n}]$
+\end_inset
+
+, then 
+\begin_inset Formula $\lim_{n\rightarrow\infty}E[-X_{n}]=0$
+\end_inset
+
+.
+ 
+\begin_inset Formula $P(-X_{n}\geq\epsilon)\le\frac{-E[X_{n}]}{\epsilon}$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{n\rightarrow\infty}P(X_{n}\geq-\epsilon)=1$
+\end_inset
+
+(2) (we can remove this step because 
+\begin_inset Formula $X_{n}>0>-\epsilon$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+From (1) and (2), we see that 
+\begin_inset Formula $\lim_{n\rightarrow\infty}P(-\epsilon\le X_{n}\leq\epsilon)=1$
+\end_inset
+
+, so 
+\begin_inset Formula $\lim_{n\rightarrow\infty}P(|X_{n}-0|\leq\epsilon)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+2.
+ 
+\series medium
+Suppose that 
+\begin_inset Formula $X$
+\end_inset
+
+ is a random variable: 
+\begin_inset Formula $Pr(X\geq0)=1$
+\end_inset
+
+ and 
+\begin_inset Formula $Pr(X\geq10)=1/5$
+\end_inset
+
+.
+ Prove that 
+\begin_inset Formula $E(X)\geq2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Following Markov inequality because 
+\begin_inset Formula $Pr(X\geq0)=1$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{5}=Pr(X\geq10)\leq\frac{E(X)}{10}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $E(X)\geq\frac{1}{2}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+3.
+ 
+\series medium
+
+\begin_inset Formula $X$
+\end_inset
+
+ is a random variable : 
+\begin_inset Formula $E(X)=10$
+\end_inset
+
+, 
+\begin_inset Formula $Pr(X\leq7)=0.2$
+\end_inset
+
+ and 
+\begin_inset Formula $Pr(X\geq13)=0.3$
+\end_inset
+
+.
+ Prove that : 
+\begin_inset Formula $Var(X)\geq9/2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We have: 
+\begin_inset Formula $P(X\le7)+P(7\leq X\leq13)+P(13\leq X)=1$
+\end_inset
+
+, 
+\begin_inset Formula $P(7\leq X\leq13)=P(|X-10|\leq3)=1-P(X\leq7)-P(X\geq13)=1-0.2-0.3=0.5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Following Chebyshev inequality : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(|X-10|\leq3)\leq\frac{Var(X)}{9}$
+\end_inset
+
+, so 
+\begin_inset Formula $\frac{Var(X)}{9}\geq0.5$
+\end_inset
+
+, so 
+\begin_inset Formula $Var(X)\geq\frac{9}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+4.
+ 
+\series medium
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable for which 
+\begin_inset Formula $E(X)=\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $Var(X)=\sigma^{2}$
+\end_inset
+
+.
+ Construct probability distribution for 
+\begin_inset Formula $X$
+\end_inset
+
+, such that : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(|X-\mu|\geq3\sigma)=1/9
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First, we will see when equalization holds in Markov inequality with 
+\begin_inset Formula $X$
+\end_inset
+
+ is a random variable, with 
+\begin_inset Formula $P(X\geq0)=1$
+\end_inset
+
+ and 
+\begin_inset Formula $t>0$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(X\geq t)\leq\frac{E(x)}{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E(X)=\int_{0}^{\infty}xp(x)dx\geq\int_{t}^{\infty}xp(x)dx\geq\int_{t}^{\infty}tp(x)dx=tP(X\geq t).$
+\end_inset
+
+ (1)
+\end_layout
+
+\begin_layout Standard
+Equalization holds if equations in (1) hold.
+ One situation can be: 
+\begin_inset Formula $P(X=t)=1$
+\end_inset
+
+ or in original problem, it happens when 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Not yet 
+\end_layout
+
+\begin_layout Paragraph
+5.
+ 
+\series medium
+
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+is random sample of 
+\begin_inset Formula $n$
+\end_inset
+
+ variable 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ have distribution 
+\begin_inset Formula $\mu,\sigma$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $P(|\bar{X_{n}}-\mu|\geq2\sigma)\leq\frac{Var(\bar{X_{n})}}{4\sigma^{2}}=\frac{1}{4n}$
+\end_inset
+
+, so we need 
+\begin_inset Formula $n\geq\frac{1}{4*0.01}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+9.
+ 
+\series medium
+Let 
+\series default
+
+\begin_inset Formula $Z_{1},Z_{2},...$
+\end_inset
+
+
+\series medium
+ be a sequence of random variables, and for 
+\begin_inset Formula $n=1,2,...$
+\end_inset
+
+, the distribution of 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ is as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(Z_{n}=n^{2})=\frac{1}{n}\text{ and }Pr(Z_{n}=0)=1-\frac{1}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Show that 
+\begin_inset Formula $\lim_{n\rightarrow\infty}E(Z_{n})=\infty$
+\end_inset
+
+ but 
+\begin_inset Formula $Z_{n}\rightarrow_{p}0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[Z_{n}]=n$
+\end_inset
+
+, so 
+\begin_inset Formula $\lim_{n\rightarrow\infty}E[Z_{n}]=\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+, 
+\begin_inset Formula $P(|Z_{n}-0|\leq\epsilon)=P(-\epsilon\leq Z_{n}\leq\epsilon)=1-\frac{1}{n}=1$
+\end_inset
+
+ when 
+\begin_inset Formula $n$
+\end_inset
+
+ goto 
+\begin_inset Formula $\infty$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $lim_{n\rightarrow\infty}(P(|Z_{n}-0|\leq\epsilon))=1$
+\end_inset
+
+.
+ or 
+\begin_inset Formula $Z_{n}\rightarrow_{p}0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If following Markov inequality, we can use this because 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ is not nonnegative random variable
+\end_layout
+
+\begin_layout Standard
+So, 
+\begin_inset Formula $P(|Z_{n}-0|\geq\epsilon)=P(Z_{n}\ge\epsilon)+P(Z_{n}\le-\epsilon)$
+\end_inset
+
+, we can apply Markov inequality for 
+\begin_inset Formula $P(Z_{n}\leq-\epsilon)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+10.
+ 
+\series medium
+It is said that a sequence of random variables 
+\begin_inset Formula $Z_{1},Z_{2},...$
+\end_inset
+
+ converges to a constant 
+\begin_inset Formula $b$
+\end_inset
+
+ in 
+\series default
+quadratic mean 
+\series medium
+if :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}E[(Z_{n}-b)^{2}]=0\text{ (6.2.17)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Show that Eq.
+ (6.2.17) is satisfied if and only if 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}E(Z_{n})=b\text{ and }\lim_{n\rightarrow\infty}Var(Z_{n})=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Answer : 
+\begin_inset Formula $E[(Z_{n}-b)^{2}]-\sigma^{2}=E(Z_{n}^{2})-2E(Z_{n})b+b^{2}-E(Z_{n}^{2})+\mu^{2}=(\mu-b)^{2}$
+\end_inset
+
+
+\series default
+, so 
+\begin_inset Formula $E[(Z_{n}-b)^{2}]=(\mu-b)^{2}+\sigma^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\lim_{n\rightarrow\infty}E[(Z_{n}-b)^{2}]=0\Leftrightarrow\lim_{n\rightarrow\infty}[(\mu-b)^{2}+\sigma^{2}]=0\Leftrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\lim_{n\rightarrow\infty}(\mu-b)^{2}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\lim_{n\rightarrow\infty}\sigma^{2}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+11.
+ 
+\series medium
+Prove that if sequence 
+\begin_inset Formula $Z_{1},Z_{2},...$
+\end_inset
+
+ converges to constant 
+\begin_inset Formula $b$
+\end_inset
+
+ in quadratic mean, then also converges to 
+\begin_inset Formula $b$
+\end_inset
+
+ in probability.
+\end_layout
+
+\begin_layout Standard
+Apply Chebyshev inequality : 
+\begin_inset Formula $Pr(|Z_{n}-E(Z_{n})|\geq\epsilon)\leq\frac{Var(Z_{n})}{\epsilon^{2}}$
+\end_inset
+
+.
+ Because sequence converges to a constant 
+\begin_inset Formula $b$
+\end_inset
+
+ in quadratic mean so 
+\begin_inset Formula $\lim_{n\rightarrow\infty}Var(Z_{n})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\lim_{n\rightarrow\infty}E(Z_{n})=b$
+\end_inset
+
+.
+ so 
+\begin_inset Formula $\lim_{n\rightarrow\infty}(Pr(|Z_{n}-b|\geq\epsilon))=0$
+\end_inset
+
+, or the sequence converges to 
+\begin_inset Formula $b$
+\end_inset
+
+ in probability.
+\end_layout
+
+\begin_layout Paragraph
+12 
+\series medium
+Let 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ be the sample mean of a random sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ from a distribution mean is 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and the variance is 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $\sigma^{2}\leq\infty$
+\end_inset
+
+, or 
+\begin_inset Formula $\lim_{n\rightarrow\infty}\frac{\sigma^{2}}{n}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Answer: 
+\series default
+
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ will have mean and variance : 
+\begin_inset Formula $\bar{\mu}=\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{\sigma}^{2}=\frac{\sigma^{2}}{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We use 
+\begin_inset Quotes eld
+\end_inset
+
+only if
+\begin_inset Quotes erd
+\end_inset
+
+ statement in exercise 10 with 
+\begin_inset Formula $Z_{n}=\bar{X_{n}}$
+\end_inset
+
+: 
+\begin_inset Formula $E(Z_{n})=\mu$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{n\rightarrow\infty}Var(Z_{n})=\lim_{n\rightarrow\infty}\frac{\sigma^{2}}{n}=0$
+\end_inset
+
+.
+ So from exercise 10, 
+\begin_inset Formula $\lim_{n\rightarrow\infty}E[(Z_{n}-\mu)^{2}]=0$
+\end_inset
+
+ or 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ converges to a constant 
+\begin_inset Formula $b$
+\end_inset
+
+ in quadratic mean.
+\end_layout
+
+\begin_layout Paragraph
+13.
+ 
+\series medium
+Let 
+\begin_inset Formula $Z_{1},Z_{2},...$
+\end_inset
+
+ be sequence of random variables, suppose 
+\begin_inset Formula $n=2,3,...$
+\end_inset
+
+ , the distribution of 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ is as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(Z_{n}=\frac{1}{n})=1-\frac{1}{n^{2}}\text{ and }Pr(Z_{n}=n)=\frac{1}{n^{2}}
+\]
+
+\end_inset
+
+ a.
+ Does there exists constant 
+\begin_inset Formula $c$
+\end_inset
+
+ to which sequence converges in probability ?
+\end_layout
+
+\begin_layout Standard
+Suppose sequence converges in probability with 
+\begin_inset Formula $c<\infty$
+\end_inset
+
+, so 
+\begin_inset Formula $\lim_{n\rightarrow\infty}Pr(|Z_{n}-c|\leq\epsilon)=1(1)$
+\end_inset
+
+.
+ Now, 
+\begin_inset Formula $\lim_{n\rightarrow\infty}Pr(|Z_{n}-c|\leq\epsilon)=\lim_{n\rightarrow\infty}Pr(Z_{n}=\frac{1}{n})\text{ }$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ because 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ is small 
+\begin_inset Formula $=\lim_{n\rightarrow\infty}(1-\frac{1}{n^{2}})=1$
+\end_inset
+
+, so it is a constant 
+\begin_inset Formula $c$
+\end_inset
+
+ for (1).
+ 
+\family default
+\series bold
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Yes
+\end_layout
+
+\begin_layout Paragraph
+b.
+ 
+\series medium
+Does there exist a constant 
+\begin_inset Formula $c$
+\end_inset
+
+ to which the sequence converges in quadratic mean.
+\end_layout
+
+\begin_layout Standard
+Suppose constant 
+\begin_inset Formula $c$
+\end_inset
+
+, sequence converges in quadratic mena to 
+\begin_inset Formula $c\Leftrightarrow\lim_{n\rightarrow\infty}E(Z_{n})=c$
+\end_inset
+
+ and 
+\begin_inset Formula $\lim_{n\rightarrow\infty}Var(Z_{n})=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E(Z_{n})=\frac{2}{n}-\frac{1}{n^{3}}$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{n\rightarrow\infty}E(Z_{n})=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Var(Z_{n})=E[Z_{n}^{2}]-E(Z_{n})^{2}=E(Z_{n}^{2})=(1-\frac{1}{n^{2}})\frac{1}{n^{2}}+\frac{1}{n^{2}}n^{2}=(1-\frac{1}{n^{2}})\frac{1}{n^{2}}+1$
+\end_inset
+
+, so 
+\begin_inset Formula $\lim_{n\rightarrow\infty}Var(Z_{n})=1\neq0$
+\end_inset
+
+, so 
+\series bold
+NO
+\end_layout
+
+\begin_layout Paragraph
+14.
+ 
+\series medium
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be a p.f.
+ for a distrcete distribution.
+ Suppose that 
+\begin_inset Formula $f(x)=0$
+\end_inset
+
+ for 
+\begin_inset Formula $x\notin[0,1]$
+\end_inset
+
+.
+ Prove that the variance of this distribution is at mose 
+\begin_inset Formula $1/4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+15.
+ 
+\series medium
+Prove 
+\series default
+Theorem 6.2.5 
+\series medium
+: Continuous functions of Random variables.
+ If 
+\begin_inset Formula $Z_{n}\rightarrow_{p}b$
+\end_inset
+
+, and if 
+\begin_inset Formula $g(z)$
+\end_inset
+
+ is a function that is continuous at 
+\begin_inset Formula $z=b$
+\end_inset
+
+, then 
+\begin_inset Formula $g(Z_{n})\rightarrow_{p}g(b).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+17.
+ 
+\series medium
+show if we using histogram method to approximate distribution, the smaller
+ we divide the interval, the bigger variance get for random variabe 
+\begin_inset Formula $X$
+\end_inset
+
+ is Binomial distribution present probability of 
+\begin_inset Formula $X$
+\end_inset
+
+ in that interval.
+\end_layout
+
+\begin_layout Paragraph
+18.
+ 
+\series medium
+Prove Theorem 6.2.7 
+\end_layout
+
+\begin_layout Standard
+Chernoff Bounds.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable with moment generating function 
+\begin_inset Formula $\psi$
+\end_inset
+
+.
+ Then, for every real 
+\begin_inset Formula $t$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(X\geq t)\leq\min_{s>0}exp(-st)\psi(s).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have 
+\begin_inset Formula $\forall s>0$
+\end_inset
+
+, 
+\begin_inset Formula $Pr(X\geq t)=P(sX\geq st)=P(e^{sX}\geq e^{st})\leq\frac{E[e^{sX}]}{e^{st}}$
+\end_inset
+
+ (following Chebyshev inequality) 
+\begin_inset Formula $=\psi(s)exp(-st)$
+\end_inset
+
+.
+ So we just need to choose 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(X\ge t)\leq\min_{s>0}exp(-st)\psi(s)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For minimize sample complexity.
+\end_layout
+
+\begin_layout Paragraph
+24.
+ 
+\series medium
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable having the uniform distribution on the interval 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+ Define 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ by 
+\begin_inset Formula $Z_{n}=n^{2}$
+\end_inset
+
+ if 
+\begin_inset Formula $0<X<1/n$
+\end_inset
+
+ and 
+\begin_inset Formula $Z_{n}=0$
+\end_inset
+
+ otherwise, so
+\begin_inset Formula 
+\[
+P(Z_{n})=\begin{cases}
+\int_{0}^{1/n}1dx=\frac{1}{n} & Z_{n}=n^{2}\\
+1-\frac{1}{n} & 0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+a.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $0$
+\end_inset
+
+ with probability 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ So we need to prove 
+\begin_inset Formula $\exists\text{ }\epsilon>0\text{ small},$
+\end_inset
+
+ 
+\begin_inset Formula $\lim_{n\rightarrow\infty}P(|Z_{n}|\geq\epsilon)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(|Z_{n}|\ge\epsilon)=P(Z_{n}\ge\epsilon)+P(Z_{n}\leq-\epsilon)=P(Z_{n}=n^{2})=\frac{1}{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $\lim_{n\rightarrow\infty}P(|Z_{n}|\geq\epsilon)=\lim_{n\rightarrow\infty}\frac{1}{n}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $\lim_{n\rightarrow\infty}(P(|Z_{n}|\leq\epsilon))=1$
+\end_inset
+
+, or 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $0$
+\end_inset
+
+ with probability 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+b.
+ 
+\series medium
+Prove that 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ does not converge to 
+\begin_inset Formula $0$
+\end_inset
+
+ in quadratic mean.
+ So we need to prove 
+\begin_inset Formula $\lim_{n\rightarrow\infty}E[(Z_{n}-0)^{2}]=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[Z_{n}^{2}]=n^{3}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\lim_{n\rightarrow\infty}n^{3}=\infty$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ does not converge to 
+\begin_inset Formula $0$
+\end_inset
+
+ in quadratic mean.
+\end_layout
+
+\end_body
+\end_document

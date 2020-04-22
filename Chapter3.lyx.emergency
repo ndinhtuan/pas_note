@@ -1,0 +1,545 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsection*
+3.8 Functions of a Random Variables
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 3.8.1 
+\series default
+Function of a Discrete Random Variable.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ have a discrete distribution with p.d.
+ 
+\begin_inset Formula $f$
+\end_inset
+
+, and let 
+\begin_inset Formula $Y=r(X)$
+\end_inset
+
+ for some function of 
+\begin_inset Formula $r$
+\end_inset
+
+ defined on the set of possible values of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ For each possible value 
+\begin_inset Formula $y$
+\end_inset
+
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+, the p.f.f 
+\begin_inset Formula $g$
+\end_inset
+
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y)=Pr(Y=y)=Pr[r(X)=y]=\sum_{x:r(x)=y}f(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.9 Functions of Two or More Random Variables.
+\end_layout
+
+\begin_layout Standard
+The general method for solving problems like those of Example 3.9.1 is a straight
+ forwatd extension of 
+\series bold
+Theorem 3.8.1.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 3.9.1 
+\series default
+Functions of Discrete Random Variables.
+ Suppose that 
+\begin_inset Formula $n$
+\end_inset
+
+ random variables 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ have a discrete joint distribution for which the joint p.f.
+ is 
+\begin_inset Formula $f$
+\end_inset
+
+, and that 
+\begin_inset Formula $m$
+\end_inset
+
+ functions 
+\begin_inset Formula $Y_{1},...,Y_{m}$
+\end_inset
+
+ of these 
+\begin_inset Formula $n$
+\end_inset
+
+ random variables are defined as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y_{1}=r_{1}(X_{1},...,X_{n}),...,Y_{m}=r_{m}(X_{1},...,X_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For given values 
+\begin_inset Formula $y_{1},...,y_{m}$
+\end_inset
+
+ of the 
+\begin_inset Formula $m$
+\end_inset
+
+ random variables 
+\begin_inset Formula $Y_{1},...,Y_{m}$
+\end_inset
+
+, let 
+\begin_inset Formula $A$
+\end_inset
+
+ denote the set of all points 
+\begin_inset Formula $(x_{1},...,x_{n})$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r_{1}(x_{1},...,x_{n})=y_{1};...;r_{m}(x_{1},...,x_{n})=y_{m}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then the value of the joint p.f.
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ of 
+\begin_inset Formula $Y_{1},...,Y_{m}$
+\end_inset
+
+ is specified at the point 
+\begin_inset Formula $(y_{1},...,y_{m})$
+\end_inset
+
+ by the relation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y_{1},...,y_{m})=\sum_{(x_{1},...,x_{n})\in A}f(x_{1},...,x_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Theorem 3.9.2 
+\series default
+Binomial and Bernoulli Distributions Assume that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are i.i.d.
+ random variables having the Bernoulli distribution with parameter 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $Y=X_{1}+...+X_{n}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $Y$
+\end_inset
+
+ has the binomial distribution with parameters 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Question: 
+\series default
+In Binomial case is not equally likely intuition, so explain how it different
+ with equally likely as 
+\series bold
+Example 3.9.2.
+\end_layout
+
+\begin_layout Subsection*
+Random Variables with a Continuous Joint Distribution 
+\end_layout
+
+\begin_layout Standard
+Example 3.9.4 is an example of a brute-force method that is always availabel
+ for finding the distribution of a function of several random variables,
+ however, it might be difficult to apply in individual cases.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 3.9.3 
+\series medium
+Brute-Force Distribution of a Function.
+ Suppose that the joint p.d.f of 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ is 
+\begin_inset Formula $f(\boldsymbol{x})$
+\end_inset
+
+ and that 
+\begin_inset Formula $Y=r(\boldsymbol{X}).$
+\end_inset
+
+ For each real number 
+\begin_inset Formula $y$
+\end_inset
+
+, define 
+\begin_inset Formula $A_{y}=\{\boldsymbol{x:}r(\boldsymbol{x})\leq y\}.$
+\end_inset
+
+ Then the c.d.f 
+\begin_inset Formula $G(y)$
+\end_inset
+
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G(y)=\int\ldots_{A_{y}}\int f(x)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the distribution of 
+\begin_inset Formula $Y$
+\end_inset
+
+ also is continuous, then the p.d.f of 
+\begin_inset Formula $Y$
+\end_inset
+
+ can be found by differentiating the c.d.f.
+ 
+\begin_inset Formula $G(y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A popular special case of 
+\series bold
+Theorem 3.9.3 
+\series default
+is the following.
+\end_layout
+
+\begin_layout Paragraph*
+Theorem 3.9.4 Linear Function of Two Random Variables.
+ 
+\series medium
+Let 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ have joint p.d.f 
+\begin_inset Formula $f(x_{1},x_{2})$
+\end_inset
+
+, and let 
+\begin_inset Formula $Y=\alpha_{1}X_{1}+\alpha_{2}X_{2}+b$
+\end_inset
+
+ with 
+\begin_inset Formula $a_{1}\neq0$
+\end_inset
+
+.
+ The n 
+\begin_inset Formula $Y$
+\end_inset
+
+ has a continous distribution whose p.d.f is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y)=\int_{-\infty}^{\infty}f(\frac{y-b-a_{2}x_{2}}{a_{1}},x_{2})\frac{1}{|a_{1}|}dx_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Definition 3.9.1 Convolution.
+ 
+\series medium
+Let 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ be independent continuos random variables and let 
+\begin_inset Formula $Y=X_{1}+X_{2}$
+\end_inset
+
+.
+ The distribution of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is called the convolution of the distributions of 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+.
+ The p.d.f of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is sometime called the convolution of the p.d.f.'s of 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If we let the p.d.f of 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ be 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,2$
+\end_inset
+
+ in definition 3.9.1, then Theorem 3.9.4 (with 
+\begin_inset Formula $a_{1}=a_{2}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $b=0$
+\end_inset
+
+) says that the p.d.f of 
+\begin_inset Formula $Y=X_{1}+X_{2}$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(y)=\int_{-\infty}^{\infty}f_{1}(y-z)f_{2}(z)dz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+A popular way to describe how spread out is a random sample is to use the
+ distance from the minimum to the maximum, which is called the range of
+ the random sample.
+ We can combine the result from the end of 
+\series default
+Example 3.9.6 
+\series medium
+with 
+\series default
+Theorem 3.9.4 
+\series medium
+to find the p.d.f of the range.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
