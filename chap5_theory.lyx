@@ -76,6 +76,235 @@
 \begin_body
 
 \begin_layout Section*
+5.3 The Hypergeometric Distributions
+\end_layout
+
+\begin_layout Standard
+In this section, we consider dependent Bernoulli random variables.
+ A common source of dependent Bernoulli random variables is sampling without
+ replacement from a finite population.
+ Suppose that a finite population consists of a known number of successes
+ and failuers.
+ If we sample a fixed number of units from that population, the number of
+ successes in out sample will have a distribution that is a member of the
+ family of hypergeometric distributions.
+\end_layout
+
+\begin_layout Paragraph
+Example 5.3.1 Sampling without Replacement.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Theorem 5.3.1.
+ Probability Function.
+ 
+\series medium
+The distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ in Example 5.3.1 has the p.f.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(x|A,B,n)=\frac{\binom{A}{x}\binom{B}{n-x}}{\binom{A+B}{n}}\text{ (5.3.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\max\{0,n-B\}\leq x\leq\min\{n,A\}\text{ (5.3.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula $f(x|A,B,n)=0$
+\end_inset
+
+ otherwise.
+\end_layout
+
+\begin_layout Paragraph
+Theorem 5.3.3 
+\series medium
+Let 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{n}$
+\end_inset
+
+ be sequences of real numbers such that 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $0$
+\end_inset
+
+, and 
+\begin_inset Formula $c_{n}a_{n}^{2}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ Then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}(1+a_{n})^{c_{n}}e^{-a_{n}c_{n}}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In particular, if 
+\begin_inset Formula $a_{n}c_{n}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $b$
+\end_inset
+
+, then 
+\begin_inset Formula $(1+a_{n})^{c_{n}}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $e^{b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+5.4 Poisson Distribution
+\end_layout
+
+\begin_layout Paragraph
+Definition 5.4.1 
+\series medium
+Poisson Distribution.
+ Let 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+.
+ A random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ has the Poisson distribution with mean 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ if the p.f.
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+ is as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(x|\lambda)=\begin{cases}
+\frac{e^{-\lambda}\lambda^{x}}{x!} & \text{for }x=0,1,2,...\\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Theorem 5.4.1 Mean 
+\series medium
+The mean of the distribution with p.f.
+ equal to (5.4.2) is 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Theorem 5.4.2.
+ Variance.
+ 
+\series medium
+The variance of the Poisson distribution with mean 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is also 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Theorem 5.4.3.
+ Moment Generating Function.
+ 
+\series medium
+The m.g.f of the Poisson distribution with mean 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\psi(t)=e^{\lambda(e^{t}-1)}\text{ (5.4.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for all real 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
 5.6 The Normal Distribution
 \end_layout
 

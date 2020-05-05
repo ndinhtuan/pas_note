@@ -1,0 +1,748 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Chapter 7 Estimation 
+\end_layout
+
+\begin_layout Chapter*
+7.1 Statistical Inference 
+\end_layout
+
+\begin_layout Standard
+Recal our various clinical trial examples.
+ What would we say is the probability that a future patient will respond
+ successfully to treatment treatment after we observe the results from a
+ collection of other patients ? This is the kind of question that statistical
+ inference is designed to address.
+ In general, statistical inference consists of making probabilistic statements
+ about unknown quantities.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Our goal: 
+\series medium
+will be to say what we have learned about the unknown quantities after observing
+ some data that we believe contain relevant information.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Probability and Statistical Models.
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.1.1.
+ 
+\series medium
+Statistical Model.
+ A statistical model consists of an identification of random variables of
+ interest (both observable and only hypothetically observable), a specification
+ of a joint distribution or family of possible joint distributions for the
+ observable random variables, the identification of any parameters of those
+ distributions that are assumed unknown and possibly hypothetically observable,
+ and (if desired) a specification for a (joint) distribution for unknown
+ parameter(s).
+ When we treat the unknown parameter(s) 
+\begin_inset Formula $\theta$
+\end_inset
+
+ as random, then the joint distribution of the observable random variables
+ indexed by 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is understood as the conditional distribution of the observable random
+ variables given 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+In example 7.1.1, 
+\series medium
+The observable random variables of interest form the sequence 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+, while the failure rate 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is hypothetically observable.
+ The family of possible joint distributions of 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ is indexed by the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ .
+ The joint distribution of observables corresponding to the value 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is that 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ are i.i.d random variables each having the exponential distribution with
+ parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ This is also the conditional distribution of 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ given 
+\begin_inset Formula $\theta$
+\end_inset
+
+ because we are treating 
+\begin_inset Formula $\theta$
+\end_inset
+
+ as random variable.
+ The distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the gamma distribution with parameters 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.1.2 
+\series medium
+Statistical Inference.
+ A statistical inference is a procedure that produces a probabilistic statement
+ about some or all parts of a statistical model.
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+In Definition 7.1.1, The name 
+\series default
+observable
+\series medium
+ for a random variable that we are essentially certain that we could observe
+ if we devoted the neccessay effort to observe it.
+ The name 
+\series default
+hypothetically observable
+\series medium
+ was used for a random variable that would require infinite resources observe,
+ such as the limit (as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+) of the sample averages of the first 
+\begin_inset Formula $n$
+\end_inset
+
+ observables.
+ In this text, such hypothetically observable random variables will correspond
+ to the parameters of the joint distribution of the observable as in Example
+ 7.1.1.
+ 
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.1.3
+\series medium
+ Parameter/Parameter space.
+ In a problem of statistical inference, a characteristic or combination
+ of characteristics that determine the joint distribution for the random
+ variables of interest is called a parameter of the distribution.
+ The set 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ of all possible values of a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ or of a vector of parameters 
+\begin_inset Formula $(\theta_{1},...,\theta_{k})$
+\end_inset
+
+ is called the parameter space.
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+The important feature of the parameter space 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is that it must contain all possible values of the parameters in a given
+ problem, in order that we can be certain that the actual value of the vector
+ of paramters is a point in 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+General Classes of Inference Problems
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.1.4 
+\series default
+Statistic.
+ 
+\series medium
+Suppose that the observable random variables of interest are 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $r$
+\end_inset
+
+ be an arbitrary real-valued function of 
+\begin_inset Formula $n$
+\end_inset
+
+ real variabels.
+ Then the random variable 
+\begin_inset Formula $T=r(X_{1},...,X_{n})$
+\end_inset
+
+ is called a statistic.
+\end_layout
+
+\begin_layout Chapter*
+7.2 Prior and Posterior Distributions 
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+The distribution of a parameter before observing any data is called the
+ prior distribution of the parameter , 
+\begin_inset Formula $P(\theta)$
+\end_inset
+
+.
+ The conditional distribution of the parameter given the observed data is
+ called the posterior distribution, 
+\begin_inset Formula $P(\theta|X)$
+\end_inset
+
+.
+ If we plug observed values of the data into the conditional p.f or p.d.f of
+ the data given the parameter, the result is a function of the parameter
+ alone, which is called the likelihood function, 
+\begin_inset Formula $P(X|\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+The Prior Distribution 
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.2.1
+\series default
+ 
+\series medium
+Prior Distribution/p.f./p.d.f.
+ Suppose that one has a statistical model with parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ If one treats 
+\begin_inset Formula $\theta$
+\end_inset
+
+ as random, then the distribution that one assigns to 
+\begin_inset Formula $\theta$
+\end_inset
+
+ before observing the other random variable of interest is called 
+\series default
+\emph on
+prior distribution.
+ 
+\emph default
+If the parameter space is at most countable, then the prior distribution
+ is discrete and its p.f.
+ is called prior p.f.
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ If the prior distribution is a continuous distribution, then its p.d.f is
+ called the prior p.d.f of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ We shall commonly use the symbol 
+\begin_inset Formula $\xi(\theta)$
+\end_inset
+
+ to denote the prior p.f.
+ or p.d.f.
+ as a function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+When one treats the parameter as a random variable, the name 
+\begin_inset Quotes eld
+\end_inset
+
+prior distribution
+\begin_inset Quotes erd
+\end_inset
+
+ is merely another name for the marginal distribution of the parameter.
+\end_layout
+
+\begin_layout Paragraph*
+In summary, 
+\series medium
+the following two expression are to be understood as equivalent:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample with p.f.
+ or p.d.f.
+ 
+\begin_inset Formula $f(x|\theta).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are conditionally i.i.d.
+ given 
+\begin_inset Formula $\theta$
+\end_inset
+
+ with conditional p.f.
+ or p.d.f.
+ 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+The Posterior Distribution 
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.2.2 
+\series default
+Posterior Distribution/p.f/p.d.f.
+ Consider a statistical inference problem with parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and random variables 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ to be observed.
+ The conditional distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ given 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ is called te posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ The conditional p.f.
+ or p.d.f.
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ given 
+\begin_inset Formula $X_{1}=x_{1},...,X_{n}=x_{n}$
+\end_inset
+
+ is called the posteriro p.f.
+ or posterior p.d.f of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and typically denote 
+\begin_inset Formula $\xi(\theta|x_{1},...,x_{n})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+
+\series bold
+7.2.1 
+\series default
+Suppose that 
+\begin_inset Formula $n$
+\end_inset
+
+ random variables 
+\begin_inset Formula $X_{1},..,X_{n}$
+\end_inset
+
+ form a random sample from a distribution for which the p.d.f.
+ or the p.f.
+ is 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+.
+ Suppose also that the value of the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is unknown and the prior p.d.f or p.f.
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is 
+\begin_inset Formula $\xi(\theta)$
+\end_inset
+
+.
+ Then the posterior p.d.f or p.f.
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is 
+\begin_inset Formula $\xi(\theta)$
+\end_inset
+
+.
+ Then the posterior p.d.f.
+ or p.f.
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\xi(\theta|\boldsymbol{x})=\frac{f(x_{1}|\theta)...f(x_{n}|\theta)\xi(\theta)}{g_{n}(\boldsymbol{x})}\text{ for }\theta\in\Omega
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $g_{n}$
+\end_inset
+
+ is the marginal joint p.d.f or p.f.
+ of 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+The Likelihood function 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+We may replace following relation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\xi(\theta|\boldsymbol{x})\propto f_{n}(\boldsymbol{x}|\theta)\xi(\theta)\text{ (7.2.10)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The proportionaility symbol 
+\begin_inset Formula $\propto$
+\end_inset
+
+ is used here to indicate the left side is euqal to the right side except
+ possibly for a constant factor, the value of which may depend on the observed
+ values 
+\begin_inset Formula $x_{1},...x_{n}$
+\end_inset
+
+ but does not depend on 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.2.3 
+\series default
+Likelihood Function.
+ When the joint p.d.f.
+ or the joint p.f.
+ 
+\begin_inset Formula $f_{n}(\boldsymbol{x}|\theta)$
+\end_inset
+
+ of the observations in a random sample is regarded as a function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ for given values of 
+\begin_inset Formula $x_{1},..,x_{n}.$
+\end_inset
+
+ it is called the likelihood function.
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The relation (7.2.10) states that the posterior p.d.f.
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is proportional to the product of the likelihood function and the prior
+ p.d.f of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Sequential Observations and Prediction 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+If 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ are conditionally independent given 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\xi(\theta|x_{1},x_{2})\propto f(x_{2}|\theta)\xi(\theta|x_{1})\text{ (7.2.15)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly for 
+\begin_inset Formula $x_{n}$
+\end_inset
+
+ if known 
+\begin_inset Formula $x_{1},...,x_{n-1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\xi(\theta|\boldsymbol{x})\propto f(x_{n}|\theta)\xi(\theta|x_{1},...,x_{n-1})\text{ (7.2.16)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $\int_{\Omega}\xi(\theta|\boldsymbol{x})=1$
+\end_inset
+
+ because 
+\begin_inset Formula $\xi$
+\end_inset
+
+ is p.f/p.d.f of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Derivation from bayes theorem: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(x_{n}|x_{1},...,x_{n-1})=\int f(x_{n}|\theta)\xi(\theta|x_{1},...,x_{n-1})d\theta\text{ (7.2.17)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

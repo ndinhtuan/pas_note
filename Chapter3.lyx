@@ -109,6 +109,136 @@ In this section, we shall extend the result of Bivariate distribution and
 \end_layout
 
 \begin_layout Subsection*
+Histograms
+\end_layout
+
+\begin_layout Paragraph
+Definition 3.7.9 Histogram
+\series medium
+.
+ Let 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ be a collection of numbers that all lie between two values 
+\begin_inset Formula $a<b$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula $a\leq x_{i}\leq b$
+\end_inset
+
+ for all 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+ Choose some integer 
+\begin_inset Formula $k\geq1$
+\end_inset
+
+ and divide the interval 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ into k equal-length subintervals of length 
+\begin_inset Formula $(b-a)/k$
+\end_inset
+
+.
+ For each subinterval, count how many of the number 
+\begin_inset Formula $x_{1},..,x_{n}$
+\end_inset
+
+ are in the subinterval.
+ Let 
+\begin_inset Formula $c_{i}$
+\end_inset
+
+ be the count for subinterval 
+\begin_inset Formula $i$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+.
+ Choose a number 
+\begin_inset Formula $r>0$
+\end_inset
+
+.
+ (Typically, 
+\begin_inset Formula $r=1$
+\end_inset
+
+ or 
+\begin_inset Formula $r=n$
+\end_inset
+
+ or 
+\begin_inset Formula $r=n(b-a)/k$
+\end_inset
+
+).
+ Draw a two-dimensional graph with the horizontal axis running from 
+\begin_inset Formula $a$
+\end_inset
+
+ to 
+\begin_inset Formula $b$
+\end_inset
+
+.
+ For each subinterval 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+ draw a rectangular bar of width 
+\begin_inset Formula $(b-a)/k$
+\end_inset
+
+ and height equal 
+\begin_inset Formula $c_{i}/r$
+\end_inset
+
+ over the midpoint of the 
+\begin_inset Formula $i$
+\end_inset
+
+th interval.
+ Such a graph is called a histogram.
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+The choice of the number 
+\begin_inset Formula $r$
+\end_inset
+
+ in the definition of histogram depends on what one wishes to be displayed
+ on the vertical axis.
+ The shape of the histogram is identical regardless of what value one chooses
+ for 
+\begin_inset Formula $r$
+\end_inset
+
+.
+ With 
+\begin_inset Formula $r=1$
+\end_inset
+
+, he height of each bar is the raw count for each subinterval, and counts
+ are displayed on the vertical axis.
+ 
+\series default
+This is as normalized value to visualize.
+\end_layout
+
+\begin_layout Subsection*
 3.8 Functions of a Random Variables
 \end_layout
 

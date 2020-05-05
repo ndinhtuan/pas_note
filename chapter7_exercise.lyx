@@ -1,0 +1,614 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Chapter 7.
+ Estimation
+\end_layout
+
+\begin_layout Section*
+7.1 Statistical Inference
+\end_layout
+
+\begin_layout Paragraph
+1.
+ 
+\series medium
+Identify the components of the statistical model (as defined in Definition
+ 7.1.1) in example 7.1.3.
+\end_layout
+
+\begin_layout Paragraph
+Answer: 
+\series medium
+Following Definition 7.1.1, Statistical model consists of :
+\end_layout
+
+\begin_layout Enumerate
+Random variables of interest (both observable and only hypothetically observable
+)
+\end_layout
+
+\begin_layout Enumerate
+A Specification of a joint distribution or a family of possible joint dsitributi
+ons for the observable random variables
+\end_layout
+
+\begin_layout Enumerate
+The identification of any parameters of those distributions that are assumed
+ unknown and possibly hypothetically observable
+\end_layout
+
+\begin_layout Enumerate
+A specification for a joint distribution for the unknown parameters
+\end_layout
+
+\begin_layout Paragraph
+In example 7.1.3: 
+\end_layout
+
+\begin_layout Enumerate
+Random variables of interest: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Observed variable: 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ as i.i.d.
+ Bernoulli random variables with parameter 
+\begin_inset Formula $p$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $p$
+\end_inset
+
+ is hypothetically observable
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Distribution of 
+\begin_inset Formula $p$
+\end_inset
+
+ is uniform distribution
+\end_layout
+
+\begin_layout Enumerate
+Distribution of conditionaly 
+\begin_inset Formula $X_{1},X_{2},..$
+\end_inset
+
+ if known 
+\begin_inset Formula $p$
+\end_inset
+
+ is Bernoulli
+\end_layout
+
+\begin_layout Paragraph
+2.
+ 
+\series medium
+Identify two statistical inferences mentioned in Example 
+\begin_inset Formula $7.1.3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Assumed that 
+\begin_inset Formula $P$
+\end_inset
+
+ had the uniform distribution on the interval [0,1], and we found the conditiona
+l distribution of 
+\begin_inset Formula $P$
+\end_inset
+
+ given the observed results of the study.
+ We also computed the conditional mean of 
+\begin_inset Formula $P$
+\end_inset
+
+ given the study results as well as the M.S.E for trying to predict 
+\begin_inset Formula $P$
+\end_inset
+
+ both before and after observing the results of the study.s
+\end_layout
+
+\begin_layout Paragraph
+3.
+ 
+\series medium
+In Examples 7.1.4 and 5.7.8, identify the components of the statistical model
+ as defined in Definition 7.1.1.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $Z_{k},k=1,2,...$
+\end_inset
+
+.
+ are observable variables and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is hypothetically observable.
+\end_layout
+
+\begin_layout Chapter*
+7.2 Prior and Posterior Distribution
+\end_layout
+
+\begin_layout Problem*
+
+\series bold
+1.
+ 
+\series default
+Consider again the situation described in Example 7.2.8.
+ This time, suppose that the experimenter believes that the prior distribution
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the gamma distribution with parameters 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $5000$
+\end_inset
+
+.
+ What would this experimenter compute as the value of 
+\begin_inset Formula $Pr(X_{6}>3000|\boldsymbol{x})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+We remind that lifetimes of fluerescent lamps are independent exponential
+ random variables with parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+, so 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{j}$
+\end_inset
+
+ is independent in condition given 
+\begin_inset Formula $\theta$
+\end_inset
+
+, or, 
+\begin_inset Formula $P(X_{i}|\theta,X_{j})=P(X_{i}|\theta)$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $P(X_{n}|X_{1},...,X_{n-1})$
+\end_inset
+
+ means that 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+ still depends on 
+\begin_inset Formula $X_{1},...,X_{n-1}$
+\end_inset
+
+ if not given 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We want to find 
+\begin_inset Formula $P(x_{6}|x_{1},...,x_{5})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $P(x_{6}|x_{1},...,x_{5})=\int_{\Omega}P(x_{6}|\theta)P(\theta|x_{1},...,x_{5})d\theta$
+\end_inset
+
+ (5)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(x_{6}|\theta)=\theta e^{-\theta x_{6}}$
+\end_inset
+
+ 
+\series bold
+(6) 
+\series default
+because 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ is exponential distribution with parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Now, we find 
+\begin_inset Formula $P(\theta|x_{1},...,x_{5})$
+\end_inset
+
+, 
+\begin_inset Formula $P(\theta|x_{1},...,x_{5})=\frac{P(x_{1},...,x_{5}|\theta)\xi(\theta)}{g(x_{1},...,x_{5})}$
+\end_inset
+
+ 
+\series bold
+(1)
+\series default
+ with 
+\begin_inset Formula $g(x_{1},...,x_{5})$
+\end_inset
+
+ is marginal joint distribution of 
+\begin_inset Formula $x_{1},...,x_{5}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(x_{1},...,x_{5}|\theta)=\theta^{5}e^{-\theta(x_{1}+...+x_{5})}=\theta^{5}e^{-\theta y}$
+\end_inset
+
+ 
+\series bold
+(2)
+\series default
+ with 
+\begin_inset Formula $y=x_{1}+...+x_{5}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Formula $\xi(\theta)$
+\end_inset
+
+ is prior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the gamma distribution with parameters 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $5000$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\xi(\theta)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}$
+\end_inset
+
+ with 
+\begin_inset Formula $x>0$
+\end_inset
+
+.
+ So, 
+\begin_inset Formula $\xi(\theta)=5000e^{-5000\theta}$
+\end_inset
+
+ 
+\series bold
+(3)
+\series default
+ for 
+\begin_inset Formula $\theta>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $g(x_{1},...,x_{5})=\int_{\Omega}P(x_{1},...,x_{5}|\theta)\xi(\theta)d\theta=\int_{0}^{\infty}\theta^{5}e^{-(5000+y)\theta}5000d\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Following 
+\series bold
+Theorem 5.7.3 
+\series default
+for each 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ and each 
+\begin_inset Formula $\beta>0$
+\end_inset
+
+, 
+\begin_inset Formula $\int_{0}^{\infty}x^{\alpha-1}exp(\beta x)dx=\frac{\Gamma(\alpha)}{\beta^{\alpha}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $g(x_{1},...,x_{5})=5000\frac{\Gamma(6)}{(5000+y)^{6}}$
+\end_inset
+
+ 
+\series bold
+(4) 
+\end_layout
+
+\begin_layout Paragraph
+From (1),(2) and (3), (4): 
+\begin_inset Formula $P(\theta|x_{1}...,x_{5})=\frac{\theta^{5}e^{-\theta y}5000e^{-5000\theta}}{5000\frac{5!}{(5000+y)^{6}}}=\theta^{5}e^{-(5000+y)\theta}\frac{(5000+y)^{6}}{5!}$
+\end_inset
+
+ 
+\series bold
+(7)
+\end_layout
+
+\begin_layout Standard
+From (5), (6) and (7) : 
+\begin_inset Formula $P(x_{6}|x_{1},...,x_{5})=\int_{0}^{\infty}\theta e^{-\theta x_{6}}\theta^{5}e^{-(5000+y)\theta}\frac{(5000+y)^{6}}{5!}d\theta=\int_{0}^{\infty}\theta^{6}e^{-(5000+y+x_{6})\theta}\frac{(5000+y)^{6}}{5!}d\theta=\frac{(5000+y)^{6}}{5!}\frac{\Gamma(7)}{-(5000+y+x_{6})^{7}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have 
+\begin_inset Formula $y=16178=x_{1}+..+x_{5}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $P(x_{6}>3000|x_{1}...x_{5})=\frac{(5000+16178)^{6}6!}{5!}\int_{3000}^{\infty}\frac{-1}{(5000+16178+x_{6})^{7}}dx_{6}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\int_{3000}^{\infty}\frac{-1}{(5000+36178+x_{6})^{7}}dx_{6}=\int_{3000}^{\infty}-(x_{6}+41178)^{-7}dx_{6}=-\frac{1}{-6}(x_{6}+41178)^{-6}|_{3000}^{\infty}=\frac{1}{-6x(3000+21178)^{6}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+So 
+\begin_inset Formula $P(x_{6}>3000|x_{1}...x_{5})=\frac{(5000+16178)^{6}6!}{5!}*\frac{1}{-6x(3000+21178)^{6}}=0.4163$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem*
+
+\series bold
+10.
+
+\series default
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ is to taken from the uniform distribution on the interval 
+\begin_inset Formula $[\theta-\frac{1}{2},\theta+\frac{1}{2}]$
+\end_inset
+
+, the value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is unknown, and the prior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the uniform distribution on the interval 
+\begin_inset Formula $[10,20]$
+\end_inset
+
+.
+ If observed value 
+\begin_inset Formula $X$
+\end_inset
+
+ is 
+\begin_inset Formula $12$
+\end_inset
+
+, what is the poterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $P(\theta|X)=\frac{P(X|\theta)\xi(\theta)}{\int_{10}^{20}P(X|\theta)P(\theta)d\theta}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $P(\theta)=1/10$
+\end_inset
+
+, 
+\begin_inset Formula $P(X|\theta)=1$
+\end_inset
+
+.
+ 
+\begin_inset Formula $X=12$
+\end_inset
+
+ so 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is choosed in 
+\begin_inset Formula $[11.5,12.5]$
+\end_inset
+
+, because if choosing 
+\begin_inset Formula $\theta$
+\end_inset
+
+ outside this interval , we can choose 
+\begin_inset Formula $X=12$
+\end_inset
+
+, or 
+\begin_inset Formula $X=12$
+\end_inset
+
+ cannot be in 
+\begin_inset Formula $(\theta-12,\theta+1/2)$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\int_{10}^{20}P(X|\theta)\xi(\theta)d\theta=\int_{11.5}^{12.5}\frac{1}{10}d\theta=1/10$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $P(\theta|X=12)=1,$
+\end_inset
+
+ choose 
+\begin_inset Formula $\theta$
+\end_inset
+
+ in 
+\begin_inset Formula $[11.5,12.5]$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $P(\theta|X=12)$
+\end_inset
+
+ is uniform distribution in 
+\begin_inset Formula $[11.5,12.5]$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

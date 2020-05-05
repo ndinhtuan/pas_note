@@ -1295,5 +1295,867 @@ Prove that
  in quadratic mean.
 \end_layout
 
+\begin_layout Section*
+6.3 The Central Limit Theorem
+\end_layout
+
+\begin_layout Paragraph
+1.
+ 
+\series medium
+Each minute a machine produces a length of rope with 
+\begin_inset Formula $\mu=4\text{ feet}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma=5\text{ inches}$
+\end_inset
+
+.
+ Approximate the probability that the machine will product at least 
+\begin_inset Formula $250\text{ feet }$
+\end_inset
+
+in one hour.
+\end_layout
+
+\begin_layout Paragraph
+Answer: 
+\series medium
+Assume that 
+\begin_inset Formula $X_{1},...,X_{60}$
+\end_inset
+
+: 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ is length of rope is produced in 
+\begin_inset Formula $ith$
+\end_inset
+
+ minutes.
+ 
+\end_layout
+
+\begin_layout Standard
+So in one hour, length of rope: 
+\begin_inset Formula $X=X_{1}+...+X_{60}$
+\end_inset
+
+.
+ Follow Central Limit Theorem (Lindeberg and Levy - 6.3.1), sum 
+\begin_inset Formula $X=\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+ will be approximately the normal distribution with mean 
+\begin_inset Formula $n\mu=60*4=240$
+\end_inset
+
+ and vairiance 
+\begin_inset Formula $n\sigma^{2}=60*5^{2}$
+\end_inset
+
+, so standard deviation 
+\begin_inset Formula $\sigma^{'}=\sqrt{n}\sigma=\sqrt{60}5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $P(X\text{\ensuremath{\geq250}})=1-\Phi(\frac{250-240}{5\sqrt{60}})=1-\Phi(\frac{1}{\sqrt{15}})\sim1-\Phi(0.258)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+2.
+ 
+\begin_inset Formula $75\%$
+\end_inset
+
+ 
+\series medium
+of the people in a certain metropolitan area live in the city and 
+\begin_inset Formula $25\%$
+\end_inset
+
+ of the people live in the suburbs.
+ If 
+\begin_inset Formula $1200$
+\end_inset
+
+ people represent a random sample from metropolita area, what is the probability
+ that the number of people from the suburbs attends the concert will be
+ fewer than 
+\begin_inset Formula $270$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Answer.
+
+\series medium
+ We can see each people is choosed in 
+\begin_inset Formula $1200$
+\end_inset
+
+ people from population is i.i.d of Bernoulli distribution with 
+\begin_inset Formula $p=0.25$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X_{1},...,X_{1200}$
+\end_inset
+
+ is Bernoulli distribution with 
+\begin_inset Formula $p=0.25$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma=p(1-p)=0.75*0.25=0.1875$
+\end_inset
+
+.
+ 
+\begin_inset Formula $X=X_{1}+...+X_{1200}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Following The central limit theorem 
+\begin_inset Formula $X$
+\end_inset
+
+ will be normal distribution 
+\begin_inset Formula $\mu=n\mu=1200*0.25=300$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma^{'}=\sqrt{n}*\sigma\sim6.5.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(X\leq270)=\Phi(\frac{270-300}{6.5}).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+3.
+ 
+\series medium
+Suppose that the distribution of the number of defects on any given bold
+ of cloth is Poisson distribution with mean 
+\begin_inset Formula $5$
+\end_inset
+
+, and the number the defects on each bolt is counted for a random sample
+ of 125 bolts.
+ Determined the probability average number of defects per bolt in the sample
+ will be less than 5.5 
+\end_layout
+
+\begin_layout Paragraph
+Answer : 
+\series medium
+Number of defects in a bold is Poisson distribution with mean is 
+\begin_inset Formula $\mu=5$
+\end_inset
+
+, so 
+\begin_inset Formula $\sigma=\mu=5$
+\end_inset
+
+.
+ Average number of defects per bolt in the sample having 125 bolts: distribution
+ 
+\begin_inset Formula $\bar{X}_{125}$
+\end_inset
+
+ is approximately normal distribution with 
+\begin_inset Formula $\mu_{125}=5$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{125}=\frac{\sigma}{\sqrt{125}}=\frac{1}{5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(\bar{X}_{125}\leq5.5)=\Phi(\frac{5.5-5}{1/5})=\Phi(2.5)\sim0.9938$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+4.
+ 
+\series medium
+Suppose that a random sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ is to be taken from a distribution for which the mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and the standard deviation is 
+\begin_inset Formula $3$
+\end_inset
+
+.
+ Use central limit theorem to determine the smallest value of 
+\begin_inset Formula $n$
+\end_inset
+
+ for which : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(|\bar{X_{n}}-\mu|<0.3)\geq0.95
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Answer: 
+\series medium
+Following the central limit theorem, distribution of 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ is approximately normal distribution having 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and standard deviation 
+\begin_inset Formula $\sigma/\sqrt{n}=3/\sqrt{n}$
+\end_inset
+
+.
+ so 
+\begin_inset Formula $Pr(|\bar{X_{n}}-\mu|\leq0.3)=Pr(-0.3\leq\bar{X}_{n}-\mu\leq0.3)=Pr(-0.1\sqrt{n}\leq Z\leq0.1\sqrt{n})=2\Phi(0.1\sqrt{n})-1\ge0.95$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $\Phi(0.1\sqrt{n})\geq0.975$
+\end_inset
+
+.
+ We want minimum of 
+\begin_inset Formula $n$
+\end_inset
+
+ so choose 
+\begin_inset Formula $n$
+\end_inset
+
+ : 
+\begin_inset Formula $\Phi(0.1\sqrt{n})=0.975$
+\end_inset
+
+, so 
+\begin_inset Formula $0.1\sqrt{n}=1.96$
+\end_inset
+
+, 
+\begin_inset Formula $n=384$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If we use Chebyshev theorem, we can attain 
+\begin_inset Formula $n\geq100/0.05=2000\sim5*\text{ bound of central limit theorem}$
+\end_inset
+
+.
+ Maybe because, in central limit theorem, we prove that it's distribution
+ is approximately normal distribution, so 
+\begin_inset Formula $n$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Paragraph
+5.
+ 
+\series medium
+Proportion of defective items in a large manufactured lot is 
+\begin_inset Formula $0.1$
+\end_inset
+
+.
+ So this is Bernoulli 
+\begin_inset Formula $\mu=p=0.1$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma^{2}=p(1-p)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(A\leq0.13)\geq0.99\leftrightarrow\frac{0.03\sqrt{n}}{0.3}\geq2.3\leftrightarrow n\geq542$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note: 
+\series default
+So we can see we have choose large 
+\begin_inset Formula $n$
+\end_inset
+
+, but more than 0.99 probability to have probability see defective 
+\begin_inset Formula $\leq0.13$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+9.
+ 
+\series medium
+A physicist makes 
+\begin_inset Formula $25$
+\end_inset
+
+ independent measurement of the specific gravity of a certain body.
+ He knows that the limitations of his equipment are such that the standard
+ deviation of each measurement is 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ units.
+\end_layout
+
+\begin_layout Itemize
+Using Chebyshev inequality, find a lower bound for the probability that
+ the average of his measurements will differ from the actual specific gravity
+ of the body by less than 
+\begin_inset Formula $\sigma/4$
+\end_inset
+
+ units.
+\end_layout
+
+\begin_layout Itemize
+Using central limit theorem, find an approximate value for the probability
+ in part (a)
+\end_layout
+
+\begin_layout Paragraph
+Anwser: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\bar{X}_{25}$
+\end_inset
+
+ having mean : 
+\begin_inset Formula $\mu^{'}=\mu$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma^{'}=\sigma/\sqrt{25}=\sigma/5$
+\end_inset
+
+.
+ So we need to find: 
+\begin_inset Formula $P(|\bar{X}-\mu|\leq\frac{\sigma}{4})=1-P(|\bar{X}-\mu|\geq\frac{\sigma}{4})$
+\end_inset
+
+.
+ Applying Chebyshev inequality, 
+\begin_inset Formula $P(|\bar{X}-\mu|\geq\frac{\sigma}{4})\le\frac{\sigma^{'2}}{(\frac{\sigma}{4})^{2}}=\frac{16}{25}=0.64$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $P(|\bar{X}-\mu|\leq\frac{\sigma}{4})\geq1-0.64=0.36$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Following central limit theorem, 
+\begin_inset Formula $\bar{X}$
+\end_inset
+
+ has normal distribution having 
+\begin_inset Formula $\mu^{'}=\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{'}=\sigma/5$
+\end_inset
+
+.
+ We need to find 
+\begin_inset Formula $P(\bar{|X}-\mu|\le\frac{\sigma}{4})=P(\frac{-\sigma}{4}\leq\bar{X}-\mu\leq\frac{\sigma}{4})$
+\end_inset
+
+, 
+\begin_inset Formula $=P(\frac{-5}{4}\le Z\leq\frac{5}{4})$
+\end_inset
+
+ with 
+\begin_inset Formula $Z$
+\end_inset
+
+ is standard normal distribution 
+\begin_inset Formula $=2\Phi(1.25)-1=2*0.8944-1=0.7888$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note: 
+\series default
+We can see, when apply central limit theorem, probability a random variable
+ concentrate around 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is bigger than using Chebyshev theorem.
+\end_layout
+
+\begin_layout Paragraph
+11.
+ 
+\series medium
+
+\begin_inset Formula $1/3$
+\end_inset
+
+ of the graduting seniors at a certain college have two parents attend the
+ graduation, 
+\begin_inset Formula $1/3$
+\end_inset
+
+ have one parent atteding, 
+\begin_inset Formula $1/3$
+\end_inset
+
+ have no parents attend.
+ If there are 
+\begin_inset Formula $600$
+\end_inset
+
+, graduating seniors in a particular class, what is probability that not
+ more than 
+\begin_inset Formula $650$
+\end_inset
+
+ parents will attend the graduation.
+\end_layout
+
+\begin_layout Paragraph
+Answer : 
+\end_layout
+
+\begin_layout Standard
+We can model each graduting seniors will be random variable 
+\begin_inset Formula $X=\begin{cases}
+2 & p=1/3\\
+1 & p=1/3\\
+0 & p=1/3
+\end{cases}$
+\end_inset
+
+, So number of parents in graduation is 
+\begin_inset Formula $S=X_{1}+...+X_{600}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mu_{X}=1$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{X}^{2}=2/3$
+\end_inset
+
+ .
+ Following central limit theorem, distribution of 
+\begin_inset Formula $S$
+\end_inset
+
+ is proximatrly normal distribution have 
+\begin_inset Formula $\mu=600$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma^{2}=600*\frac{2}{3}=400,\sigma=20$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We need compute 
+\begin_inset Formula $P(S\leq650)=P(Z\leq\frac{50}{20})=P(Z\leq2.5)=0.9938$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+13.
+ 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ 
+\series medium
+form a random sample from a normal distribution with unknown mean 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and variace 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Assuming that 
+\begin_inset Formula $\theta\neq0$
+\end_inset
+
+, determine the asumptotic distribution 
+\begin_inset Formula $\bar{X}_{n}^{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Answer: 
+\series medium
+Following Corollary 6.3.1 Delta Method for Average of a Radom Sample for function
+ 
+\begin_inset Formula $\alpha=f(x)=x^{3}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\alpha^{'}(\theta)=3\theta^{2}\neq0\text{ because of \ensuremath{\theta\neq0}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So distribution of 
+\begin_inset Formula $\bar{X}_{n}^{3}$
+\end_inset
+
+ is approximately with normal distribution mean 
+\begin_inset Formula $\theta^{3}$
+\end_inset
+
+, and variance 
+\begin_inset Formula $\sigma^{2}[3\theta^{2}]^{2}/n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+6.4 The Correction for Continuty
+\end_layout
+
+\begin_layout Paragraph
+1.
+ 
+\series medium
+Let 
+\begin_inset Formula $X_{1},...,X_{30}$
+\end_inset
+
+ be independent random variables each having a discrete distribution with
+ p.f.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(x)=\begin{cases}
+1/4 & x=0\text{ or }2\\
+1/2 & x=1\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Following the central limit theorem, distribution of 
+\begin_inset Formula $S=X_{1}+...+X_{30}$
+\end_inset
+
+ is approximately normal distribution with 
+\begin_inset Formula $\mu^{'}=n\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{'}=\sqrt{n}\sigma$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mu=1$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma=1/2$
+\end_inset
+
+, so 
+\begin_inset Formula $\mu^{'}=30$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{'}=\sqrt{30}\sigma=\frac{\sqrt{30}}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $P(S\leq33)=P(S\leq33.5)\text{ following the correction for continuity}=P(Z\leq\frac{3.5}{\sqrt{30}/2})=\Phi(1.278)\approx0.8997$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+2.
+ 
+\series medium
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ denote the total number of successes in 
+\begin_inset Formula $15$
+\end_inset
+
+ Bernoulli trials, with probability of success 
+\begin_inset Formula $p=0.3$
+\end_inset
+
+ on each trial
+\end_layout
+
+\begin_layout Itemize
+Determinine approximately the value of 
+\begin_inset Formula $Pr(X=4)$
+\end_inset
+
+ by using the central limit theorem with the correction for continuity
+\end_layout
+
+\begin_layout Itemize
+Compare the answer obtained in part 
+\begin_inset Formula $(a)$
+\end_inset
+
+ with the exact value of this probability.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Answer:
+\end_layout
+
+\begin_layout Itemize
+Having 15 Bernoulli trials, 
+\begin_inset Formula $p=0.3$
+\end_inset
+
+, so 
+\begin_inset Formula $\mu=p=0.3$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma=\sqrt{p(1-p)}=\sqrt{0.3*0.7}=\frac{\sqrt{21}}{10}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume 
+\begin_inset Formula $X$
+\end_inset
+
+ dente the total number of successes in 
+\begin_inset Formula $15$
+\end_inset
+
+ Bernoulli trials.
+ Following the central limit theorem, distribution's 
+\begin_inset Formula $X$
+\end_inset
+
+ is approximately normal distribution with 
+\begin_inset Formula $\mu^{'}=15*\mu=15*0.3=4.5$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma^{'}=\sqrt{15}*\sigma^{'}=\sqrt{15}\frac{\sqrt{21}}{10}=\frac{3\sqrt{35}}{10}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+With the correction for continuity, 
+\begin_inset Formula $Pr(X=4)=\Phi(0)-\Phi(\frac{-10}{3\sqrt{35}})\approx0.5-\Phi(-0.56)=0.5-(1-0.7123)=0.2123$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we compute directly, 
+\begin_inset Formula $Pr(X=4)=\binom{4}{15}0.3^{4}0.7^{11}=0.2186\approx(a)'s\text{ answer}=0.2123$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+3.
+ 
+\series medium
+Using the correction for continuity, determine the probability required
+ in Example 6.3.2.
+\end_layout
+
+\begin_layout Standard
+People : 
+\begin_inset Formula $0.75$
+\end_inset
+
+ live in the city, 
+\begin_inset Formula $p=0.25$
+\end_inset
+
+ live in the suburbs.
+ 
+\begin_inset Formula $N=1200$
+\end_inset
+
+, compute probability that the number of people from people from subuerbs:
+ 
+\begin_inset Formula $N_{s}$
+\end_inset
+
+, modeling problem with population sum of Bernoulli with 
+\begin_inset Formula $p=0.25$
+\end_inset
+
+, 
+\begin_inset Formula $N=1200$
+\end_inset
+
+, so 
+\begin_inset Formula $\mu=p=0.25$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma=\sqrt{p(1-p)}=\sqrt{0.25*0.75}=\frac{\sqrt{3}}{4}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Following the central limit theorem, distribution of 
+\begin_inset Formula $N_{s}$
+\end_inset
+
+ is approximately the normal distribution with 
+\begin_inset Formula $\mu^{'}=N*\mu=1200*0.25=300$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma^{,}=\sqrt{N}*\sigma=\sqrt{1200}*\frac{\sqrt{3}}{4}=15$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Pr(N_{s}\leq270)=Pr(N_{s}\leq270+1/2)=\Phi(\frac{270+1/2-300}{15})=\Phi(-1.96666)=1-\Phi(1.9667)=1-0.956=...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document

@@ -906,5 +906,1384 @@ Chernoff bounds
 can be sharper, but are harder to compute.
 \end_layout
 
+\begin_layout Section*
+6.3 The Central Limit Theorem 
+\end_layout
+
+\begin_layout Standard
+The sample mean of a large random sample of random variables with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and finite variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ has approximately the normal distribution with eman 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}/n$
+\end_inset
+
+.
+ This result helps to justify the use of the normal distribution as model
+ for many random variables that can be thought of as being made up of many
+ independent random variables that are not identically distributed.
+ We also introduce the delta method, which allows us to compute approximate
+ distributions for functions of random varibles.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Statement of the Theorem 
+\end_layout
+
+\begin_layout Standard
+In examples 5.4.1 and 5.4.2, we illustrated how the Poisson distribution provides
+ a good approximation to binomial distribution with a large 
+\begin_inset Formula $n$
+\end_inset
+
+ and small 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Example 6.3.1 shows how a normal distribution can be a good approximation
+ to a binomial distribution with a large 
+\begin_inset Formula $n$
+\end_inset
+
+ and not so small 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ The central limit theorem (Theorem 6.3.1) is a formal statement of how normal
+ distributions can approximate distributions of general sums or averages
+ of i.i.d.
+ random variables.
+\end_layout
+
+\begin_layout Standard
+In Corollary 5.6.2, we saw that if a random sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ is taken from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, then the sample average 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}/n$
+\end_inset
+
+.
+ The simple version of the central limit theorem that we give in this section
+ says that whenever a random sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ is taken from any distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, the sample average 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ will have a distribution that is approximately normal with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}/n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Authors shall also state another central limit theorem pertaining to the
+ sum of independent random variables that are not necessarily identically
+ distributed and shall present some examples illustrating both theorems.
+\end_layout
+
+\begin_layout Paragraph
+Theorem 6.3.1 
+\series medium
+Central Limit Theorem (Lindeberg and Levy).
+ If the random variables 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ from a given distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}\text{ }(0<\sigma^{2}<\infty)$
+\end_inset
+
+, then for each fixed number 
+\begin_inset Formula $x$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}Pr[\frac{\bar{X_{n}}-\mu}{\sigma/n^{1/2}}\le x]=\Phi(x)\text{ (6.3.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ denotes the c.d.f.
+ of the standard normal distribution.
+\end_layout
+
+\begin_layout Standard
+The interpretation of Eq.
+ (6.3.1) is as follows: If a large random sample is taken from any distribution
+ with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, regardless of whether this distribution is discrete or continuous, then
+ the distribution of random variable 
+\begin_inset Formula $n^{1/2}(\bar{X_{n}}-\mu)/\sigma$
+\end_inset
+
+ will be approximately the standard normal distribution.
+ Therefore, the distribution of 
+\begin_inset Formula $\bar{X_{n}}$
+\end_inset
+
+ will be approximately the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}/n$
+\end_inset
+
+, or, equivalently, the distribution of the sum 
+\begin_inset Formula $\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+ will be approximately the normal distribution with mean 
+\begin_inset Formula $n\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $n\sigma^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Definition 6.3.1 
+\series medium
+Convergence in Distribution/Asymptotic Distribution.
+ Let 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ be a sequence of random variables, and for 
+\begin_inset Formula $n=1,2,...$
+\end_inset
+
+, let 
+\begin_inset Formula $F_{n}$
+\end_inset
+
+ denote the c.d.f.
+ of 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+.
+ Also, let 
+\begin_inset Formula $F^{*}$
+\end_inset
+
+ be a c.d.f.
+ Then it is said that the sequence 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ converges in distribution to 
+\begin_inset Formula $F^{*}$
+\end_inset
+
+ if 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}F_{n}(x)=F^{*}(x)\text{ (6.3.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For all 
+\begin_inset Formula $x$
+\end_inset
+
+ at which 
+\begin_inset Formula $F^{*}(x)$
+\end_inset
+
+ is continuous.
+ Sometimes, it is simply said that 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+ converges in distribution to 
+\begin_inset Formula $F^{*}$
+\end_inset
+
+, and 
+\begin_inset Formula $F^{*}$
+\end_inset
+
+ is called the asymptotic distribution of 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $F^{*}$
+\end_inset
+
+ has a name, then we say that 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+ converges in distribution to that name.
+\end_layout
+
+\begin_layout Standard
+Thus, according to Theorem 6.3.1, as indicated in Eq.
+ (6.3.1), the random variable 
+\begin_inset Formula $n^{1/2}(\bar{X_{n}}-\mu)/\sigma$
+\end_inset
+
+ converges in distribution to the standard normal distribution, or, equivalently
+, the asymptotic distribution of 
+\begin_inset Formula $n^{1/2}(\bar{X_{n}}-\mu)/\sigma$
+\end_inset
+
+ is the standard normal distribution.
+\end_layout
+
+\begin_layout Paragraph
+Effect of the Central Limit Theorem 
+\series medium
+The central limit theorem provides a plausible explanation for the fact
+ that distributions of many random variables studied in phydical experiments
+ are approximately normal.
+ For example, a person's height is influenced by many random factors.
+ IF the height of each person is determined by adding the values of these
+ individual factors, then the distribution of the heights of a large number
+ of persons will be approximately normal.
+ In general, the central limit theorem indicates that the distribution of
+ the sum of many random variables can be approximately normal, even though
+ the distribution of each random variable in the sum differs from the normal.
+\end_layout
+
+\begin_layout Paragraph
+Other Examples of Convergence in Distribution: 
+\series medium
+In chapter 5, we saw three examples of limit theorems involving discrete
+ distributions: Theorem 5.3.4, 5.4.5 and 5.4.6 all showed that a sequence of p.f;s
+ converged to some other p.f.
+ (Binomial ~ Poisson, ..)
+\end_layout
+
+\begin_layout Section*
+The Delta Method 
+\end_layout
+
+\begin_layout Standard
+Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a distribution that has finite mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and finite variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ The central limit theorem says that 
+\begin_inset Formula $n^{1/2}(\bar{X_{n}}-\mu)/\sigma$
+\end_inset
+
+ has approximately the standard normal distribution.
+ Now suppose that we are interested in the distribution of some function
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is a differentiable function whose derivative is nonzero at 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+ We shall approximate the distribution of 
+\begin_inset Formula $\alpha(\bar{X_{n})}$
+\end_inset
+
+ by a method known in statistics as the 
+\emph on
+delta method.
+\end_layout
+
+\begin_layout Paragraph
+Theorem 6.3.2 
+\series medium
+Delta Method.
+ Let 
+\begin_inset Formula $Y_{1},Y_{2},...$
+\end_inset
+
+ be a sequence of random variables, and let 
+\begin_inset Formula $F^{*}$
+\end_inset
+
+ be a continuous c.d.f.
+ Let 
+\begin_inset Formula $\theta$
+\end_inset
+
+ be a real number, and let 
+\begin_inset Formula $a_{1},a_{2},..$
+\end_inset
+
+ be sequence of positive numbers that increase to 
+\begin_inset Formula $\infty$
+\end_inset
+
+, Suppose that 
+\begin_inset Formula $a_{n}(Y_{n}-\theta)$
+\end_inset
+
+ converges in distribution to 
+\begin_inset Formula $F^{*}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ be a function with continuous derivative such that 
+\begin_inset Formula $\alpha^{'}(\theta)\neq0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $a_{n}[\alpha(Y_{n})-\alpha(\theta)]/\alpha^{'}(\theta)$
+\end_inset
+
+ converges in distribution to 
+\begin_inset Formula $F^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The most common application of Theorem 6.3.2 occurs when 
+\begin_inset Formula $Y_{n}$
+\end_inset
+
+ is the average of a random sample from a distribution with finite variance.
+ We state that case in the following corollary.
+\end_layout
+
+\begin_layout Paragraph
+Corollary 6.3.1 
+\series medium
+Delta Method for Average of a Random Sample.
+ Let 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ be a sequence of i.i.d.
+ random variables from a distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and finite variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ be a function with continuous derivative such that 
+\begin_inset Formula $\alpha^{'}(\mu)\neq0$
+\end_inset
+
+.
+ Then the asymptotic distribution of 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{n^{1/2}}{\sigma\alpha^{'}(\mu)}[\alpha(\bar{X_{n}})-\alpha(\mu)]
+\]
+
+\end_inset
+
+ is the standard normal distribution.
+\end_layout
+
+\begin_layout Standard
+A common way to report the result in Corollary 6.3.1 is to say that the distributi
+on of 
+\begin_inset Formula $\alpha(\bar{X_{n}})$
+\end_inset
+
+ is approximately the normal distribution with mean 
+\begin_inset Formula $\alpha(\mu)$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}[\alpha^{'}(\mu)]^{2}/n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Variance Stabilizing Transformations 
+\series medium
+If we were to observe a random sample of Possion random variables as in
+ Example 6.3.4, we would assume that 
+\begin_inset Formula $\theta$
+\end_inset
+
+ us unknown.
+ In such a case we cannot compute the probability in Eq.
+\end_layout
+
+\begin_layout Subsection*
+The Central Limit Thoerem (Liapounov) for the Sum of Independent Random
+ Variables
+\end_layout
+
+\begin_layout Standard
+We shall now state a central limit theorem that applies to a sequence of
+ random variables 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ that are independent but 
+\series bold
+not necessarily
+\series default
+ 
+\series bold
+identically distributed
+\series default
+.
+ This theorem was first proved by A.Liapounov in 1901.
+ We shall assume that 
+\begin_inset Formula $E(X_{i})=\mu_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $Var(X_{i})=\sigma_{i}^{2}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+ Also, we shall let
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y_{n}=\frac{\sum_{i=1}^{n}X_{i}-\sum_{i=1}^{n}\mu_{i}}{(\sum_{i=1}^{n}\sigma_{i}^{2})^{1/2}}\text{ (6.3.8)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $E(Y_{n})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $Var(Y_{n})=1$
+\end_inset
+
+.
+ The theorem that is stated next gives a sufficient condition for the distributi
+on of this random variable 
+\begin_inset Formula $Y_{n}$
+\end_inset
+
+ to be approximately the standard normal distribution.
+\end_layout
+
+\begin_layout Paragraph
+Theorem 6.3.3 
+\series medium
+Suppose that the random varibales 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ are independent and that 
+\begin_inset Formula $E(|X_{i}-\mu_{i}|^{3})<\infty$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,2,...$
+\end_inset
+
+.
+ Also, suppose that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}\frac{\sum_{i=1}^{n}E(|X_{i}-\mu_{i}|^{3})}{(\sum_{i=1}^{n}\sigma_{i}^{2})^{3/2}}=0\text{ (6.3.9)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, let the random variable 
+\begin_inset Formula $Y_{n}$
+\end_inset
+
+ be as defined in Eq.
+ (6.3.8).
+ Then, for each fixed number 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}Pr(Y_{n}\leq x)=\Phi(x)\text{ (6.3.10)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The interpretatino of this theorem is as follows: If Eq.
+ (6.3.9) is satisfied, then for every large value of 
+\begin_inset Formula $n$
+\end_inset
+
+, the distribution of 
+\begin_inset Formula $\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+ will be approximately the normal distribution with mean 
+\begin_inset Formula $\sum_{i=1}^{n}\mu_{i}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sum_{i=1}^{n}\sigma_{i}^{2}.$
+\end_inset
+
+ It should be noted that when the random variables 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ are identically distributed and the third moments of the variables exist,
+ Eq.
+ (6.3.9) will automatically be satisfied and Eq.
+ (6.3.10) then reduces to Eq.
+ (6.3.1).
+\end_layout
+
+\begin_layout Standard
+THe distinction between the theorem of Lindeberg and Levy and the theorem
+ of Liapounov should be emphasized.
+ The theorem of Lindeberg and Levy applies to a sequence of i.i.d random variables.
+ In order for this theorem to be applicable, it is sufficient to assume
+ only that the variance of each random variable is finite.
+ The theorem of Liapounov applies to a sequence of independent random variables
+ that are not necessarily identically distributed.
+ In order for this theorem to be applicable, it must be assume that the
+ third moment of each random varible is finite and satisfied Eq.
+ (6.3.9.).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The Central Limit Theorem for Bernoulli Random Variables 
+\series default
+By applying the theorem of Liapounov, we can establish the following result.
+\end_layout
+
+\begin_layout Paragraph
+Theorem 6.3.4.
+ 
+\series medium
+Suppose that the random variables 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are independent and 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ has the Bernoulli distribution with parameter 
+\begin_inset Formula $p_{i}(i=1,2,...)$
+\end_inset
+
+ .
+ Suppose also that the infinite series 
+\begin_inset Formula $\sum_{i=1}^{\infty}p_{i}(1-p_{i})$
+\end_inset
+
+ is divergent, and let 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y_{n}=\frac{\sum_{i=1}^{n}X_{i}-\sum_{i=1}^{n}p_{i}}{(\sum_{i=1}^{n}p_{i}(1-p_{i}))^{1/2}}\text{ (6.3.11)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then for every fixed number 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}Pr(Y_{n}\leq x)=\Phi(x)\text{ (6.3.12)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To prove this, we need to prove its satisfied Eq (6.3.9)
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+Since the normal distribution will be attained more and more closely as
+ 
+\begin_inset Formula $\sum_{i=1}^{n}p_{i}(1-p_{i})\rightarrow\infty$
+\end_inset
+
+, the normal distribution provides a good approximiation when the value
+ of 
+\begin_inset Formula $\sum_{i=1}^{n}p_{i}(1-p_{i})$
+\end_inset
+
+ is alrge.
+ Furthermore, since the value of each term 
+\begin_inset Formula $p_{i}(1-p_{i})$
+\end_inset
+
+ is a maximum when 
+\begin_inset Formula $p_{i}=1/2$
+\end_inset
+
+, the approximation will be best when 
+\begin_inset Formula $n$
+\end_inset
+
+ is large and the values of 
+\begin_inset Formula $p_{1},...,p_{n}$
+\end_inset
+
+ are close to 
+\begin_inset Formula $1/2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Variance Stabilizing Transformations 
+\series medium
+If we were to observe a random sample of Poisson random variables as in
+ Example 6.3.4, we would assume that 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is unknown.
+ In such a case we cannot compute the probability, because the appronimate
+ variance of 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+ depends on 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ It is sometimes desirable to transform 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+ by a function 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ so that the approximate distribution of 
+\begin_inset Formula $\alpha(\bar{X}_{n})$
+\end_inset
+
+ has variance that is a known value.
+ Such a function is called a variance stabilizing transformation.
+ We can often find a variance stabilizing transformation by running the
+ delta method in reverse.
+ In general we note that the approximate distribution of 
+\begin_inset Formula $\alpha(\bar{X}_{n})$
+\end_inset
+
+ has variacne 
+\begin_inset Formula $\alpha^{'}(\mu)^{2}\sigma^{2}/n$
+\end_inset
+
+.
+ In order to make this variance constant, we need 
+\begin_inset Formula $\alpha^{'}(\mu)$
+\end_inset
+
+ to be a constant times 
+\begin_inset Formula $1/\sigma$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is a function 
+\begin_inset Formula $g(\mu)$
+\end_inset
+
+, then we achieve this goal by letting 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha(\mu)=\int_{a}^{\mu}\frac{dx}{g(x)^{1/2}}\text{ (6.3.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $a$
+\end_inset
+
+ is an arbitrary constant that makes the integral finite.
+\end_layout
+
+\begin_layout Subsection*
+Outline of Proof of Central Limit Theorem 
+\end_layout
+
+\begin_layout Paragraph
+Convergence of the Moment Generating Functions.
+ 
+\series medium
+Moment generating functions are important in the study of convergence in
+ distribution because 
+\end_layout
+
+\begin_layout Paragraph
+Theorem 6.3.5 
+\series medium
+Let 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ be a sequence of random variables.
+ For 
+\begin_inset Formula $n=1,2,...$
+\end_inset
+
+, Let 
+\begin_inset Formula $F_{n}$
+\end_inset
+
+ denote the c.d.f of 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+, and let 
+\begin_inset Formula $\psi_{n}$
+\end_inset
+
+ denote the m.g.f of 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Also, Let 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+ denote another random variable with c.d.f 
+\begin_inset Formula $F^{*}$
+\end_inset
+
+ and m.g.f.
+ 
+\begin_inset Formula $\psi^{*}$
+\end_inset
+
+.
+ Suppose that the m.g.f's 
+\begin_inset Formula $\psi_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi^{*}$
+\end_inset
+
+ exists 
+\begin_inset Formula $(n=1,2,...)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\lim_{n\rightarrow\infty}\psi_{n}(t)=\psi^{*}(t)$
+\end_inset
+
+ for all values of 
+\begin_inset Formula $t$
+\end_inset
+
+ in some interval around the point 
+\begin_inset Formula $t=0$
+\end_inset
+
+, then the sequence 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ converges in distribution to 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+In other words, the sequence of c.d.f's 
+\begin_inset Formula $F_{1},F_{2},...$
+\end_inset
+
+ must converge to the c.d.f.
+ 
+\begin_inset Formula $F^{*}$
+\end_inset
+
+ if the corresponding sequence of m.g.f.'s 
+\begin_inset Formula $\psi_{1},\psi_{2},...$
+\end_inset
+
+ converges to m.g.f 
+\begin_inset Formula $\psi^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Summary
+\end_layout
+
+\begin_layout Standard
+Two versions of the central limit theorem were given.
+ They conclude that the distribution of the average of a large number of
+ independent random variables is close to a normal distribution.
+ One theorem requires that the random variabels all have the same distribution
+ with finite variance.
+ The other theorem does not require that the random variabels be identically
+ distributed, but instead requires that their third moments exist and satisfy
+ condition (6.3.9).
+ The delta method lets us find the approximate distribution of a smooth
+ function of a sample average.
+\end_layout
+
+\begin_layout Section*
+6.4 The Correction for Continuity
+\end_layout
+
+\begin_layout Standard
+Some applications of the central limit theorem allow us to approximate the
+ probability that a discrete random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ lies in an interval 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ by the probability that a normal random variable lies in that interval.
+ The approximation can be improved slightly by being careful about how we
+ approximate 
+\begin_inset Formula $Pr(X=a)$
+\end_inset
+
+ and 
+\begin_inset Formula $Pr(X=b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Problem : 
+\series medium
+In Figure 6.4., two c.d.f's are very close at 
+\begin_inset Formula $x=n+0.5$
+\end_inset
+
+ for each integer 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ But for each integer 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $Pr(Y\le x)<Pr(X\le x)$
+\end_inset
+
+ for 
+\begin_inset Formula $x$
+\end_inset
+
+ little above 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $Pr(Y\leq x)>Pr(X\leq x)$
+\end_inset
+
+ for 
+\begin_inset Formula $x$
+\end_inset
+
+ a little below 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Approximating a Discrete Distribution by a Continous Distribution
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+If he distribution of 
+\begin_inset Formula $Y$
+\end_inset
+
+ provides a good approximation to the distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+, then for all integers 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+, we can approximate the discrete probability 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(a\leq X\leq b)=\sum_{x=a}^{b}f(x)\text{ (6.4.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+by the continuous probability 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(a\le Y\leq b)=\int_{a}^{b}g(x)dx\text{ (6.4.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Indeed, this approximation was used in Examples 6.3.2 and 6.3.9, where 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ was the appropriate normal p.d.f derived from the central limit theorem.
+ 
+\end_layout
+
+\begin_layout Standard
+This simple approximation has the following shortcoming: Although 
+\begin_inset Formula $Pr(X\geq a)$
+\end_inset
+
+ and 
+\begin_inset Formula $Pr(X>a)$
+\end_inset
+
+ will typically have different values for the discrete distribution values
+ for the discrete distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $Pr(Y\geq a)=P(Y>a)$
+\end_inset
+
+ because 
+\begin_inset Formula $Y$
+\end_inset
+
+ has a continuous distribution.
+ Another way of expressing this shortcoming is as follows: Although 
+\begin_inset Formula $Pr(X=x)>0$
+\end_inset
+
+ for each integer 
+\begin_inset Formula $x$
+\end_inset
+
+ that is a possible value of 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $Pr(Y=x)=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $x$
+\end_inset
+
+, because 
+\begin_inset Formula $Y$
+\end_inset
+
+ has continuous distribution.
+\end_layout
+
+\begin_layout Subsection*
+Approximating a Bar Chart
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+The p.f.
+ 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ of discrete random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ can be represented by a bar chart, as sketched in Fig.
+ 6.5.
+ For each integer 
+\begin_inset Formula $x$
+\end_inset
+
+, the probability of 
+\begin_inset Formula $\{X=x\}$
+\end_inset
+
+ is represented by the area of a rectangle with a base that extends from
+ 
+\begin_inset Formula $x-\frac{1}{2}$
+\end_inset
+
+ to 
+\begin_inset Formula $x+\frac{1}{2}$
+\end_inset
+
+ and with a height 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ Thus, the area of the rectangle for which the center of the base is at
+ integer 
+\begin_inset Formula $x$
+\end_inset
+
+ is simply 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+From this point of view, it can be seen that 
+\begin_inset Formula $Pr(a\leq X\leq b)$
+\end_inset
+
+, as specified in Eq.
+ (6.4.1) is the sum of the areas of the rectangles in Fig 6.5 that are centered
+ at 
+\begin_inset Formula $a,a+1,...,b$
+\end_inset
+
+.
+ It can also be seen from Fig.
+ 6.5 that the sum of these areas is approximated by the integral
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(a-1/2<Y<b+1/2)=\int_{a-1/2}^{b+1/2}g(x)dx\text{ (6.4.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 6.5HistApprox.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+The adjustment from the integral in (6.4.2) to the integral in (6.4.3) is called
+ the 
+\series default
+correction for continuity.
+\end_layout
+
+\begin_layout Paragraph
+Intuition: 
+\series medium
+Shift place 
+\begin_inset Formula $P(Y\leq a+...)$
+\end_inset
+
+ or 
+\begin_inset Formula $P(Y\leq a-...)$
+\end_inset
+
+ to approximate 
+\begin_inset Formula $P(X\leq a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+
+\series medium
+If we use the correction for continuity, we find that the probability 
+\begin_inset Formula $f(a)$
+\end_inset
+
+ of the single integer 
+\begin_inset Formula $a$
+\end_inset
+
+ can be approximated as follows: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(X=a)=Pr(a-\frac{1}{2}\leq X\leq a+\frac{1}{2})\approx\int_{a-1/2}^{a+1/2}g(x)dx.\text{ (6.4.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr(X>a)=Pr(X\geq a+1)=Pr(X\geq a+\frac{1}{2})\approx\int_{a+1/2}^{\infty}g(x)dx\text{ (6.4.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Summary
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable tha takes only integer values.
+ Suppose that 
+\begin_inset Formula $X$
+\end_inset
+
+ has approximately the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ be integers, and suppose that we wish to approximate 
+\begin_inset Formula $Pr(a\leq X\leq b)$
+\end_inset
+
+.
+ The correction to the normal distribution approximation for continuity
+ is to use 
+\begin_inset Formula $\Phi([b+1/2-\mu]/\sigma)-\Phi([a-1/2-\mu]/\sigma)$
+\end_inset
+
+ rather than 
+\begin_inset Formula $\Phi([b-\mu]/\sigma)-\Phi([a-\mu]/\sigma)$
+\end_inset
+
+ as the approximation.
+\end_layout
+
 \end_body
 \end_document
