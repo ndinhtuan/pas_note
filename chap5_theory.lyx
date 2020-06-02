@@ -305,6 +305,10 @@ for all real
 \end_layout
 
 \begin_layout Section*
+5.5 The Negative Binomial Distributions
+\end_layout
+
+\begin_layout Section*
 5.6 The Normal Distribution
 \end_layout
 
@@ -2563,6 +2567,7 @@ If a random vector
 ) A more thorough treatment of the bivariate normal distributions and higher-dim
 ensional generalizations can be found in this book by D.F.
  Morrison (1990).
+ 
 \end_layout
 
 \end_body

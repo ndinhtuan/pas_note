@@ -744,5 +744,2297 @@ f(x_{n}|x_{1},...,x_{n-1})=\int f(x_{n}|\theta)\xi(\theta|x_{1},...,x_{n-1})d\th
 
 \end_layout
 
+\begin_layout Chapter*
+7.3 Conjugate Prior Distributions
+\end_layout
+
+\begin_layout Standard
+For each of the most popular statistical models, there exists a family of
+ distributions for the parameter with a very special property.
+ If the prior distribution is chosen to be a member of that family, then
+ the posterior distribution will also be a member of that family.
+ Such a family of distributions is called a conjugate family.
+ Choosing a prior distribution from a conjugate family will typically make
+ it particularly simple to calculdate the posterior distribution.
+\end_layout
+
+\begin_layout Theorem*
+
+\series bold
+7.3.1 
+\series default
+Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the Bernoulli distribution with parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+, which is unknown (
+\begin_inset Formula $0<\theta<1$
+\end_inset
+
+).
+ Suppose also that the prior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the beta distribution with parameters 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta>0$
+\end_inset
+
+.
+ Then the posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ given that 
+\begin_inset Formula $X_{i}=x_{i}(i=1,...,n)$
+\end_inset
+
+ is the beta distribution with parameters 
+\begin_inset Formula $\alpha+\sum_{i=1}^{n}x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta+n-\sum_{i=1}^{n}x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Theorem 7.3.1 is restatement of Theorem 5.8.2 (page 329), and its proof is essential
+ly the calculation in Example 5.8.3\SpecialChar endofsentence
+
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.3.1 
+\series default
+Conjugate Family/Hyperparameters.
+ Let 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ be conditionally i.i.d given 
+\begin_inset Formula $\theta$
+\end_inset
+
+ with common p.f.
+ or p.d.f.
+ 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ be a family of possible distributions over the parameter space 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+ Suppose that, no matter which prior distribution 
+\begin_inset Formula $\xi$
+\end_inset
+
+ we choose from 
+\begin_inset Formula $\Psi$
+\end_inset
+
+, no matter how many observations 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ we observe, and no matter how many observations 
+\begin_inset Formula $X=(X_{1},..,X_{n})$
+\end_inset
+
+ we observe, and no matter what are their observed values 
+\begin_inset Formula $x=(x_{1},...,x_{n})$
+\end_inset
+
+, the posterior distribution 
+\begin_inset Formula $\xi(\theta|\boldsymbol{x})$
+\end_inset
+
+ is a member of 
+\begin_inset Formula $\Psi$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ is called a 
+\emph on
+conjugate family of prior distributions for sample from the distribution
+ 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+.
+ 
+\emph default
+It is also said that the family 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ is closed under sampling from the distributions 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+.
+ Finally, if the distributions in 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ are parametrized by further parameters, then the associated parameters
+ for the prior distribution are called the prior hyperparameters and associated
+ parameters of the posterior distribution are called the posterior hyperparamete
+rs.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Theorem 7.3.1 says that the family of beta distributions is a conjugate family
+ of prior distributions for samples from a Bernoulli distribution.
+\end_layout
+
+\begin_layout Section*
+Sampling from a Normal Distribution
+\end_layout
+
+\begin_layout Theorem*
+
+\series bold
+7.3.3 
+\series default
+Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a normal distribution for which the value of
+ the mean 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is unknown and the value of the variance 
+\begin_inset Formula $\sigma^{2}>0$
+\end_inset
+
+ is known.
+ Suppose also that the prior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the normal distribution with mean 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $v_{o}^{2}$
+\end_inset
+
+.
+ The posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ given that 
+\begin_inset Formula $X_{i}=x_{i}\text{ }(i=1,...,n)$
+\end_inset
+
+ is the normal distribution with mean 
+\begin_inset Formula $\mu_{1}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $v_{1}^{2}$
+\end_inset
+
+ where
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\mu_{1}=\frac{\sigma^{2}\mu_{0}+nv_{0}^{2}\bar{x_{n}}}{\sigma^{2}+nv_{0}^{2}}\text{ (7.3.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+and 
+\begin_inset Formula 
+\[
+v_{1}^{2}=\frac{\sigma^{2}v_{0}^{2}}{\sigma^{2}+nv_{0}^{2}}\text{ (7.3.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The mean 
+\begin_inset Formula $\mu_{1}$
+\end_inset
+
+ of the posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, as given in Eq.
+ (7.3.1), can be rewritten as follows: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{1}=\frac{\sigma^{2}}{\sigma^{2}+nv_{0}^{2}}\mu_{0}+\frac{nv_{0}^{2}}{\sigma^{2}+nv_{0}^{2}}\bar{x}_{n}\text{ (7.3.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It can be seen from Eq.
+ (7.3.3) that 
+\begin_inset Formula $\mu_{1}$
+\end_inset
+
+ is a weighted average of the mean 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+ of the prior distribution and the sample 
+\begin_inset Formula $\bar{x}_{n}$
+\end_inset
+
+.
+ Before any observations have been taken, we can use Eq.
+ (7.3.2) to calculate the actual value of the variance 
+\begin_inset Formula $v_{1}^{2}$
+\end_inset
+
+ of the posterior distribution.
+ We can compute 
+\begin_inset Formula $v_{1}^{2}$
+\end_inset
+
+, that dont depend on magnitude of observed value.
+\end_layout
+
+\begin_layout Section*
+Sampling from a Poisson Distribution
+\end_layout
+
+\begin_layout Theorem*
+
+\series bold
+7.3.2 
+\series default
+Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the Poisson distribution with mean 
+\begin_inset Formula $\theta>0$
+\end_inset
+
+ , and 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is unknown.
+ Suppose also that the prior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the gamma distribution with parameters 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta>0$
+\end_inset
+
+.
+ Then the posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, given that 
+\begin_inset Formula $X_{i}=x_{i}\text{ (i=1,...,n) },$
+\end_inset
+
+is the gamma distribution with parameters 
+\begin_inset Formula $\alpha+\sum_{i=1}^{n}x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta+n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Sampling from an Exponential Distribution
+\end_layout
+
+\begin_layout Standard
+When sampling from an exponential distribution for which the value of the
+ parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is unknown, the family of gamma distribution serves as a conjugate family
+ of prior distributions.
+\end_layout
+
+\begin_layout Theorem*
+
+\series bold
+7.3.4 
+\series default
+Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the exponential distribution with parameter 
+\begin_inset Formula $\theta>0$
+\end_inset
+
+ that is unknown.
+ Suppose also that the prior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the gamma distribution with parameters 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta>0$
+\end_inset
+
+.
+ Then the posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ given that 
+\begin_inset Formula $X_{i}=x_{i}$
+\end_inset
+
+ (
+\begin_inset Formula $i=1,....,n$
+\end_inset
+
+) is the gamma distribution with parameters 
+\begin_inset Formula $\alpha+n$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta+\sum_{i=1}^{n}x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Improper Prior Distributions
+\end_layout
+
+\begin_layout Standard
+In Sec.
+ 7.2, we mentioned improper priors as expedients that try to capture the
+ idea that there is much more information in the data than is captured in
+ our prior distribution.
+ Each of the conjugate families that we have seen in this section has an
+ improper prior as a limiting case.
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.3.2 
+\series default
+Improper Prior.
+ Let 
+\begin_inset Formula $\xi$
+\end_inset
+
+ be a nonnegative function whose domain includes the parameter space of
+ a statistical model.
+ Suppose that 
+\begin_inset Formula $\int\xi(\theta)d\theta=\infty$
+\end_inset
+
+.
+ If we pretend as if 
+\begin_inset Formula $\xi(\theta)$
+\end_inset
+
+ is the prior p.d.f.
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, then we are using an improper prior for 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Itemize
+For data with distribution related to the Bernoulli, such as binomial, geometric
+, and negative binomial, the conjugate family for the success probability
+ parameter is the family of beta distributions.
+ 
+\end_layout
+
+\begin_layout Itemize
+For data with distributions related to the Poisson process, such as Poisson,
+ gamma (with known first parameter), and exponential, the conjugate family
+ for the rate parameter is the family of gamma distributions.
+\end_layout
+
+\begin_layout Itemize
+For data having a normal distribution with known variance, the conjugate
+ family for the mean is the normal family.
+\end_layout
+
+\begin_layout Remark*
+
+\series bold
+In exercise 23, 24 we have most general distribution and its's conjugate
+ prior distribution.
+ So we can base here to solve many problem with easy tool.
+\end_layout
+
+\begin_layout Chapter*
+7.4 Bayes Estimators
+\end_layout
+
+\begin_layout Standard
+An estimator of a parameter is some function of the data that we hope is
+ close to the parameter.
+ A Bayes estimator is an estimator that is chosen to minimize the posterior
+ mean of some measure of how far the estimator is from the parameter, such
+ as squared error or absolute error.
+\end_layout
+
+\begin_layout Section*
+Nature of an Estimation Problem
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.4.1 
+\series default
+Estimator/Estimate.
+ Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be observable data whose joint distribution is indexed by a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ taking values in a subset 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ of the real line.
+ An estimator of the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is a real-valued function 
+\begin_inset Formula $\delta(X_{1},...,X_{n})$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $X_{1}=x_{1},...,X_{n}=x_{n}$
+\end_inset
+
+ are observed, then 
+\begin_inset Formula $\delta(x_{1},...,x_{n})$
+\end_inset
+
+ is called the estimate of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Notice that every estimator is, by nature of being a function of data, a
+ statistic in the sense of Definition 7.1.4.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+An Estimate is specific value 
+\begin_inset Formula $\delta(x_{1},...,x_{n})$
+\end_inset
+
+ of the estimator that is determined by using specific observed values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+.
+ If we use the vector notation 
+\begin_inset Formula $\boldsymbol{X}=(X_{1},...,X_{n})$
+\end_inset
+
+, then an estimator is a function 
+\begin_inset Formula $\delta(\text{\textbf{X}})$
+\end_inset
+
+ of the random vector 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+, and an estimate is a specific value 
+\begin_inset Formula $\delta(\boldsymbol{\text{x}})$
+\end_inset
+
+.
+ It will often be convenient to denote an estimator 
+\begin_inset Formula $\delta(\boldsymbol{\text{X}})$
+\end_inset
+
+ simply by the symbol 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Loss Functions
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.4.2 Loss Functions.
+ 
+\series default
+A loss function is real-valued function of two variables, 
+\begin_inset Formula $L(\theta,a)$
+\end_inset
+
+, where 
+\begin_inset Formula $\theta\in\Omega$
+\end_inset
+
+ and 
+\begin_inset Formula $a$
+\end_inset
+
+ is a real number.
+ The interpretation is that the statistician loses 
+\begin_inset Formula $L(\theta,a)$
+\end_inset
+
+ if the parameter equals 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and the estimate equals 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\xi(\theta)$
+\end_inset
+
+ denote the prior p.d.f.
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ on the set 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, and consider a problem in which the statistician must estimate the value
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ without being able to observe the values in random sample.
+ If the statistician chooses a particular estimate 
+\begin_inset Formula $a$
+\end_inset
+
+ , then her expected loss will be 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[L(\theta,a)]=\int_{\Omega}L(\theta,a)\xi(\theta)d\theta\text{ (7.4.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assume that the statistician wishes to choose an estimate 
+\begin_inset Formula $a$
+\end_inset
+
+ for which the expected loss in Eq.
+ (7.4.1) is a minimum.
+\end_layout
+
+\begin_layout Section*
+Definition of a Bayes Estimator
+\end_layout
+
+\begin_layout Standard
+Suppose statistician observe the value 
+\begin_inset Formula $x$
+\end_inset
+
+ of the random vector 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ before estimating 
+\begin_inset Formula $\theta$
+\end_inset
+
+, and let 
+\begin_inset Formula $\xi(\theta|\boldsymbol{x})$
+\end_inset
+
+ denote the posterior p.d.f of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ on 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+ For each estimate 
+\begin_inset Formula $a$
+\end_inset
+
+ that the statistician might use, her expected loss:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[L(\theta,a)|\boldsymbol{x}]=\int_{\Omega}L(\theta,a)\xi(\theta|\boldsymbol{x})d\theta\text{ (7.4.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence, the statistician should choose an estimate 
+\begin_inset Formula $a$
+\end_inset
+
+ for which the expectation in Eq.
+ (7.4.2) is a minimum.
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+For each possible value 
+\begin_inset Formula $x$
+\end_inset
+
+ of the random vector 
+\begin_inset Formula $X$
+\end_inset
+
+, let 
+\begin_inset Formula $\delta^{*}(x)$
+\end_inset
+
+ denote a value of the estimate 
+\begin_inset Formula $a$
+\end_inset
+
+ for which the expected loss in Eq.
+ (7.4.2) is a minimum.
+ The the function 
+\begin_inset Formula $\delta^{*}(X)$
+\end_inset
+
+ for which the values are specified in this way will be an estimator of
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.4.3 
+\series default
+Bayes Estimator/Estimate.
+ Let 
+\begin_inset Formula $L(\theta,a)$
+\end_inset
+
+ be a loss function.
+ For each possible value 
+\begin_inset Formula $x$
+\end_inset
+
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+, let 
+\begin_inset Formula $\delta^{*}(x)$
+\end_inset
+
+ be a value of 
+\begin_inset Formula $a$
+\end_inset
+
+ such that 
+\begin_inset Formula $E[L(\theta,a)|x]$
+\end_inset
+
+ is minimized.
+ Then 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+ is called a Bayes estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Once 
+\begin_inset Formula $X=x$
+\end_inset
+
+ is observed, 
+\begin_inset Formula $\delta^{*}(x)$
+\end_inset
+
+ is called a Bayes estimate of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another way to describe a Bayes estimator 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+ is to note that, for each possible value 
+\begin_inset Formula $x$
+\end_inset
+
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+, the value 
+\begin_inset Formula $\delta^{*}(x)$
+\end_inset
+
+ is chosen so that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[L(\theta,\delta^{*}(x))|x]=\min_{all\text{ a}}E[L(\theta,a)|x]\text{ (7.4.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It should be emphasized that the form of the Bayes estimator will depend
+ on both the loss function that is used in the problem and the prior distributio
+n that is assigned to 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Different Loss Functions
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.4.4 
+\series default
+Squared Error Loss Function.
+ The loss function 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+L(\theta,a)=(\theta-a)^{2}\text{ (7.4.4) }
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+is called squared error loss.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When the squared error loss function is used, the Bayes estimate 
+\begin_inset Formula $\delta^{*}(x)$
+\end_inset
+
+ for each observed value of 
+\begin_inset Formula $x$
+\end_inset
+
+ will be the value of 
+\begin_inset Formula $a$
+\end_inset
+
+ for which the expectation 
+\begin_inset Formula $E[(\theta-a)^{2}|x]$
+\end_inset
+
+ is a minimum.
+ Theorem 4.7.3 states that, when the expectation of 
+\begin_inset Formula $(\theta-a)^{2}$
+\end_inset
+
+ is calculated with respect to the posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, this expectation will be a minimum when 
+\begin_inset Formula $a$
+\end_inset
+
+ is chosen to be equal to the mean 
+\begin_inset Formula $E[\theta|x]$
+\end_inset
+
+ of the posterior distribution, if that posteriro mean is finite.
+\end_layout
+
+\begin_layout Standard
+If posterior mean of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is not finite, then expected loss is infinite for every possible estimate
+ 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Hence, we have the following corollary to Theorem 4.7.3
+\end_layout
+
+\begin_layout Corollary*
+
+\series bold
+7.4.1 
+\series default
+Let 
+\begin_inset Formula $\theta$
+\end_inset
+
+ be a real-valued parameter.
+ Suppose that the squared error loss function (7.4.4) is used and that the
+ posterior mean of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, 
+\begin_inset Formula $E[\theta|X]$
+\end_inset
+
+, is finite.
+ Then, a Bayes estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ if 
+\begin_inset Formula $\delta^{*}(X)=E(\theta|X)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.4.5 
+\series default
+Absolute Error Loss Function.
+ The loss function
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+L(\theta,a)=|\theta-a|\text{ (7.4.7)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+is called absolute error loss.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For every observed value of 
+\begin_inset Formula $x$
+\end_inset
+
+, the Bayes estimate 
+\begin_inset Formula $\delta^{*}(x)$
+\end_inset
+
+ will now be the value of 
+\begin_inset Formula $a$
+\end_inset
+
+ for which the expectation 
+\begin_inset Formula $E(|\theta-a||x)$
+\end_inset
+
+ is a minimum.
+ It was shown in Theorem 4.5.3 that for every given probability distribution
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, the expectation of 
+\begin_inset Formula $|\theta-a|$
+\end_inset
+
+ will be minimum when 
+\begin_inset Formula $a$
+\end_inset
+
+ is chosen to be equal to a median of the distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Corollary*
+
+\series bold
+7.4.2 
+\series default
+When the absolute error loss function (7.4.7) is used, a Bayes estimator of
+ a real-valued parameter is 
+\begin_inset Formula $\delta^{*}(X)$
+\end_inset
+
+ equal to a median of the posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+The Bayes Estimate for Large Samples
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Consistency of the Bayes Estimator 
+\series default
+Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be a random sample (given 
+\begin_inset Formula $\theta$
+\end_inset
+
+) from the Bernolli distribution with parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Suppose that we use a conjugate prior for 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the mean of the distribution from which the sample is being taken, it
+ follows from the law of large numbers discussed in Sec.
+ 6.2 that 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+ converges in probability to 
+\begin_inset Formula $\theta$
+\end_inset
+
+ as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+.
+ Since the difference between the Bayes estimator 
+\begin_inset Formula $\delta^{*}(X)$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+ converges in probability to 0 as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+, it can also be concluded that 
+\begin_inset Formula $\delta^{*}(X)$
+\end_inset
+
+ converges in probability to the unknown value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.4.6 
+\series default
+Consistent Estimator.
+ A sequence of estimators that converges in probability to the unknown value
+ of the parameter being estimated, as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+, is called a consistent sequence of estimators.
+\end_layout
+
+\begin_layout Section*
+More General Parameters and Estimators
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.4.7 
+\series default
+Estimator/Estimate.
+ Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be observable data whose joint distribution is indexed by a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ taking values in a subset 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ of k-dimensional space.
+ Let 
+\begin_inset Formula $h$
+\end_inset
+
+ be a function from 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ into d-dimensional space.
+ Define 
+\begin_inset Formula $\psi=h(\theta)$
+\end_inset
+
+.
+ An estimator of 
+\begin_inset Formula $\psi$
+\end_inset
+
+ is a function 
+\begin_inset Formula $\delta(X_{1},...,X_{n})$
+\end_inset
+
+ that takes values in d-dimensional space.
+ If 
+\begin_inset Formula $X_{1}=x_{1},...,X_{n}=x_{n}$
+\end_inset
+
+ are observed, then 
+\begin_inset Formula $\delta(x_{1},...,x_{n})$
+\end_inset
+
+ is called the estimate of 
+\begin_inset Formula $\psi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+An estimator for a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is a function 
+\begin_inset Formula $\delta$
+\end_inset
+
+ of the data 
+\begin_inset Formula $X$
+\end_inset
+
+ .
+ If 
+\begin_inset Formula $X=x$
+\end_inset
+
+ is observed, the value 
+\begin_inset Formula $\delta(x)$
+\end_inset
+
+ is called our estimate, the observed value of the estimator 
+\begin_inset Formula $\delta(X)$
+\end_inset
+
+.
+ A loss function 
+\begin_inset Formula $L(\delta,a)$
+\end_inset
+
+ is designed to measure how costly is to use the value 
+\begin_inset Formula $a$
+\end_inset
+
+ to estimate 
+\begin_inset Formula $\theta$
+\end_inset
+
+ .
+ A Bayes estimator 
+\begin_inset Formula $\delta^{*}(X)$
+\end_inset
+
+ is chosen so that 
+\begin_inset Formula $a=\delta^{*}(x)$
+\end_inset
+
+ provides the minimum value of the posterior mean of 
+\begin_inset Formula $L(\theta,a)$
+\end_inset
+
+ .
+ That is,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[L(\theta,\delta^{*}(x))|x]=\min_{a}E[L(\theta,a)|x]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the loss is squared error, 
+\begin_inset Formula $L(\theta,a)=(\theta-a)^{2}$
+\end_inset
+
+, then 
+\begin_inset Formula $\delta^{*}(x)$
+\end_inset
+
+ is the posterior mean of 
+\begin_inset Formula $\theta$
+\end_inset
+
+,
+\begin_inset Formula $E(\theta|x)$
+\end_inset
+
+.
+ If the loss is absolute error, 
+\begin_inset Formula $L(\theta,a)=|\theta-a|$
+\end_inset
+
+, then 
+\begin_inset Formula $\delta^{*}(x)$
+\end_inset
+
+ is a median of the posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ For other loss functions, locating the minimum might have to be done numericall
+y.
+\end_layout
+
+\begin_layout Chapter*
+7.6 Properties of Maximum Likelihood Estimators
+\end_layout
+
+\begin_layout Standard
+In this section, we explore several properties of M.L.E's, including:
+\end_layout
+
+\begin_layout Itemize
+The relationship between the M.L.E of a parameter and the M.L.E of a function
+ of that parameter
+\end_layout
+
+\begin_layout Itemize
+The need for computational algorithms
+\end_layout
+
+\begin_layout Itemize
+The behavior of the M.L.E as the sample size increases
+\end_layout
+
+\begin_layout Itemize
+The lack of dependence of the M.L.E o the sampling plan
+\end_layout
+
+\begin_layout Standard
+We also introduce a popular alterative method of estimate (method of moments)
+ that sometimes agrees with maximum likelihood, but can sometimes be computation
+ally simpler.
+\end_layout
+
+\begin_layout Section*
+Invariance
+\end_layout
+
+\begin_layout Theorem*
+
+\series bold
+7.6.1 
+\series default
+Invariance Property of M.L.E's.
+ If 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ is the maximum likelihood estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and if 
+\begin_inset Formula $g$
+\end_inset
+
+ is a one-to-one function, then 
+\begin_inset Formula $g(\hat{\theta})$
+\end_inset
+
+ is the maximum likelihood estimator of 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.6.1 
+\series default
+M.L.E of a function.
+ Let 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ be an arbitrary function of the parameter, and let 
+\begin_inset Formula $G$
+\end_inset
+
+ be the image of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ under the fuction 
+\begin_inset Formula $g$
+\end_inset
+
+.
+ For each 
+\begin_inset Formula $t\in G$
+\end_inset
+
+ define 
+\begin_inset Formula $G_{t}=\{\theta:g(\theta)=t\}$
+\end_inset
+
+ and define 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+L^{*}(t)=\max_{\theta\in G_{t}}\log f_{n}(x|\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+Finally, define the M.L.E of 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ to be 
+\begin_inset Formula $\hat{t}$
+\end_inset
+
+ where
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+L^{*}(\hat{t})=\max_{t\in G}L^{*}(t)\text{ (7.6.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following result shows how to find the M.L.E of 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ based on Definition 7.6.1.
+\end_layout
+
+\begin_layout Theorem*
+
+\series bold
+7.6.2 
+\series default
+Let 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ be an M.L.E of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, let 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ be a function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Then an M.L.E of 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ is 
+\begin_inset Formula $g(\hat{\theta})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Consistency
+\end_layout
+
+\begin_layout Standard
+Under certain conditions, which are typically satisfied in practical problems,
+ the sequence of M.L.E.'s is a consistent sequence of estimators of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ In other words, in such problems the sequence of M.L.E.'s converges in probability
+ to the unknown value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Remarked in Sec.
+ 7.4 that under certain general conditions the sequence of Bayes estimators
+ of a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is also a consistent sequence of estimators.
+ Therefore, for a given prior distribution and a sufficiently large sample
+ size 
+\begin_inset Formula $n$
+\end_inset
+
+, the Bayes estimator and the M.L.E of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ will typically be very close to each other, and both will be very close
+ to the unknown value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We shall not present any formal details of the conditions that are needed
+ to prove this result (
+\series bold
+Details can be found in chapter 7 of Schervish, 1995
+\series default
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Both the sequence of Bayes estimators and the sequence of M.L.E's are consistent
+ sequences.
+\end_layout
+
+\begin_layout Section*
+Numerical Computation
+\end_layout
+
+\begin_layout Standard
+In many problems there exists a unique M.L.E.
+ 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ of a given parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+, but this M.L.E.
+ cannot be expressed in closed form as a function of the observations in
+ the sample.
+ In such a problem, for a given set of observed values, it is nessary to
+ determine the value of 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ by numerical computation.
+ 
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.6.2 
+\series default
+Newton's Method.
+ Let 
+\begin_inset Formula $f(\theta)$
+\end_inset
+
+ be a real-valued function of a real variable, and suppose that we wish
+ to solve the equation 
+\begin_inset Formula $f(\theta)=0$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+ be initial guess at the solution.
+ Newton's method replaces the initial guess with the updated guess
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+\theta_{1}=\theta_{0}-\frac{f(\theta_{0})}{f^{'}(\theta_{0})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Typically, one replaces the intial guess with the revised guess and iterates
+ Newton's method until the results stabilize.
+\end_layout
+
+\begin_layout Section*
+Method of Moments
+\end_layout
+
+\begin_layout Definition*
+
+\series bold
+7.6.3 
+\series default
+Method of Moments.
+ Assume that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a distribution that is indexed by a 
+\begin_inset Formula $k-$
+\end_inset
+
+dimensional parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and that has at least 
+\begin_inset Formula $k$
+\end_inset
+
+ finite moments.
+ For 
+\begin_inset Formula $j=1,...,k$
+\end_inset
+
+ , let 
+\begin_inset Formula $\mu_{j}(\theta)=E(X_{1}^{j}|\theta)$
+\end_inset
+
+.
+ Suppose that the function 
+\begin_inset Formula $\mu(\theta)=(\mu_{1}(\theta),...,\mu_{k}(\theta))$
+\end_inset
+
+ is a one-to-one function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $M(\mu_{1},...,\mu_{k})$
+\end_inset
+
+ denote the inverse function, that is, for all 
+\begin_inset Formula $\theta$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+\theta=M(\mu_{1}(\theta),...,\mu_{k}(\theta))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+Define the sample moments by 
+\begin_inset Formula $m_{j}=\frac{1}{n}\sum_{i=1}^{n}X_{i}^{j}$
+\end_inset
+
+ for 
+\begin_inset Formula $j=1,...,k$
+\end_inset
+
+.
+ The method of moments estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is 
+\begin_inset Formula $M(m_{1},...,m_{j})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The usual way of implementing the method of moments is to set up the 
+\begin_inset Formula $k$
+\end_inset
+
+ equations 
+\begin_inset Formula $m_{j}=\mu_{j}(\theta)$
+\end_inset
+
+ and then solve for 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+
+\series bold
+7.6.3 
+\series default
+Suppose that 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ are i.i.d with a distribution indexed by a k-dimensional parameter vector
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Suppose that the first 
+\begin_inset Formula $k$
+\end_inset
+
+ moments of that distribution exist and are finite for all 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Suppose also that the inverse function 
+\begin_inset Formula $M$
+\end_inset
+
+ in Definition 7.6.3 is continuous.
+ Then the sequence of method of moments estimators based on 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ is a consistent sequence of estimators of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+The EM Algorithm
+\end_layout
+
+\begin_layout Standard
+There are a number of complicated situations in which it is difficult to
+ compute the M.L.E.
+ Many of these situatios involve forms of missing data.
+ The term 
+\begin_inset Quotes eld
+\end_inset
+
+missing data
+\begin_inset Quotes erd
+\end_inset
+
+ can refer to several different types of information.
+ The most obvious would be observations that we had planned or hoped to
+ observ but were not observed.
+\end_layout
+
+\begin_layout Itemize
+'E' step of the EM algorithm is the following: Compute the conditional distribut
+ion of the missing data given the observed data as if the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ were equal to 
+\begin_inset Formula $\theta^{(j)}$
+\end_inset
+
+, and then compute the conditional mean of the full-data log-likelihood
+ treating 
+\begin_inset Formula $\theta$
+\end_inset
+
+ as constant and the missing data as random variables.
+ The E step gets rid of the unobserved random variables from the full-data
+ log-likelihood and leaves 
+\begin_inset Formula $\theta$
+\end_inset
+
+ where it was.
+\end_layout
+
+\begin_layout Itemize
+For the 'M' step, choose 
+\begin_inset Formula $\theta^{(j+1)}$
+\end_inset
+
+ to maximize the expected value of the full-data log-likelihood that you
+ just computed.
+ The M step takes you to stage 
+\begin_inset Formula $j+1$
+\end_inset
+
+.
+ Ideally, the maximization step is no harder than it would be if the missing
+ data had actually been observed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Itemize
+The M.L.E of a function 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ is 
+\begin_inset Formula $g(\hat{\theta})$
+\end_inset
+
+, where 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ is the M.L.E of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ For example, the M.L.E.
+ of 
+\begin_inset Formula $1/\theta$
+\end_inset
+
+ is 1 over the M.L.E of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Sometimes we cannot find a closed form expression for the M.L.E of a parameter
+ and we must resort to numerical methods to find or approximate the M.L.E.
+ In most problmes, the sequence of M.L.E.'s, as sample size increases, converges
+ in probability to the parameter.
+\end_layout
+
+\begin_layout Itemize
+When data are collected in such a way that the decision to step collecting
+ data is based solely on the data already observed or on other considerations
+ that are not related to the parameter, then M.L.E.
+ will not depend on the sampling plan.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+7.7.
+ Sufficient Statistics
+\end_layout
+
+\begin_layout Definition*
+7.7.1.
+ Sufficient Statistic.
+ Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be a random sample from a distribution indexed by a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $T$
+\end_inset
+
+ be a statistic.
+ Suppose that, for every 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and every possible value 
+\begin_inset Formula $t$
+\end_inset
+
+ of 
+\begin_inset Formula $T$
+\end_inset
+
+, the conditional joint distribution of 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ given that 
+\begin_inset Formula $T=t$
+\end_inset
+
+ (and 
+\begin_inset Formula $\theta$
+\end_inset
+
+) depends only on 
+\begin_inset Formula $t$
+\end_inset
+
+ but not on 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ That is, for each 
+\begin_inset Formula $t$
+\end_inset
+
+, the conditional distribution of 
+\begin_inset Formula $X_{1},..,X_{n}$
+\end_inset
+
+ given 
+\begin_inset Formula $T=t$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the same for all 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Then we say that 
+\begin_inset Formula $T$
+\end_inset
+
+ is a sufficient statistic for the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+7.7.1.
+ Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from either a continuous distribution or a discrete
+ distribution for which the p.d.f or the p.f is 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+, where the value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is unknown and belongs to a given parameter space 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+ A statistic 
+\begin_inset Formula $T=r(X_{1},...,X_{n})$
+\end_inset
+
+ is a sufficient statistic for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ if and only if the joint p.d.f.
+ or the joint p.f.
+ 
+\begin_inset Formula $f_{n}(x|\theta)$
+\end_inset
+
+ of 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ can be factored as follows for all values of 
+\begin_inset Formula $x=(x_{1},...,x_{n})\in R^{n}$
+\end_inset
+
+ and all values of 
+\begin_inset Formula $\theta\in\Omega:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+f_{n}(x|\theta)=u(x)v[r(x),\theta]\text{ (7.7.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Here, the functions 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ are nonnegative, the function 
+\begin_inset Formula $u$
+\end_inset
+
+ may depend on 
+\begin_inset Formula $x$
+\end_inset
+
+ but does not depend on 
+\begin_inset Formula $\theta$
+\end_inset
+
+, and the function 
+\begin_inset Formula $v$
+\end_inset
+
+ will depend on 
+\begin_inset Formula $\theta$
+\end_inset
+
+ but depends on the observed value 
+\begin_inset Formula $x$
+\end_inset
+
+ only through the value of the statistic 
+\begin_inset Formula $r(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary*
+7.7.1.
+ A statistic 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+ is sufficient if and only if, no matter that prior distribution we use,
+ the posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ depends on the data only through the value of 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Every one-to-one function of a sufficient statistic is also a sufficient
+ statistic.
+\end_layout
+
+\begin_layout Subsection*
+Summary
+\end_layout
+
+\begin_layout Standard
+A statistic 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+ is sufficient if, for each 
+\begin_inset Formula $t$
+\end_inset
+
+, the conditional distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ given 
+\begin_inset Formula $T=t$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the same for all values of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ So, if 
+\begin_inset Formula $T$
+\end_inset
+
+ is sufficient, and one observed only 
+\begin_inset Formula $T$
+\end_inset
+
+ instead of 
+\begin_inset Formula $X$
+\end_inset
+
+, one could, at least in principle, simulate random variables 
+\begin_inset Formula $X^{'}$
+\end_inset
+
+ with the same joint distribution given 
+\begin_inset Formula $\theta$
+\end_inset
+
+ as 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ In this sense, 
+\begin_inset Formula $T$
+\end_inset
+
+ is sufficient for obtaining as much information about 
+\begin_inset Formula $\theta$
+\end_inset
+
+ as one could get from 
+\begin_inset Formula $X$
+\end_inset
+
+ .
+ The factorization criterion says that 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+ is sufficient if and only if the joint p.f.
+ or p.d.f.
+ can be factored as 
+\begin_inset Formula $f(x|\theta)=u(x)v[r(x),\theta]$
+\end_inset
+
+ for some functions 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ This is the most convenient way to identify whether or not a statistic
+ is sufficient.
+\end_layout
+
+\begin_layout Section*
+Intuition
+\end_layout
+
+\begin_layout Enumerate
+If we can prove statistic 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+ is sufficient statistic, we can decrease cost to collect data: for example,
+ 
+\begin_inset Formula $T=r(X)=X_{1}+..+X_{n}$
+\end_inset
+
+ for 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ is Poisson distribution for counting number of customer in day.
+ We do not care about counting on each day, we just need to count on whole
+ n days (
+\begin_inset Formula $T=\sum_{i}X_{i}$
+\end_inset
+
+).
+\end_layout
+
 \end_body
 \end_document

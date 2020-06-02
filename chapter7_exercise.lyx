@@ -610,5 +610,841 @@ So
 .
 \end_layout
 
+\begin_layout Chapter*
+7.3 Conjugate Prior Distributions
+\end_layout
+
+\begin_layout Exercise*
+
+\series bold
+16.
+ 
+\end_layout
+
+\begin_layout Exercise*
+Based on Exercise 15, conjugate family of prior distribution for samples
+ from a normal distribution with a known value of the mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and unknown value of the standard deviation 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is distribution:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+\xi(\theta)=\begin{cases}
+\frac{\beta^{\alpha+1/2}}{\Gamma(\alpha+1/2)}x^{-2(\alpha-1/2)}e^{-2\beta/x^{2}} & x>0\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Note: we already based on p.d.f of inverse gamma distribution is spend for
+ prior distribution normal with unknown 
+\series bold
+variance.
+ 
+\series default
+With unknown 
+\series bold
+standard deviation 
+\series default
+we transform some computation in this distribution to present 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+ in distribution (particular, in term 
+\begin_inset Formula $e^{-2\beta/x^{2}}$
+\end_inset
+
+) instead of 
+\begin_inset Formula $e^{-\beta/x}$
+\end_inset
+
+, this function cannot compute post distribution with unknown 
+\series bold
+standard deviation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+7.4 Bayes estimator
+\end_layout
+
+\begin_layout Exercise*
+
+\series bold
+1.
+ 
+\series default
+In a clinical trial, let probability of successful outcome 
+\begin_inset Formula $\theta$
+\end_inset
+
+ have a prior distribution that is the uniform distribution on the interval
+ 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ - beta distribution 1, 1.
+ Suppose that the first patient has a successful outcome.
+ Find the Bayes estimates of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ that would be obtained for both the squared error and absolute error loss
+ functions.
+\end_layout
+
+\begin_layout Solution*
+Following Theorem 7.3.4, the posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the gamma distribution with parameter 
+\begin_inset Formula $\alpha=1+1=2$
+\end_inset
+
+ , 
+\begin_inset Formula $\beta=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+So with loss function is the squared error, the 
+\begin_inset Formula $\delta^{*}(x)=\mu=\frac{\alpha}{\alpha+\beta}=2/3$
+\end_inset
+
+.
+ Otherwise, with loss function is absolute error loss function, then 
+\begin_inset Formula $\delta^{*}(x)=P^{-1}(0.5)\approx0.7$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+
+\series bold
+12.
+ 
+\series default
+
+\begin_inset Formula $\xi_{A}=2\theta$
+\end_inset
+
+ is Gamma distribution with parameter 2, 1 ; 
+\begin_inset Formula $\xi_{B}=4\theta^{3}$
+\end_inset
+
+ is Gamma distribution with parameter 3, 1.
+ So apply theorem from 7.3 we can find posterior distribtion.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem*
+
+\series bold
+14
+\series default
+ 
+\begin_inset Formula $\hat{\psi}=E[x^{2}]\geq\mu^{2}\text{ (because variance > 0)}=\hat{\theta}^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+7.6 Properties of Maximum likelihood estimators.
+\end_layout
+
+\begin_layout Problem*
+1.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a distribution with the p.d.f.
+ given in Exercise 10 of Sec.
+ 7.5.
+ Find M.L.E of 
+\begin_inset Formula $e^{-1/\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a distribution 
+\begin_inset Formula $f(x|\theta)=\frac{1}{2}e^{-|x-\theta|}$
+\end_inset
+
+, we choose 
+\begin_inset Formula $\theta$
+\end_inset
+
+ with M.L.E is median of 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+: sort(
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+) and choose median of this sorted array.
+\end_layout
+
+\begin_layout Solution*
+M.L.E of 
+\begin_inset Formula $g(\theta)=e^{-1/\theta}$
+\end_inset
+
+ (one-to-one function) is 
+\begin_inset Formula $e^{-1/\text{median(}X_{1},...,X_{n}\text{)}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+2.
+ Suppose that 
+\begin_inset Formula $X_{1},..,X_{n}$
+\end_inset
+
+ form a random sample from a Poisson distribution for which the mean is
+ unknown.
+ Determine the M.L.E.
+ of the standard deviation of the distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\mu=\lambda$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma=\sqrt{\lambda}$
+\end_inset
+
+ .
+ With M.L.E 
+\begin_inset Formula $\hat{\lambda}=\frac{1}{n}\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+, so 
+\begin_inset Formula $\hat{\sigma}=\sqrt{\frac{1}{n}\sum_{i=1}^{n}X_{i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+3.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from an exponential distribution for which the value
+ of the parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is unknown.
+ Determine the M.L.E of the median of the distribution
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+First, we represent median of exponetial distribution following 
+\begin_inset Formula $\beta$
+\end_inset
+
+: 
+\begin_inset Formula $\int_{0}^{n}\beta e^{-\beta x}dx=0.5$
+\end_inset
+
+, 
+\begin_inset Formula $n$
+\end_inset
+
+ is median number of exponential distribution.
+ 
+\begin_inset Formula $n=g(\beta)=\frac{ln2}{\beta}$
+\end_inset
+
+.
+ Using M.L.E for finding 
+\begin_inset Formula $\beta$
+\end_inset
+
+ : 
+\begin_inset Formula $\hat{\beta}=\frac{n}{\sum_{i=1}^{n}X_{i}}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\hat{n}=g(\hat{\beta})=ln2.\bar{X}_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Lifetime of a certain type of lamp has an exponential distribution: 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is unknown.
+ A random sample of 
+\begin_inset Formula $n$
+\end_inset
+
+ lamps of this type are tested for a period of 
+\begin_inset Formula $T$
+\end_inset
+
+ hours and the number 
+\begin_inset Formula $X$
+\end_inset
+
+ of lamps that fail during this period is observed, but the times at which
+ the failures occured are not noted.
+ Determine the M.L.E of 
+\begin_inset Formula $\beta$
+\end_inset
+
+ based on the observed value of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a gamma distribution for which the p.d.f is given
+ by Eq.(7.6.2).
+ Find the M.L.E of 
+\begin_inset Formula $\Gamma^{'}(\alpha)/\Gamma(\alpha)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+We have prove in Example 7.6.4, we found 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ for 
+\begin_inset Formula $\frac{d\log f_{n}(x|a)}{d\alpha}=0$
+\end_inset
+
+, and then with 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\Gamma^{'}(\alpha)}{\Gamma(\alpha)}=\frac{1}{n}\sum_{i=1}^{n}\log x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a gamma distribution for which both parameters
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ are unknown.
+ Find M.L.E of 
+\begin_inset Formula $\alpha/\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+Following invariance property (Theorem 7.6.2): M.L.E of 
+\begin_inset Formula $\alpha/\beta$
+\end_inset
+
+ is 
+\begin_inset Formula $\hat{\alpha}/\hat{\beta}$
+\end_inset
+
+, where 
+\begin_inset Formula $\hat{\alpha}$
+\end_inset
+
+ is M.L.E of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+ is M.L.E of 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ We see 
+\begin_inset Formula $\theta=(\alpha,\beta)$
+\end_inset
+
+ is parameter, 
+\begin_inset Formula $g(\theta)=\frac{\theta[0]}{\theta[1]}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We implement 2 phases: find 
+\begin_inset Formula $\hat{\alpha}$
+\end_inset
+
+ then find 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In first phase, suppose we already found 
+\begin_inset Formula $\hat{\alpha}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In second phase, we replace 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ with 
+\begin_inset Formula $\hat{\alpha}$
+\end_inset
+
+, we find 
+\begin_inset Formula $\frac{dF}{d\beta}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $\frac{n\hat{\alpha}}{\beta}-\sum_{i}X_{i}=0$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{\beta}=\frac{n\hat{\alpha}}{\sum_{i}X_{i}}$
+\end_inset
+
+, then M.L.E.
+ of 
+\begin_inset Formula $\frac{\alpha}{\beta}=\frac{\hat{\alpha}}{\hat{\beta}}=\bar{X}_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+10.
+ Apply 2 phases like exercise 9, we will have system of equations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+11.
+ Suppose that 
+\begin_inset Formula $X_{1},..,X_{n}$
+\end_inset
+
+ form a random sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ from the uniform distribution on the interval 
+\begin_inset Formula $[0,\theta]$
+\end_inset
+
+, where the value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is unknown.
+ Show that the sequence of M.L.E.'s of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is consistent sequence.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It will be converged to a limit number: 
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+21.
+ Prove that the method of moments estimators of the mean and variance of
+ a normal distribution are also the M.L.E's.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Following Example 7.5.6, authors already found M.L.E.
+ sampling from a Normal Distribution with Unknown Mean and Variance:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+\hat{\theta}=(\hat{\mu},\hat{\sigma^{2}})=(\bar{X}_{n},\frac{1}{n}\sum_{i=1}^{n}(X_{1}-\bar{X}_{n})^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Following Method of Moments:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m_{1}=\mu_{1}(\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $m_{2}=\mu_{2}(\theta)$
+\end_inset
+
+ then 
+\begin_inset Formula $\mu=\bar{X}_{n}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu^{2}+\sigma^{2}=\frac{1}{n}\sum_{i=1}^{n}X_{i}^{2}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+Approach: Quy nap.
+\end_layout
+
+\begin_layout Problem*
+22.
+ 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be a random sample from the uniform distribution on the interval 
+\begin_inset Formula $[0,\theta]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem*
+a.
+ Find the method of moments estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem*
+b.
+ Show that the method of moments estimator is not the M.L.E.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $m_{1}=\mu_{1}$
+\end_inset
+
+, then 
+\begin_inset Formula $\bar{X}_{n}=\frac{\theta}{2}$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $\theta=2\bar{X}_{n}$
+\end_inset
+
+.
+ But as we known, M.L.E.
+ of uniform distribution 
+\begin_inset Formula $\hat{\theta}=max(X_{1},...,X_{n})$
+\end_inset
+
+.
+ So b.
+ is proven.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+7.7.
+ Sufficient Statistics
+\end_layout
+
+\begin_layout Standard
+From Exercises 1 to 10: show statistic 
+\begin_inset Formula $T$
+\end_inset
+
+ specified in the exercise is a sufficient statistic for the parameter
+\end_layout
+
+\begin_layout Exercise*
+1.
+ The Bernoulli distribution with parameter 
+\begin_inset Formula $p$
+\end_inset
+
+, which is unknown (
+\begin_inset Formula $0<p<1$
+\end_inset
+
+); 
+\begin_inset Formula $T=\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+15.
+ For beta distribution, 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is known and the value of 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is unknown, 
+\begin_inset Formula $T=r(x)=\frac{1}{\prod_{i}(1-X_{i})}$
+\end_inset
+
+ is sufficient statistic.
+ Following Exercise 13, one-one function of sufficient statistic is also
+ sufficient statistic.
+ Fist, we have 
+\begin_inset Formula $\boldsymbol{\log}(x)$
+\end_inset
+
+ is one-one function.
+ Second, we also have 
+\begin_inset Formula $x^{4}$
+\end_inset
+
+ is one-to-one function if 
+\begin_inset Formula $x>0$
+\end_inset
+
+.
+ (Apply with 
+\begin_inset Formula $\sum_{i=1}^{n}\log\frac{1}{1-X_{i}}>0$
+\end_inset
+
+, because 
+\begin_inset Formula $X_{i}<1$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+16.
+ 
+\begin_inset Formula $P(\theta|X,t)=\frac{Pr(X,\theta|t)}{Pr(X|t)}=\frac{P(X|\theta,t)*P(\theta|t)}{P(X|t)}=P(\theta|t)$
+\end_inset
+
+ ,because T is sufficient statistic, 
+\begin_inset Formula $P(X|\theta,t)=P(X|t)$
+\end_inset
+
+.
+ With 
+\begin_inset Formula $t=r(x)$
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
