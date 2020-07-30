@@ -1,0 +1,2311 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Chapter 8.
+ Sampling Distributions of Estimators.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+8.1 The Sampling Distribution of a Statistic
+\end_layout
+
+\begin_layout Standard
+A statistic is a function of some observable random variables, and hence
+ is itself a random varibale with a distribution.
+ That distribution is its sampling distribution and it tells us what values
+ the statistic is likely to assume and how likely it is to assume those
+ values prior to observing our data.
+ When the distribution of the observable data is indexed by a parameter,
+ the sampling distribution is specified as the distribution of the statistic
+ for a given value of the parameter.
+\end_layout
+
+\begin_layout Definition*
+8.1.1.
+ Sampling Distribution.
+ Suppose that the random variables 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ form a random sample from a distribution in involving a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ whose value is unknown.
+ Let 
+\begin_inset Formula $T$
+\end_inset
+
+ be a function of 
+\begin_inset Formula $X$
+\end_inset
+
+ and possibly 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula $T=r(X_{1},...,X_{n},\theta)$
+\end_inset
+
+.
+ The distribution of 
+\begin_inset Formula $T$
+\end_inset
+
+ (given 
+\begin_inset Formula $\theta$
+\end_inset
+
+) is called the sampling distribution of 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ We will use the notation 
+\begin_inset Formula $E_{\theta}(T)$
+\end_inset
+
+ to denote the mean of 
+\begin_inset Formula $T$
+\end_inset
+
+ calculated from its sampling distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The name of 
+\begin_inset Quotes eld
+\end_inset
+
+sampling distribution
+\begin_inset Quotes erd
+\end_inset
+
+ comes from the fact that 
+\begin_inset Formula $T$
+\end_inset
+
+ depends on a random sample and so its distribution is derived from the
+ distribution of the sample.
+\end_layout
+
+\begin_layout Standard
+Often, the random variable 
+\begin_inset Formula $T$
+\end_inset
+
+ in Definition 8.1.1 will not depend 
+\begin_inset Formula $\theta$
+\end_inset
+
+, and hence will be a statistic as defined in Definition 7.1.4.
+ In particular, if 
+\begin_inset Formula $T$
+\end_inset
+
+ is an estimator
+\end_layout
+
+\begin_layout Chapter*
+8.2 The Chi-Square Distributions 
+\end_layout
+
+\begin_layout Standard
+The family of chi-square (
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+) distribution is a subcollection of the family of gamma distributions.
+ these special gamma distributions arise as sampling distributions of variance
+ estimators based on random samples from normal distributions 
+\end_layout
+
+\begin_layout Section*
+Definition of the Distributions
+\end_layout
+
+\begin_layout Definition*
+8.2.1.
+ 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ Distributions.
+ For each positive number 
+\begin_inset Formula $m$
+\end_inset
+
+, the gamma distribution with parameters 
+\begin_inset Formula $\alpha=m/2$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta=1/2$
+\end_inset
+
+ is called the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom.
+ 
+\begin_inset Formula 
+\[
+f(x)=\frac{1}{2^{m/2}\Gamma(m/2)}x^{(m/2)-1}e^{-x/2}\text{ (8.2.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+8.2.1 Mean and Variance.
+ If a random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom, then 
+\begin_inset Formula $E(X)=m$
+\end_inset
+
+ and 
+\begin_inset Formula $Var(X)=2m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+8.2.2 If the random variables 
+\begin_inset Formula $X_{1},..,X_{k}$
+\end_inset
+
+ are independent and if 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m_{i}+....+m_{k}$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+8.2.3.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ have the stand normal distribution.
+ Then the random variable 
+\begin_inset Formula $Y=X^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with one degree of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary*
+8.2.1.
+ If the random variables 
+\begin_inset Formula $X_{1},..,X_{m}$
+\end_inset
+
+ are i.i.d with the standard normal distribution, then the sum of squares
+ 
+\begin_inset Formula $X_{1}^{2}+...+X_{m}^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distributions with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+The chi-square distribution with 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom is the same as the gamma distribution with parameters
+ 
+\begin_inset Formula $m/2$
+\end_inset
+
+ and 
+\begin_inset Formula $1/2$
+\end_inset
+
+.
+ It is the distribution of the sum of squares of a sample of 
+\begin_inset Formula $m$
+\end_inset
+
+ independent standard normal random variables.
+ The mean of the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom is 
+\begin_inset Formula $m$
+\end_inset
+
+, and the variance is 
+\begin_inset Formula $2m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter*
+8.3 Joint Distribution of the Sample Mean and Sample Variance
+\end_layout
+
+\begin_layout Standard
+It follows from Corrolarry 8.2.1 that the sum of their squares 
+\begin_inset Formula $\sum_{i=1}^{n}(X_{i}-\mu)^{2}/\sigma^{2}$
+\end_inset
+
+ has 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom.
+ Hence, the striking property is that if the population mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is replaced by the sample mean 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+in the sum of squares, the effect is simply to reduce the degrees of freedom
+ in the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+distribution from 
+\begin_inset Formula $n$
+\end_inset
+
+ to 
+\begin_inset Formula $n-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+8.3.1 Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Then the sample mean 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+ and the sample variance 
+\begin_inset Formula $(1/n)\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$
+\end_inset
+
+ are independent random variables, 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}/n$
+\end_inset
+
+, and 
+\begin_inset Formula $\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}/\sigma^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Furthermore, it can be shown that the sample mean and the sample variance
+ are independent only when the random sample is drawn from a normal distribution.
+\end_layout
+
+\begin_layout Section*
+Estimation of the Mean and Standard Deviation
+\end_layout
+
+\begin_layout Section*
+Proof of Theorem 8.3.1
+\end_layout
+
+\begin_layout Standard
+We already knew from Corollary 5.6.2 that the distribution of the sample mean
+ was as stated in Theorem 8.3.1.
+ What remains to prove is the stated distribution of the sample variance
+ and the independence of the sample mean and sample variance.
+\end_layout
+
+\begin_layout Subsubsection*
+Orthogonal Matrices
+\end_layout
+
+\begin_layout Definition*
+8.3.1 Orthogonal Matrix.
+ It is said that an 
+\begin_inset Formula $nxn$
+\end_inset
+
+ matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is orthogonal if 
+\begin_inset Formula $A^{-1}=A^{'}$
+\end_inset
+
+, where 
+\begin_inset Formula $A^{'}$
+\end_inset
+
+is the transpose of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In other words, a matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is orthogonal if and only if 
+\begin_inset Formula $AA^{'}=A^{'}A=I$
+\end_inset
+
+, where 
+\begin_inset Formula $I$
+\end_inset
+
+ is the 
+\begin_inset Formula $nxn$
+\end_inset
+
+ identity matrix.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Properties of Orthogonal Matrices 
+\series default
+We shall now derive two important properties of orthogonal matrices.
+\end_layout
+
+\begin_layout Theorem*
+8.3.2 Determinant is 1 .
+ If 
+\begin_inset Formula $A$
+\end_inset
+
+ is orthogonal, then |det 
+\begin_inset Formula $A$
+\end_inset
+
+| = 1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+8.3.3 Squared Length is Preserved.
+ Consider two 
+\begin_inset Formula $n-$
+\end_inset
+
+dimensional random vectors
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+X=[X_{1}...X_{n}]\text{ and }Y=[Y_{1}....Y_{n}]\text{(8.3.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+and suppose that 
+\begin_inset Formula $Y=AX$
+\end_inset
+
+, where 
+\begin_inset Formula $A$
+\end_inset
+
+ is an orthogonal matrix.
+ Then 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}Y_{i}^{2}=\sum_{i=1}^{n}X_{i}^{2}\text{ (8.3.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Together, these two properties of orthogonal matrices imply that if a random
+ vector 
+\begin_inset Formula $Y$
+\end_inset
+
+ is obtained from a random vector 
+\begin_inset Formula $X$
+\end_inset
+
+ by an orthogonal linear transformation 
+\begin_inset Formula $Y=AX$
+\end_inset
+
+, then the absolute value of the Jacobian of the transformation is 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{i=1}^{n}Y_{i}^{2}=\sum_{i=1}^{n}X_{i}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+8.3.4 Suppose that the random variables, 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are i.i.d and each has the standard normal distribution.
+ Suppose also that 
+\begin_inset Formula $A$
+\end_inset
+
+ is orthogonal 
+\begin_inset Formula $nxn$
+\end_inset
+
+ matrix, and 
+\begin_inset Formula $Y=AX$
+\end_inset
+
+.
+ Then the random variables 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are also i.i.d., each also has the standard normal distribution, and 
+\begin_inset Formula $\sum_{i=1}^{n}X_{i}^{2}=\sum_{i=1}^{n}Y_{i}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Summary
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be a random sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Then the sample mean 
+\begin_inset Formula $\hat{\mu}=\bar{X}_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+ and sample variance 
+\begin_inset Formula $\hat{\sigma^{2}}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$
+\end_inset
+
+ are independent random variables.
+ Furthermore, 
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variacne 
+\begin_inset Formula $\sigma^{2}/n$
+\end_inset
+
+, and 
+\begin_inset Formula $n\hat{\sigma^{2}}/\sigma^{2}$
+\end_inset
+
+ has as chi-square distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Chapter*
+8.4 The 
+\begin_inset Formula $t$
+\end_inset
+
+ Distributions
+\end_layout
+
+\begin_layout Standard
+When our data are a sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, the distribution of 
+\begin_inset Formula $Z=n^{1/2}(\hat{\mu}-\mu)/\sigma$
+\end_inset
+
+ is the standard normal distribution, where 
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+ is the sample mean.
+ If 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is unknown, we can replace 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ by an estimator (similar to the M.L.E) in the formula for 
+\begin_inset Formula $Z$
+\end_inset
+
+.
+ The resulting random variable has the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom and is useful for making inferences about 
+\begin_inset Formula $\mu$
+\end_inset
+
+ alone even when both 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ are unknown.
+\end_layout
+
+\begin_layout Standard
+We know that 
+\begin_inset Formula $n^{1/2}(\bar{X}_{n}-\mu)/\sigma$
+\end_inset
+
+ has the standard normal distribution, but we do not know 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+ If we repacle 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ by 
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+ such as the M.L.E.
+ So what is the distribution of 
+\begin_inset Formula $n^{1/2}(\bar{X}_{n}-\mu)/\hat{\sigma}$
+\end_inset
+
+, and how can we make use of this random variable to make infereces about
+ 
+\begin_inset Formula $\mu$
+\end_inset
+
+ ?
+\end_layout
+
+\begin_layout Definition*
+8.4.1.
+ 
+\begin_inset Formula $t$
+\end_inset
+
+ Distributions.
+ Consider two independent random variables 
+\begin_inset Formula $Y$
+\end_inset
+
+ and 
+\begin_inset Formula $Z$
+\end_inset
+
+, such that 
+\begin_inset Formula $Y$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom and 
+\begin_inset Formula $Z$
+\end_inset
+
+ has the standard normal distribution.
+ Suppose that a random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ is defined by the equation 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+X=\frac{Z}{(\frac{Y}{m})^{1/2}}\text{ (8.4.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+Then the distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ is called the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+8.4.1 Probability Density Function.
+ The p.d.f.
+ of the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom is 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\frac{\Gamma(\frac{m+1}{2})}{(m\pi)^{1/2}\Gamma(\frac{m}{2})}(1+\frac{x^{2}}{m})^{-(m+1)/2}\text{ for \ensuremath{-\infty<x<\infty} (8.4.2) }
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Moments of the t Distributions.
+ 
+\series default
+Although the mean of the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution does not exist when 
+\begin_inset Formula $m\leq1$
+\end_inset
+
+, the mean does exist for every value of 
+\begin_inset Formula $m>1$
+\end_inset
+
+.
+ Of course, whenever the mean does exist, its value is 
+\begin_inset Formula $0$
+\end_inset
+
+ because of symmetry of the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Theorem*
+8.4.2.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+ denote the sample mean, and define
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\sigma^{'}=[\frac{\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}}{n-1}]^{1/2}\text{ (8.4.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Then 
+\begin_inset Formula $n^{1/2}(\bar{X}_{n}-\mu)/\sigma^{'}$
+\end_inset
+
+ has the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The reader should notice that 
+\begin_inset Formula $\sigma^{'}$
+\end_inset
+
+ differs from the M.L.E.
+ 
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+ of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ by a constant factor,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\sigma^{'}}{\hat{\sigma}}=(\frac{n}{n-1})^{1/2}\text{ (8.4.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It can be seen from Eq.
+ (8.4.5) that for large values of 
+\begin_inset Formula $n$
+\end_inset
+
+ the estimators 
+\begin_inset Formula $\sigma^{'}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+ will be very close to each other.
+ The estimator 
+\begin_inset Formula $\sigma^{'}$
+\end_inset
+
+ will be discussed further in Sec.
+ 8.7.
+\end_layout
+
+\begin_layout Standard
+If the sample size 
+\begin_inset Formula $n$
+\end_inset
+
+ is large, the probability that the estimator 
+\begin_inset Formula $\sigma^{'}$
+\end_inset
+
+ will be close to 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is high.
+ Hence, replacing 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ by 
+\begin_inset Formula $\sigma^{'}$
+\end_inset
+
+ in the random variable 
+\begin_inset Formula $Z$
+\end_inset
+
+ will not greatly change the standard normal distribution of 
+\begin_inset Formula $Z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For this reason, it is plausible that the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom should be close to the standard normal distribution
+ if 
+\begin_inset Formula $n$
+\end_inset
+
+ is large.
+ We shall return to this point more formally later in this section.
+\end_layout
+
+\begin_layout Section*
+Relation to the Cauchy Distribution and to the Standard Normal Distribution
+\end_layout
+
+\begin_layout Standard
+It can be shown from Eq.
+ (8.4.2) that, as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+, the p.d.f.
+ 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ converges to the p.d.f.
+ 
+\begin_inset Formula $\phi(x)$
+\end_inset
+
+ of the standard normal distribution for every value of 
+\begin_inset Formula $x$
+\end_inset
+
+ (
+\begin_inset Formula $-\infty<x<\infty$
+\end_inset
+
+).
+ This follows from Theorem 5.3.3 and the following result:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{m\rightarrow\infty}\frac{\Gamma(m+\frac{1}{2})}{\Gamma(m)m^{1/2}}=1\text{ (8.4.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be a random sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\bar{X}_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{'}=(\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2})^{1/2}$
+\end_inset
+
+.
+ Then the distribtuion of 
+\begin_inset Formula $n^{1/2}(\bar{X}_{n}-\mu)/\sigma^{'}$
+\end_inset
+
+ is the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Chapter*
+8.5 Confidence Intervals 
+\end_layout
+
+\begin_layout Standard
+Confidence intervals provide a method of adding more information to an estimator
+ 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ when we wish to estimate an unknown parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ We can find an interval 
+\begin_inset Formula $(A,B)$
+\end_inset
+
+ that we think has high probability of containing 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ The length of such an interval gives us an idea of how closely we can estimate
+ 
+\begin_inset Formula $\theta.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Confidence Intervals for the Mean of a Normal Distribution
+\end_layout
+
+\begin_layout Definition*
+8.5.1.
+ Confidence Interval.
+ Let 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ be a random sample from a distribution that depends on a parameter (or
+ parameter vector) 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ be a real-valued function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $A\leq B$
+\end_inset
+
+ be two statistics that have the property that for all values of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+Pr(A<g(\theta)<B)\geq\gamma\text{ (8.5.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+Then the random interval 
+\begin_inset Formula $(A,B)$
+\end_inset
+
+ is call coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ confidence interval for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ or a 
+\begin_inset Formula $100\gamma$
+\end_inset
+
+ percent confidence interval for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ .
+ if inequality 
+\begin_inset Formula $"\geq\gamma"$
+\end_inset
+
+ in Eq.
+ (8.5.4) is an equality for all 
+\begin_inset Formula $\theta$
+\end_inset
+
+, the confidence interval is called exact.
+ After the values of the random variable 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ in the random sample have been observed, the values of 
+\begin_inset Formula $A=a$
+\end_inset
+
+ and 
+\series bold
+
+\begin_inset Formula $B=b$
+\end_inset
+
+ 
+\series default
+are computed, and ther interval 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ is called the observed value of the confidence interval.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+8.5.1 Confidence Interval for the Mean of a Normal Distribution.
+ Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be a random sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ For each 
+\begin_inset Formula $0<\gamma<1$
+\end_inset
+
+, the interval 
+\begin_inset Formula $(A,B)$
+\end_inset
+
+ with the following endpoints is an exact coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ confidence interval for 
+\begin_inset Formula $\mu$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+A=\bar{X}_{n}-T_{n-1}^{-1}(\frac{1+\gamma}{2})\frac{\sigma^{'}}{n^{1/2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+B=\bar{X}_{n}+T_{n-1}^{-1}(\frac{1+\gamma}{2})\frac{\sigma^{'}}{n^{1/2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+One-Sided Confidence Intervals 
+\end_layout
+
+\begin_layout Definition*
+8.5.2 One-sided Confidence Intervals/Limits.
+ Let 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ be a random sample from a distribution that depends on a parameter (or
+ parameter vector) 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ be a real-valued function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $A$
+\end_inset
+
+ be a statistic that has the property that for all values of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+Pr(A<g(\theta))\geq\gamma\text{ (8.5.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+Then the random interval 
+\begin_inset Formula $(A,\infty)$
+\end_inset
+
+ is called a one-sided coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ confidence interval for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ or a one-sided 
+\begin_inset Formula $100\gamma$
+\end_inset
+
+ percent confidence interval for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+.
+ Also, 
+\begin_inset Formula $A$
+\end_inset
+
+ is called a coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ lower confidence limit for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ or a 
+\begin_inset Formula $100\gamma$
+\end_inset
+
+ percent lower confidence limit for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+.
+ Similarly, if 
+\begin_inset Formula $B$
+\end_inset
+
+ is a statistic such that
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+Pr(g(\theta)<B)\geq\gamma\text{ (8.5.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+then 
+\begin_inset Formula $(-\infty,B)$
+\end_inset
+
+ is a one-sided coeffieint 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ confidence interval for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ or a one-sided 
+\begin_inset Formula $100\gamma$
+\end_inset
+
+ percent confidence for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ is a coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ upper confidence limit for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ or a 
+\begin_inset Formula $100\gamma$
+\end_inset
+
+ percent upper confidence limit for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+.
+ If the inequality 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\geq\gamma$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ in either Eq.(8.5.5) or Eq.
+ (8.5.6) is equality for all 
+\begin_inset Formula $\theta$
+\end_inset
+
+, the corresponding confidence interval and confidence limite are called
+ exact.
+\end_layout
+
+\begin_layout Theorem*
+8.5.2 One-sided Confidence Intervals for the Mean of a Normal Distribution.
+ Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be a random sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ For each 
+\begin_inset Formula $0<\gamma<1$
+\end_inset
+
+, the following statistics are, respectively, exact lower and upper coefficient
+ 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ confidence limits for 
+\begin_inset Formula $\mu$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+A=\bar{X}_{n}-T_{n-1}^{-1}(\gamma)\frac{\sigma^{'}}{n^{1/2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+A=\bar{X}_{n}+T_{n-1}^{-1}(\gamma)\frac{\sigma^{'}}{n^{1/2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Confidence Intervals for Other Parameters
+\end_layout
+
+\begin_layout Definition*
+8.5.3.
+ Pivotal.
+ Let 
+\begin_inset Formula $X=(X_{1},..,X_{n})$
+\end_inset
+
+ be a random sample from a distribution that depends on a parameter (or
+ vector of parameters) 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $V(X,\theta)$
+\end_inset
+
+ be a random variable whose distribution is the same for all 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $V$
+\end_inset
+
+ is called a pivotal quantity (or simply a pivotal)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to be able to use a pivotal to construct a confidence interval
+ for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+, one needs to be able to 
+\begin_inset Quotes eld
+\end_inset
+
+invert
+\begin_inset Quotes erd
+\end_inset
+
+ the pivotal.
+ That is, one needs a function 
+\begin_inset Formula $r(v,x)$
+\end_inset
+
+such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r(V(X,\theta),X)=g(\theta)\text{ (8.5.7)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If such a function exists, then one can use it to construct confidence intervals.
+\end_layout
+
+\begin_layout Theorem*
+8.5.3 Confidence Interval from a Pivotal.
+ Let 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ be a random sample from a distribution that depends on a parameter (or
+ vector of parameters) 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Suppose that a pivotal 
+\begin_inset Formula $V$
+\end_inset
+
+ exists.
+ Let 
+\begin_inset Formula $G$
+\end_inset
+
+ be the c.d.f.
+ of 
+\begin_inset Formula $V$
+\end_inset
+
+, and assume that 
+\begin_inset Formula $G$
+\end_inset
+
+ is continuous.
+ Assume that a function 
+\begin_inset Formula $r$
+\end_inset
+
+ exists as in Eq.(8.5.7), and assume that 
+\begin_inset Formula $r(v,x)$
+\end_inset
+
+ is strictly increasing in 
+\begin_inset Formula $v$
+\end_inset
+
+ for each 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $0<\gamma<1$
+\end_inset
+
+ and let 
+\begin_inset Formula $\gamma_{2}>\gamma_{1}$
+\end_inset
+
+be such that 
+\begin_inset Formula $\gamma_{2}-\gamma_{1}=\gamma$
+\end_inset
+
+.
+ Then following statistics are the endpoints of an exact coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ confidence interval for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+A=r(G^{-1}(\gamma_{1}),X)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+B=r(G^{-1}(\gamma_{2}),X)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+If 
+\begin_inset Formula $r(v,x)$
+\end_inset
+
+ is strictly decreasing in 
+\begin_inset Formula $v$
+\end_inset
+
+ for each 
+\begin_inset Formula $x$
+\end_inset
+
+, then switch the definitions of 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma*
+Even with discrete data, if the sample size is large enough to apply the
+ central limit theorem, one can find approximate confidence intervals.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Shortcoming of Confidence Intervals 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Interpretation of Confidence Intervals.
+ 
+\series default
+Let 
+\begin_inset Formula $(A,B)$
+\end_inset
+
+ be a coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ confidence interval for a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+, and let 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ be the observed value of the interval.
+ It is important to understand that is not correct to say 
+\begin_inset Formula $\theta$
+\end_inset
+
+ lies in the interval 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ with 
+\series bold
+probability 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ (
+\series default
+It is 
+\series bold
+confident).
+ 
+\series default
+To find probability, we need have prior distribution for 
+\begin_inset Formula $\theta$
+\end_inset
+
+, and after observed 
+\begin_inset Formula $X$
+\end_inset
+
+, we compute posterior of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and find probability of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ in 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Information Can be Ignored 
+\series medium
+In accordance with the preceding explanation, the interpretation of a confidence
+ coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ for a confidence interval is as follows: Before a sample is taken, there
+ is probability 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ that the interval that will be constructed from the sample will include
+ the unknown value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Summary 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be a random sample of independent random variables from the normal distribution
+ with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Let the observed values be 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\bar{X}_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{'2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}.$
+\end_inset
+
+ The interval 
+\begin_inset Formula $(\bar{X}_{n}-c\sigma^{'}/n^{1/2},\bar{X}_{n}+c\sigma^{'}/n^{1/2})$
+\end_inset
+
+ is a coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ confident interval for 
+\begin_inset Formula $\mu$
+\end_inset
+
+ , where 
+\begin_inset Formula $c$
+\end_inset
+
+ is the 
+\begin_inset Formula $(1+\gamma)/2$
+\end_inset
+
+ quantile of the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Chapter*
+8.7 Unbiased Estimators 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\delta$
+\end_inset
+
+ be an estimator of a function 
+\begin_inset Formula $g$
+\end_inset
+
+ of a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ We say that 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is unbiased if 
+\begin_inset Formula $E_{\theta}[\delta(X)]=g(\theta)$
+\end_inset
+
+ for all values of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ This section provides several examples of unbiased estimators.
+\end_layout
+
+\begin_layout Definition*
+8.7.1.
+ Unbiased Estimator/Bias.
+ An estimator 
+\begin_inset Formula $\delta(X)$
+\end_inset
+
+ is an unbiased estimator of a function 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ of the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ if 
+\begin_inset Formula $E_{\theta}[\delta(X)]=g(\theta)$
+\end_inset
+
+ for every possile value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ An estimator that is not unbiased is called biased estimator.
+ The difference between the expectation of an estimator and 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ is called the bias of the estimator.
+ That is, the bias of 
+\begin_inset Formula $\delta$
+\end_inset
+
+ as an estimator of 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ is 
+\begin_inset Formula $E_{\theta}[\delta(X)]-g(\theta)$
+\end_inset
+
+, and 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is unbiased if and only if the bias if 
+\begin_inset Formula $0$
+\end_inset
+
+ for all 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the case of a sample from a normal distribution with unknown mean 
+\begin_inset Formula $\theta$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+ is an unbiased estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ because 
+\begin_inset Formula $E_{\theta}(\bar{X}_{n})=\theta$
+\end_inset
+
+ for 
+\begin_inset Formula $-\infty<\theta<\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+The study of unbiased estimators is largelt devoted to the search for an
+ unbiased estimator that has a small variance.
+ However, if an estimator 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is unbiased, then its M.S.E.
+ 
+\begin_inset Formula $E_{\theta}[(\delta-g(\theta))^{2}]$
+\end_inset
+
+ is equal to its variance 
+\begin_inset Formula $Var_{\theta}(\delta)$
+\end_inset
+
+.
+ Therefore, the search for an unbiased estiamtor with a small M.S.E.
+\end_layout
+
+\begin_layout Corollary*
+8.7.1.
+ Let 
+\begin_inset Formula $\delta$
+\end_inset
+
+ be an estimator with finite variance.
+ Then the M.S.E.
+ of 
+\begin_inset Formula $\delta$
+\end_inset
+
+ as an estimator of 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ equals its variance plus square of its bias.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+M.S.E - Mean squared error of estimator = 
+\begin_inset Formula $E_{\theta}[(\hat{\theta}-\theta)^{2}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Unbiased Estimation of the Variance
+\end_layout
+
+\begin_layout Theorem*
+8.7.2.
+ Sampling from a General Distribution.
+ Let 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ be a random sample from a distribution that depends on a parameter (or
+ parameter vector) 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Assume that the variance of the distribution is finite.
+ Define 
+\begin_inset Formula $g(\theta)=Var_{\theta}(X_{1})$
+\end_inset
+
+.
+ The following statistic is an unbiased estimator of the variance 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\sigma_{1}}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+If an unbiased estimator is to be used, the problem is to determine which
+ one of the possible unbiased estimators has the smallest variance of, equivalen
+tly, has the smallest M.S.E.
+\end_layout
+
+\begin_layout Standard
+Examples 8.7.3 and 8.7.6 illustrate the following fact: In many problems, there
+ exist biased estimators that have smaller M.S.E.
+ than every unbiased estimator for every possible value of the parameter.
+\end_layout
+
+\end_body
+\end_document

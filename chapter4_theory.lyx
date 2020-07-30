@@ -2182,6 +2182,37 @@ Tinh chat ket hop
 4.7 Conditional Expectation 
 \end_layout
 
+\begin_layout Paragraph*
+Theorem 4.7.1 
+\series medium
+Law of Total Probability for Expectations.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ be random variables such that 
+\begin_inset Formula $Y$
+\end_inset
+
+ has finite mean.
+ Then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[E(Y|X)]=E(Y)
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 
 \series bold

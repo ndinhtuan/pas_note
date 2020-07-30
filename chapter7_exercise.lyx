@@ -1446,5 +1446,220 @@ From Exercises 1 to 10: show statistic
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+7.8.
+ Jointly Sufficient Statistics.
+\end_layout
+
+\begin_layout Problem*
+15.
+ Follow Theorem 7.3.1.
+ Posterior distributon of beta : 
+\begin_inset Formula $\alpha+\sum_{i=1}^{n}x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta+n-\sum_{i=1}^{n}x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem*
+Following Bayes estimator with square loss : 
+\begin_inset Formula $max=E[\theta|X]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem*
+Following Theorem 5.8.3.
+ 
+\begin_inset Formula $E[\theta|X]=\frac{\alpha_{1}}{\beta_{1}}=\frac{\alpha+\sum_{i=1}^{n}x_{i}}{\alpha+\beta+n}=u(x)v[r(x),\theta]$
+\end_inset
+
+ with 
+\begin_inset Formula $u(x)=1$
+\end_inset
+
+.
+ So Estimator is sufficient so it does minimal sufficient too.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+7.9 Improving an Estimator
+\end_layout
+
+\begin_layout Exercise*
+1.
+ Sample variance: 
+\begin_inset Formula $=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X})^{2}$
+\end_inset
+
+, From Sec.7 we showed that statistic 
+\begin_inset Formula $\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$
+\end_inset
+
+ is sufficient statistic, So sample variance is an inadmissble by 
+\begin_inset Formula $\delta_{0}(X)=E(\delta(X)|T)$
+\end_inset
+
+, 
+\begin_inset Formula $T=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$
+\end_inset
+
+; or any function of 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+3.
+ M.S.E 
+\begin_inset Formula $R(\theta,\delta)=E[\{\delta(X)-\theta\}^{2}]=E[\{2\bar{X}_{n}-\theta\}^{2}]=E[\frac{4}{n^{2}}(\sum_{i=1}^{n}X_{i}-\theta)^{2}]=\frac{4}{n^{2}}\sum_{i=1}^{n}(X_{i}-\theta/2)^{2}$
+\end_inset
+
+ 
+\begin_inset Formula $(1)$
+\end_inset
+
+ because 
+\begin_inset Formula $E[(X_{i}-\mu)(X_{j}-\mu)]$
+\end_inset
+
+ is covariance of 2 independent random variables 
+\begin_inset Formula $X_{i},X_{j}$
+\end_inset
+
+ (with 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is mean of 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{j}$
+\end_inset
+
+), 
+\begin_inset Formula $E[(X_{i}-\mu)(X_{j}-\mu)]=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+So Eq(1)
+\begin_inset Formula $=\frac{4}{n^{2}}\sum_{i=1}^{n}\sigma^{2}=\frac{4}{n^{2}}n\frac{\theta^{2}}{12}=\frac{\theta^{2}}{3n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+4.
+ M.S.E 
+\begin_inset Formula $R(\theta,\delta_{2})=E[\{Y_{n}-\theta\}^{2}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem*
+13.
+ 
+\begin_inset Formula $E(Y_{i}|T)=P(X_{i}=0|T=t)=\frac{P(X_{i},T=t)}{P(T=t)}=\frac{e^{-\theta}e^{-(n-1)\theta}[(n-1)\theta]^{t}}{t!\frac{e^{-n\theta}(n\theta)^{t}}{t!}}=(\frac{n-1}{n})^{t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+16.
+ 
+\begin_inset Formula $\delta(X)=\frac{\sum_{i=1}^{n}Y_{i}}{n}=P(X=1)=e^{\theta}\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\delta_{0}(X)=\frac{t}{n}(1-\frac{1}{n})^{t-1}$
+\end_inset
+
+ , when 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{t}{n}=\theta$
+\end_inset
+
+, 
+\begin_inset Formula $(1-\frac{1}{n})^{t-1}=e^{\frac{t-1}{n}}=e^{\theta}$
+\end_inset
+
+, so 
+\begin_inset Formula $\delta_{0}(X)=\theta e^{\theta}=\delta(X)$
+\end_inset
+
+ when 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

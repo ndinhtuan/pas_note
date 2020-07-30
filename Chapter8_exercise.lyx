@@ -1,0 +1,2599 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+8.2
+\end_layout
+
+\begin_layout Exercise*
+13.
+ Prove 
+\begin_inset Formula $\hat{\sigma^{2}}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$
+\end_inset
+
+ is gamma distribution with parameters 
+\begin_inset Formula $n/2$
+\end_inset
+
+ and 
+\begin_inset Formula $n/(2\sigma^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $Y=\hat{\sigma^{2}}=\frac{\sigma^{2}}{n}\sum_{i=1}^{n}\frac{(X_{i}-\mu)^{2}}{\sigma^{2}}=\frac{\sigma^{2}}{n}Z$
+\end_inset
+
+, we can see 
+\begin_inset Formula $Z$
+\end_inset
+
+ is 
+\begin_inset Formula $\chi_{n}^{2}$
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Solution*
+We want to consider distribution of 
+\begin_inset Formula $Y$
+\end_inset
+
+: 
+\begin_inset Formula $g(Y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+Following property of distribution function of variable 
+\series bold
+Theorem 3.8.4 
+\series default
+: p.d.f.
+ of 
+\begin_inset Formula $Y=r(Z)$
+\end_inset
+
+ is 
+\begin_inset Formula $g(Y)=f(s(Y))|ds(y)/dy|$
+\end_inset
+
+.
+ (
+\begin_inset Formula $s(r(z))=z$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $f(Z)=\gamma(\alpha=\frac{n}{2},\beta=\frac{1}{2})=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}=\frac{1}{2^{n/2}\Gamma(n/2)}x^{(n/2)-1}e^{-x/2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $g(Y)=f(\frac{n}{\sigma^{2}}Y)\frac{n}{\sigma^{2}}=\frac{n}{\sigma^{2}}\frac{1}{2^{n/2}\Gamma(n/2)}\frac{nx}{\sigma^{2}}^{(n/2)-1}e^{-(nx/\sigma^{2})/2}=(\frac{n}{2\sigma^{2}})^{n/2}\frac{1}{\Gamma(n/2)}x^{n/2-1}e^{-nx/(2\sigma^{2})}\sim\gamma(\frac{n}{2},\frac{n}{2\sigma^{2}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have concluded: If 
+\begin_inset Formula $Z$
+\end_inset
+
+ has 
+\begin_inset Formula $\chi_{n}^{2}$
+\end_inset
+
+ distribution, so 
+\begin_inset Formula $\frac{\sigma^{2}}{n}Z$
+\end_inset
+
+ has distribution: 
+\begin_inset Formula $\gamma(\frac{n}{2},\frac{n}{2\sigma^{2}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+8.3 Joint Distribution of the Sample Mean and Sample Variance
+\end_layout
+
+\begin_layout Exercise*
+1.
+ 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Show that 
+\begin_inset Formula $\hat{\sigma^{2}}$
+\end_inset
+
+ has gamma distribution with parameters 
+\begin_inset Formula $(n-1)/2$
+\end_inset
+
+ and 
+\begin_inset Formula $n/(2\sigma^{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+We had 
+\begin_inset Formula $Z=n\hat{\sigma^{2}}/\sigma^{2}$
+\end_inset
+
+ has a chi-square distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+ 
+\begin_inset Formula $Y=\hat{\sigma^{2}}=\frac{\sigma^{2}}{n}Z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $f(z)=\chi_{n-1}^{2}=\frac{1}{2^{(n-1)/2}\Gamma[(n-1/2]}x^{[(n-1)/2]-1}e^{-x/2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $g(Y)=g(\frac{n}{\sigma^{2}}Y)\frac{n}{\sigma^{2}}=\frac{n}{\sigma^{2}}\frac{1}{2^{(n-1)/2}\Gamma[(n-1/2]}(\frac{n}{\sigma^{2}}x)^{[(n-1)/2]-1}e^{-nx/(2\sigma^{2})}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $=(\frac{n}{2\sigma^{2}})^{(n-1)/2}\frac{1}{\Gamma[(n-1)/2]}e^{-nx/(2\sigma^{2})}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $=\Gamma(\frac{n-1}{2},\frac{n}{2\sigma^{2}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+2.
+ We compare 
+\begin_inset Formula $X^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+4.
+ 
+\begin_inset Formula $X_{1},X_{2},X_{3}$
+\end_inset
+
+ are i.i.d.
+ and that each has standard normal disbution.
+ Also, suppose that 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+Y_{1}=0.8X_{1}+0.6X_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+Y_{2}=\sqrt{2}(0.3X_{1}-0.4X_{2}-0.5X_{3})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+Y_{3}=\sqrt{2}(0.3X_{1}-0.4X_{2}+0.5X_{3})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Find the joint distribution of 
+\begin_inset Formula $Y_{1},Y_{2},Y_{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+Apply 
+\series bold
+Theorem 3.9.5 Multivariate Transformation.
+ 
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula 
+\[
+g(y_{1},...,y_{n})=\begin{cases}
+f(s_{1},...,s_{n})|J|\\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula 
+\[
+|J|\text{ is jacobian matrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $x_{1}=s_{1}(y_{1},...,y_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $x_{2}=s_{2}(y_{1},...,y_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $...........................$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $x_{n}=s_{n}(y_{1},...,y_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $f(x_{1},x_{2},x_{3})=f(x_{1})f(x_{2})f(x_{3})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+5.
+ Suppose that random variables 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ are independent, each has the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Prove 
+\begin_inset Formula $X_{1}+X_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{1}-X_{2}$
+\end_inset
+
+ are independent.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $Cov[(X_{1}+X_{2}),(X_{1}-X_{2})]=E[(X_{1}+X_{2})(X_{1}-X_{2})]-E[(X_{1}+X_{2})]E[(X_{1}-X_{2})]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $=E[X_{1}^{2}-X_{2}^{2}]-(E[X_{1}]+E[X_{2}])(E[X_{1}]-E[X_{2}])$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $=E[X_{1}^{2}]-E[X_{2}^{2}]-E[X_{1}]^{2}+E[X_{2}]^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $=\sigma_{1}^{2}-\sigma_{2}^{2}=0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Solution*
+So 
+\begin_inset Formula $Cov()=0$
+\end_inset
+
+, so this 2 variables is independent.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+6.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Assuming that the sample size 
+\begin_inset Formula $n$
+\end_inset
+
+ is 
+\begin_inset Formula $16$
+\end_inset
+
+, determine the values of the following properties:
+\end_layout
+
+\begin_layout Exercise*
+a.
+ 
+\begin_inset Formula $Pr[\frac{1}{2}\sigma^{2}\le\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}\leq2\sigma^{2}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+b.
+ 
+\begin_inset Formula $Pr[\frac{1}{2}\sigma^{2}\le\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}\leq2\sigma^{2}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+a.
+ 
+\begin_inset Formula $X=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{n}{\sigma^{2}}X$
+\end_inset
+
+ has 
+\begin_inset Formula $\chi_{n}^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $n=16$
+\end_inset
+
+, so we need to find 
+\begin_inset Formula $Pr[\frac{1}{2}*16\le16X\leq2*16]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+b.
+ 
+\begin_inset Formula $Pr[\frac{1}{2}*15\le15X\leq2*15]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ Determined smallest 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+a.
+ 
+\begin_inset Formula $Pr(\frac{\hat{\sigma}_{2}}{\sigma_{2}}\leq1.5)>0.95$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Try for 
+\begin_inset Formula $n=1...$
+\end_inset
+
+ to find smallest 
+\begin_inset Formula $n$
+\end_inset
+
+ satisfied 
+\begin_inset Formula $P(\chi_{n}^{2}\le1.5n)\ge0.95$
+\end_inset
+
+ based on Chi-squared Distribution table.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9.
+ 
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+ is independent so not relevent.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+8.4 The 
+\begin_inset Formula $t$
+\end_inset
+
+ Distributions
+\end_layout
+
+\begin_layout Exercise*
+1.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ has 
+\begin_inset Formula $t$
+\end_inset
+
+ distributions with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom 
+\begin_inset Formula $(m>2)$
+\end_inset
+
+.
+ Show that 
+\begin_inset Formula $Var(X)=m/(m-2)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+2.
+ Same example 8.4.3.
+ Answer: 
+\begin_inset Formula $\frac{-1.746}{4}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+3.
+ Determine 
+\begin_inset Formula $c$
+\end_inset
+
+ to 
+\begin_inset Formula $\frac{c(X_{1}+X_{2})}{(X_{3}^{2}+X_{4}^{2}+X_{5}^{2})^{1/2}}$
+\end_inset
+
+ have 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $t$
+\end_inset
+
+ distribution have : 
+\begin_inset Formula $\frac{Z}{(\frac{Y}{m})^{2}}$
+\end_inset
+
+.
+ with 
+\begin_inset Formula $Z$
+\end_inset
+
+ has standard normal distribution, 
+\begin_inset Formula $Y$
+\end_inset
+
+ has 
+\begin_inset Formula $\chi_{m}^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $Z=\frac{X_{1}+X_{2}}{\sqrt{2}}$
+\end_inset
+
+ has standard normal distribution, 
+\begin_inset Formula $Y=X_{3}^{2}+X_{4}^{2}+X_{5}^{2}$
+\end_inset
+
+ is 
+\begin_inset Formula $\chi_{3}^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+6.
+ 
+\begin_inset Formula $n=20$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\frac{\sqrt{20}(\bar{X}_{n}-\mu)}{\sigma^{'}}$
+\end_inset
+
+ is 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution 
+\begin_inset Formula $19$
+\end_inset
+
+ freedom degree.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $Pr(\frac{\sqrt{20}(\bar{X}_{n}-\mu)}{\sigma^{'}}\leq1.729)=0.95$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ From Theorem 5.7.4, 
+\begin_inset Formula $\lim_{x\rightarrow\infty}\Gamma(m)=(2\pi)^{1/2}m^{m-1/2}e^{-m}$
+\end_inset
+
+, similar for 
+\begin_inset Formula $\Gamma(m+1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8.
+ We need to find max of 
+\begin_inset Formula $Pr(-c<X<c)-Pr(-c<Y<c)=2\Phi(X)-1-(2\Phi(Y)-1)=2*(F(X)-F(Y))$
+\end_inset
+
+ or 
+\begin_inset Formula $\max(F(X)-F(Y))$
+\end_inset
+
+, so we find maximum point of 
+\begin_inset Formula $g=F(X)-F(Y)$
+\end_inset
+
+, 
+\begin_inset Formula $g^{'}=f(x)-f(y)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+8.5 Confidence Intervals 
+\end_layout
+
+\begin_layout Exercise*
+5.
+ 
+\begin_inset Formula $X_{1},X_{2},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with unknown mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and unknown variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Describe method for constructing a confidence interval for 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+We have 
+\begin_inset Formula $V(\theta,X)=\frac{\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}}{\sigma^{2}}$
+\end_inset
+
+ is 
+\begin_inset Formula $\chi_{n-1}^{2}$
+\end_inset
+
+ distribution, that have c.d.f is 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ Assume that 
+\begin_inset Formula $\gamma_{2}-\gamma_{1}=\gamma$
+\end_inset
+
+, and 
+\begin_inset Formula $c_{1}=G^{-1}(\gamma_{1})$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}=G^{-1}(\gamma_{2})$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $Pr[c_{1}\le\frac{\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}}{\sigma^{2}}\le c_{2}]=\gamma$
+\end_inset
+
+ , then 
+\begin_inset Formula $Pr[\frac{A}{c_{2}}\leq\sigma^{2}\le\frac{A}{c_{1}}]$
+\end_inset
+
+, with 
+\begin_inset Formula $A=\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Exercise*
+6.
+ Similar to 
+\series bold
+Example 8.5.7.
+ 
+\series default
+We have 
+\begin_inset Formula $\frac{1}{\mu}\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+ is 
+\begin_inset Formula $\Gamma(\alpha=3,\beta=1)$
+\end_inset
+
+ distribution, have c.d.
+ is 
+\begin_inset Formula $G$
+\end_inset
+
+, so Assume that 
+\begin_inset Formula $\gamma_{2}-\gamma_{1}=\gamma$
+\end_inset
+
+ (like in Exercise 5).
+ So we do like in Exercise 5.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ Using Formulation in 
+\series bold
+Example 8.5.1
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9.
+ c.
+ 
+\begin_inset Formula $Y_{2}-1/2\le\theta\leq Y_{1}+1/2$
+\end_inset
+
+ is consistent with observed data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+8.6 Bayesian Analysis of Samples from a Normal Distribution
+\end_layout
+
+\begin_layout Exercise*
+1.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and precision 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+ Show 
+\begin_inset Formula $Y=aX+b$
+\end_inset
+
+ has normal distribution with mean 
+\begin_inset Formula $a\mu+b$
+\end_inset
+
+ and precision 
+\begin_inset Formula $\tau/a^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Based on 
+\series bold
+Theorem 5.6.4, 
+\series default
+We have 
+\begin_inset Formula $Y$
+\end_inset
+
+ will have normal distribution 
+\begin_inset Formula $a\mu+b$
+\end_inset
+
+ and 
+\begin_inset Formula $a^{2}\sigma^{2}$
+\end_inset
+
+, so precision is 
+\begin_inset Formula $\frac{1}{a^{2}\sigma^{2}}=\frac{\tau}{a^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+2.
+ 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with unknown mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ (
+\begin_inset Formula $-\infty<\mu<\infty$
+\end_inset
+
+ ) and known precision 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+ Suppose prior distribution of 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is normal distribution with mean 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+ and precision 
+\begin_inset Formula $\lambda_{0}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apply 
+\series bold
+Theorem 7.3.3 
+\series default
+Conjugate prior distribution for normal distribution with known variance
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{1}=\frac{\sigma^{2}\mu_{0}+nv_{0}^{2}\bar{x_{n}}}{\sigma^{2}+nv_{0}^{2}}\text{ (7.3.1)}
+\]
+
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+v_{1}^{2}=\frac{\sigma^{2}v_{0}^{2}}{\sigma^{2}+nv_{0}^{2}}\text{ (7.3.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we replace 
+\begin_inset Formula $\sigma^{2}=1/\tau$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{0}^{2}=1/\lambda_{0}$
+\end_inset
+
+ to (7.3.1), we have 
+\begin_inset Formula $\mu_{1}=\frac{\lambda_{0}\mu_{0}+n\tau\bar{x}_{n}}{\lambda_{0}+n\tau}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also, from (7.3.2), we have 
+\begin_inset Formula $1/v_{1}^{2}=\lambda_{0}+n\tau$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+3.
+ Apply Exercise 24.c and Exercise 23 (Conjugate prior for Exponential distributio
+n family) in 
+\series bold
+Chapter 7.3 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+4.
+ 
+\begin_inset Formula $V=(n-1)\sigma^{'2}\tau=(n-1)\sigma^{'2}/\sigma^{2}=\frac{\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}}{\sigma^{2}}$
+\end_inset
+
+ from Chapter 8.3, we conclude 
+\begin_inset Formula $V$
+\end_inset
+
+ has 
+\begin_inset Formula $\chi_{n-1}^{2}$
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+5.
+ 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\tau$
+\end_inset
+
+ have the joint normal-gamma distribution, 
+\begin_inset Formula $E(\mu)=\mu_{0};Var(\mu)=\frac{\beta_{0}}{\lambda_{0}(\alpha_{0}-1)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+And, 
+\begin_inset Formula $\tau$
+\end_inset
+
+ has gamma distribution, so 
+\begin_inset Formula $E(\tau)=\frac{\alpha_{0}}{\beta_{0}}$
+\end_inset
+
+, 
+\begin_inset Formula $Var(\tau)=\frac{\alpha_{0}}{\beta_{0}^{2}}$
+\end_inset
+
+, So 
+\begin_inset Formula $\alpha_{0}=2,\beta_{0}=4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+6.
+ 
+\begin_inset Formula $\alpha_{0}=1$
+\end_inset
+
+ so it is cannot be that in 
+\begin_inset Formula $Var(\mu)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ Following from prove of Theorem 8.6.3, if 
+\begin_inset Formula $E(U)=0$
+\end_inset
+
+, if 
+\begin_inset Formula $\alpha_{0}>1/2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8 
+\begin_inset Formula $Pr(\text{\ensuremath{\mu>0}})=Pr((\frac{\lambda_{0}\alpha_{0}}{\beta_{0}})^{2}(\mu-\mu_{0})>-(\frac{\lambda_{0}\alpha_{0}}{\beta_{0}})^{2}\mu_{0})$
+\end_inset
+
+, While we have 
+\begin_inset Formula $(\frac{\lambda_{0}\alpha_{0}}{\beta_{0}})^{2}(\mu-\mu_{0})$
+\end_inset
+
+ is 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $2\alpha_{0}$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9.
+ 
+\begin_inset Formula $\bar{x}_{n}=182.17$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{n}^{2}=88678.5$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\mu_{1}=183.95$
+\end_inset
+
+ 
+\begin_inset Formula $\lambda_{1}=20$
+\end_inset
+
+ 
+\begin_inset Formula $\alpha_{1}=11$
+\end_inset
+
+ 
+\begin_inset Formula $\beta_{1}=50925.37$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $U=0.0657(\mu-183.95)$
+\end_inset
+
+ is 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $2\alpha_{1}=22$
+\end_inset
+
+ degrees of freedom.
+ The quantile 0.95 of 
+\begin_inset Formula $t$
+\end_inset
+
+ distribtuion is 1.717
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+a) Shortest possible interval fo posterior 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Pr(-1.717<U<1.717)=0.9$
+\end_inset
+
+, 
+\begin_inset Formula $Pr(157.8<\text{\ensuremath{\mu}}<210)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b) Shortest possible confidence interval , confidence coefficient is 0.90.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sigma^{'}=72.72$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n=18$
+\end_inset
+
+, so following Eq.
+ 8.4.4.
+ has 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $17$
+\end_inset
+
+ degrees of freedom.
+ 0.95 quantile of it is 1.74
+\end_layout
+
+\begin_layout Standard
+so Shortest possible confidence interval is 
+\begin_inset Formula $(\bar{X_{n}}-1.74\frac{\sigma^{'}}{n^{1/2}},\bar{X_{n}}+1.74\frac{\sigma^{'}}{n^{1/2}})=(152.55,211.789)$
+\end_inset
+
+ , it close to 
+\begin_inset Formula $a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+10.
+ 
+\begin_inset Formula $\alpha_{0}=4$
+\end_inset
+
+, 
+\begin_inset Formula $\beta_{0}=2$
+\end_inset
+
+, 
+\begin_inset Formula $\mu_{0}=0$
+\end_inset
+
+, so based on 
+\begin_inset Formula $Pr(|\mu|<1.412)=0.5$
+\end_inset
+
+ and distribution of 
+\begin_inset Formula $U=(\frac{\lambda_{0}\alpha_{0}}{\beta_{0}})^{1/2}(\mu-\mu_{0})$
+\end_inset
+
+ is 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with freedom degree is 
+\begin_inset Formula $2\alpha_{0}=4$
+\end_inset
+
+.
+ So find 
+\begin_inset Formula $T_{4}^{-1}(0.75)$
+\end_inset
+
+, and then find 
+\begin_inset Formula $\lambda_{0}=[\frac{1}{1.412}T_{8}^{-1}(0.75)\frac{\beta_{0}}{\alpha_{0}}]^{2}=(\frac{1}{1.412}*0.706*0.5)^{2}=0.0625$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+11.
+ 
+\begin_inset Formula $n=10$
+\end_inset
+
+ 
+\begin_inset Formula $\bar{x}_{n}=1$
+\end_inset
+
+ 
+\begin_inset Formula $s_{n}^{2}=8$
+\end_inset
+
+.
+ Find shortest intervals such that posterior probability that 
+\begin_inset Formula $\mu$
+\end_inset
+
+ lies in the interval 
+\begin_inset Formula $0.95$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Following Eq.
+ 8.6.1 and Eq.
+ 8.6.2, we have 
+\begin_inset Formula $\mu_{1}=0.994$
+\end_inset
+
+ 
+\begin_inset Formula $,\lambda_{1}=10.0625$
+\end_inset
+
+ ,
+\begin_inset Formula $\alpha_{1}=9$
+\end_inset
+
+, 
+\begin_inset Formula $\beta_{1}=6.031$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Shortest 0.95 interval is :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(\mu_{1}-T_{18}^{-1}(0.975)[\frac{\beta_{1}}{\alpha_{1}\lambda_{1}}]^{1/2},\mu_{1}+T_{18}^{-1}(0.975)[\frac{\beta_{1}}{\alpha_{1}\lambda_{1}}]^{1/2})=(0.452,1.536)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+14.
+ Following Theorem 8.6.2.
+ 
+\begin_inset Formula $(\frac{\lambda_{1}\alpha_{1}}{\beta_{1}})^{1/2}(\mu-\mu_{1})$
+\end_inset
+
+ is 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $2\alpha_{1}=11$
+\end_inset
+
+ degree freedom.
+ 
+\begin_inset Formula $T_{11}^{-1}(0.95)=1.796$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+So 
+\begin_inset Formula $-1.796<(\frac{\lambda_{1}\alpha_{1}}{\beta_{1}})^{1/2}(\mu-\mu_{1})<1.796$
+\end_inset
+
+, 
+\begin_inset Formula $-1.796<(\frac{\lambda_{1}\alpha_{1}}{\beta_{1}})^{1/2}(\mu-\mu_{1})<1.796$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $Pr(1.1<\mu<1.58)=0.9$
+\end_inset
+
+, It so close to Example 8.5.4 - 
+\begin_inset Formula $(1.379,1.569)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+15.
+ 
+\begin_inset Formula $n=11$
+\end_inset
+
+.
+ Prior 
+\begin_inset Formula $(\mu,\begin{tabular}{c}
+ \tau\end{tabular})$
+\end_inset
+
+ from the normal-gamma family with 
+\begin_inset Formula $\alpha_{0}=2$
+\end_inset
+
+, 
+\begin_inset Formula $\beta_{0}=1$
+\end_inset
+
+, 
+\begin_inset Formula $\mu_{0}=3.5$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda_{0}=2$
+\end_inset
+
+.
+ The sample yields an average of 
+\begin_inset Formula $\bar{x}_{n}=7.2$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{n}^{2}=20.3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+a.
+ Find posterior hyperparameters
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\mu_{1}=\frac{\lambda_{0}\mu_{0}+n\bar{x}_{n}}{\lambda_{0}+n}=6.631$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda_{1}=\lambda_{0}+n=13$
+\end_inset
+
+, 
+\begin_inset Formula $a_{1}=a_{0}+\frac{n}{2}=7.5$
+\end_inset
+
+, 
+\begin_inset Formula $\beta_{1}=\beta_{0}+\frac{1}{2}s_{n}^{2}+\frac{n\lambda_{0}(\bar{x}_{n}-\mu_{0})^{2}}{2(\lambda_{0}+n)}=22.73$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+b.
+ Find 
+\begin_inset Formula $95\%$
+\end_inset
+
+ of posteriro distribution of 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $(\mu_{1}-T_{2\alpha_{1}}^{-1}(\frac{1+\lambda}{2})[\frac{\beta_{1}}{\alpha_{1}\lambda_{1}}]^{1/2},\mu_{1}+T_{2\alpha_{1}}^{-1}(\frac{1+\lambda}{2})[\frac{\beta_{1}}{\alpha_{1}\lambda_{1}}]^{1/2})=0.95$
+\end_inset
+
+; 
+\begin_inset Formula $T_{2\alpha_{1}}^{-1}(\frac{1+\lambda}{2})=T_{15}^{-1}(\frac{1+0.95}{2})=2.131$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+So 
+\begin_inset Formula $(5.6,7.66)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+17.
+ Using usual improper prior to compute posterior distribution of the parameters.
+\end_layout
+
+\begin_layout Exercise*
+
+\series bold
+Usal imporper prior: 
+\series default
+
+\begin_inset Formula $\alpha_{0}=\beta_{0}=\lambda_{0}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{0}=-1/2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+Data of Example 8.6.2: 
+\begin_inset Formula $n=10$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{x}_{n}=1.379$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{n}^{2}=0.9663$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\mu_{1}=\frac{\lambda_{0}\mu_{0}+n\bar{x}_{n}}{\lambda_{0}+n}=1.379,\lambda_{1}=\lambda_{0}+n=10,a_{1}=a_{0}+\frac{n}{2}=4.5,\beta_{1}=\beta_{0}+\frac{1}{2}s_{n}^{2}+\frac{n\lambda_{0}(\bar{x}_{n}-\mu_{0})^{2}}{2(\lambda_{0}+n)}=0.48315$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+19.
+ Similar to Exercise: 15.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+20.
+ 
+\begin_inset Formula $\alpha_{0}=\beta_{0}=\lambda_{0}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{0}=-1/2$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{x}_{n}=0.125$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{n}^{2}=2102.9$
+\end_inset
+
+.
+ Similar : 15
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+8.7 The unbiased Estimator.
+\end_layout
+
+\begin_layout Exercise*
+1.
+ 
+\begin_inset Formula $Var_{\theta}(X_{i})=\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+b.
+ 
+\begin_inset Formula $M.L.E=MLE(\mu)=\bar{X}_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+5.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ has Poisson distribution with unknown mean 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ Find a statistic 
+\begin_inset Formula $\delta(X)$
+\end_inset
+
+ that will be an unbiased estimator of 
+\begin_inset Formula $e^{\lambda}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Like in the hint.
+ 
+\end_layout
+
+\begin_layout Standard
+we have: 
+\begin_inset Formula $\sum_{x=0}^{\infty}\frac{\delta(x)\lambda^{x}}{x!}=e^{2\lambda}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $g(\lambda)=e^{2\lambda}$
+\end_inset
+
+.
+ Assume that we have 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ with 
+\begin_inset Formula $x=2\lambda$
+\end_inset
+
+, then applying Taylor series:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $e^{2\lambda}=\sum_{i=0}^{\infty}\frac{g^{(k)}(0)(2\lambda-0)^{k}}{k!}$
+\end_inset
+
+.
+ With 
+\begin_inset Formula $g^{k}(x)$
+\end_inset
+
+ is derivative degree 
+\begin_inset Formula $k$
+\end_inset
+
+ of 
+\begin_inset Formula $g(x)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $g(x)=e^{x}$
+\end_inset
+
+so 
+\begin_inset Formula $g^{k}(0)=1$
+\end_inset
+
+.
+ so 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $e^{2\lambda}=\sum_{i=0}^{\infty}\frac{g^{(k)}(0)(2\lambda-0)^{k}}{k!}=\sum_{i=0}^{\infty}\frac{(2\lambda)^{k}}{k!}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $\delta(x)=2^{X}$
+\end_inset
+
+ is unbiased estimator of 
+\begin_inset Formula $e^{\lambda}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+6, From example.
+ 8.7.6, 
+\begin_inset Formula $T_{c}=c\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$
+\end_inset
+
+, transform it to 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ with dividing for 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, then following Eq.(8.7.7): 
+\begin_inset Formula $Var(T_{c})=2(n-1)c^{2}\sigma^{4}$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{Var(T_{n})}{Var(T_{n-1})}=\frac{n-1}{n}$
+\end_inset
+
+, So 
+\begin_inset Formula $Var(T_{n})<Var(T_{n-1})$
+\end_inset
+
+, then we can conclude: MSE of 
+\begin_inset Formula $\hat{\sigma_{0}^{2}}$
+\end_inset
+
+ is smaller thant the M.S.E of 
+\begin_inset Formula $\hat{\sigma_{1}^{2}}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ 
+\begin_inset Formula $\delta(X_{1},...,X_{n})$
+\end_inset
+
+ with 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form n Bernoulli trials for which the parameter 
+\begin_inset Formula $p$
+\end_inset
+
+ is unknown.
+\end_layout
+
+\begin_layout Exercise*
+So 
+\begin_inset Formula $\delta(X_{1},...,X_{n})$
+\end_inset
+
+ is list of value 
+\begin_inset Formula $\{a:p(a)\}$
+\end_inset
+
+ and 
+\begin_inset Formula $p(a)=p^{k}(1-p)^{n-k}$
+\end_inset
+
+, so it is polynomial in 
+\begin_inset Formula $p$
+\end_inset
+
+ whose degree does not exceed 
+\begin_inset Formula $n$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ has the geometric distribution with unknown parameter 
+\begin_inset Formula $p$
+\end_inset
+
+ (
+\begin_inset Formula $0<p<1$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ has the possion distribution with unknown mean 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ The only unbiased estimator of 
+\begin_inset Formula $e^{-2\lambda}$
+\end_inset
+
+ is the estimator 
+\begin_inset Formula $\delta(X)$
+\end_inset
+
+ such that 
+\begin_inset Formula $\delta(X)=1$
+\end_inset
+
+ if 
+\begin_inset Formula $X$
+\end_inset
+
+ is an even integer and 
+\begin_inset Formula $\delta(X)=-1$
+\end_inset
+
+ if X is odd interger.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Like in Exercise 5, taylor series of 
+\begin_inset Formula $e^{-\lambda}=\sum_{x=1}^{n}\frac{(-1)^{x}(\lambda)^{x}}{x!}$
+\end_inset
+
+, so '
+\begin_inset Formula $\delta(X)=1$
+\end_inset
+
+ if 
+\begin_inset Formula $X$
+\end_inset
+
+ is an even integer and 
+\begin_inset Formula $\delta(X)=-1$
+\end_inset
+
+ if X is odd interger' is unbiased estimator of 
+\begin_inset Formula $e^{-2\lambda}$
+\end_inset
+
+.
+ Actually, we have equation: 
+\begin_inset Formula $\sum_{x=0}^{\infty}\frac{\delta(x)\lambda^{x}}{x!}=\sum_{x=1}^{n}\frac{(-1)^{x}(\lambda)^{x}}{x!}$
+\end_inset
+
+, so we have only one function.
+\end_layout
+
+\begin_layout Exercise*
+10.This is Geometric distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[\frac{k-1}{N-1}]=\frac{k}{N}$
+\end_inset
+
+ when 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+, and 
+\begin_inset Formula $\frac{k}{N}=p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+11.
+ 
+\begin_inset Formula $\mu_{1}=\mu_{2}=\theta$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\hat{\theta}=\alpha\bar{X}_{m}+(1-\alpha)\hat{Y}_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+a, 
+\begin_inset Formula $\forall\alpha,m,n$
+\end_inset
+
+ we have 
+\begin_inset Formula $E[\hat{\theta}]=\alpha E[\bar{X}_{m}]+(1-\alpha)E[\bar{Y}_{n}]=\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+b.
+\begin_inset Formula $Var(\hat{\theta})=Var(\alpha\bar{X}_{m}+(1-\alpha)\bar{Y}_{n})=\alpha^{2}\frac{\sigma_{1}^{2}}{m}+(1-\alpha)^{2}\frac{\alpha_{2}^{2}}{n}$
+\end_inset
+
+.
+ We want to find 
+\begin_inset Formula $\min[Var(\hat{\theta})]=\min[4n\alpha^{2}+(1-\alpha)^{2}m]=min[(4n+m)\sigma^{2}-2\sigma m+m].$
+\end_inset
+
+ We can see 
+\begin_inset Formula $f(\sigma)=(4n+m)\sigma^{2}-2\sigma m+m$
+\end_inset
+
+ is quaradic convec fucntion so it achive minimum at 
+\begin_inset Formula $f^{'}(\sigma)=0$
+\end_inset
+
+, then 
+\begin_inset Formula $\sigma=\frac{m}{4n+m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+12.
+ b.
+ Min[
+\begin_inset Formula $\sum_{i=1}^{k}p_{i}\frac{\sigma_{i}^{2}}{n_{i}}$
+\end_inset
+
+] and 
+\begin_inset Formula $\sum_{i=1}^{k}n_{i}-n=0$
+\end_inset
+
+.
+ Using 
+\series bold
+Larange multiper
+\series default
+: 
+\begin_inset Formula $Min(A):\sum_{i=1}^{k}p_{i}(\frac{\sigma_{i}^{2}}{n_{i}})+\lambda\sum_{i=1}^{k}n_{i}=\sum_{i=1}^{k}(p_{i}\frac{\sigma_{i}^{2}}{n_{i}}+\lambda n_{i})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+We consider derivative of A on 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{dA}{d\lambda}=\sum n_{i}-n=0$
+\end_inset
+
+, and with 
+\begin_inset Formula $n_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $-\frac{p_{i}\sigma_{i}^{2}}{n_{i}^{2}}+\lambda=0\rightarrow n_{i}=\frac{(p_{i}\sigma_{i}^{2})^{1/2}}{\lambda^{1/2}}$
+\end_inset
+
+, 
+\begin_inset Formula $\sum n_{i}=n=\frac{\sum_{i}(p_{i}\sigma_{i}^{2})^{1/2}}{\lambda^{1/2}}$
+\end_inset
+
+, so 
+\begin_inset Formula $\lambda^{1/2}=\sum_{i}(p_{i}\sigma_{i}^{2})^{1/2}/n$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $n_{i}=n*\frac{(p_{i}\sigma_{i}^{2})^{1/2}}{\sum_{i}(p_{i}\sigma_{i}^{2})^{1/2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+13.
+ Making use of Sec 4.7.
+ From theorem 4.7.1.
+ Law of Total probability for expectations.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ be random variables such that 
+\begin_inset Formula $Y$
+\end_inset
+
+ has finite mean.
+ Then 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+E[E(Y|X)]=E(Y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+so 
+\begin_inset Formula $E[E[\delta(X)|T]]=E[\delta(X)]=\theta$
+\end_inset
+
+, so 
+\begin_inset Formula $E[\delta(X)|T]$
+\end_inset
+
+, is also an unbiased estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+b.
+ 
+\begin_inset Formula $Var_{\theta}(\delta_{0})\le Var_{\theta}(\delta)$
+\end_inset
+
+.
+ From 
+\series bold
+Theorem 4.7.4: 
+\begin_inset Formula $Var(Y)=E[Var(Y|X)]+Var[E(Y|X)]$
+\end_inset
+
+
+\series default
+, so 
+\begin_inset Formula $Var(\delta(X))=E[Var(\delta(X)|T)]+Var[E(\delta(X)|T)]$
+\end_inset
+
+.
+ So ..
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+14.
+ 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the uniform distribution on the interval 
+\begin_inset Formula $[0,\theta]$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Y_{n}=max(X_{1},...,X_{n})$
+\end_inset
+
+.
+ Show that 
+\begin_inset Formula $[(n+1)/n]Y_{n}$
+\end_inset
+
+ is an unbiased estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F(Y_{n})=Pr(Y_{n}<y)=Pr(X_{1}<y)....Pr(X_{n}<y)=(\frac{y}{\theta})^{n}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $f(Y_{n})=F^{'}(Y_{n})=n\frac{y^{n-1}}{\theta^{n}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[Y_{n}]=\int_{0}^{\theta}f(y)ydy=\int_{o}^{\theta}n\frac{y^{n}}{\theta^{n}}dy=\frac{n}{n+1}\frac{y^{n+1}}{\theta^{n}}|_{0}^{\theta}=\frac{n}{n+1}\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $E[\frac{n+1}{n}Y_{n}]=\frac{n+1}{n}E[Y_{n}]=\frac{n+1}{n}\frac{n}{n+1}\theta=\theta$
+\end_inset
+
+, so 
+\begin_inset Formula $\frac{n+1}{n}Y_{n}$
+\end_inset
+
+ is an unbiased estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+15.
+ 
+\begin_inset Formula $X:\{1,2,3,4,5\}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f(1|\theta)=\theta^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $f(2|\theta)=\theta^{2}(1-\theta)$
+\end_inset
+
+, 
+\begin_inset Formula $f(3|\theta)=2\theta(1-\theta)$
+\end_inset
+
+, 
+\begin_inset Formula $f(4|\theta)=\theta(1-\theta)^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $f(5|\theta)=(1-\theta)^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+a, 
+\begin_inset Formula $\theta^{3}+\theta^{2}-\theta^{3}+2\theta-2\theta^{2}+\theta^{3}-2\theta^{2}+\theta-\theta^{3}+3\theta^{2}-3\theta+1=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+b.We have:  
+\begin_inset Formula $E_{\theta}[\delta_{c}]=\theta^{3}+(2-2c)(\theta^{2}-\theta^{3})+c(2\theta-2\theta^{2})+(1-2c)(\theta^{3}-2\theta^{2}+\theta)=\theta^{3}+2\theta^{2}-2\theta^{3}-2c\theta^{2}+2c\theta^{3}+2\theta c-2c\theta^{2}+\theta^{3}-2\theta^{2}+\theta-2c\theta^{3}+4c\theta^{2}-2c\theta$
+\end_inset
+
+=
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+So 
+\begin_inset Formula $\delta_{c}(X)$
+\end_inset
+
+ is unbiased estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ for each constant 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+c.
+ We want to find 
+\begin_inset Formula $Min(Var(\delta_{c}(X)))$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Var(\delta_{c}(X))=\theta^{3}+(2-2c-\theta)^{2}(\theta^{2}-\theta^{3})+(c-\theta)^{2}(2\theta-2\theta^{2})+(1-2c-\theta)^{2}(\theta^{3}-2\theta^{2}+\theta)$
+\end_inset
+
+ or 
+\begin_inset Formula $=E[(\delta_{c}(X))^{2}]-[E[\delta_{c}(C)]^{2}]=E[(\delta_{c}(X))^{2}]-\theta^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+16.
+ In exercise 3:
+\end_layout
+
+\begin_layout Exercise*
+From theorem 8.7.1: 
+\begin_inset Formula $\hat{\sigma}_{1}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$
+\end_inset
+
+ is an unbiased of variacne 
+\end_layout
+
+\begin_layout Exercise*
+and From exercise 2: 
+\begin_inset Formula $(1/n)\sum_{i=1}^{n}X_{i}^{2}$
+\end_inset
+
+ is unbiased estimator of 
+\begin_inset Formula $E[X^{2}]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+So 
+\begin_inset Formula $(1/n)\sum_{i=1}^{n}X_{i}^{2}-\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$
+\end_inset
+
+ is unbiased estimator of 
+\begin_inset Formula $[E(X)]^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $X_{1}=2$
+\end_inset
+
+ , 
+\begin_inset Formula $X_{2}=-1$
+\end_inset
+
+ so value of unbiased estimaotor =
+\begin_inset Formula $\frac{5}{2}-\frac{1}{1}(1/4+9/4)=0$
+\end_inset
+
+.
+ FLAW, so value estimator of 
+\begin_inset Formula $[E(X)]^{2}=0????$
+\end_inset
+
+.
+ Meanwhile value's estimator of 
+\begin_inset Formula $E(X)=1/2$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

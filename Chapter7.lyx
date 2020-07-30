@@ -3036,5 +3036,820 @@ If we can prove statistic
 ).
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+7.8 Jointly Sufficient Statistics
+\end_layout
+
+\begin_layout Standard
+When a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is multidimentional, sufficient statistics will typically need to be multidimen
+sional as well.
+ Sometimes, no one-dimensional statistic is sufficient even when 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is one-dimensional.
+ In either case, we need to extend the concept of sufficient statistic to
+ deal with cases in which more than one statistic is need in order to be
+ sufficient.
+\end_layout
+
+\begin_layout Chapter*
+7.8.
+ Jointly Sufficient Statistics
+\end_layout
+
+\begin_layout Standard
+When a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is multidimentsional, sufficient statistics will typically need to be multidime
+nsional as well.
+ Sometimes, no one-dimensional statistic is sufficient even when 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is one-dimensional.
+ In either case, we need to extend the concept sufficient statistic to deal
+ with cases in which more than one statistic is needed in order to be sufficient.
+\end_layout
+
+\begin_layout Section*
+Definition of Jointly Sufficient Statistics
+\end_layout
+
+\begin_layout Definition*
+7.8.1 Jointly Sufficient Statistics.
+ Suppose that for each 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and each possible value 
+\begin_inset Formula $(t_{1},...,t_{k})$
+\end_inset
+
+ of 
+\begin_inset Formula $(T_{1},...,T_{k})$
+\end_inset
+
+, the conditional joint distribution of 
+\begin_inset Formula $(X_{1},...,X_{n})$
+\end_inset
+
+ given 
+\begin_inset Formula $(T_{1},...,T_{k})=(t_{1},...,t_{k})$
+\end_inset
+
+ does not depend on 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $T_{1},...,T_{k}$
+\end_inset
+
+ are called jointly sufficient statistics for 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+7.8.1 Factorization Criterion for Jointly Sufficient Statistics.
+ Let 
+\begin_inset Formula $r_{1},...,r_{k}$
+\end_inset
+
+ be functions of 
+\begin_inset Formula $n$
+\end_inset
+
+ real variables.
+ The statistics 
+\begin_inset Formula $T_{i}=r_{i}(X),i=1,...,k$
+\end_inset
+
+, are jointly sufficient statistics for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ if and only if the joint p.d.f or the joint p.f.
+ 
+\begin_inset Formula $f_{n}(x|\theta)$
+\end_inset
+
+ can be factored as follows for all values of 
+\begin_inset Formula $x\in R^{n}$
+\end_inset
+
+and all values of 
+\begin_inset Formula $\theta\in\Omega$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+f_{n}(x|\theta)=u(x)v[r_{1}(x),...,r_{k}(x),\theta]\text{ (7.8.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Here the function 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ are nonnegative, the function 
+\begin_inset Formula $u$
+\end_inset
+
+ may depend on 
+\begin_inset Formula $x$
+\end_inset
+
+ but does not depend on 
+\begin_inset Formula $\theta$
+\end_inset
+
+, and the function 
+\begin_inset Formula $v$
+\end_inset
+
+ will depend on 
+\begin_inset Formula $\theta$
+\end_inset
+
+ but depends on 
+\begin_inset Formula $x$
+\end_inset
+
+ only through the 
+\begin_inset Formula $k$
+\end_inset
+
+ functions 
+\begin_inset Formula $r_{1}(x),...,r_{k}(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Minimal Sufficient Statistics
+\end_layout
+
+\begin_layout Definition*
+7.8.2 Order Statistics.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from some distribution.
+ Let 
+\begin_inset Formula $Y_{1}$
+\end_inset
+
+ denote the smallest value in the random sample, let 
+\begin_inset Formula $Y_{2}$
+\end_inset
+
+ denote the next smallest value, let 
+\begin_inset Formula $Y_{3}$
+\end_inset
+
+ denote the third smallest value, and so on.
+ In this way, 
+\begin_inset Formula $Y_{n}$
+\end_inset
+
+ denotes the largest value in the sample, and 
+\begin_inset Formula $Y_{n-1}$
+\end_inset
+
+ denotes the next largest value.
+ The random variables 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are called the order statistics of the sample.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+7.8.2.
+ Order Statistics Are Sufficient in Random Samples.
+ Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a distribution for which the p.d.f.
+ or the p.f.
+ is 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+.
+ Then the order statistics 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are jointly sufficient for 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+7.8.3 Minimal (Jointly) Sufficient Statistic(s).
+ A statistic 
+\begin_inset Formula $T$
+\end_inset
+
+ is a minimal sufficient statistic if 
+\begin_inset Formula $T$
+\end_inset
+
+ is sufficient and is a function of every other sufficient.
+ A vector 
+\begin_inset Formula $T=(T_{1},...,T_{k})$
+\end_inset
+
+ of statistics are minimal jointly sufficient statistics if the coordinates
+ of 
+\begin_inset Formula $T$
+\end_inset
+
+ are jointly sufficient statistics and 
+\begin_inset Formula $T$
+\end_inset
+
+ is a function of every other jointly sufficient statistics.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Maximum Likelihood Estimators and Bayes Estimators as Sufficient Statistics
+\end_layout
+
+\begin_layout Theorem*
+7.8.3 M.L.E and Sufficient Statistics.
+ Let 
+\begin_inset Formula $T=r(X_{1},...,X_{n})$
+\end_inset
+
+ be a sufficient statistic for 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Then the M.L.E.
+ 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ depends on the observations 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ only through the statistic 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ Furthermore, if 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ is itself sufficient, then it is minimal sufficient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+7.8.4 Bayes Estimator and Sufficient Statistics.
+ Let 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+ be a sufficient statistic for 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Then every Bayes estimator 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ depends on the observations 
+\begin_inset Formula $X_{1},..,X_{n}$
+\end_inset
+
+ only through the statistic 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ Furthermore, if 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ is itself sufficient, then it is minimal sufficient.
+\end_layout
+
+\begin_layout Chapter*
+7.9 Improving an Estimator
+\end_layout
+
+\begin_layout Standard
+Show how to improve upon an estimator that is not a function of a sufficient
+ statistic by using an estimator that is a function of a sufficient statistic.
+\end_layout
+
+\begin_layout Section*
+The Mean Squared Error of an Estimator
+\end_layout
+
+\begin_layout Section*
+Conditional Expectation When a Sufficient Statistic is known
+\end_layout
+
+\begin_layout Standard
+Define the estimator 
+\begin_inset Formula $\delta_{0}(T)$
+\end_inset
+
+ by the following conditional expectation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\delta_{0}(T)=E_{\theta}[\delta(X)|T]\text{ (7.9.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $T$
+\end_inset
+
+ is a sufficient statistic, the conditional joint distribution of 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ for each given value of 
+\begin_inset Formula $T$
+\end_inset
+
+ is the same for every value of 
+\begin_inset Formula $\theta\in\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset Formula $\delta_{0}(T)$
+\end_inset
+
+ is indeed as estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ because it depends only on the observations 
+\begin_inset Formula $X$
+\end_inset
+
+ and does not depend on the unknown value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ For this reasno, we can omit the subscript 
+\begin_inset Formula $\theta$
+\end_inset
+
+ on the expectation symbol 
+\begin_inset Formula $E$
+\end_inset
+
+ in Eq.
+ (7.9.2), and we can write the relation as follows: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\delta_{0}(T)=E[\delta(X)|T]\text{(7.9.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+7.9.1.
+ Let 
+\begin_inset Formula $\delta(X)$
+\end_inset
+
+ be an estimator, let 
+\begin_inset Formula $T$
+\end_inset
+
+ be a sufficient statistic for 
+\begin_inset Formula $\theta$
+\end_inset
+
+, and let the estimator 
+\begin_inset Formula $\delta_{0}(T)$
+\end_inset
+
+ be defined as in Eq.
+ (7.9.3).
+ Then for every value of 
+\begin_inset Formula $\theta\in\Omega$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+R(\theta,\delta_{0})\leq R(\theta,\delta)\text{ (7.9.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Furthermore, if 
+\begin_inset Formula $R(\theta,\delta)<\infty$
+\end_inset
+
+, there is strict inequality in (7.9.4) unless 
+\begin_inset Formula $\delta(X)$
+\end_inset
+
+ is a function of T.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From example 7.9.2 (Customer Arrivals), 
+\begin_inset Formula $\delta(X)=\sum_{i=1}^{n}Y_{i}/n$
+\end_inset
+
+, but follow Theorem 7.9.1, We have better estimator: 
+\begin_inset Formula $\delta_{0}(T)=E[\delta(X)|T]$
+\end_inset
+
+.
+ And after following Eq.(7.9.6) 
+\begin_inset Formula $E(Y_{i}|T=t)=\frac{t}{n}(1-\frac{1}{n})^{t-1}$
+\end_inset
+
+ 
+\begin_inset Formula $\delta_{0}(t)=\frac{1}{n}\sum_{i=1}^{n}E(Y_{i}|T=t)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+7.9.1.
+ Inadmissible/Admissible/Dominates.
+ Suppose that 
+\begin_inset Formula $R(\theta,\delta)$
+\end_inset
+
+ is defined by either (7.9.1) or Eq.(7.9.7).
+ It is said that an estimator 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is inadmissible if there exists another estimator 
+\begin_inset Formula $\delta_{0}$
+\end_inset
+
+ such that 
+\begin_inset Formula $R(\theta,\delta_{0})\leq R(\theta,\delta)$
+\end_inset
+
+ for every value of 
+\begin_inset Formula $\theta\in\Omega$
+\end_inset
+
+ and there is strict inequality in this relation for at least one value
+ of 
+\begin_inset Formula $\theta\in\Omega$
+\end_inset
+
+.
+ Under these conditions, it is also said that the estimator 
+\begin_inset Formula $\delta_{0}$
+\end_inset
+
+ dominates the estimator 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+ An estimator 
+\begin_inset Formula $\delta_{0}$
+\end_inset
+
+ is admissible if there is no other estimator that dominates 
+\begin_inset Formula $\delta_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Theorem 7.9.1 also explicitly identifies an estimator 
+\begin_inset Formula $\delta_{0}=E(\delta(X)|T)$
+\end_inset
+
+ that dominates 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+ However, this part of the theorem is somewhat less useful in a practical
+ problem, because it is usally very difficult to calculate the condional
+ expectation 
+\begin_inset Formula $E(\delta(X)|T)$
+\end_inset
+
+.
+ Theorem 7.9.1 is valuable mainly because it provides futher strong evidence
+ that we can restrict our search for a good estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ to those estimator that 
+\series bold
+depend on the observations through a sufficient statistics.
+\end_layout
+
+\begin_layout Standard
+Estimating the Standard Deviation of a Normal Distribution.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a normal distribution for which both the mean
+ 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and the variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ are unknown, and again let 
+\begin_inset Formula $Y_{1}\le....\leq Y_{n}$
+\end_inset
+
+ denote the order statistics of the sample.
+ The difference 
+\begin_inset Formula $Y_{n}-Y_{1}$
+\end_inset
+
+ is called the range of the sample, and we might consider using some simple
+ function of the range as an estimator of the standard deviation 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+ It was shown in Example 7.8.2 that statistics 
+\begin_inset Formula $\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{i=1}^{n}X_{i}^{2}$
+\end_inset
+
+ are jointly sufficient for the parameters 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Therefore, every function of the range that might be used as an estimator
+ of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ will be dominated by a function of 
+\begin_inset Formula $\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{i=1}^{n}X_{i}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Limitation of the Use of Sufficient Statistics
+\end_layout
+
+\begin_layout Itemize
+The existence and the form of a sufficient statistic in a particular problem
+ depend on the form of the function assumed for the p.d.f or the p.f.
+\end_layout
+
+\begin_layout Itemize
+Becaus of the statistician's uncertainty about the exact form of the p.d.f.,
+ he may wish to use an estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ that performs reasonably well for a wide variety of possible p.d.f.'s, even
+ though the selected estimator may not meet the requirement that it should
+ depend on the observations only through the statistic 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+An estimator that performs reasonably well for a wide variety of possible
+ p.d.f.'s, even though it may not necesssarily be the best available estimator
+ for any particular family of p.d.f.'s, is often called a robust estimator.
+ We shall consider robus estimators futher in Chapter 10.
+\end_layout
+
+\begin_layout Itemize
+The distribution for the observations given the parameters, as defined through
+ 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+, is often chosen for convenience rather than through a careful analysis.
+ One can perform an inference repeatedly using different distributions for
+ the observable data.
+\end_layout
+
+\begin_layout Itemize
+Sec.
+ 7.2, we introduced sensitivity analysis (comparison of posterior distribution
+ from different prior distribiution to see effect of prior distribution).
+ The comparison of the resulting inferences from each choice is another
+ form of sensitivity analysis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T$
+\end_inset
+
+ is a sufficient statistic, and we are trying to estimate a parameter with
+ squared error loss.
+ Suppose that an estimator 
+\begin_inset Formula $\delta(X)$
+\end_inset
+
+ is not a function of 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\delta$
+\end_inset
+
+ can be improved by using 
+\begin_inset Formula $\delta_{0}(T)$
+\end_inset
+
+, the conditional mean of 
+\begin_inset Formula $\delta(X)$
+\end_inset
+
+ given 
+\begin_inset Formula $T$
+\end_inset
+
+, 
+\begin_inset Formula $E[\delta(X)|T]$
+\end_inset
+
+.
+ Because 
+\begin_inset Formula $\delta_{0}(T)$
+\end_inset
+
+ has the same mean as 
+\begin_inset Formula $\delta(X)$
+\end_inset
+
+ and its variance is no larger, it follows that 
+\begin_inset Formula $\delta_{0}(T)$
+\end_inset
+
+ has M.S.E.
+ that is no larger than that of 
+\begin_inset Formula $\delta(X)$
+\end_inset
+
+.
+\end_layout
+
 \end_body
 \end_document
