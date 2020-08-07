@@ -2307,5 +2307,1206 @@ Examples 8.7.3 and 8.7.6 illustrate the following fact: In many problems, there
  than every unbiased estimator for every possible value of the parameter.
 \end_layout
 
+\begin_layout Section*
+Question:
+\end_layout
+
+\begin_layout Standard
+1.
+ Why we need unbiased estimators
+\end_layout
+
+\begin_layout Chapter*
+8.8 Fisher Information
+\end_layout
+
+\begin_layout Standard
+This section introduces a method for measuring the amount of information
+ that a sample of data contains about an unknown parameter.
+ This measure has the intuitive properties that more data provide more informati
+on, and more precie data provide more information.
+ The information measure can be used to find bounds on the variances of
+ estimators, and it can be used to approximate the variances of estimators
+ obtained from large samples.
+\end_layout
+
+\begin_layout Section*
+Definition and Properties of Fisher Information
+\end_layout
+
+\begin_layout Standard
+The Fisher information is one property of a distribution that can be used
+ to measure how much information one is likely to obtain from a random variable
+ or a random sample.
+\end_layout
+
+\begin_layout Definition*
+8.8.1.
+ Fisher Information in a Random Variable.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable whose distribution depends on a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ that takes values in an open interval 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ of the real line.
+ Let the p.f or p.d.f of 
+\begin_inset Formula $X$
+\end_inset
+
+ be 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+.
+ Assume that the set of 
+\begin_inset Formula $x$
+\end_inset
+
+ such that 
+\begin_inset Formula $f(x|\theta)>0$
+\end_inset
+
+ is the same for all 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and that 
+\begin_inset Formula $\lambda(x|\theta)=\log(f(x|\theta))$
+\end_inset
+
+ is twice differentiable as a function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ The 
+\emph on
+Fisher information 
+\emph default
+
+\begin_inset Formula $I(\theta)$
+\end_inset
+
+ in the random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ is defined as 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+I(\theta)=E_{\theta}\{[\lambda^{'}(X|\theta)]^{2}\}\text{ (8.8.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+Thus, if 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+ is a p.d.f., then 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+I(\theta)=\int_{S}[\lambda^{'}(x|\theta)]^{2}f(x|\theta)dx\text{ (8.8.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+If 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+ is a p.f., the integral in Eq.
+ (8.8.2) is replaced by a sum over the points in 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ In the discussion that follows, we shall assume for convenience that 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+ is a p.d.f.
+ However, all the results hold also when 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+ is a p.f.
+\end_layout
+
+\begin_layout Definition*
+An alternative method for calculating the Fisher information sometimes proves
+ more useful.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+8.8.1.
+ Assume the conditions of Definition 8.8.1.
+ Also, assume that two derivatives of 
+\begin_inset Formula $\int_{S}f(x|\theta)dx$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $\theta$
+\end_inset
+
+ can be calculated by reversing the order of integration and differentiation.
+ Then the Fisher information also equals
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+I(\theta)=-E_{\theta}[\lambda^{''}(X|\theta)].\text{ (8.8.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Another expression for the Fisher information is 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+I(\theta)=Var_{\theta}[\lambda^{'}(X|\theta)].\text{ (8.8.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In many problems, it is easier to determine the value of 
+\begin_inset Formula $I(\theta)$
+\end_inset
+
+ from Eq.
+ (8.8.3) thant from Eqs.
+ (8.8.1) or (8.8.4)
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+It should be emphasized that the concept of Fisher information cannot be
+ applied to a distribution, such as the uniform distribution on the interval
+ 
+\begin_inset Formula $[0,\theta]$
+\end_inset
+
+, for which the nescessary assumptions are not satisfied.
+\end_layout
+
+\begin_layout Paragraph*
+The Fisher Information in a Random Sample, 
+\series medium
+When we have a random sample from a distribution, the Fisher information
+ is defined in an analogous manner.
+ Indeed, Definition 8.8.2 subsumes Definition 8.8.1 as the special case in which
+ 
+\begin_inset Formula $n=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+8.8.2.
+ Fisher Information in a Random Sample.
+ Suppose that 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ form a random sample from a distribution fro which the p.f.
+ or p.d.f.
+ is 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+, where the value of the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ must lie in an open interval 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ of the real line.
+ Let 
+\begin_inset Formula $f_{n}(x|\theta)$
+\end_inset
+
+ denote the joint p.f.
+ or joint p.d.f.
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Define
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+\lambda_{n}(x|\theta)=\log(f_{n}(x|\theta)).\text{ (8.8.9)}
+\]
+
+\end_inset
+
+ Assume that the set of 
+\begin_inset Formula $x$
+\end_inset
+
+ such that 
+\begin_inset Formula $f_{n}(x|\theta)>0$
+\end_inset
+
+ is the same for all 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and that 
+\begin_inset Formula $\log f_{n}(x|\theta)$
+\end_inset
+
+ is twice differentiable with respect to 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ The Fisher information 
+\begin_inset Formula $I_{n}(\theta)$
+\end_inset
+
+ in the random sample 
+\begin_inset Formula $X$
+\end_inset
+
+ is defined as 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+I_{n}(\theta)=E_{\theta}\{[\lambda_{n}^{'}(X|\theta)]^{2}\}
+\]
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+For continuous distribution, the Fisher information 
+\begin_inset Formula $I_{n}(\theta)$
+\end_inset
+
+ in the entire sample is given by the following 
+\begin_inset Formula $n-$
+\end_inset
+
+dimenional intergal:
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+I_{n}(\theta)=\int_{S}...\int_{S}[\lambda_{n}^{'}(x|\theta)]^{2}f_{n}(x|\theta)dx_{1}...dx_{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+For discrete distribution, replace the 
+\begin_inset Formula $n-$
+\end_inset
+
+dimensional integral by an n-fold summation.
+\end_layout
+
+\begin_layout Definition*
+Furthermore, if we again assume that dericatives can be passed under the
+ intergrals, then we may express 
+\begin_inset Formula $I_{n}(\theta)$
+\end_inset
+
+ in eithr of the following two ways:
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+I_{n}(\theta)=Var_{\theta}[\lambda_{n}^{'}(X|\theta)]\text{ (8.8.10)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+of 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+I_{n}(\theta)=-E_{\theta}[\lambda_{n}^{''}(X|\theta)]\text{ (8.8.11)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+We shall now show that there is a simple relation between the Fisher information
+ 
+\begin_inset Formula $I_{n}(\theta)$
+\end_inset
+
+ in the entire sample and the Fisher information 
+\begin_inset Formula $I(\theta)$
+\end_inset
+
+ in a single observation 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+8.8.2.
+ Under the conditions of Definitions 8.8.1 and 8.8.2, 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+I_{n}(\theta)=nI(\theta)\text{ (8.8.12)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+In words, the Fisher information in a random sample of 
+\begin_inset Formula $n$
+\end_inset
+
+ observations is simply 
+\begin_inset Formula $n$
+\end_inset
+
+ times the Fisher information in a single observation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+The Information Inequality
+\end_layout
+
+\begin_layout Standard
+As one application of the results that have been derived concerning Fisher
+ information, we shall show how the Fisher information can be used to determine,
+ we shall show how the Fisher information can be used to determine a lower
+ bound for the variance of an arbitrary estimator of the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ in a given problem.
+ The following result was independently developed by H.
+ Cramer and C.
+ R.
+ Rao during the 1940.
+\end_layout
+
+\begin_layout Theorem*
+8.8.3.
+ Cramer-Rao (Information) Inequality.
+ Suppose that 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ form a random sample from a distribution for which the p.d.f.
+ is 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+.
+ Suppose also that all the assumptions which have been made about 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+ thus far in this section continue to hold.
+ Let 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+ be a statistic with finite variance.
+ Let 
+\begin_inset Formula $m(\theta)=E_{\theta}(T)$
+\end_inset
+
+.
+ Assume that 
+\begin_inset Formula $m(\theta)$
+\end_inset
+
+ is a differentible function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Then 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+Var_{\theta}(T)\geq\frac{[m^{'}(\theta)]^{2}}{nI(\theta)}\text{ (8.8.14)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+There will be equality in (8.8.14) if and only if there exist functions 
+\begin_inset Formula $u(\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $v(\theta)$
+\end_inset
+
+ that may depend on 
+\begin_inset Formula $\theta$
+\end_inset
+
+ but do not depend on 
+\begin_inset Formula $X$
+\end_inset
+
+ and that satisfy the relation 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+T=u(\theta)\lambda_{n}^{'}(X|\theta)+v(\theta).\text{ (8.8.15)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary*
+8.8.1.
+ Cramer-Rao Lower Bound on the Variance of an Unbiased Estimator.
+ Assume the assumptions of Theorem 8.8.3.
+ Let 
+\begin_inset Formula $T$
+\end_inset
+
+ be an unbiased estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Then 
+\end_layout
+
+\begin_layout Corollary*
+\begin_inset Formula 
+\[
+Var_{\theta}(T)\geq\frac{1}{nI(\theta)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof: 
+\begin_inset Formula $m(\theta)=0$
+\end_inset
+
+ 
+\series default
+so 
+\begin_inset Formula $m^{'}(\theta)=1$
+\end_inset
+
+.
+ Now apply Eq.(8.8.14).
+\end_layout
+
+\begin_layout Paragraph*
+
+\series medium
+In words, Corollary 8.8.1 says that the variance of an unbiased estimator
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ cannot be smaller than the reciprocal of the Fisher information in the
+ sample.
+\end_layout
+
+\begin_layout Section*
+Efficient Estimators
+\end_layout
+
+\begin_layout Standard
+An estimator whose variance equals the Cramer-Rao lower bound makes the
+ most efficient use of the data 
+\begin_inset Formula $X$
+\end_inset
+
+ in some sense.
+\end_layout
+
+\begin_layout Definition*
+8.8.3.
+ Efficient Estimator.
+ It is said that an estimator 
+\begin_inset Formula $T$
+\end_inset
+
+ is an efficient estimator of its expectation 
+\begin_inset Formula $m(\theta)$
+\end_inset
+
+ if there is equality in (8.8.14) for every value of 
+\begin_inset Formula $\theta\in\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $T$
+\end_inset
+
+ is an estimator, it cannot involve the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Therefore, in order for 
+\begin_inset Formula $T$
+\end_inset
+
+ to be efficient, it must be possible to find 
+\begin_inset Formula $u(\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $v(\theta)$
+\end_inset
+
+ such that the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ will actually be canceled from the right side of Eq.
+ (8.8.15) and the value of 
+\begin_inset Formula $T$
+\end_inset
+
+ will depend only on the observations 
+\begin_inset Formula $X$
+\end_inset
+
+ and not on 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Unbiased Estimators with Minimum Variance.
+ 
+\series medium
+Suppose that in a given problem a particular estimator 
+\begin_inset Formula $T$
+\end_inset
+
+ is an efficient estimator of its expectation 
+\begin_inset Formula $m(\theta)$
+\end_inset
+
+, and let 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ denote any other unbiased estimator of 
+\begin_inset Formula $m(\theta)$
+\end_inset
+
+.
+ Then for every value of 
+\begin_inset Formula $\theta\in\Omega$
+\end_inset
+
+, 
+\begin_inset Formula $Var_{\theta}(T_{1})$
+\end_inset
+
+ will be at least as large as that lower bound.
+ Hence, 
+\begin_inset Formula $Var_{\theta}(T)\leq Var_{\theta}(T_{1})$
+\end_inset
+
+ for 
+\begin_inset Formula $\theta\in\Omega$
+\end_inset
+
+.
+ In other words, if 
+\begin_inset Formula $T$
+\end_inset
+
+ is an efficient estimator of 
+\begin_inset Formula $m(\theta)$
+\end_inset
+
+, then among all unbiased estimators of 
+\begin_inset Formula $m(\theta)$
+\end_inset
+
+, 
+\begin_inset Formula $T$
+\end_inset
+
+ will have the smallest variance for every possible value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Properties of Maximum Likelihood Estimators for Large Samples
+\end_layout
+
+\begin_layout Standard
+Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a distribution for which the p.d.f.
+ or the p.f.
+ is 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+, and suppose also that 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+ satisfies conditions similar to those which were needed to derive the informati
+on inequality.
+ For each sample size 
+\begin_inset Formula $n$
+\end_inset
+
+, let 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ denote the M.L.E.
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ We shall show that if 
+\begin_inset Formula $n$
+\end_inset
+
+ is large, then the distribution of 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ is approximately the normal distribution with mean 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and variance 
+\begin_inset Formula $1/[nI(\theta)]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+8.8.4.
+ Asymptotic Distribution of an Efficient Estimator.
+ Assume the assumptions of Theorem 8.8.3.
+ Let 
+\begin_inset Formula $T$
+\end_inset
+
+ be an efficient estimator of its mean 
+\begin_inset Formula $m(\theta)$
+\end_inset
+
+.
+ Assume that 
+\begin_inset Formula $m^{'}(\theta)$
+\end_inset
+
+ is never 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ Then the asymptotic distribution of 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\frac{[nI(\theta)]^{1/2}}{m^{'}(\theta)}[T-m(\theta)]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+is the standard normal distribution\SpecialChar endofsentence
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Asymptotic Distribution of an M.L.E 
+\series default
+It follows from Theorem 8.8.4 that if the M.L.E.
+ 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ is an efficient estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ for each value of 
+\begin_inset Formula $n$
+\end_inset
+
+, then the asymptotic distribution of 
+\begin_inset Formula $[nI(\theta)]^{1/2}(\hat{\theta}_{n}-\theta)$
+\end_inset
+
+ is the standard normal distribution.
+ However, it can be shown that even in an arbitrary problem in which 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ is not an efficient estimator, 
+\begin_inset Formula $[nI(\theta)]^{1/2}(\hat{\theta}_{n}-\theta)$
+\end_inset
+
+ has this same asymptotic distribution under certain conditions.
+ Without presenting all the requird conditions in full detail, we can state
+ the following result.
+\end_layout
+
+\begin_layout Theorem*
+8.8.5.
+ Asmptotic Distribution of M.L.E.
+ Suppose that in an arbitrary problem the M.L.E.
+ 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ is determined by solving the equation 
+\begin_inset Formula $\lambda_{n}^{'}(x|\theta)=0$
+\end_inset
+
+, and in addition both the second and third derivatives 
+\begin_inset Formula $\lambda_{n}^{''}(x|\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{n}^{'''}(x|\theta)$
+\end_inset
+
+ exist and satisfy certain regularity conditions.
+ Then the asymptotic distribution of 
+\begin_inset Formula $[nI(\theta)]^{1/2}(\hat{\theta}_{n}-\theta)$
+\end_inset
+
+ is the standard normal distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For cases in which it is difficult to compute the M.L.E., there is a result
+ similar to Theorem 8.8.5:
+\end_layout
+
+\begin_layout Theorem*
+8.8.6.
+ Efficient Estimation.
+ Assume the same smoothness conditions on the likelihood function as in
+ Theorem 8.8.5.
+ Assume that 
+\begin_inset Formula $\tilde{\theta}$
+\end_inset
+
+ is sequence of estimators of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ such that 
+\begin_inset Formula $\sqrt{n}(\tilde{\theta}_{n}-\theta)$
+\end_inset
+
+ converges in distribution to some distribution (it doesn't matter what
+ distribution).
+ Use 
+\begin_inset Formula $\tilde{\theta_{n}}$
+\end_inset
+
+ as the starting value, and perform one step of Newton's method (Definition
+ 7.6.2) toward finding the M.L.E of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let the result of the one step be called 
+\begin_inset Formula $\theta_{n}^{*}$
+\end_inset
+
+.
+ Then the asymptotic distribution of 
+\begin_inset Formula $[nI(\theta)]^{1/2}(\theta_{n}^{*}-\theta)$
+\end_inset
+
+ is the standard normal distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A typical choice of 
+\begin_inset Formula $\tilde{\theta}_{n}$
+\end_inset
+
+ in Theorem 8.8.6 is a method of moments estimator (Definition 7.6.3).
+ 
+\end_layout
+
+\begin_layout Paragraph*
+The Bayesian Point of View.
+ 
+\series medium
+Another general property of the M.L.E.
+ 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ pertains to making inferences about a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ from the Bayesian point of view.
+ Suppose that the prior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is represented by a positive and differentibale p.d.f.
+ over the interval 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, and the sample size 
+\begin_inset Formula $n$
+\end_inset
+
+ is large.
+ Then under conditions similar to the regularity conditions that are needed
+ to assure the asymptotic normality of the distribution of 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+, it can be shown that the posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, after the values of 
+\begin_inset Formula $X_{1},..,X_{n}$
+\end_inset
+
+ have been observed, will be approximately the normal distribution with
+ mean 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $1/[nI(\hat{\theta}_{n})]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Fisher Information for Multiple Parameters.
+\end_layout
+
+\begin_layout Definition*
+8.8.4.
+ Fisher Information for a Vector Parameter.
+ Suppose that 
+\begin_inset Formula $X=(X_{1},..,X_{n})$
+\end_inset
+
+ form random sample from a distribution for which the p.d.f is 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+, where the value of the parameter 
+\begin_inset Formula $\theta=(\theta_{1},..,\theta_{k})$
+\end_inset
+
+ must lie in an open subset 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ of a k-dimensional real space.
+ Let 
+\begin_inset Formula $f_{n}(x|\theta)$
+\end_inset
+
+ denote the joint p.d.f.
+ or joint p.f.
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Define
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+\lambda_{n}(x|\theta)=logf_{n}(x|\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+Assume that the set of 
+\begin_inset Formula $x$
+\end_inset
+
+ such that 
+\begin_inset Formula $f_{n}(x|\theta)>0$
+\end_inset
+
+ is the same for all 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and that log 
+\begin_inset Formula $f_{n}(x|\theta)$
+\end_inset
+
+ is twice differentiable with respect to 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ The Fisher information matrix 
+\begin_inset Formula $I_{n}(\theta)$
+\end_inset
+
+ in the random sample 
+\begin_inset Formula $X$
+\end_inset
+
+ is defined as 
+\begin_inset Formula $kxk$
+\end_inset
+
+ matrix with 
+\begin_inset Formula $(i,j)$
+\end_inset
+
+ element equal to 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+I_{n,i,j}=Cov_{\theta}[\frac{\partial}{\partial\theta_{i}}\lambda_{n}^{'}(X|\theta),\frac{\partial}{\text{\ensuremath{\partial\theta_{j}}}}\lambda_{n}^{'}(X|\theta)]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+Fisher information attempts to measure the amount of information about a
+ parameter that a random variable or sample contains.
+ Fisher information from independent random variables adds together to form
+ the Fisher information in the sample.
+ The information inequality (Cramer-Rao lower bound) provides lower bounds
+ on the variances of all estimators.
+ An estimator is efficient if its variance equlas the lower bound.
+ The asymtotoc distribution of a maximum likelihood estimator of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is (inder regularity condiations) normal with mean 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and variance equal to 
+\begin_inset Formula $1$
+\end_inset
+
+ over the Fisher information in the sample.
+ Also, for the large sample sizes, the posteriro distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is approximately normal with mean equal to the M.L.E.
+ and variance equal to 
+\begin_inset Formula $1$
+\end_inset
+
+ over the Fisher information in the sample evaluated at the M.L.E
+\end_layout
+
+\begin_layout Section*
+Question
+\end_layout
+
+\begin_layout Enumerate
+Relatitive with Entropy ?
+\end_layout
+
 \end_body
 \end_document

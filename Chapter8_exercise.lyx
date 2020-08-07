@@ -2595,5 +2595,370 @@ So
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+8.8 Fisher Information
+\end_layout
+
+\begin_layout Exercise*
+9.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ taken from the normal distribution with mean 
+\begin_inset Formula $0$
+\end_inset
+
+ and unknown standard deviation 
+\begin_inset Formula $\sigma>0$
+\end_inset
+
+.
+ An unbiased estimator of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+10.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with mean 
+\begin_inset Formula $0$
+\end_inset
+
+ and unknown 
+\begin_inset Formula $\sigma>0$
+\end_inset
+
+.
+ Find the lower bound specified by the information inequality for the variance
+ of any inbiased estimator of 
+\begin_inset Formula $\log\sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+Lower bound 
+\begin_inset Formula $=\frac{[m^{'}(\theta)]^{2}}{nI(\theta)}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $m^{'}(\theta)=\frac{1}{\sigma}$
+\end_inset
+
+, 
+\begin_inset Formula $I(\theta)=E[\lambda^{''}(X|\theta)]=\frac{1}{\sigma^{2}}$
+\end_inset
+
+.
+ So lower bound is 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+11.
+ From exercise 23 from Sec 7.3.
+ 
+\begin_inset Formula $f(x|\theta)=a(\theta)b(x)exp[c(\theta)d(x)]$
+\end_inset
+
+.
+ Show that estimator 
+\begin_inset Formula $T=\sum_{i=1}^{n}d(X_{i})$
+\end_inset
+
+ is efficient estimator.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It means 
+\begin_inset Formula $T$
+\end_inset
+
+ hold equation 
+\begin_inset Formula $(8.8.15)$
+\end_inset
+
+: 
+\begin_inset Formula $T=u(\theta)\lambda_{n}^{'}(X|\theta)+v(\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\lambda_{n}(X|\theta)=\log(f_{n}(x|\theta))$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f_{n}(x|\theta)=[a(\theta)]^{n}\prod_{i=1}^{n}b(x_{i})exp(c(\theta)\sum_{i=1}^{n}d(x_{i}))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\lambda_{n}(X|\theta)=\log(f_{n}(x|\theta))=n\log(a(\theta))+log(\prod_{i=1}^{n}b(x_{i}))+c(\theta)\sum_{i=1}^{n}d(x_{i})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\lambda_{n}^{'}(X|\theta)=\frac{n}{a(\theta)}a^{'}(\theta)+c^{'}(\theta)\sum_{i=1}^{n}d(x_{i})$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\sum_{i=1}^{n}d(x_{i})=\frac{1}{c^{'}(\theta)}\lambda_{n}^{'}(X|\theta)-\frac{n}{a(\theta)c^{'}(\theta)}a^{'}(\theta)$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $u(\theta)=\frac{1}{c^{'}(\theta)}$
+\end_inset
+
+ and 
+\begin_inset Formula $v(\theta)=-\frac{n}{a(\theta)c^{'}(\theta)}a^{'}(\theta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+12.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a normal distribution for mean is known and the
+ variance is unknown.
+ Construct an efficient estimator .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Efficient estimator if 
+\begin_inset Formula $T=u(\theta)\lambda_{n}^{'}(X|\theta)+v(\theta)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\lambda_{n}(X|\theta)=\log(f_{n}(x|\theta))$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x|\theta)=\frac{1}{\sqrt{2\pi}\sigma}exp(\frac{-(x-\mu)^{2}}{\sigma^{2}}),$
+\end_inset
+
+so 
+\begin_inset Formula $f_{n}(x|\theta)=(2\pi)^{-n/2}\sigma^{-n}exp(\frac{-\sum_{i=1}^{n}(x-\mu)^{2}}{\sigma^{2}})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\log(f_{n}(x|\theta))=\frac{-n}{2}log(2\pi)-n\log(\sigma)-\sum_{i=1}^{n}(x-\mu)^{2}/\sigma^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\lambda_{n}^{'}(x|\theta)=\frac{-n}{\sigma}+2\sum_{i=1}^{n}(x-\mu)^{2}/\sigma^{3}$
+\end_inset
+
+.
+ We choose 
+\begin_inset Formula $u(\theta)=\frac{\sigma}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $v(\theta)=\frac{n}{2}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $T=\sum_{i=1}^{n}(x-\mu)^{2}/\sigma^{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $T$
+\end_inset
+
+ is 
+\begin_inset Formula $\chi_{n}^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha=n/2,\beta=1/2$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $E[T]=\alpha/\beta=n$
+\end_inset
+
+, 
+\begin_inset Formula $Var(T)=\alpha/\beta^{2}=2n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+14.
+ Following Theorem 8.8.5, Variance is 
+\begin_inset Formula $1/[nI(\theta)]^{1/2}$
+\end_inset
+
+.
+ So we need find 
+\begin_inset Formula $I(\theta)$
+\end_inset
+
+ of Gamma distribution with 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ unknown.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+15.
+ From Bayesian Point of View in Page 524.
+ Posterior distribution of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is normal distribution with mean is M.L.E 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $1/[nI(\hat{\theta}_{n})]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+My result: Posterior: mean 
+\begin_inset Formula $\bar{x}_{n}$
+\end_inset
+
+; variance: 
+\begin_inset Formula $\frac{\sigma^{2}}{2n}$
+\end_inset
+
+.
+ Notice: 
+\begin_inset Formula $1/[nI(\hat{\theta}_{n})]$
+\end_inset
+
+ not 
+\begin_inset Formula $1/[nI_{n}(\hat{\theta}_{n})]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+16.
+ Easy to find 
+\begin_inset Formula $I(p)=\frac{1}{(1-p)p}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+19.
+ Easy to find 
+\begin_inset Formula $\lambda^{''}(X|\theta)=\frac{-n}{\theta^{2}}$
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
