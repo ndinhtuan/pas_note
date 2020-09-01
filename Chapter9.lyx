@@ -1,0 +1,3307 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Chapter 9.
+ Testing Hypotheses
+\end_layout
+
+\begin_layout Chapter*
+9.1 Problems of Testing Hypotheses
+\end_layout
+
+\begin_layout Standard
+In example 8.3.1 on page 473, we were interested in whether or not the mean
+ log-rainfall 
+\begin_inset Formula $\mu$
+\end_inset
+
+ from seeded clouds was greater than some constant, specifically 
+\begin_inset Formula $4$
+\end_inset
+
+.
+ Hypothesis testing problems are similar in nature to the decision problem
+ of Example 8.3.1.
+ In general, hypothesis testing concerns trying to decide whether a parameter
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+ lies in one subset of the parameter space or in its complemet.
+ When 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is one-dimensional, at least one of the two subsets will typically be an
+ interval, possibly degenerate.
+ In this section, we introduct the notation and some common methodology
+ associated with hypothesis testing.
+ We also demonstrate an equivalence between hypothesis tests and confidence
+ intervals.
+\end_layout
+
+\begin_layout Section*
+The Null and Alternative Hypotheses
+\end_layout
+
+\begin_layout Standard
+Consider a statistical problem involving a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ whose value is unknown but must lie in a certain parameter space 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+ Suppose now that 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ can be partitioned into two disjoint subset 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+, and the statistician is interested in whether 
+\begin_inset Formula $\theta$
+\end_inset
+
+ lies in 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ or in 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We shall let 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ denote hypothesis 
+\begin_inset Formula $\theta\in\Omega_{0}$
+\end_inset
+
+ and let 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ denote the hypothesis that 
+\begin_inset Formula $\theta\in\Omega_{1}.$
+\end_inset
+
+Since subsets 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+ are disjoint and 
+\begin_inset Formula $\Omega_{0}\cup\Omega_{1}=\Omega$
+\end_inset
+
+, exactly one of hypotheses 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ must be true.
+ The statistician must decide which of the hypotheses 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+or 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ appears to be true.
+ A problem of this type, in which there are only two possible decisions,
+ is called a problem of 
+\series bold
+testing hypotheses
+\series default
+.
+ If the statistician makes the wrong decisions, he might suffer a certain
+ loss or pay a certain cost.
+ In many problems, he will have an opportunity to observe some data before
+ he has to make his decision, and the observed values will provide him with
+ information about the value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ A procedure for deciding which hypothesis to choose is called a
+\series bold
+ test procedure or simple a test
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+In our discussion up to this point, we have treated the hypotheses 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ on an equal basis.
+ In most problems, however, the two hypotheses are treated quite differently.
+\end_layout
+
+\begin_layout Definition*
+9.1.1.
+ Null and Alternative Hypotheses/Reject.
+ The hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is called 
+\emph on
+null hypothesis 
+\emph default
+and hypothesis 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ is called the 
+\emph on
+alternative hypothesis.
+ 
+\emph default
+When performing a test, if we decide that 
+\begin_inset Formula $\theta$
+\end_inset
+
+ lies in 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+, we are said to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+ If we decide that 
+\begin_inset Formula $\theta$
+\end_inset
+
+ lies in 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ we are said not to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The terminology referring to the decisions in Definition 9.1.1 is asymetric
+ with regard to the null and alternative hypotheses.
+ We shall retrurn to this point later in the section.
+\end_layout
+
+\begin_layout Section*
+Simple and Composite Hypotheses
+\end_layout
+
+\begin_layout Standard
+Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a distribution for which the p.d.f.
+ or the p.f.
+ is 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+ , where the value of the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ must lie in the parameter space 
+\begin_inset Formula $\Omega$
+\end_inset
+
+; 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+ are disjoint sets with 
+\begin_inset Formula $\Omega_{0}\cup\Omega_{1}=\Omega$
+\end_inset
+
+; and ot os desired to test the following hypotheses:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta\in\Omega_{0},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta\in\Omega_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=0$
+\end_inset
+
+ or 
+\begin_inset Formula $i=1$
+\end_inset
+
+, the set 
+\begin_inset Formula $\Omega_{i}$
+\end_inset
+
+ may contain just a single value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ or it might be a larger set.
+\end_layout
+
+\begin_layout Definition*
+Simple and Composite Hypotheses.
+ If 
+\begin_inset Formula $\Omega_{i}$
+\end_inset
+
+ contains just a single value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, then 
+\begin_inset Formula $H_{i}$
+\end_inset
+
+ is a simple hypothesis.
+ If the set 
+\begin_inset Formula $\Omega_{i}$
+\end_inset
+
+ contains more than one value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, then 
+\begin_inset Formula $H_{i}$
+\end_inset
+
+ is a composite hypothesis.
+\end_layout
+
+\begin_layout Standard
+Under a simple hypothesis, the distribution of the observations is completely
+ specified.
+ Under a composite hypothesis, it is specified only that the distribution
+ of the observations belongs to a certain class.
+ For example, a simple null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ must have the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta=\theta_{0}\text{ (9.1.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+9.1.3.
+ One-sided and Two-sided Hypotheses.
+ Let 
+\begin_inset Formula $\theta$
+\end_inset
+
+ be a one-dimensional parameter.
+ One-sided null hypotheses are of the form 
+\begin_inset Formula $H_{0}:\theta\le\theta_{0}$
+\end_inset
+
+ or 
+\begin_inset Formula $H_{0}:\theta\geq\theta_{0}$
+\end_inset
+
+, with the corresponding one-sided alternative hypotheses being 
+\begin_inset Formula $H_{1}:\theta>\theta_{0}$
+\end_inset
+
+ or 
+\begin_inset Formula $H_{1}:\theta<\theta_{0}$
+\end_inset
+
+.
+ When the null hypothesis is simple, such as (9.1.1), the alternative hypothesis
+ is usually two-sided, 
+\begin_inset Formula $H_{1}:\theta\neq\theta_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consider a problem in which we wish to test the following hypotheses:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta\in\Omega_{0},\text{ and }H_{1}:\theta\in\Omega_{1}\text{ (9.1.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose that before the statistician has to decide which hypothesis to choose,
+ she can observe a random sample 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ drawn from a distribution that involves the unknown parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ We shall let 
+\begin_inset Formula $S$
+\end_inset
+
+ denote the sample space of the 
+\begin_inset Formula $n-$
+\end_inset
+
+dimensional random vector 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ In other words, 
+\begin_inset Formula $S$
+\end_inset
+
+ is the set of all possible values of the random sample.
+\end_layout
+
+\begin_layout Standard
+In a problem of this type, the statistician can specify a test procedure
+ by partitioning the sample space 
+\begin_inset Formula $S$
+\end_inset
+
+ into two subsets.
+ One subset 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ contains the values of 
+\begin_inset Formula $X$
+\end_inset
+
+ for which she will reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, and the other subset 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ contains the values of 
+\begin_inset Formula $X$
+\end_inset
+
+ for which she will not reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+9.1.4.
+ Critical Region.
+ The set 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ defined above is called the critical region of the test.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In summary, a test procedure is determined by specifying the critical region
+ of the test.
+ The complement of the critical region must then contain all outcomes for
+ which 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ will not be rejected.
+\end_layout
+
+\begin_layout Standard
+In most hypothesis-testing problems, the critical region is defined in terms
+ of a statistic, 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+9.1.5.
+ Test Statistic/Rejection Region.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random sample from a distribution that depends on a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+ be a statistic, and let 
+\begin_inset Formula $R$
+\end_inset
+
+ be a subset of the real line.
+ Suppose that test procedure for the hypotheses (9.1.3) is of the form 
+\begin_inset Quotes eld
+\end_inset
+
+reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $T\in R$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Then we call 
+\begin_inset Formula $T$
+\end_inset
+
+ a 
+\series bold
+test statistic
+\series default
+, and we call 
+\begin_inset Formula $R$
+\end_inset
+
+ the 
+\series bold
+rejection region 
+\series default
+of the test.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When a test is defined in terms of a test statistic 
+\begin_inset Formula $T$
+\end_inset
+
+ and rejection region 
+\begin_inset Formula $R$
+\end_inset
+
+, as in Definition 9.1.5, the set 
+\begin_inset Formula $S_{1}=\{x:r(x)\in R\}$
+\end_inset
+
+ is the critical region from Definition 9.1.4.
+\end_layout
+
+\begin_layout Standard
+Typically, the rejection region for a test based on a test statistic 
+\begin_inset Formula $T$
+\end_inset
+
+ will be some fixed interval or the outside of some fixed interval.
+ For example, if the test rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $T\ge c$
+\end_inset
+
+, the rejection region is the interval 
+\begin_inset Formula $[c,\infty)$
+\end_inset
+
+.
+ Once a test statistic is being used, it is simpler to express everthing
+ in terms of the test statistic in the rest of this book will be based on
+ test statistics rather thant try to compute the critical region from Definition
+ 9.1.4.
+ All of the tests in the test o fthis book will be based on test statistics.
+ Indeed, most of the tests can be written in the form 
+\begin_inset Quotes eld
+\end_inset
+
+reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $T\ge c$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Some theoretical arguments are given in Sections 9.2-9.4 for choosing certain
+ test statistics in a variety of problems invlving a single parameter.
+ Although these theoretical results provide optimal tests in the situations
+ in which they apply many practical problem do not satisfy the conditions
+ required to apply these results.
+\end_layout
+
+\begin_layout Paragraph*
+Note: Dividing Both parameter space and sample space.
+ 
+\series medium
+In the various definitions given so far, the reader needs to keep straight
+ two different divisions.
+ First, we divided the parameter space 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ into two disjoint subsets, 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+.
+ Next we divided the sample space 
+\begin_inset Formula $S$
+\end_inset
+
+ into two disjoint subsets 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+.
+ These divisions are related to each other, but the are not the same.
+ For one things, the parameter space and the sample space usually are of
+ different dimensions, so 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ will necessarily be different from 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+.
+ The relation between the two divisions is the following: If the random
+ sample 
+\begin_inset Formula $X$
+\end_inset
+
+ lies in the critical region 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+, then we reject the null hypothesis 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $X\in S_{0}$
+\end_inset
+
+, we don't reject 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+.
+ We eventually learn which set 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ or 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ contains 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ We rarely learn which set 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ or 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+ contains 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+The Power Function and Types of Error
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\delta$
+\end_inset
+
+ stand for a test procedure of the form discussed earlier in this section,
+ either based on a critical region or based on a test statistic.
+ The interesting probabistic properties of 
+\begin_inset Formula $\delta$
+\end_inset
+
+ can be summarized by computing, for each value of 
+\begin_inset Formula $\theta\in\Omega$
+\end_inset
+
+, either the probability 
+\begin_inset Formula $\pi(\theta|\delta)$
+\end_inset
+
+ that the test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ will reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ or the probability 
+\begin_inset Formula $1-\pi(\theta|\delta)$
+\end_inset
+
+ that it does not reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+9.1.6.
+ Power Function.
+ Let 
+\begin_inset Formula $\delta$
+\end_inset
+
+ be a test procedure.
+ The function 
+\begin_inset Formula $\pi(\theta|\delta)$
+\end_inset
+
+ is called the power function of the test 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ denotes the critical region of 
+\begin_inset Formula $\delta$
+\end_inset
+
+, then the power function 
+\begin_inset Formula $\pi(\theta|\delta)$
+\end_inset
+
+ is determined by the relation
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+\pi(\theta|\delta)=Pr(X\in S_{1}|\theta)\text{ for }\theta\in\Omega\text{ (9.1.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+If 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is described in terms of a test statistic 
+\begin_inset Formula $T$
+\end_inset
+
+ and rejection region 
+\begin_inset Formula $R$
+\end_inset
+
+, the power function is
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+\pi(\theta|\delta)=Pr(T\in R|\theta)\text{ for \ensuremath{\theta\in\Omega}\text{ (9.1.5)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+Since the power function 
+\begin_inset Formula $\pi(\theta|\delta)$
+\end_inset
+
+ specifies, for each possible value f the parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+, the probability that 
+\begin_inset Formula $\delta$
+\end_inset
+
+ will reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, it follows that the ideal power function would be one for which 
+\begin_inset Formula $\pi(\theta|\delta)=0$
+\end_inset
+
+ for every value of 
+\begin_inset Formula $\theta\in\Omega_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\pi(\theta|\delta)=1$
+\end_inset
+
+ for every value of 
+\begin_inset Formula $\theta\in\Omega_{1}$
+\end_inset
+
+ .
+ If the power function of a test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ actually had these values, then regardless of the actual value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, 
+\begin_inset Formula $\delta$
+\end_inset
+
+ would lead to correct decision with probability 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ In a practical problem, however, there would seldom exist any test procedure
+ having this ideal power function.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since the possibility of error exists in virtually every testing problem,
+ we should consider what kinds of errors we might take.
+ For each value of 
+\begin_inset Formula $\theta\in\Omega_{0}$
+\end_inset
+
+, the decision to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is an incorrect decision.
+ Similarly, for each value of 
+\begin_inset Formula $\theta\in\Omega_{1}$
+\end_inset
+
+, the decision not to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is an incorrect decision.
+\end_layout
+
+\begin_layout Definition*
+9.1.7.
+ Type 
+\begin_inset Formula $I/II$
+\end_inset
+
+ Error.
+ An erroneous decision to reject a true null hypothesis is 
+\emph on
+type I error, 
+\emph default
+or an error of the first kind.
+ An erroneous decision not to reject a false null hypothesis is called a
+ 
+\emph on
+type II error 
+\emph default
+, or an error of the second kind.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is a need to strike an appropriate balance between the two goals of
+ low power in 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ and high power in 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The most popular method for striking a balance between the two goals is
+ to choose a number 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ between 0 and 1 and require that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi(\theta|\delta)\leq\alpha_{0},\text{ for all \ensuremath{\theta\in\Omega_{0}}(9.1.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then among all tests that satisfy (9.1.6), the statistician seeks a test whose
+ power function is as high as can be obtained for 
+\begin_inset Formula $\delta\in\Omega_{1}$
+\end_inset
+
+.
+ This method is discussed in Sections 9.2 and 9.3.
+ Another method of balancng the proababilities of type I and type II errors
+ is to minimize linear combination of the different probabilities of error.
+ We shall discuss this method in Sec 9.2 and again in Sec.
+ 9.8.
+\end_layout
+
+\begin_layout Paragraph*
+Note: Choosing Null and Alternative Hypotheses.
+ 
+\series medium
+If one chooses to balance type I and type II error probabilities by requiring
+ (9.1.6), then one has introduced an asymmetry in the treatment of the null
+ and alternative hypotheses.
+ In mose testing problems, such asymmetry can be quite natural.
+ Generally, one of the two errors (type I and type II) is more costly or
+ less palatable in some sense.
+ It would make sense to put tighter controls on the probability of the more
+ serious error.
+ For this reason, one generally arranges the null and alternative hypotheses
+ so that type I error is the error most to be avoided.
+ For cases in which neither hypotheseis is naturally the null, switch the
+ names of null and alternative hypotheses can have a variety of different
+ effects on the results of testing procedures.
+ (see Exercise 21 in this section).
+\end_layout
+
+\begin_layout Standard
+The quantities in Eq.
+ (9.1.6) play a fundamental role in hypothesis testing and have special names.
+\end_layout
+
+\begin_layout Definition*
+9.1.8.
+ Level/Size.
+ A test that satisfies (9.1.6) is called a level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test, and we say that the test has level of significance 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+ In addition, the size 
+\begin_inset Formula $\alpha(\delta)$
+\end_inset
+
+ of a test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is defined as follows:
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+\alpha(\delta)=\sup_{\theta\in\Omega_{0}}\pi(\theta|\delta)\text{ (9.1.7)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice: It seems 
+\series bold
+threshold 
+\series default
+for probability
+\end_layout
+
+\begin_layout Standard
+The following results are immediate consequences of Definition 9.1.8.
+\end_layout
+
+\begin_layout Corollary*
+9.1.1.
+ A test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is a level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test if and only if its size is at most 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ (i.e., 
+\begin_inset Formula $\alpha(\delta)\leq\alpha_{0}$
+\end_inset
+
+).
+ If the null hypothesis is simple, that is, 
+\begin_inset Formula $H_{0}:\theta=\theta_{0}$
+\end_inset
+
+, then the size of 
+\begin_inset Formula $\delta$
+\end_inset
+
+ will be 
+\begin_inset Formula $\alpha(\delta)=\pi(\theta_{0}|\delta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Making a Test Have a Specific Significance Level
+\end_layout
+
+\begin_layout Standard
+Whenever we choose a test procedure, we should also examine the power function.
+ If one has made a good choice, then the power function should generally
+ be larger for 
+\begin_inset Formula $\theta\in\Omega_{1}$
+\end_inset
+
+ than for 
+\begin_inset Formula $\theta\in\Omega_{0}$
+\end_inset
+
+.
+ Also the power function should increase as 
+\begin_inset Formula $\theta$
+\end_inset
+
+ moves away from 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+.
+ For example, Fig.
+ 9.4 shows plots of the power function for two of the example in this section.
+ In both cases, the power function increase as the parameter moves away
+ from 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 9.4_power_function_property.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+The p-value
+\end_layout
+
+\begin_layout Standard
+An experimenter does not typically choose a value of 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ in advance of the experiment and then simply report whether or not 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ was rejected at level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+ In many fields of application, it has become standard practice to report,
+ in addition to the observed value of the appropriate test statistic such
+ as 
+\begin_inset Formula $Z$
+\end_inset
+
+, all value of 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ for which the level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test would leed to rejection of 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+9.1.9.
+ 
+\begin_inset Formula $p-value$
+\end_inset
+
+.
+ In general, the 
+\begin_inset Formula $p-value$
+\end_inset
+
+ is the smallest level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ such that we would reject the null-hypothesis at level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ with the 
+\series bold
+observed data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An experimenter who rejects a null hypothesis if and only if the 
+\begin_inset Formula $p-value$
+\end_inset
+
+ is at most 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ is using a test with level of significance 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+ Similarly, an experimenter who wants a level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test will reject the null hypothesis if and only if the 
+\begin_inset Formula $p-value$
+\end_inset
+
+ is at most 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+ For this reason, the 
+\begin_inset Formula $p-value$
+\end_inset
+
+ is sometimes called the observed level of significance.
+\end_layout
+
+\begin_layout Paragraph*
+Calculating p-values 
+\series medium
+If all of our tests are of the form 
+\begin_inset Quotes eld
+\end_inset
+
+reject the null hypothesis when 
+\begin_inset Formula $T\geq c$
+\end_inset
+
+ 
+\begin_inset Quotes erd
+\end_inset
+
+ for a single test statistc 
+\begin_inset Formula $T$
+\end_inset
+
+, there is a straightforward way to compute p-values.
+ For each 
+\begin_inset Formula $t$
+\end_inset
+
+, let 
+\begin_inset Formula $\delta_{t}$
+\end_inset
+
+ be the test that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $T\geq t$
+\end_inset
+
+.
+ Then the p-value when 
+\begin_inset Formula $T=t$
+\end_inset
+
+ is observed is the size of the test 
+\begin_inset Formula $\delta_{t}$
+\end_inset
+
+.
+ (See Exercise 18.) That is, the p-value equals
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sup_{\theta\in\Omega_{0}}\pi(\theta|\delta_{t})=\sup_{\theta\in\Omega_{0}}Pr(T\geq t|\theta)\text{ (9.1.12)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Typically, 
+\begin_inset Formula $\pi(\theta|\delta_{t})$
+\end_inset
+
+ is maximized at some 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+ on the boundary between 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+.
+ Because the p-value is calculated as a probability in the upper tail of
+ the distribution of 
+\begin_inset Formula $T$
+\end_inset
+
+, it is sometimes called a tail area.
+\end_layout
+
+\begin_layout Standard
+The calculation of the p-value is more complicated when the test cannot
+ be put into the form 
+\begin_inset Quotes eld
+\end_inset
+
+reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $T\geq c$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ In this text, we shall calculate p-values only for tests that do have this
+ form.
+\end_layout
+
+\begin_layout Section*
+Equivalence of Tests and Confidence Sets
+\end_layout
+
+\begin_layout Standard
+We shall now illustate how confidence intervals (see Sec.
+ 8.5) can be used as an alternative method to report the results of a test
+ of hypotheses.
+ In particular, we shall show that a coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ confident set (a generalization of confidence interval to be defined shortly)
+ can be thought of as a set of null hypotheses that would not be rejected
+ at significance level 
+\begin_inset Formula $1-\gamma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+9.1.1.
+ Definding Confidence Sets from Tests.
+ Let 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ be a random sample from a distribution that depends on a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ be a function, and suppose that for each possible value 
+\begin_inset Formula $g_{0}$
+\end_inset
+
+ of 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+, there is a level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test 
+\begin_inset Formula $\delta_{g_{0}}$
+\end_inset
+
+ of the hypotheses
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+H_{0,g_{0}}:g(\theta)=g_{0},H_{1,g_{0}}:g(\theta)\neq g_{0}\text{ (9.1.13)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+For each possible value 
+\begin_inset Formula $x$
+\end_inset
+
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+, define
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\omega(x)=\{g_{0}:\delta_{g0}\text{ does not reject }H_{0,g0}\text{ if \ensuremath{X=x} is observed}\}\text{ (9.1.14)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Let 
+\begin_inset Formula $\gamma=1-\alpha_{0}$
+\end_inset
+
+.
+ Then, the random set 
+\begin_inset Formula $\omega(X)$
+\end_inset
+
+ satisfies
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+Pr[g(\theta_{0})\in\omega(X)|\theta=\theta_{0}]\geq\gamma\text{ (9.1.15)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+for all 
+\begin_inset Formula $\theta_{0}\in\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+9.1.10 Confidence Set.
+ If a random set 
+\begin_inset Formula $\omega(X)$
+\end_inset
+
+ satisfies (9.1.15) for every 
+\begin_inset Formula $\theta_{0}\in\Omega$
+\end_inset
+
+, we call it a coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ confidence set for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+.
+ If the inequality in (9.1.15) is equality for all 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+, then we call the confidence set exact.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A confidence set is a generalization of the concept of a confidence interval
+ introduced in Sec.
+ 8.5.
+ What Theorem 9.1.1 shows is that a collection of level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ tests of the hypotheses (9.1.13) can be used to construct a coefficient 
+\begin_inset Formula $\gamma=1-\alpha_{0}$
+\end_inset
+
+ confidence set for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+.
+ The reverse constrction is also possible.
+\end_layout
+
+\begin_layout Theorem*
+9.1.2.
+ Defining Tests from Confidence Sets.
+ Let 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ be a random sample from a distribution that depends on a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ be a function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, and let 
+\begin_inset Formula $\omega(X)$
+\end_inset
+
+ be a coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ confidence set for 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+.
+ For each possible value 
+\begin_inset Formula $g_{0}$
+\end_inset
+
+ of 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+, construct the following test 
+\begin_inset Formula $\delta_{g0}$
+\end_inset
+
+ of the hypotheses in Eq.
+ (9.1.13): 
+\begin_inset Formula $\delta_{g0}$
+\end_inset
+
+ does not reject 
+\begin_inset Formula $H_{0,g0}$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $g_{0}\in\omega(X)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\delta_{g0}$
+\end_inset
+
+ is a level 
+\begin_inset Formula $\alpha_{0}=1-\gamma$
+\end_inset
+
+ test of the hypotheses in Eq.
+ (9.1.13)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+One-sided confidence intervals and Tests.
+ 
+\series default
+Theorems 9.1.1 and 9.1.2 establish the equivalence between confidence sets and
+ tests of hypotheses of the form (9.1.13).
+ It is often necessary to test other forms of hypotheses, and it woulf be
+ nice to have versions of Theorems 9.1.1 and 9.1.2 to deal with these cases.
+ Example 9.1.13 is one such case in which the hypotheses are of the form 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0,g0}:g(\theta)\leq g_{0},\text{ }H_{1,g0}:g(\theta)>g_{0}\text{ (9.1.19)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Theorem 9.1.1 extends immediately to such cases.
+\end_layout
+
+\begin_layout Theorem*
+9.1.3.
+ One-Sided Confidence Intervals from One-Sided Tests.
+ Let 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ be a random sample from a distribution that depends on a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+ be a real-valued function, and suppose that for each possible value 
+\begin_inset Formula $g_{0}$
+\end_inset
+
+ of 
+\begin_inset Formula $g(\theta)$
+\end_inset
+
+, there is a level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test 
+\begin_inset Formula $\delta_{g0}$
+\end_inset
+
+ of the hypotheses (9.1.19).
+ For each possible value 
+\begin_inset Formula $x$
+\end_inset
+
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+, define 
+\begin_inset Formula $\omega(x)$
+\end_inset
+
+ by Eq.(9.1.14).
+ Let 
+\begin_inset Formula $\gamma=1-\alpha_{0}$
+\end_inset
+
+ .
+ Then the random set 
+\begin_inset Formula $\omega(X)$
+\end_inset
+
+ satisfies Eq.
+ (9.1.15) for all 
+\begin_inset Formula $\theta_{0}\in\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Likelihood Ratio Tests
+\end_layout
+
+\begin_layout Standard
+Likelihood ratio tests in Sec9.2 are based on likelihood function 
+\begin_inset Formula $f_{n}(x|\theta)$
+\end_inset
+
+.
+ The likelihood function tends to the highes near the true value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Indeed, this is why maximum likelihood estimation works well in so many
+ cases.
+ Now, suppose that we wish to test the hypotheses
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta\in\Omega_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta\in\Omega_{1}\text{ (9.1.23)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to compare these two hypotheses, we might wish to see whether the
+ likelihood function is higher on 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ or on 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+, and if not, how much smaller the likelihood function is on 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+.
+ When we computed M.L.E.'s, we maximized the likelihood function over the entire
+ parameter space 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+ In particular, we calculated 
+\begin_inset Formula $\sup_{\theta\in\Omega}f_{n}(x|\theta)$
+\end_inset
+
+.
+ If we restrict attention to 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, then we can compute the largest value of the likelihood among those parameter
+ values in 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+: 
+\begin_inset Formula $\sup_{\theta\in\Omega_{0}}f_{n}(x|\theta)$
+\end_inset
+
+.
+ The ratio of these two suprema can then be used for testing the hypotheses
+ (9.1.23).
+\end_layout
+
+\begin_layout Definition*
+9.1.11.
+ Likelihood Ratio Test.
+ The statistic
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+\Lambda(x)=\frac{\sup_{\theta\in\Omega_{0}}f_{n}(x|\theta)}{\begin{subarray}{c}
+\sup_{\theta\in\Omega}f_{n}(x|\theta)\end{subarray}}\text{ (9.1.24)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+is called the likelihood ratio statistic.
+ A likelihood ratio test of hypotheses (9.1.23) is to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $\Lambda(x)\le k$
+\end_inset
+
+ for some constant 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In words, a likelihood ratio test rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if the likelihood function on 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+ is sufficiently small compared to the likelihood function on all of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+ Generally, 
+\begin_inset Formula $k$
+\end_inset
+
+ is chosen so that the test has a desired level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+, if that is possible.
+\end_layout
+
+\begin_layout Section*
+Likelihood Ratio Tests with Large Samples
+\end_layout
+
+\begin_layout Standard
+Likelihood ratio tests are most popular in problems involving large sample
+ sizes.
+ The following result, whose precise statement and proof are beyond the
+ scope of this text, shows how to use them in such cases.
+\end_layout
+
+\begin_layout Theorem*
+9.1.4.
+ Large-Sample Likelihood Ratio Tests.
+ Let 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ be an open subset of p-dimensional space, and suppose that 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ specifies that 
+\begin_inset Formula $k$
+\end_inset
+
+ coordinates of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ are equal to 
+\begin_inset Formula $k$
+\end_inset
+
+ specific values.
+ Assume that 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true and that the likelihood function satisfies the conditions needed
+ to prove that the M.L.E.
+ is asymptotically normal and asymptotically efficient.
+ (page 523).
+ Then, as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+, 
+\begin_inset Formula $-2\log\Lambda(X)$
+\end_inset
+
+ converges in distribution to the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $k$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On a final note, one must be careful not to apply Theorem 9.1.4.
+ to problems of one-sided hypothesis testing.
+ In such cases, the 
+\begin_inset Formula $\Lambda(X)$
+\end_inset
+
+ usually has a distribution that is neither discrete nor continuos and doesn't
+ converge to a 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution.
+ Also, Theorem 9.1.4.
+ fails to apply when the parameter space 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is a closed set and the null hypothesis is that 
+\begin_inset Formula $\theta$
+\end_inset
+
+ takes a value on the boundary of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Hypothesis-Testing Terminology
+\end_layout
+
+\begin_layout Theorem*
+9.1.5.
+ For 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ let 
+\begin_inset Formula $H_{0,i}$
+\end_inset
+
+ be a null hypothesis, and let 
+\begin_inset Formula $\delta_{i}$
+\end_inset
+
+ be level 
+\begin_inset Formula $\alpha_{0,i}$
+\end_inset
+
+ test of 
+\begin_inset Formula $H_{0,i}$
+\end_inset
+
+.
+ Define the combined null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ that all of 
+\begin_inset Formula $H_{0,1},...,H_{0,n}$
+\end_inset
+
+ are simultaneously true.
+ Let 
+\begin_inset Formula $\delta$
+\end_inset
+
+ be the test that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if at least one of 
+\begin_inset Formula $\delta_{1},...,\delta_{n}$
+\end_inset
+
+ rejects its corresponding null hypothesis.
+ Then 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is a level 
+\begin_inset Formula $\sum_{i=1}^{n}\alpha_{0,i}$
+\end_inset
+
+ test of 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+9.2.
+ Testing Simple Hypotheses
+\end_layout
+
+\begin_layout Standard
+The simplest hypothesis-testing situation is that in which there are only
+ two possible values of the parameter.
+ In such cases, it is possible to identify a collection of test procedures
+ that have certain optimal properties.
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The two types of errors
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ comes from a distribution for which the joint p.d.f, p.f., or p.f./p.d.f.
+ is either 
+\begin_inset Formula $f_{0}(x)$
+\end_inset
+
+ or 
+\begin_inset Formula $f_{1}(x)$
+\end_inset
+
+.
+ To correspond with notation earlier and later in the book, we can introduce
+ a parameter space 
+\begin_inset Formula $\Omega=\{\theta_{0},\theta_{1}\}$
+\end_inset
+
+ and let 
+\begin_inset Formula $\theta=\theta_{i}$
+\end_inset
+
+ stand for the case in which the data have p.d.f., p.f., or p.f./p.d.f.
+ 
+\begin_inset Formula $f_{i}(x)$
+\end_inset
+
+ for 
+\begin_inset Formula $i=0,1$
+\end_inset
+
+.
+ We are then interested in testign the following simple hypotheses:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta=\theta_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta=\theta_{1}\text{ (9.2.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this case, 
+\begin_inset Formula $\Omega_{0}=\{\theta_{0}\}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega_{1}=\{\theta_{1}\}$
+\end_inset
+
+ are both singleton sets.
+\end_layout
+
+\begin_layout Standard
+For the special case in which 
+\begin_inset Formula $X$
+\end_inset
+
+ is a random sample from a distribution with univariate p.d.f.
+ or p.f.
+ 
+\begin_inset Formula $f(x|\theta)$
+\end_inset
+
+, we then have, for 
+\begin_inset Formula $i=0$
+\end_inset
+
+ or 
+\begin_inset Formula $i=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{i}(\boldsymbol{x})=f(x_{1}|\theta_{i})....f(x_{n}|\theta_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The Two Types of Errors
+\end_layout
+
+\begin_layout Standard
+When a test of the hypotheses (9.2.3) is being carried out, we have special
+ notation for the probabilities of type I and Type II errors.
+ For each test procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+, we shall let 
+\begin_inset Formula $\alpha(\delta)$
+\end_inset
+
+ denote the probability of an error of type I and shall let 
+\begin_inset Formula $\beta(\delta)$
+\end_inset
+
+ denote the probability of an error of type II.
+ Thus,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha(\delta)=Pr(\text{Rejecting \ensuremath{H_{0}}|\ensuremath{\theta=\theta_{0}}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta(\delta)=Pr(\text{Not Rejecting \ensuremath{H_{0}}|\ensuremath{\theta=\theta_{1}}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is desirable to find a test procedure for which probabilities 
+\begin_inset Formula $\alpha(\delta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta(\delta)$
+\end_inset
+
+ of the two types of error will be small.
+ For a given sample size, it is typically not possible to find a test procedure
+ for which both 
+\begin_inset Formula $\alpha(\delta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta(\delta)$
+\end_inset
+
+ will be arbitrarily small.
+ Therefore, we shall now show how to construct a procedure for which the
+ value of a specific linear combination of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ will be minimized.
+\end_layout
+
+\begin_layout Section*
+Optimal Tests
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Minimizing a Linear Combination 
+\series default
+Suppose that 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are specified positive constants, and it is desired a procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+ for which 
+\begin_inset Formula $a\alpha(\delta)+b\beta(\delta)$
+\end_inset
+
+ will be a minimum.
+\end_layout
+
+\begin_layout Theorem*
+9.2.1.
+ Let 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+ denote a test procedure such that the hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is not rejected if 
+\begin_inset Formula $af_{0}(x)>bf_{1}(x)$
+\end_inset
+
+ and the hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is rejected if 
+\begin_inset Formula $af_{0}(x)<bf_{1}(x)$
+\end_inset
+
+.
+ The null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ can be either rejected or not if 
+\begin_inset Formula $af_{0}(x)=bf_{1}(x)$
+\end_inset
+
+.
+ Then every other test procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+a\alpha(\delta^{*})+b\beta(\delta^{*})\leq a\alpha(\delta)+b\beta(\delta)\text{ (9.2.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The ratio 
+\begin_inset Formula $f_{1}(x)/f_{0}(x)$
+\end_inset
+
+ is sometimes called the likelihood ratio rof the sample.
+\end_layout
+
+\begin_layout Corollary*
+9.2.1.
+ Assume the conditions of Theorem 9.2.1, and assume that 
+\begin_inset Formula $a>0$
+\end_inset
+
+ and 
+\begin_inset Formula $b>0$
+\end_inset
+
+.
+ Then the test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ for which the value of 
+\begin_inset Formula $a\alpha(x)+b\beta(x)$
+\end_inset
+
+ is a minimum rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when the likelihood ratio exceeds 
+\begin_inset Formula $a/b$
+\end_inset
+
+ and does not reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when the likelihood ratio is less than 
+\begin_inset Formula $a/b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Minimizing the Probability of an Error of type II
+\end_layout
+
+\begin_layout Theorem*
+9.2.2.
+ Nayma-Pearson lemma.
+ Suppose that 
+\begin_inset Formula $\delta^{'}$
+\end_inset
+
+ is a test procedure that has the following form for some constant 
+\begin_inset Formula $k>0$
+\end_inset
+
+; The hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is not rejected if 
+\begin_inset Formula $f_{1}(x)<kf_{0}(x)$
+\end_inset
+
+ and the hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is rejected if 
+\begin_inset Formula $f_{1}(x)>kf_{0}(x)$
+\end_inset
+
+.
+ The null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ can be either rejected or not if 
+\begin_inset Formula $f_{1}(x)=kf_{0}(x)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is another test procedure such that 
+\begin_inset Formula $\alpha(\delta)\le\alpha(\delta^{'})$
+\end_inset
+
+, then it follows that 
+\begin_inset Formula $\beta(\delta)\ge\beta(\delta^{'})$
+\end_inset
+
+.
+ Furthermore, if 
+\begin_inset Formula $\alpha(\delta)<\alpha(\delta^{'})$
+\end_inset
+
+, then 
+\begin_inset Formula $\beta(\delta)>\beta(\delta^{'})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To illustrate the use of the Nayman-Pearson lemma, we shall suppose that
+ a statistician wishes to use a test procedure for which 
+\begin_inset Formula $\alpha(\delta)=\alpha_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta(\delta)$
+\end_inset
+
+ is a minimum.
+ According to the lemma, we should try to find a value of 
+\begin_inset Formula $k$
+\end_inset
+
+ for which 
+\begin_inset Formula $\alpha(\delta^{'})=\alpha_{0}$
+\end_inset
+
+.
+ The procedure 
+\begin_inset Formula $\delta^{'}$
+\end_inset
+
+ will then have the mimimum possible value of 
+\begin_inset Formula $\beta(\delta)$
+\end_inset
+
+.
+ Remind that 
+\begin_inset Formula $\delta^{'}$
+\end_inset
+
+ is hypotheses reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $f_{1}/f_{0}>k$
+\end_inset
+
+ and otherwise..
+ 
+\series bold
+Not clear.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Not clear: 
+\series default
+What happen if we choose other 
+\begin_inset Formula $k$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha(\delta^{'})$
+\end_inset
+
+ still equal 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+ 
+\series bold
+Answer (?): 
+\series default
+With each value of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, we only have exactly one value of 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ So we must find 
+\begin_inset Formula $k$
+\end_inset
+
+ for 
+\begin_inset Formula $\alpha=\alpha_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Pipeline of this algorithm: 
+\series default
+Find 
+\begin_inset Formula $k$
+\end_inset
+
+ for with 
+\begin_inset Formula $\alpha(\delta^{'})=\alpha_{0}$
+\end_inset
+
+ create minimum at 
+\begin_inset Formula $k\alpha(\delta)+\beta(\delta)$
+\end_inset
+
+, At this step we also have statistic part to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ : 
+\begin_inset Formula $S(X)$
+\end_inset
+
+, then find 
+\begin_inset Formula $\beta(\delta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+But 
+\series default
+we will need 
+\begin_inset Formula $\frac{f_{1}}{f_{0}}>k$
+\end_inset
+
+ to find the statistic part : 
+\begin_inset Formula $g(X)>k^{'}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Because we care about minimum value of 
+\begin_inset Formula $\beta(\delta)$
+\end_inset
+
+, so we dont care about minimum value of 
+\begin_inset Formula $k\alpha(\delta)+\beta(\delta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Standard
+For the special case in which there are only two possible values, 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{1}$
+\end_inset
+
+, for the parameter, we found a collection of procedures for testing 
+\begin_inset Formula $H_{0}:\theta=\theta_{0}$
+\end_inset
+
+ versus 
+\begin_inset Formula $H_{1}:\theta=\theta_{1}$
+\end_inset
+
+ that contains the optimal test procedure for each of the following criteria:
+\end_layout
+
+\begin_layout Itemize
+Choose the test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ with the smallest value of 
+\begin_inset Formula $a\alpha(\delta)+b\beta(\delta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Among all tests 
+\begin_inset Formula $\delta$
+\end_inset
+
+ with 
+\begin_inset Formula $\alpha(\delta)\le\alpha_{0}$
+\end_inset
+
+ , choose the test with smallest value of 
+\begin_inset Formula $\beta(\delta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Here, 
+\begin_inset Formula $\alpha(\delta)=Pr(RejectH_{0}|\theta=\theta_{0})$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta(\delta)=Pr(\text{Not Rejecting \ensuremath{H_{0}}|\ensuremath{\theta=\theta_{1}}})$
+\end_inset
+
+ are, respectively, type 1 and type 2 error.
+ The tests all ave the following form for some positive constant 
+\begin_inset Formula $k$
+\end_inset
+
+: reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $f_{0}(x)<kf_{1}(x)$
+\end_inset
+
+, don't reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $f_{0}(x)>kf_{1}(x)$
+\end_inset
+
+, and do either if 
+\begin_inset Formula $f_{0}(x)=kf_{1}(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Important: 
+\series default
+We perform 
+\begin_inset Formula $f_{1}/f_{0}>k$
+\end_inset
+
+ to extract what formular of statistic of sequence 
+\begin_inset Formula $X$
+\end_inset
+
+:
+\begin_inset Formula $S(X)>k^{'}$
+\end_inset
+
+.
+ and from 
+\begin_inset Formula $\alpha(\delta)=\alpha_{0}$
+\end_inset
+
+ and distribution of 
+\begin_inset Formula $S(X)$
+\end_inset
+
+ we can find 
+\begin_inset Formula $k^{'}$
+\end_inset
+
+ as quantile function.
+\end_layout
+
+\begin_layout Chapter*
+9.3.
+ Uniformly Most Powerful Tests
+\end_layout
+
+\begin_layout Standard
+When the null and/or alternative hypothesis is composite, we can still find
+ a class of tests that has optimal properties in certain circumstances.
+ In particular, the null and alternative hypotheses must be of the form
+ 
+\begin_inset Formula $H_{0}:\theta\le\theta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{1}:\theta>\theta_{0}$
+\end_inset
+
+ or 
+\begin_inset Formula $H_{0}:\theta\ge\theta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{1}:\theta<\theta_{0}$
+\end_inset
+
+.
+ In addition, the family of distributions of the data must have a property
+ called 
+\begin_inset Quotes eld
+\end_inset
+
+monotone likelihood ratio
+\begin_inset Quotes erd
+\end_inset
+
+, which is deined in this section.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta\in\Omega_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta\in\Omega_{1}\text{ (9.3.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+ is composite set.
+\end_layout
+
+\begin_layout Section*
+Definite of a Uniformly Most Powerful Test
+\end_layout
+
+\begin_layout Standard
+(9.3.3) : 
+\begin_inset Formula $\alpha(\delta)\le\alpha_{0}$
+\end_inset
+
+ , among all test procedures that satisfy the requirement (9.3.3), we want
+ to find one that has the smallest possible probability of type II error
+ for every 
+\begin_inset Formula $\theta\in\Omega_{1}$
+\end_inset
+
+.
+ In terms of the power function, we want the value of 
+\begin_inset Formula $\pi(\theta|\delta)$
+\end_inset
+
+ to be as large as possible for every value of 
+\begin_inset Formula $\theta\in\Omega_{1}$
+\end_inset
+
+.
+ It may not be possible to satisfy this last criterion.
+ If 
+\begin_inset Formula $\theta_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{2}$
+\end_inset
+
+ are two different values of 
+\begin_inset Formula $\theta\in\Omega_{1}$
+\end_inset
+
+, then the test procedure for which the value of 
+\begin_inset Formula $\pi(\theta_{1}|\delta)$
+\end_inset
+
+ is maximum might be different from the test procedure for which the value
+ of 
+\begin_inset Formula $\pi(\theta_{2}|\delta)$
+\end_inset
+
+ is a maximum.
+ In other words, there might be no single test procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+ that maximizes the power function 
+\begin_inset Formula $\pi(\theta|\delta)$
+\end_inset
+
+ simultaneously for every value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ in 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+.
+ In some problems, however, there will exists a test procedure that statisfied
+ this criterion.
+ Such a procedure, when it exists, it called a uniformly most powerful test.
+ (UMP)
+\end_layout
+
+\begin_layout Definition*
+9.3.1.
+ Uniformly Most Powerful (UMP) Test.
+ A test procedure 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+ is uniformly most powerful (UMP) test of hypotheses (9.3.1) at the level
+ of significance 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $\alpha(\delta^{*})<\alpha_{0}$
+\end_inset
+
+ and for every other test procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that 
+\begin_inset Formula $\alpha(\delta)\leq\alpha_{0}$
+\end_inset
+
+, it is true that
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+\pi(\theta|\delta)\le\pi(\theta|\delta^{*})\text{ for every value of \ensuremath{\theta\in\Omega_{1}} (9.3.4)}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this section, we shall show that a UMP test exists in many problems in
+ which the random sample comes from one of the standard families of distribution
+ that we have been considering in this book.
+\end_layout
+
+\begin_layout Section*
+Monotone Likelihood Ratio
+\end_layout
+
+\begin_layout Standard
+From 
+\series bold
+Example 9.3.2, 
+\series default
+The family of exponential distributions has a special property called monotone
+ likelihood ratio that allows the manager to find a UMP test.
+\end_layout
+
+\begin_layout Definition*
+9.3.2.
+ Monotone Likelihood Ratio.
+ Let 
+\begin_inset Formula $f_{n}(x|\theta)$
+\end_inset
+
+ denote the joint p.d.f.
+ or the joint p.f.
+ of the observations 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+ be a statistic.
+ It is said that the joint distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ has a monotone likelihod ratio (MLR) in the statistic 
+\begin_inset Formula $T$
+\end_inset
+
+ if the following property is satisfied: For every two value 
+\begin_inset Formula $\theta_{1}\in\Omega$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{2}\in\Omega$
+\end_inset
+
+ with 
+\begin_inset Formula $\theta_{1}<\theta_{2}$
+\end_inset
+
+, the ratio 
+\begin_inset Formula $f_{n}(x|\theta_{2})/f_{n}(x|\theta_{1})$
+\end_inset
+
+ depends on the vector 
+\begin_inset Formula $x$
+\end_inset
+
+ only through the function 
+\begin_inset Formula $r(x)$
+\end_inset
+
+, and this ratio is a monotone function of 
+\begin_inset Formula $r(x)$
+\end_inset
+
+ over the range of possible values of 
+\begin_inset Formula $r(x)$
+\end_inset
+
+.
+ Specifically, if the ratio is increasing, we say that the distribution
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+ has increasing MLR, and if the ratio is decreasing, we say that the distributio
+n has decreasing MLR.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+One-Sided Alternatives
+\end_layout
+
+\begin_layout Standard
+In Example 9.3.2, we found a UMP level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test for a simple nul hypothesis 
+\begin_inset Formula $H_{0}^{'}:\theta=1/2$
+\end_inset
+
+ against a one-sided alternative 
+\begin_inset Formula $H_{1}:\theta>1/2$
+\end_inset
+
+.
+ It is common in such problems to test hypothese of the form: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta\le\theta_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta>\theta_{1}\text{ (9.3.8)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+9.3.1.
+ Suppose that the joint distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ has increasing monotone likelihood ratio in the statistic 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $c$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ be constants such that 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+Pr(T\ge c|\theta=\theta_{0})=\alpha_{0}\text{ (9.3.9)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Then the test procedure 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+ that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $T\ge c$
+\end_inset
+
+ is a UMP test of the hypotheses (9.3.8) at the level of significance 
+\begin_inset Formula $\alpha_{0}.$
+\end_inset
+
+ Also, 
+\begin_inset Formula $\pi(\theta|\delta^{*})$
+\end_inset
+
+ is a monotone increasing function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+A uniformly most powerful (UMP) level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test is a level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test whose power function on the alternative hypothesis is always at least
+ as high as the power function of every level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test.
+ If the family of distributions for the data has a monotone likelihood ratio
+ in a statistic 
+\begin_inset Formula $T$
+\end_inset
+
+, and if the null and alternative hypotheses are both one-sided, then there
+ exists a UNP level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test.
+ In these cases, the UMP level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test is either of the form 
+\begin_inset Quotes eld
+\end_inset
+
+reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $T\ge c$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $T\le c$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Note: 
+\series medium
+With continuous function we can find level for nonrandomized, but it maybe
+ impossible to find level for nonrandomized in concrete distribution.
+ Then we need randomized test.
+\end_layout
+
+\end_body
+\end_document
