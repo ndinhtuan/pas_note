@@ -1292,7 +1292,7 @@ b
 \begin_inset Formula $k=2*\chi_{8}^{-1}(0.95)=2*15.51=31.02$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -1995,6 +1995,912 @@ a.
 \begin_layout Exercise*
 b.
  same a.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+9.4 Two-Sided Alternatives
+\end_layout
+
+\begin_layout Exercise*
+1.
+ 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with unknown 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and known variance 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ and it is desired to test the following hypotheses for a given number 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\mu=\mu_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\mu\neq\mu_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Consider a test procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that the hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is rejected if either 
+\begin_inset Formula $\bar{X}_{n}\le c_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\bar{X}_{n}\ge c_{2}$
+\end_inset
+
+ , and let 
+\begin_inset Formula $\pi(\mu|\delta)$
+\end_inset
+
+ denote the power function of 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+ Determine the values of the constants 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\pi(\mu_{0}|\delta)=0.1$
+\end_inset
+
+ and the function 
+\begin_inset Formula $\pi(\mu|\delta)$
+\end_inset
+
+ is symmetric with respect to the point 
+\begin_inset Formula $\mu=\mu_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+From exercise 9.4.1, we have 
+\begin_inset Formula $\alpha_{1}=\alpha_{2}=0.05$
+\end_inset
+
+ is make 
+\begin_inset Formula $\pi(\mu|\delta)$
+\end_inset
+
+ symmetric with respect to the point 
+\begin_inset Formula $\mu=\mu_{0}$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+ have mean is 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma=\frac{\sigma}{\sqrt{n}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $Pr(\bar{X}_{n}\le c_{1}|\mu=\mu_{0})=0.05$
+\end_inset
+
+ and 
+\begin_inset Formula $Pr(\bar{X}_{n}\ge c_{2}|\mu=\mu_{0})$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $c_{1}=\mu_{0}+\Phi^{-1}(0.05)*\frac{\sigma}{\sqrt{n}}=\mu_{0}-\Phi^{-1}(0.95)*\frac{\sigma}{\sqrt{n}}=\mu_{0}-1.64*\frac{\sigma}{\sqrt{n}}$
+\end_inset
+
+.
+ and 
+\begin_inset Formula $c_{2}=\mu_{0}+\Phi^{-1}(0.95)*\frac{\sigma}{\sqrt{n}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+2.
+ Conditions of Exercise 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ 
+\begin_inset Formula $c_{1}=\mu_{0}-1.96n^{-1/2}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $Pr(\bar{X}_{n}>c_{1}|\mu=\mu_{0})=\Phi(-1.96)=1-\Phi(1.96)=1-0.975=0.025$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\alpha_{2}=0.1-0.025=0.075$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $c_{2}=\mu_{0}+\Phi^{-1}(0.925)n^{-1/2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+4.
+ 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with unknown mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and known variance 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:0.1\le\mu\le0.2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\mu<0.1\text{ or }\mu>0.2
+\]
+
+\end_inset
+
+
+\begin_inset Formula $n=23$
+\end_inset
+
+.
+ Find 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\pi(0.1|\delta)=\pi(0.2|\delta)=0.07$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is like Example 9.4.5.
+ Let 
+\begin_inset Formula $c_{1}=0.15-c$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}=0.15+c$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\pi(0.1|\delta)=\pi(0.2|\delta)=\Phi[n^{1/2}(0.05-c)]+1-\Phi[n^{1/2}(0.05+c)]=0.07$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula $n=25$
+\end_inset
+
+, 
+\begin_inset Formula $\Phi[5(0.05-c)]+1-\Phi[5(0.05+c)]=0.07$
+\end_inset
+
+, 
+\begin_inset Formula $\Phi(0.25+5c)-\Phi(0.25-5c)=0.93$
+\end_inset
+
+.
+ From this, we can find 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+6.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the uniform distribution on the interval 
+\begin_inset Formula $[0,\theta]$
+\end_inset
+
+, where the value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is unknown.
+ Test the following hypotheses:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\theta\leq3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\theta>3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+a.
+ Show that for each level of significance 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ (
+\begin_inset Formula $0\le\alpha_{0}<1$
+\end_inset
+
+), there exists a UMP test that specifies that 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ should be rejected if 
+\begin_inset Formula $\max\{X_{1},...,X_{n}\}\ge c$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+For 
+\begin_inset Formula $\theta=\theta_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $f_{1}(X)=\frac{X}{\theta_{1}}$
+\end_inset
+
+ if 
+\begin_inset Formula $X\le\theta_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $0$
+\end_inset
+
+ if 
+\begin_inset Formula $X>\theta_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+for 
+\begin_inset Formula $X=X_{i}$
+\end_inset
+
+, we have 
+\begin_inset Formula $f(X)=\frac{X}{\theta}$
+\end_inset
+
+ if 
+\begin_inset Formula $X\le\theta$
+\end_inset
+
+ or 
+\begin_inset Formula $0$
+\end_inset
+
+ if 
+\begin_inset Formula $X>\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $f(X_{1},...,X_{n})=0$
+\end_inset
+
+ if 
+\begin_inset Formula $max(X_{1},...,X_{n})>\theta$
+\end_inset
+
+ of 
+\begin_inset Formula $\frac{\prod_{i}X_{i}}{\theta^{n}}$
+\end_inset
+
+ if 
+\begin_inset Formula $max(X_{1},...,X_{n})\le\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+Following definition 9.3.2, suppose 
+\begin_inset Formula $\theta_{1},\theta_{2}\in\Omega$
+\end_inset
+
+, and 
+\begin_inset Formula $\theta_{1}<\theta_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\frac{f_{2}(X_{1},...,X_{n})}{f_{1}(X_{1},....,X_{n})}=\frac{\theta_{1}^{n}}{\theta_{2}^{n}}$
+\end_inset
+
+ if 
+\begin_inset Formula $max(X_{1},...,X_{n})\le\theta_{1}$
+\end_inset
+
+ ; or 
+\begin_inset Formula $\infty$
+\end_inset
+
+ if 
+\begin_inset Formula $\theta_{1}<max(X_{1},...,X_{n})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Exercise*
+So 
+\begin_inset Formula $\frac{f_{2}}{f_{1}}$
+\end_inset
+
+ is increasing for 
+\begin_inset Formula $max(X_{1},..,X_{n})$
+\end_inset
+
+ and ratio is depends 
+\begin_inset Formula $x$
+\end_inset
+
+ through 
+\begin_inset Formula $max(X_{1},..,X_{n})$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $max(X_{1},...,X_{n})$
+\end_inset
+
+ is increasing MLR of hypothesis tesing.
+ So UMP tests specifies that 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ should be rejected if 
+\begin_inset Formula $max(X_{1},..,X_{n})\ge c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+b.
+ Determine the value of 
+\begin_inset Formula $c$
+\end_inset
+
+ for each possible value of 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $Pr(max\{X_{1},...,X_{n}\}\geq c)=\alpha_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $Pr(max\{X_{1},...,X_{n}\}\le c)=1-\alpha_{0}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $[Pr(X\le c)]^{n}=1-\alpha_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha_{0}=1-(\frac{c}{\theta_{0}})^{n}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $max(X_{1}...X_{n})>\theta$
+\end_inset
+
+ then 
+\begin_inset Formula $\alpha_{0}=1$
+\end_inset
+
+.
+ With 
+\begin_inset Formula $\theta_{0}=3$
+\end_inset
+
+, because we have increasing MLR, so level achieve at 
+\begin_inset Formula $\theta_{0}=3$
+\end_inset
+
+ (boundary of 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ If we have 
+\begin_inset Formula $\alpha_{0},n$
+\end_inset
+
+, From exercise 6.b we can found 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ so 
+\begin_inset Formula $\pi(\theta|\delta)=Pr(max\{X_{1},...,X_{n}\}\geq c|\theta)=1-(\frac{c}{\theta})^{n}$
+\end_inset
+
+.
+ From this function we sketch with 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8.
+ Similar to exercise 6.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9 Similar Exercise 7.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+10.
+ Condition on Exercise 6.
+ but suppose now that desired to test the following hypotheses:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\theta=3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\theta\neq3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consider the test procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that the hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is rejected if either 
+\begin_inset Formula $max(X_{1},..,X_{n})\le c_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $max\{X_{1},...,X_{n}\}\ge c_{2}$
+\end_inset
+
+ and let 
+\begin_inset Formula $\pi(\theta|\delta)$
+\end_inset
+
+ denote the power function of 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+a.
+ Determine the values of the constants 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\pi(3|\delta)=0.05$
+\end_inset
+
+ and 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is unbiased.
+\end_layout
+
+\begin_layout Standard
+Remind that Unbiased Test is a test procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+, if for every 
+\begin_inset Formula $\theta\in\Omega_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta^{'}\in\Omega_{1}$
+\end_inset
+
+, we have 
+\begin_inset Formula $\pi(\theta|\delta)\le\pi(\theta^{'}|\delta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We have 
+\begin_inset Formula $\Omega_{0}:\theta=3$
+\end_inset
+
+, so 
+\begin_inset Formula $\pi_{\theta=3}(\theta|\delta)=Pr(max(X_{1},..,X_{n})\le c_{1})+Pr(max\{X_{1},...,X_{n}\}\ge c_{2})$
+\end_inset
+
+ 
+\begin_inset Formula $=Pr(max(X_{1},..,X_{n})\le c_{1})+1-Pr(max\{X_{1},...,X_{n}\}\le c_{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Eq.(9.4.12), we have equations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{\theta=3}=(\frac{c_{1}}{\theta})^{n}+1-(\frac{c_{2}}{\theta})^{n}=0.05$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{dA}{d\theta}|_{\theta=3}=\frac{-nc_{1}^{n}}{3^{n+1}}+\frac{nc_{2}^{n}}{3^{n+1}}=0$
+\end_inset
+
+, From these equations, we can find 
+\begin_inset Formula $c_{1},c_{2}$
+\end_inset
+
+ depends on 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We have 
+\begin_inset Formula $\frac{dA}{d\theta}|_{\theta=3}$
+\end_inset
+
+ because we want 
+\begin_inset Formula $\pi_{\theta\neq3}(\theta|\delta)>\pi_{\theta=3}(\theta|\delta)$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\theta=3$
+\end_inset
+
+ is minimum point of function 
+\begin_inset Formula $\pi(\theta|\delta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+11.
+ Like Exercise 10, we have 2 equations
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\pi(\mu_{0}|\delta)=0.1$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{d\pi(\mu|\delta)}{d\mu}|_{\mu=\mu_{0}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $Pr(\bar{X}_{n}\le c_{1}|\text{\ensuremath{\mu_{0}}})+Pr(\bar{X}_{n}\ge c_{2}|\text{\ensuremath{\mu_{0}}})=0.1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+We have 
+\begin_inset Formula $A=Pr(\bar{X}_{n}\le c_{1}|\text{\ensuremath{\mu}})+Pr(\bar{X}_{n}\ge c_{2}|\text{\ensuremath{\mu}})=\Phi(\frac{c_{1}-\mu}{n^{-1/2}})+1-\Phi(\frac{c_{2}-\mu}{n^{-1/2}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\frac{dA}{d\mu}=-n^{1/2}f(\frac{c_{1}-\mu}{n^{-1/2}})+n^{1/2}f(\frac{c_{2}-\mu}{n^{-1/2}})=0(1)$
+\end_inset
+
+ with 
+\begin_inset Formula $f$
+\end_inset
+
+ is p.d.f having c.d.f is 
+\begin_inset Formula $\Phi$
+\end_inset
+
+.
+ From 
+\begin_inset Formula $(1)$
+\end_inset
+
+, 
+\begin_inset Formula $f(\frac{c_{1}-\mu}{n^{-1/2}})=f(\frac{c_{2}-\mu}{n^{-1/2}})$
+\end_inset
+
+, Because 
+\begin_inset Formula $f$
+\end_inset
+
+ is gaussion distribution, so 
+\begin_inset Formula $c_{1},c_{2}$
+\end_inset
+
+ is symmetric value between 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+ Because 
+\begin_inset Formula $\mu=\mu_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $c_{1},c_{2}$
+\end_inset
+
+ is symmetric between 
+\begin_inset Formula $\mu_{0},$
+\end_inset
+
+ so we turn problem 11 to problem exercise 1.
+ then 
+\begin_inset Formula $c_{1}=\mu_{0}-1.645n^{-1.2}$
+\end_inset
+
+, 
+\begin_inset Formula $c_{2}=\mu_{0}+1.645n^{-1.2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+12.
+ a.
+ 
+\begin_inset Formula $F^{-1}(c_{1})+1-F^{-1}(c_{2})=\alpha_{0}$
+\end_inset
+
+ .
+ 
+\begin_inset Formula $F$
+\end_inset
+
+ is cdf of expnetial with 
+\begin_inset Formula $\beta=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+13.
+ From 
+\begin_inset Formula $G(x;n,\theta)=\int_{0}^{x}\frac{\theta^{n}}{(n-1)!}t^{n-1}exp(-t\theta)dt$
+\end_inset
+
+ we can derive to this 2 terms.
 \end_layout
 
 \end_body

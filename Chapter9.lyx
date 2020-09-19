@@ -3303,5 +3303,130 @@ With continuous function we can find level for nonrandomized, but it maybe
  Then we need randomized test.
 \end_layout
 
+\begin_layout Chapter*
+9.4.
+ Two-Sided Alternatives
+\end_layout
+
+\begin_layout Standard
+When testing a simple null hypothesis against a two-sided alternative (as
+ at the end of Sec.
+ 9.3), the choice of a test procedure requires a bit more care than in the
+ one-sided.
+ This sections discusses some of the issues and describes the most common
+ choices.
+ 
+\end_layout
+
+\begin_layout Section*
+General Form of the Procedure
+\end_layout
+
+\begin_layout Section*
+Selection of the Test Procedure
+\end_layout
+
+\begin_layout Section*
+Other Distributions
+\end_layout
+
+\begin_layout Standard
+The principles introduced above for samples from a normal distribution can
+ be extended to any random sample.
+ The details of implementation can be more tedious and less satisfying for
+ other distributions.
+\end_layout
+
+\begin_layout Section*
+Composite Null Hypothesis
+\end_layout
+
+\begin_layout Section*
+Unbiased Tested
+\end_layout
+
+\begin_layout Standard
+Consider the general problem of testing the following hypotheses:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta\in\Omega_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta\in\Omega_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As usual, let 
+\begin_inset Formula $\pi(\theta|\delta)$
+\end_inset
+
+ denote the power function of an arbitrary test procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+9.4.1.
+ Unbiased Test.
+ A test procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is said to be unbiased if, for every 
+\begin_inset Formula $\theta\in\Omega_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta^{'}\in\Omega_{1},$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+\pi(\theta|\delta)\le\pi(\theta^{'}|\delta)\text{ (9.4.11)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+In words, 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is unbiased if its power function throughout 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+ is at least as large as it is throughtout 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+.
+\end_layout
+
 \end_body
 \end_document
