@@ -1,0 +1,476 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Chapter 10: Categorical Data And Nonparametric Methods
+\end_layout
+
+\begin_layout Chapter*
+10.1 Tests of Goodness-of-Fit
+\end_layout
+
+\begin_layout Standard
+In some problems, we have one specific distribution in mind for the data
+ we will observe.
+ If that one distribution is not appropriate, we do not necessarily have
+ a parametric family of alternative distributions in mind.
+ In these cases and others, we can still test the null hypothesis that the
+ data come from the one specific distribution against the alternative hypothesis
+ that the data do not come from that distribution.
+\end_layout
+
+\begin_layout Standard
+In Chapters 7,8,9, we have assumed that the observations that are available
+ to the statisticaian come from dsitributionfor which the exact form is
+ known, even though the values of some parameters are unknown.
+ In othe words, we have assumed that the observations come from a certain
+ parametric family of distributions, and a statistic inference must be made
+ about the values of the parameters defining that family.
+\end_layout
+
+\begin_layout Standard
+In many of the problems to be discussed in this chapter, we shall not assume
+ that the the available observations come from a particular parametric family
+ of distributions.
+ Rather, we shall study inferences that can be made about the distribution
+ from which the observations come, without making special assumptions about
+ the form of that distribution.
+ As one example, we might assmue that the observations form a random sample
+ from a continuous distribution, without specifying the form of this distributio
+n any further, and we might then investigate the 
+\series bold
+possibity
+\series default
+ that this distribution is a normal distribution.
+ As a third example, we might be interested in investigating the possibility
+ that two independent random samples actually come from the same distribution,
+ and we might assume only that both distributions from which the samples
+ are taken are continuous.
+\end_layout
+
+\begin_layout Standard
+Problems in which the possible distributions of the observations are not
+ restricted to a specific parametric family are called 
+\series bold
+nonparametric problems
+\series default
+, and the statistical methods that are appicable in such problems are called
+ 
+\series bold
+nonparameretric methods
+\series default
+.
+\end_layout
+
+\begin_layout Section*
+Categorical Data
+\end_layout
+
+\begin_layout Standard
+In this section and the next four sections, we shall consider statistical
+ problems based on data such that each observation can be classified as
+ belonging to one of a finite number of possible categories or types.
+ Observations of this type are called 
+\series bold
+categorical data.
+ 
+\series default
+Since there are only a finite number of possible categories in these problems,
+ and since we are interested in making inferences about the probabilities
+ of these categories, these problems actually involve just a finite number
+ of parameters.
+ However, as we shall see, methods based on categorical data can be usefully
+ applied in both parametric and nonparametric problems.
+\end_layout
+
+\begin_layout Section*
+The 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ Test
+\end_layout
+
+\begin_layout Standard
+Suppose that a larfe population consists of items of 
+\begin_inset Formula $k$
+\end_inset
+
+ different types, and let 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ denote the probability that an item selected at random will be of type
+ 
+\begin_inset Formula $i$
+\end_inset
+
+ (
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+).
+ Example 
+\begin_inset Formula $10.1.2$
+\end_inset
+
+ is of this type with 
+\begin_inset Formula $k=4$
+\end_inset
+
+.
+ Of course, 
+\begin_inset Formula $p_{i}\ge0$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{i=1}^{k}p_{i}^{0}=1$
+\end_inset
+
+, and suppose that the following hypotheses are to be tested:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:p_{i}=p_{i}^{0}\text{ for }i=1,...,k,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:p_{i}=p_{i}^{0}\text{ for at least one value of }i\text{ (10.1.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We shall assume that a random sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ is to be taken from the given population.
+ That is, 
+\begin_inset Formula $n$
+\end_inset
+
+ independent observations are to be taken, and there is probability 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ that each observations will be of type 
+\begin_inset Formula $i$
+\end_inset
+
+ 
+\begin_inset Formula $(i=1,...,k)$
+\end_inset
+
+.
+ On the basis of these 
+\begin_inset Formula $n$
+\end_inset
+
+ observations, the hypotheses (10.1.1) are to be tested.
+ 
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+, we shall let 
+\begin_inset Formula $N_{i}$
+\end_inset
+
+ denote the number of observations in the random sample that are of type
+ 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ Thus, 
+\begin_inset Formula $N_{1},..,N_{k}$
+\end_inset
+
+ are nonnegative integers such that 
+\begin_inset Formula $\sum_{i=1}^{k}N_{i}=n$
+\end_inset
+
+.
+ Indeed, (
+\begin_inset Formula $N_{1},...,N_{n})$
+\end_inset
+
+ has the multinomial distribution (see Sec, 5.9)
+\end_layout
+
+\begin_layout Theorem*
+10.1.1, 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ Statistic.
+ The following statistic
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+Q=\sum_{i=1}^{k}\frac{(N_{i}-np_{i}^{0})^{2}}{np_{i}^{0}}\text{ (10.1.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+has the property that if 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+is true and the sample size 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+, then 
+\begin_inset Formula $Q$
+\end_inset
+
+ converges in distribution to the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $k-1$
+\end_inset
+
+ degrees of freedom.
+ (see Definition 6.3.1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Theorem 10.1.1 says that if 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true and the sample size 
+\begin_inset Formula $n$
+\end_inset
+
+ is large, the distribution of 
+\begin_inset Formula $Q$
+\end_inset
+
+ will be approximately the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $k-1$
+\end_inset
+
+ degrees of freedom.
+ The discussion that we have presented indicates that 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ should be rejected when 
+\begin_inset Formula $Q\ge c$
+\end_inset
+
+, where 
+\begin_inset Formula $c$
+\end_inset
+
+ is an appropriate constant.
+ If it is desired to carry out the test at the level of significance 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+, then 
+\begin_inset Formula $c$
+\end_inset
+
+ should be chosem to be the 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+ quantile of 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $k-1$
+\end_inset
+
+ degrees of freedom.
+ This test is called the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ 
+\series bold
+test of goodness-of-fit.
+\end_layout
+
+\begin_layout Paragraph*
+Note: General form of 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test statistic.
+ 
+\series medium
+The form of the statistic 
+\begin_inset Formula $Q$
+\end_inset
+
+ in (10.1.2) is common to all 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ tests including those that will be introduced later in this chapter.
+ The form is a sum of terms, each of which is the square of different between
+ an observed count and an expected count divided by the expected count:
+ 
+\begin_inset Formula $\sum\text{(observed-expected)}^{2}/\text{expected }$
+\end_inset
+
+.
+ The expected counts are computed under the assumption that the null hypothesis
+ is true.
+\end_layout
+
+\begin_layout Standard
+Whenever the value of each expected count, 
+\begin_inset Formula $np_{i}^{0}\ge5$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+, and the approximation should still be satisfactory if 
+\begin_inset Formula $np_{i}^{0}\ge1.5$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Testing Hypotheses about a Continuous Distribution
+\end_layout
+
+\begin_layout Section*
+Likelihood Ratio Tests for Proportions
+\end_layout
+
+\end_body
+\end_document

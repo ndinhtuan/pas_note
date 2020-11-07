@@ -1,0 +1,440 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Chapter 10.
+ Categorical Data And Nonparametric Methods
+\end_layout
+
+\begin_layout Chapter*
+10.1 Tests of Goodness-of-Fit
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test of goodness-of-fit was introduced as a method for testing the null
+ hypothesis that our data form an i.i.d.
+ sample from a specific distribution against the alternative hypothesis
+ that the data have some other distribution.
+ The test is most natural when the specific distribution is discrete.
+ Suppose that there are 
+\begin_inset Formula $k$
+\end_inset
+
+ possible values for each observation, and we observe 
+\begin_inset Formula $N_{i}$
+\end_inset
+
+ with value 
+\begin_inset Formula $i$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+.
+ Suppose that the null hypothesis says that the probability of the 
+\begin_inset Formula $i$
+\end_inset
+
+th possible value is 
+\begin_inset Formula $p_{i}^{0}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+.
+ Then we compute
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q=\sum_{i=1}^{k}\frac{(N_{i}-np_{i}^{0})^{2}}{np_{i}^{0}},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $n=\sum_{i=1}^{k}N_{i}$
+\end_inset
+
+ is the sample size.
+ When the null hypothesis says that the data have a continuous distribution,
+ then one must first create a corresponding discrete distribution.
+ One does this by dividing the real line into finitely many (say, 
+\begin_inset Formula $k$
+\end_inset
+
+) intervals, calculating the probabiliy of each interval 
+\begin_inset Formula $p_{1}^{0},...,p_{k}^{0}$
+\end_inset
+
+, and then preteding as if all we learned from the data were into which
+ intervals each observation fell.
+ This converts the original data into discrete data with 
+\begin_inset Formula $k$
+\end_inset
+
+ possible values.For example, the value of 
+\begin_inset Formula $N_{i}$
+\end_inset
+
+ used in the formula for 
+\begin_inset Formula $Q$
+\end_inset
+
+ is number of observations that fell into 
+\begin_inset Formula $i$
+\end_inset
+
+th interval.
+ All of the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test statistics in this text have the form 
+\begin_inset Formula $\sum\text{(observed-expected)}^{2}/\text{expected },$
+\end_inset
+
+ where 
+\begin_inset Quotes eld
+\end_inset
+
+observed
+\begin_inset Quotes erd
+\end_inset
+
+ stands for an observed count and expeted stands for the expected value
+ of the observed count under the assumption that the null hypothesis is
+ true.
+\end_layout
+
+\begin_layout Section*
+Exercises
+\end_layout
+
+\begin_layout Exercise*
+1.
+ Consider the hypotheses being tested in Example 10.1.5.
+ Use a test procedure of the form outlined in Exercise 11 of Sec 9.1 and
+ compare the result to the numerical result obtained in Example 10.1.5.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\bar{X}_{n}=\sum_{i=1}^{100}X_{i}/n\sim N(10,\sigma/\sqrt{N})$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{X}_{n}=0.16$
+\end_inset
+
+.
+ so find 
+\begin_inset Formula $z$
+\end_inset
+
+, then find 
+\begin_inset Formula $Z\ge|z|$
+\end_inset
+
+, is 
+\begin_inset Formula $p-value$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Exercise*
+2.
+ Show that if 
+\begin_inset Formula $p_{i}^{0}=1/k$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+ then the statistic 
+\begin_inset Formula $Q$
+\end_inset
+
+ defined by Eq.
+ (10.1.2) can be written in the form 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+Q=(\frac{k}{n}\sum_{i=1}^{k}N_{i}^{2})-n
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Eq.
+ (10.1.2), 
+\begin_inset Formula $Q=\sum_{i=1}^{k}\frac{(N_{i}-np_{i}^{0})^{2}}{np_{i}^{0}}$
+\end_inset
+
+.
+ Instituting 
+\begin_inset Formula $p_{i}^{0}=1/k$
+\end_inset
+
+, we will collect the result.
+\end_layout
+
+\begin_layout Exercise*
+3.
+ Investigate the 
+\begin_inset Quotes eld
+\end_inset
+
+randomness
+\begin_inset Quotes erd
+\end_inset
+
+ of your favorite pseudo-random numbers generator as follows.
+ Simulate 
+\begin_inset Formula $200$
+\end_inset
+
+ psuedo-random numbers between 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $1$
+\end_inset
+
+ and divide the unit interval into 
+\begin_inset Formula $k=10$
+\end_inset
+
+ intervals of length 
+\begin_inset Formula $0.1$
+\end_inset
+
+ each.
+ Apply the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test of the hypothesis that each of the 
+\begin_inset Formula $10$
+\end_inset
+
+ intervals has the same probability of containing a pseudo-random number.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{0}:p_{i}=0.1\forall i$
+\end_inset
+
+.
+ 
+\begin_inset Formula $H_{1}:p_{i}\neq0.1\exists i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Using randomness generator program to randomize number and count in these
+ intervals, we can collect 
+\begin_inset Formula $N_{i}$
+\end_inset
+
+.
+ and then apply 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test.
+\end_layout
+
+\begin_layout Exercise*
+4.
+ Find 
+\begin_inset Formula $p$
+\end_inset
+
+ test of 
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ Find 
+\begin_inset Formula $c$
+\end_inset
+
+ of level of significance 0.001, then find 
+\begin_inset Formula $Q$
+\end_inset
+
+ and compare with 
+\begin_inset Formula $c$
+\end_inset
+
+, we will have conclusion.s
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8.
+ Same exercise 7.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9.
+ Use standard normal distribution, and divide 5 interval with 0.2 probability,
+ then we can find these pivot based on proabbility and standard normal distribut
+ion.
+\end_layout
+
+\end_body
+\end_document

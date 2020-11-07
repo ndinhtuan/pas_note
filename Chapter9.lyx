@@ -1288,7 +1288,7 @@ An experimenter does not typically choose a value of
 \begin_inset Formula $\alpha_{0}$
 \end_inset
 
- test would leed to rejection of 
+ test would lead to rejection of 
 \begin_inset Formula $H_{0}$
 \end_inset
 
@@ -3426,6 +3426,3674 @@ In words,
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+9.5 The t Test 
+\end_layout
+
+\begin_layout Standard
+we begin the treatment of several special cases of testing hypotheses about
+ parameters of a normal distribution.
+ In this section, we handle the case in which both the mean and the variance
+ are unknown.
+ We develop tests for hypotheses concerning the mean.
+ The tests will be based on the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Section*
+Testing Hypotheses about the Mean of a Normal Distribution When the Variance
+ is Unknown
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\mu\leq\mu_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\mu>\mu_{0}\text{ (9.5.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U=n^{1/2}\frac{\bar{X}_{n}-\mu_{0}}{\sigma^{'}}\text{ (9.5.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tests based on 
+\begin_inset Formula $U$
+\end_inset
+
+ are called 
+\begin_inset Formula $t$
+\end_inset
+
+ tests.
+\end_layout
+
+\begin_layout Standard
+When we want to test
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\mu\ge\mu_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\mu<\mu_{0}\text{ (9.5.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+the test is of the form 
+\begin_inset Quotes eld
+\end_inset
+
+reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $U\le c$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Note: 
+\series medium
+From Test of parameter 
+\begin_inset Formula $\mu$
+\end_inset
+
+ we derive to 
+\begin_inset Formula $U$
+\end_inset
+
+, that having 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution.
+ We do that because we don't know 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, and 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution solve this probolem for us.
+ And see 9.1.17 and theorem 8.5.1 to remind this.
+ It will lead us to test reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $U\ge c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Confidence interval is same hypothesis testing.
+ But function of 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ is inverse.
+\end_layout
+
+\begin_layout Section*
+Properties of the 
+\begin_inset Formula $t$
+\end_inset
+
+ Tests
+\end_layout
+
+\begin_layout Theorem*
+9.5.1.
+ Level and Unbiasedness of 
+\begin_inset Formula $t$
+\end_inset
+
+ Tests.
+ Let 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ be a random sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, let 
+\begin_inset Formula $U$
+\end_inset
+
+ be the statistic in Eq.
+ (9.5.2), and let 
+\begin_inset Formula $c$
+\end_inset
+
+ be the 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+ quantile of the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+ Let 
+\begin_inset Formula $\delta$
+\end_inset
+
+ be the test that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ in (9.5.1) if 
+\begin_inset Formula $U\ge c$
+\end_inset
+
+.
+ The power function 
+\begin_inset Formula $\pi(\mu,\sigma^{2}|\delta)$
+\end_inset
+
+ has the following properties:
+\end_layout
+
+\begin_layout Theorem*
+i.
+ 
+\begin_inset Formula $\pi(\mu,\sigma^{2}|\delta)=\alpha_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $\mu=\mu_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+ii.
+ 
+\begin_inset Formula $\pi(\mu,\sigma^{2}|\delta)<\alpha_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $\mu<\mu_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+iii.
+ 
+\begin_inset Formula $\pi(\mu,\sigma^{2}|\delta)>\alpha_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $\mu>\mu_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+iv.
+ 
+\begin_inset Formula $\pi(\mu,\sigma^{2})\rightarrow0$
+\end_inset
+
+ as 
+\begin_inset Formula $\mu\rightarrow-\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+v.
+ 
+\begin_inset Formula $\pi(\mu,\sigma^{2}|\delta)\rightarrow1$
+\end_inset
+
+ as 
+\begin_inset Formula $\mu\rightarrow\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Furthermore, the test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ has size 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ and is unbiased.
+\end_layout
+
+\begin_layout Corollary*
+9.5.1.
+ 
+\begin_inset Formula $t$
+\end_inset
+
+ Tests for Hypotheses of Eq.
+ (9.5.3).
+ Let 
+\begin_inset Formula $X=(X_{1},...,X_{n})$
+\end_inset
+
+ be a random sample from the normal distribution with mean 
+\begin_inset Formula $\text{\ensuremath{\mu}}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, let 
+\begin_inset Formula $U$
+\end_inset
+
+ be the statistic in Eq.
+ (9.5.2) , and let 
+\begin_inset Formula $c$
+\end_inset
+
+ be the 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ quantile of the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+ Let 
+\begin_inset Formula $\delta$
+\end_inset
+
+ be the test that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ in (9.5.3) if 
+\begin_inset Formula $U\le c$
+\end_inset
+
+.
+ The power function 
+\begin_inset Formula $\pi(\mu,\sigma^{2}|\delta)$
+\end_inset
+
+ has the following properties:
+\end_layout
+
+\begin_layout Corollary*
+i, ii, iii, iv, v like in theorem 9.5.1.
+\end_layout
+
+\begin_layout Paragraph*
+p-Values for 
+\begin_inset Formula $t$
+\end_inset
+
+ Tests.
+ 
+\series medium
+The 
+\begin_inset Formula $p-$
+\end_inset
+
+value from the observed data and a specific test is the smallest 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ such that we would reject the null hypothesis at level of significance
+ 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+ For the 
+\begin_inset Formula $t$
+\end_inset
+
+ tests that we have just discussed, it is straightforward to compute the
+ 
+\begin_inset Formula $p-$
+\end_inset
+
+values.
+\end_layout
+
+\begin_layout Paragraph*
+The Complete Power Function 
+\series medium
+For all values of 
+\begin_inset Formula $\mu$
+\end_inset
+
+, the power function of a 
+\begin_inset Formula $t$
+\end_inset
+
+ test can be determined if we know the distribution of 
+\begin_inset Formula $U$
+\end_inset
+
+ defined in Eq.
+ (9.5.2).
+ We can rewrite 
+\begin_inset Formula $U$
+\end_inset
+
+ as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U=\frac{n^{1/2}(\bar{X}_{n}-\mu_{0})/\sigma}{\sigma^{'}/\sigma}\text{ (9.5.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The numerator of the right side in Eq.
+ (9.5.6) has the normal distribution with mean 
+\begin_inset Formula $n^{1/2}(\mu-\mu_{0})/\sigma$
+\end_inset
+
+ and variance 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ The denominator is the square-root of a 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ rando variable divided by its degrees of freedom, 
+\begin_inset Formula $n-1$
+\end_inset
+
+.
+ Were it not for the nonzero mean, the ratio would have the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom as we have already shown.
+ When the mean of the numerator is not 
+\begin_inset Formula $)$
+\end_inset
+
+, 
+\begin_inset Formula $U$
+\end_inset
+
+ has a noncentral 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Definition*
+9.5.1.
+ Noncetral 
+\begin_inset Formula $t$
+\end_inset
+
+ Distribution.
+ Let 
+\begin_inset Formula $Y$
+\end_inset
+
+ and 
+\begin_inset Formula $W$
+\end_inset
+
+ be independen random variables with 
+\begin_inset Formula $W$
+\end_inset
+
+ having the normal distribution with mean 
+\begin_inset Formula $\psi$
+\end_inset
+
+ and variance 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ having 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees freedom.
+ Then the distribution of 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+X=\frac{W}{(\frac{Y}{m})^{1/2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+is called the noncentral 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom and noncentrality parameter 
+\begin_inset Formula $\psi$
+\end_inset
+
+.
+ We shall let 
+\begin_inset Formula $T_{m}(t|\psi)$
+\end_inset
+
+ denote the c.d.f of this distribution.
+ That is, 
+\begin_inset Formula $T_{m}(t|\psi)=Pr(X\le t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Question: 
+\series medium
+How to compute 
+\begin_inset Formula $T_{m}(t|\psi)$
+\end_inset
+
+ as well as 
+\begin_inset Formula $T_{m}^{-1}(t|\psi)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+9.5.3 Let 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ be a random sample from the normal distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ The distribution of the statistic 
+\begin_inset Formula $U$
+\end_inset
+
+ in Eq.
+ (9.5.2) is the noncentral 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom and noncentrality parameter 
+\begin_inset Formula $\psi=n^{1/2}(\mu-\mu_{0})/\sigma$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\delta$
+\end_inset
+
+ be the test that rejects 
+\begin_inset Formula $H_{0}:\mu\leq\mu_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $U\geq c$
+\end_inset
+
+.
+ Then the power function of 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is 
+\begin_inset Formula $\pi(\mu,\sigma^{2}|\delta)=1-T_{n-1}(c|\psi)$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\delta^{'}$
+\end_inset
+
+ be the test that rejects 
+\begin_inset Formula $H_{0}:\mu\ge\mu_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $U\leq c$
+\end_inset
+
+.
+ Then the power function of 
+\begin_inset Formula $\delta^{'}$
+\end_inset
+
+ is 
+\begin_inset Formula $\pi(\mu,\sigma^{2}|\delta^{'})=T_{n-1}(c|\psi)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Note: Power is a Function of the Noncentrality Parameter.
+ 
+\series medium
+In Example 9.5.5, we cannot answer a question like 
+\begin_inset Quotes eld
+\end_inset
+
+What is the power of a level 0.05 test when 
+\begin_inset Formula $\mu=5.5$
+\end_inset
+
+?
+\begin_inset Quotes erd
+\end_inset
+
+ The reason is that the power is a function of both 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ through the noncentrality parameter.
+ For each possible 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu=5.5$
+\end_inset
+
+, the noncentrality parameter is 
+\begin_inset Formula $\psi=15^{1/2}x0.3/\sigma$
+\end_inset
+
+, which varies from 
+\begin_inset Formula $0$
+\end_inset
+
+ to 
+\begin_inset Formula $\infty$
+\end_inset
+
+ depending on 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+ This is why, whenever we want a numerical value for the power of a 
+\begin_inset Formula $t$
+\end_inset
+
+ test, we need either to specify both 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ to specify how far 
+\begin_inset Formula $\mu$
+\end_inset
+
+ from 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+ in multiples of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Choosing a Sample Size.
+ 
+\series medium
+It is possible to use the power function of a test to help determine what
+ would be an appropriate sample size to observe.
+\end_layout
+
+\begin_layout Section*
+The paired 
+\begin_inset Formula $t$
+\end_inset
+
+ Test
+\end_layout
+
+\begin_layout Theorem*
+9.5.4.
+ 
+\begin_inset Formula $p-$
+\end_inset
+
+Values for Two-Sided 
+\begin_inset Formula $t$
+\end_inset
+
+ Tests.
+ Suppose that we are testing the hypotheses in Eq.
+ (9.5.7).
+ Let 
+\begin_inset Formula $u$
+\end_inset
+
+ be the observed value of the statistic 
+\begin_inset Formula $U$
+\end_inset
+
+, and let 
+\begin_inset Formula $T_{n-1}(.)$
+\end_inset
+
+ be the c.d.f.
+ of the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+ Then the 
+\begin_inset Formula $p-$
+\end_inset
+
+value is 
+\begin_inset Formula $2[1-T_{n-1}(|u|)]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with unknown mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and unknown variacne 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, we can test hypotheses about 
+\begin_inset Formula $\mu$
+\end_inset
+
+ by using the fact that 
+\begin_inset Formula $n^{1/2}(\bar{X}_{n}-\mu)/\sigma^{'}$
+\end_inset
+
+ has 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+ Let 
+\begin_inset Formula $T_{n-1}^{-1}$
+\end_inset
+
+ denote the quantile function of 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+ Then, to test 
+\begin_inset Formula $H_{0}:\mu\le\mu_{0}$
+\end_inset
+
+ versus 
+\begin_inset Formula $H_{1}:\mu>0$
+\end_inset
+
+ at level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+, for instance, we reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $n^{1/2}(\bar{X}_{n}-\mu_{0})/\sigma^{'}>T_{n-1}^{-1}(1-\alpha_{0})$
+\end_inset
+
+.
+ To test 
+\begin_inset Formula $H_{0}:\mu=\mu_{0}$
+\end_inset
+
+ versus 
+\begin_inset Formula $H_{1}:\mu\neq\mu_{0}$
+\end_inset
+
+, reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $|n^{1/2}(\bar{X}_{n}-\mu_{0})/\sigma^{'}|\geq T_{n-1}^{-1}(1-\alpha_{0}/2)$
+\end_inset
+
+.
+ The power functions of each of these tests can be written in terms of the
+ c.d.f.
+ of a noncentral 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom and noncentrality parameter 
+\begin_inset Formula $\psi=n^{1/2}(\text{\ensuremath{\mu-\mu_{0}})/\ensuremath{\sigma}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter*
+9.6.
+ Comparing the Means of Two Normla Distributions
+\end_layout
+
+\begin_layout Standard
+It is very common to compare two distributions to see which has the higher
+ mean or just to see how different the two means are.
+ When the two distributions are normal, the tests and confidence intervals
+ based on the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution are very similar to the ones that arose when we considered
+ a single distribution.
+\end_layout
+
+\begin_layout Section*
+The Two-Sample 
+\begin_inset Formula $t$
+\end_inset
+
+ Test
+\end_layout
+
+\begin_layout Theorem*
+9.6.1.
+ Two-Sample 
+\begin_inset Formula $t$
+\end_inset
+
+ Statistic.
+ Assume the structure described in the preceding paragraphs.
+ Define
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula $\bar{X}_{m}=\frac{1}{m}\sum_{i=1}^{m}X_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{Y}_{n}=\frac{1}{n}\sum_{i=1}^{n}Y_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula $S_{X}^{2}=\sum_{i=1}^{m}(X_{i}-\bar{X}_{m})^{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $S_{Y}^{2}=\sum_{i=1}^{n}(Y_{i}-\bar{Y}_{n})^{2}$
+\end_inset
+
+ (9.6.2)
+\end_layout
+
+\begin_layout Theorem*
+Define the test statistic 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+U=\frac{(m+n-2)^{1/2}(\bar{X}_{m}-\bar{Y}_{n})}{(1/m+1/n)^{1/2}(S_{X}^{2}+S_{Y}^{2})^{1/2}}\text{ (9.6.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+For all values of 
+\begin_inset Formula $\theta=(\mu_{1},\mu_{2},\sigma^{2})$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mu_{1}=\mu_{2}$
+\end_inset
+
+, the distribution of 
+\begin_inset Formula $U$
+\end_inset
+
+ is the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m+n-2$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A two-sample 
+\begin_inset Formula $t$
+\end_inset
+
+ test with level of significane 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ is the procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+ that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $U\ge T_{m+n-2}^{-1}(1-\alpha_{0})$
+\end_inset
+
+.
+ Theorem 9.6.2 states some useful properties of two-sample 
+\begin_inset Formula $t$
+\end_inset
+
+ tests analogous to those of Theorem 9.5.1.
+ The proof is so similar to that of Theorem 9.5.1.
+ that we shall not present it here.
+\end_layout
+
+\begin_layout Theorem*
+9.6.2.
+ Level and Unbiasedness of Two-Sample 
+\begin_inset Formula $t$
+\end_inset
+
+ Tests.
+ Let 
+\begin_inset Formula $\delta$
+\end_inset
+
+ be the two-sample 
+\begin_inset Formula $t$
+\end_inset
+
+ test defined above.
+ The power function 
+\begin_inset Formula $\pi(\mu_{1},\mu_{2},\sigma^{2}|\delta)$
+\end_inset
+
+ has the following properties:
+\end_layout
+
+\begin_layout Theorem*
+i.
+ 
+\begin_inset Formula $\pi(\mu_{1},\mu_{2},\sigma^{2}|\delta)=\alpha_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $\mu_{1}=\mu_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+ii.
+ , iii., iv., v is same Theorem 9.5.1.
+\end_layout
+
+\begin_layout Theorem*
+Furthermore, the test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ has size 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ and is unbiased.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Note: The Other One-sided Hypotheses.
+ 
+\series medium
+If the hypotheses are
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\mu_{1}\ge\mu_{2}\text{ versus }H_{1}:\mu_{1}<\mu_{2}\text{ (9.6.7)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+the corresponding level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $t$
+\end_inset
+
+ test is to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $U\le-T_{m+n-2}^{-1}(1-\alpha_{0})$
+\end_inset
+
+.
+ This test has properties analogous to those of the other one-sided test.
+\end_layout
+
+\begin_layout Standard
+P-values are computed in much the same way as they were for the one-sample
+ 
+\begin_inset Formula $t$
+\end_inset
+
+ test.
+ The proof of Theorem 9.6.3 is virtually the same as the proof of Theorem
+ 9.5.2 and is not given here.
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula $p-Values$
+\end_inset
+
+ for Two-Sample 
+\begin_inset Formula $t$
+\end_inset
+
+ Tests.
+ Suppose that we are testing either the hypotheses in Eq.
+ (9.6.1).
+ of the hypotheses in Eq.
+ (9.6.7) or hypotheses in Eq.
+ (9.6.7).
+ Let 
+\begin_inset Formula $u$
+\end_inset
+
+ be the observed values of the statistic 
+\begin_inset Formula $U$
+\end_inset
+
+ in Eq.
+ (9.6.3), and let 
+\begin_inset Formula $T_{m+n-2}(.)$
+\end_inset
+
+ be the c.d.f of the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m+n-2$
+\end_inset
+
+ degrees of freedom.
+ Then the 
+\begin_inset Formula $p-value$
+\end_inset
+
+ for the hypotheses in Eq.
+ (9.6.1) is 
+\begin_inset Formula $1-T_{m+n-2}(u)$
+\end_inset
+
+ and the p-value for the hypotheses in Eq.
+ (9.6.7) is 
+\begin_inset Formula $T_{m+n-2}(u)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Power of the Test
+\end_layout
+
+\begin_layout Standard
+For each parameter vector 
+\begin_inset Formula $\theta=(\mu_{1},\mu_{2},\sigma^{2})$
+\end_inset
+
+, the power function of the two-sample 
+\begin_inset Formula $t$
+\end_inset
+
+ test can be computed using the noncentral 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution introduced in Definition 9.5.1.
+ Almost identical reasoning to that which led to Theorem 9.5.3 proves the
+ following.
+\end_layout
+
+\begin_layout Theorem*
+9.6.4.
+ Power of Two-Sample 
+\begin_inset Formula $t$
+\end_inset
+
+ Test.
+ Assume the conditions stated earlier in this section.
+ Let 
+\begin_inset Formula $U$
+\end_inset
+
+ be defined in Eq.
+ (9.6.6).
+ Then 
+\begin_inset Formula $U$
+\end_inset
+
+ has the noncentral 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m+n-2$
+\end_inset
+
+ degrees of freedom and noncentrality parameter 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\psi=\frac{\mu_{1}-\mu_{2}}{\sigma(\frac{1}{m}+\frac{1}{n})^{1/2}}\text{ (9.6.8)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Two-Sided Alternatives
+\end_layout
+
+\begin_layout Standard
+The two-sample 
+\begin_inset Formula $t$
+\end_inset
+
+ test can easily be adapted to testing the following hypotheses at a specified
+ level of significant 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\mu_{1}=\mu_{2},\text{ versus }H_{1}:\mu_{1}\ne\mu_{2}\text{ (9.6.9)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The size 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ two-sided 
+\begin_inset Formula $t$
+\end_inset
+
+ test rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $|U|\ge c$
+\end_inset
+
+ where 
+\begin_inset Formula $c=T_{m+n-2}^{-1}(1-\alpha_{0}/2)$
+\end_inset
+
+, and the statistic 
+\begin_inset Formula $U$
+\end_inset
+
+ is defined Eq.
+ (9.6.3).
+ The p-value when 
+\begin_inset Formula $U=u$
+\end_inset
+
+ is observed equals 
+\begin_inset Formula $2[1-T_{m+2-2}(|u|)]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The power function of the two-sided two-sample 
+\begin_inset Formula $t$
+\end_inset
+
+ test is based on the noncentral 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution in the same way as was the power function of the one-sample
+ two-sided test.
+ The test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ that rejects 
+\begin_inset Formula $H_{0}:\mu_{1}=\mu_{2}$
+\end_inset
+
+ when 
+\begin_inset Formula $|U|\ge c$
+\end_inset
+
+ has power function
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi(\mu_{1},\mu_{2},\sigma^{2}|\delta)=T_{m+n-2}(-c|\psi)+1-T_{m+n-2}(c|\psi)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $T_{m+n-2}(.|\psi)$
+\end_inset
+
+ is the c.d.f.
+ of the noncentral 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m+n-2$
+\end_inset
+
+ degrees of freedom and noncentrality parameter 
+\begin_inset Formula $\psi$
+\end_inset
+
+ given in Eq.
+ (9.6.8).
+ 
+\end_layout
+
+\begin_layout Section*
+The Two-Sample 
+\begin_inset Formula $t$
+\end_inset
+
+ Test as a Likelihood Ratio Test
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $g(x,y|\mu_{1},\mu_{2},\sigma^{2})=f_{m}(x|\mu_{1},\sigma^{2})f_{n}(y|\mu_{2},\sigma^{2})$
+\end_inset
+
+.
+ And both 
+\begin_inset Formula $f_{m}(x|\mu_{1},\sigma^{2})$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{n}(x|\mu_{2},\sigma^{2})$
+\end_inset
+
+ have the form given in Eq.
+ (9.5.9), and the value of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is the same in both terms.
+ In this case, 
+\begin_inset Formula $\Omega_{0}=\{(\mu_{1},\mu_{2},\sigma):\mu_{1}\le\mu_{2}\}.$
+\end_inset
+
+ The likelihood ratio statistic is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Lambda(x,y)=\frac{sup_{\{(\mu_{1},\mu_{2},\sigma^{2}:\mu_{1}\le\mu_{2})\}}g(x,y|\mu_{1},\mu_{2},\sigma^{2})}{sup_{(\mu_{1},\mu_{2},\sigma^{2})}g(x,y|\mu_{1},\mu_{2},\sigma^{2})}\text{ (9.6.10)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The likelihood ratio test procedure the specifies that 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ should be rejected if 
+\begin_inset Formula $\Lambda(x,y)\le k$
+\end_inset
+
+, where 
+\begin_inset Formula $k$
+\end_inset
+
+ is typically chosen so that the test has a desired level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+To facilitate the maximizations in (9.6.10), let 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s_{x}^{2}=\sum_{i=1}^{m}(x_{i}-\bar{x}_{m})^{2},\text{ and }s_{y}^{2}=\sum_{i=1}^{n}(y_{i}-\bar{y_{n})}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then we can write
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $g(x,y|\text{\ensuremath{\mu_{1},\mu_{2},\sigma)=\frac{1}{(2\pi\sigma^{2})^{(m+n)/2}}}}exp(\frac{-1}{2\sigma^{2}}[m(\bar{x}_{m}-\mu_{1})^{2}+n(\bar{y}_{n}-\mu_{2})^{2}+s_{x}^{2}+s_{y}^{2}])$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The denominator of (9.6.10) is maximized by the overall M.L.E.'s, that is, when
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{1}=\bar{x}_{m}\text{, }\mu_{2}=\bar{x}_{n},\text{ and }\sigma^{2}=\frac{1}{m+n}(s_{x}^{2}+s_{y}^{2})\text{ (9.6.11)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+Suppose that we observe independent random samples from two normal distributions
+: 
+\begin_inset Formula $X_{1},...,X_{m}$
+\end_inset
+
+ having mean 
+\begin_inset Formula $\mu_{1}$
+\end_inset
+
+ and variace 
+\begin_inset Formula $\sigma_{1}^{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ having 
+\begin_inset Formula $\mu_{2}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma_{2}^{2}.$
+\end_inset
+
+For testing hypotheses about 
+\begin_inset Formula $\mu_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $\mu_{2}$
+\end_inset
+
+ , 
+\begin_inset Formula $t$
+\end_inset
+
+ tests are availabel if we assume that 
+\begin_inset Formula $\sigma_{1}^{2}=\sigma_{2}^{2}$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $t$
+\end_inset
+
+ tests all make use of the statistic 
+\begin_inset Formula $U$
+\end_inset
+
+ defined in Eq.
+ (9.6.3)...
+\end_layout
+
+\begin_layout Chapter*
+9.7.
+ The 
+\begin_inset Formula $F$
+\end_inset
+
+ Distributions
+\end_layout
+
+\begin_layout Standard
+In this section, we introduce that family of 
+\begin_inset Formula $F$
+\end_inset
+
+ distributions.
+ This family is useful in two different hypothesis-testing sitatuons.
+ The first situation is when we wish to test hypotheses about the variances
+ of two different normal distributions.
+ These test, which we shall derive in this section, are based on a statistic
+ that has an 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution.
+ The second situation will arise in Chapter 11 when we test hypotheses concernin
+g the means of more than two normal distributions.
+\end_layout
+
+\begin_layout Standard
+In this section, we shall introduce a family of distributions, called the
+ 
+\begin_inset Formula $F$
+\end_inset
+
+ distributions, that arises in many important problems of testing hypotheses
+ in which two or more normal distributions are to be compared on the basis
+ of random samples from each of the distributions.
+ In particular, it arises naturally when we wish to compare the variances
+ of two normal distributions.
+\end_layout
+
+\begin_layout Definition*
+9.7.1.
+ The F distribution.
+ Let 
+\begin_inset Formula $Y$
+\end_inset
+
+ and 
+\begin_inset Formula $W$
+\end_inset
+
+ be independent random variables such that 
+\begin_inset Formula $Y$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom and 
+\begin_inset Formula $W$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom, where 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ are given positive integers.
+ Define a new random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ as follows:
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+X=\frac{Y/m}{W/n}=\frac{nY}{mW}\text{ (9.7.1) }
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+Then the distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ is called the 
+\begin_inset Formula $F$
+\end_inset
+
+distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+9.7.1.
+ Probability Density Function.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ have the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom.
+ Then its p.d.f.
+ 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is as follows, for 
+\begin_inset Formula $x>0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+f(x)=\frac{\Gamma[\frac{1}{2}(m+n)]m^{m/2}n^{n/2}}{\Gamma(\frac{1}{2}m)\Gamma(\frac{1}{2}n)}.\frac{x^{(m/2)-1}}{(mx+n)^{(m+n)/2}}\text{ (9.7.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+and 
+\begin_inset Formula $f(x)=0$
+\end_inset
+
+ for 
+\begin_inset Formula $x\le0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Properties of the 
+\begin_inset Formula $F$
+\end_inset
+
+ Distributions
+\end_layout
+
+\begin_layout Standard
+When we speak of the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom, the order in which the numbers 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ are given is important, as can be seen from the definition of 
+\begin_inset Formula $X$
+\end_inset
+
+ inEq.
+ (9.7.1).
+ When 
+\begin_inset Formula $m\neq n$
+\end_inset
+
+, the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom and the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom are two different distributions.
+ Theorems 9.7.2 gives a result relating the two distributions just mentioned
+ along with a relationship between 
+\begin_inset Formula $F$
+\end_inset
+
+ distributions and 
+\begin_inset Formula $t$
+\end_inset
+
+ dsitributions.
+\end_layout
+
+\begin_layout Theorem*
+9.7.2.
+ If 
+\begin_inset Formula $X$
+\end_inset
+
+ has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom, then its reciprocal 
+\begin_inset Formula $1/X$
+\end_inset
+
+ has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom.
+ If 
+\begin_inset Formula $Y$
+\end_inset
+
+ has the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom, then 
+\begin_inset Formula $Y^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Comparing the Variances of Two Normal Distributions 
+\end_layout
+
+\begin_layout Standard
+Suppose that the random variables 
+\begin_inset Formula $X_{1},...,X_{m}$
+\end_inset
+
+ form a random sample of 
+\begin_inset Formula $m$
+\end_inset
+
+ observations from normal distribution for which both the mean 
+\begin_inset Formula $\mu_{1}$
+\end_inset
+
+ and the variance 
+\begin_inset Formula $\sigma_{1}^{2}$
+\end_inset
+
+ unknown.
+ 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ form 
+\begin_inset Formula $n$
+\end_inset
+
+ the normal distribution for which both the mean 
+\begin_inset Formula $\mu_{2}$
+\end_inset
+
+ and the variance 
+\begin_inset Formula $\sigma_{2}^{2}$
+\end_inset
+
+ are unknown.
+ Suppose that the following hypotheses are to be tested at specified level
+ of significance 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ (
+\begin_inset Formula $0<\alpha_{0}<1$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\sigma_{1}^{2}\le\sigma_{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\sigma_{1}^{2}>\sigma_{2}^{2}\text{ (9.7.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For each test procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+, we shall let 
+\begin_inset Formula $\pi(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2}|\delta)$
+\end_inset
+
+ denote the power function of 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+ Later in this section, we shall derive the likelihood ratio test.
+ For now, define 
+\begin_inset Formula $S_{X}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{Y}^{2}$
+\end_inset
+
+ to be the sums of squares defined in Eq.
+ (9.6.2).
+ Then 
+\begin_inset Formula $S_{X}^{2}/(m-1)$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{Y}^{2}/(n-1)$
+\end_inset
+
+ are estimators of 
+\begin_inset Formula $\sigma_{1}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{2}^{2}$
+\end_inset
+
+, respectively.
+ It makes intuitive sense that we should reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if the ratio of these two estimators is large.
+ That is, define
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V=\frac{S_{X}^{2}/(m-1)}{S_{Y}^{2}/(n-1)}\text{ (9.7.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $V\ge c$
+\end_inset
+
+, where 
+\begin_inset Formula $c$
+\end_inset
+
+ is chosen to make the test have a desired level of significance.
+\end_layout
+
+\begin_layout Definition*
+9.7.2.
+ 
+\begin_inset Formula $F$
+\end_inset
+
+ test.
+ The test procedure defined above is called an 
+\begin_inset Formula $F$
+\end_inset
+
+ test.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Propertoes of 
+\begin_inset Formula $F$
+\end_inset
+
+ Tests
+\end_layout
+
+\begin_layout Theorem*
+9.7.3.
+ Distribution of 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $V$
+\end_inset
+
+ be the statistic in Eq.
+ (9.7.4).
+ The distribution of 
+\begin_inset Formula $(\sigma_{2}^{2}/\sigma_{1}^{2})V$
+\end_inset
+
+ is 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m-1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+ In particular, if 
+\begin_inset Formula $\sigma_{1}^{2}=\sigma_{2}^{2}$
+\end_inset
+
+, then the distribution of 
+\begin_inset Formula $V$
+\end_inset
+
+ itself is the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m-1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degree of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+9.7.4.
+ Level, Power Function, and 
+\begin_inset Formula $P-Values$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $V$
+\end_inset
+
+ be the statistic defined in Eq.
+ (9.7.4).
+ Let 
+\begin_inset Formula $c$
+\end_inset
+
+ be the 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+quantile of the 
+\begin_inset Formula $F$
+\end_inset
+
+ disstirbution with 
+\begin_inset Formula $m-1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom, and let 
+\begin_inset Formula $G_{m-1,n-1}$
+\end_inset
+
+ be the c.d.f.
+ of that 
+\begin_inset Formula $F$
+\end_inset
+
+ dsitribution.
+ Let 
+\begin_inset Formula $\delta$
+\end_inset
+
+ be test that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ in (9.7.3) when 
+\begin_inset Formula $V\ge c$
+\end_inset
+
+.
+ The power function 
+\begin_inset Formula $\pi(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2}|\delta)$
+\end_inset
+
+ satistfies the following properties:
+\end_layout
+
+\begin_layout Theorem*
+i.
+ 
+\begin_inset Formula $\pi(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2}|\delta)=1-G_{m-1,n-1}(\frac{\sigma_{2}^{2}}{\sigma_{1}^{2}}c)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Theorem*
+ii.
+ 
+\begin_inset Formula $\pi(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2}|\delta)=\alpha_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $\sigma_{1}^{2}=\sigma_{2}^{2}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Theorem*
+iii.
+ .
+ 
+\begin_inset Formula $\pi(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2}|\delta)<\alpha_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $\sigma_{1}^{2}<\sigma_{2}^{2}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Theorem*
+iv..
+ 
+\begin_inset Formula $\pi(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2}|\delta)>\alpha_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $\sigma_{1}^{2}>\sigma_{2}^{2}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Theorem*
+v.
+ .
+ 
+\begin_inset Formula $\pi(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2}|\delta)\rightarrow\alpha_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $\sigma_{1}^{2}/\sigma_{2}^{2}\rightarrow0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Theorem*
+vi.
+ .
+ 
+\begin_inset Formula $\pi(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2}|\delta)\rightarrow1$
+\end_inset
+
+ when 
+\begin_inset Formula $\sigma_{1}^{2}/\sigma_{2}^{2}\rightarrow\infty$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Theorem*
+The test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ has level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ and is unbiased.
+ The p-value when 
+\begin_inset Formula $V=v$
+\end_inset
+
+ is observed equals 
+\begin_inset Formula $1-G_{m-1,n-1}(v)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Two-Sided Alternative
+\end_layout
+
+\begin_layout Standard
+Suppose that we wish to test the hypotheses 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\sigma_{1}^{2}=\sigma_{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\sigma_{1}^{2}\ne\sigma_{2}^{2}\text{ (9.7.7)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It would be make sense to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if either 
+\begin_inset Formula $V\le c_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $V\ge c_{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $V$
+\end_inset
+
+ is defined in Eq.
+ (9.7.4) and 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ are constants such that 
+\begin_inset Formula $Pr(V\le c_{1})+Pr(V\ge c_{2})=\alpha_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $\sigma_{1}^{2}=\sigma_{2}^{2}$
+\end_inset
+
+.
+ The most convenient choice of 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ is the one that make 
+\begin_inset Formula $Pr(V\le c_{1})=Pr(V\ge c_{2})=\alpha_{0}/2$
+\end_inset
+
+.
+ That is, choose 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ to be the 
+\begin_inset Formula $\alpha_{0}/2$
+\end_inset
+
+ and 
+\begin_inset Formula $1-\alpha_{0}/2$
+\end_inset
+
+ quantiles of the approviae 
+\begin_inset Formula $F$
+\end_inset
+
+ distirbution.
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $m\ne n$
+\end_inset
+
+, the two-sided 
+\begin_inset Formula $F$
+\end_inset
+
+ test constructed above is not unbiased.
+ Also, if 
+\begin_inset Formula $m\ne n$
+\end_inset
+
+, it is not possible to write the two-sided 
+\begin_inset Formula $F$
+\end_inset
+
+ test described above in the form 
+\begin_inset Quotes eld
+\end_inset
+
+reject the null hypothesis if 
+\begin_inset Formula $T\ge c$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ using the same statistic 
+\begin_inset Formula $T$
+\end_inset
+
+ for each significance level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+ Nevertheless, we can still compute the smallest 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ such that the two-sided 
+\begin_inset Formula $F$
+\end_inset
+
+ test with level of significance 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ would reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+9.7.5.
+ P-value of Equal-Tailed Two-Sided 
+\begin_inset Formula $F$
+\end_inset
+
+ Test.
+ Let 
+\begin_inset Formula $V$
+\end_inset
+
+ be as defined in (9.7.4).
+ Suppose that we wish t otest the hypothese (9.7.7).
+ Let 
+\begin_inset Formula $\delta_{\alpha_{0}}$
+\end_inset
+
+ be the equal-tailed two-sided 
+\begin_inset Formula $F$
+\end_inset
+
+ test that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $V\le c_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $V\ge c_{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ are, respectively, the 
+\begin_inset Formula $\alpha_{0}/2$
+\end_inset
+
+ and 
+\begin_inset Formula $1-\alpha_{0}/2$
+\end_inset
+
+ quantiles of the appropriate 
+\begin_inset Formula $F$
+\end_inset
+
+ dsitribution.
+ Then the smallest 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\delta_{\alpha_{0}}$
+\end_inset
+
+ rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $V=v$
+\end_inset
+
+ is observed is 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+2\min\{1-G_{m-1,n-1}(v),G_{m-1,n-1}(v)\}\text{ (9.7.8)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+The 
+\begin_inset Formula $F$
+\end_inset
+
+ Test as a Likelihood Ratio Test
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $Y$
+\end_inset
+
+ and 
+\begin_inset Formula $W$
+\end_inset
+
+ are independent with 
+\begin_inset Formula $Y$
+\end_inset
+
+ having the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ degrees of freedom and 
+\begin_inset Formula $W$
+\end_inset
+
+ having 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom, them 
+\begin_inset Formula $(Y/m)/(W/n)$
+\end_inset
+
+ has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom.
+ Suppose that we observe two independent random samples from two normal
+ distributions with possibly different variances.
+ The ratio 
+\begin_inset Formula $V$
+\end_inset
+
+ of the usual unbiased estimators of the two variances will have an 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution when the two variances are equal.
+ Tests of hypotheses about the two variances can be constructed by comparing
+ 
+\begin_inset Formula $V$
+\end_inset
+
+ to various quantiles of 
+\begin_inset Formula $F$
+\end_inset
+
+ distributions.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+F distribution is not symmetric.
+\end_layout
+
+\begin_layout Section*
+Note
+\end_layout
+
+\begin_layout Standard
+Statistic 
+\begin_inset Formula $V=\frac{S_{X}^{2}/(m-1)}{S_{Y}^{2}/(n-1)}$
+\end_inset
+
+ is a instuition of the authors, original from compare 
+\begin_inset Formula $\sigma_{X}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{Y}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{X}^{2}/(m-1)$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{Y}^{2}/(n-1)$
+\end_inset
+
+ is MLE of 
+\begin_inset Formula $\sigma_{X}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{Y}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter*
+9.8.
+ Bayes Test Procedures
+\end_layout
+
+\begin_layout Standard
+Here we summarize how one tests hypotheses from the bayesian perspecitive.
+ The general idea is to choose the action (reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ or not) that leads to the smaller posterior expected loss.
+ We assume that the loss of making an incorrect decision is larger than
+ the loss of making a correct decision.
+ Many of the Bayes test procedures have the same forms as the tests we have
+ already seen, by their interpretations are different.
+\end_layout
+
+\begin_layout Section*
+Simple Null and Alternative Hypotheses
+\end_layout
+
+\begin_layout Standard
+(9.8.1) 
+\begin_inset Formula $H_{0}:\theta=\theta_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\theta=\theta_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $d_{0}$
+\end_inset
+
+ denote decision not to reject the hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ and let 
+\begin_inset Formula $d_{1}$
+\end_inset
+
+ denote the decision to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+ If decision 
+\begin_inset Formula $d_{1}$
+\end_inset
+
+ is chosen when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is actually the true hypothesis (type I error), then the loss is 
+\begin_inset Formula $w_{0}$
+\end_inset
+
+ units; if decision 
+\begin_inset Formula $d_{0}$
+\end_inset
+
+ is chosen when 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ is actually the true hypothesis (type II error), then the loss is 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ units.
+ 
+\end_layout
+
+\begin_layout Standard
+Prior probability that 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true is 
+\begin_inset Formula $\xi_{0}$
+\end_inset
+
+, and the prior probability that 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ is true is 
+\begin_inset Formula $\xi_{1}=1-\xi_{0}$
+\end_inset
+
+.
+ Then the expected loss 
+\begin_inset Formula $r(\delta)$
+\end_inset
+
+ of each test procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+ will be 
+\begin_inset Formula $r(\delta)=\xi_{0}E(Loss|\theta=\theta_{0})+\xi_{1}E(Loss|\theta=\theta_{1})$
+\end_inset
+
+ (9.8.3)
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\alpha(\delta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta(\delta)$
+\end_inset
+
+ again denote the probabilities of the two types of errors for the procedure
+ 
+\begin_inset Formula $\delta$
+\end_inset
+
+, then 
+\begin_inset Formula $r(\delta)=\xi_{0}w_{0}\alpha(\delta)+\xi_{1}w_{1}\beta(\delta)$
+\end_inset
+
+ (9.8.5)
+\end_layout
+
+\begin_layout Standard
+A procedure 
+\begin_inset Formula $\delta$
+\end_inset
+
+ for which this expected loss 
+\begin_inset Formula $r(\delta)$
+\end_inset
+
+ is minimized is called Bayes test procedure.
+ 
+\begin_inset Formula $r(\delta)$
+\end_inset
+
+ is simply a linear combination of the form 
+\begin_inset Formula $a\alpha(\delta)+b\beta(\delta)$
+\end_inset
+
+, a Bayes test procedure can immediately be determined from Theorem 9.2.1.
+ Thus, a Bayes procedure will not reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ whenever 
+\begin_inset Formula $\xi_{0}w_{0}f_{0}(x)>\xi_{1}w_{1}f_{1}(x)$
+\end_inset
+
+ and will reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ whenever 
+\begin_inset Formula $\xi_{0}w_{0}f_{0}(x)<\xi_{1}w_{1}f_{1}(x)$
+\end_inset
+
+.
+ We can either reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ or not if 
+\begin_inset Formula $\xi_{0}w_{0}f_{0}(x)=\xi_{1}w_{1}f_{1}(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Note: Bayes Test Depends Only on the Ratio of Costs.
+ 
+\series medium
+Notice that choosing 
+\begin_inset Formula $\delta$
+\end_inset
+
+minimize 
+\begin_inset Formula $r(\delta)$
+\end_inset
+
+ in Eq.
+ (9.8.5) is not affected if we multiply 
+\begin_inset Formula $w_{0}$
+\end_inset
+
+and 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ by the same positive constant, such as 
+\begin_inset Formula $1/w_{0}$
+\end_inset
+
+.
+ That is, the Bayes test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is also the test that minimize
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r^{*}(\delta)=\xi_{0}\alpha(\delta)+\xi_{1}\frac{w_{1}}{w_{0}}\beta(\delta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, a decision maker does not need to choose both of the two costs of error,
+ but rather ust the ratio of the two costs.
+\end_layout
+
+\begin_layout Section*
+Tests Based on the Posterior Distribution
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $r(d_{0}|x)=\int_{\Omega_{1}}w_{1}\xi(\theta|x)d\theta=w_{1}[1-Pr(H_{0}\text{ true}|x)]$
+\end_inset
+
+, 
+\begin_inset Formula $r(d_{1}|x)=\int_{\Omega_{0}}w_{0}\xi(\theta|x)d\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The Bayes test procedure is to choose the decision that has the smaller
+ posterior expected loss, that is choose 
+\begin_inset Formula $d_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $r(d_{0}|x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If the loss function 
+\begin_inset Formula $L(\theta,d_{i})$
+\end_inset
+
+ can be summaried in table (9.8.6), The inequality 
+\begin_inset Formula $r(d_{0}|x)\ge r(d_{1}|x)$
+\end_inset
+
+ can be rewitten as 
+\begin_inset Formula $Pr(H_{0}\text{ true}|x)\le\frac{w_{1}}{w_{0}+w_{1}}\text{ (9.8.7)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The test procedure that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when (9.8.7) holds is the Bayes test in all situations in which the loss
+ function is given by the table in (9.8.6).
+ 
+\end_layout
+
+\begin_layout Section*
+One-Sided Hypotheses
+\end_layout
+
+\begin_layout Standard
+Suppose that the family of distributions has a monotone likelihood ratio
+ and that the hypotheses are 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta\le\theta_{0}\text{ (9.8.8)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta>\theta_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We shall prove next that the Bayes procedure that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when (9.8.7) holds is one-sided test as in Theorem 9.3.1.
+\end_layout
+
+\begin_layout Theorem*
+9.8.1.
+ Suppose that 
+\begin_inset Formula $f_{n}(x|\theta)$
+\end_inset
+
+ has a monotone likelihood ratio in the statistic 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+.
+ Let the hypotheses be as in Eq.
+ (9.8.8), and assume that loss function is form 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta\le\theta_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta>\theta_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+where 
+\begin_inset Formula $w_{0},w_{1}>0$
+\end_inset
+
+ are constants.
+ Then a test procedure that minimizes the posterior expected loss is to
+ reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $T\ge c$
+\end_inset
+
+ for some constant 
+\begin_inset Formula $c$
+\end_inset
+
+ (possibly infinite).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Two-Sided Alternatives
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta=\theta_{0}\text{ (9.8.14)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta\neq\theta_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If this probability is too small, we can reject the null hypothesis that
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is close to 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+.
+ to be specific, let 
+\begin_inset Formula $d>0$
+\end_inset
+
+, and consider the hypotheses
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:|\theta-\theta_{0}|\le d\text{ (9.8.15)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:|\theta-\theta_{0}|>d
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Many experiments might choose to test the hypothesis in (9.8.14) rather than
+ those in (9.8.15) because they are ready to specify a paricular value of
+ 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ In such cases, one could calculate the posterior probability of 
+\begin_inset Formula $|\theta-\theta_{0}|\le d$
+\end_inset
+
+ for all 
+\begin_inset Formula $d$
+\end_inset
+
+ and draw a little plot.
+\end_layout
+
+\begin_layout Section*
+Testing the Mean of a Normal Distribution with Unknown Variance
+\end_layout
+
+\begin_layout Paragraph*
+Remind Improper Prior distribution: 
+\series medium
+Improper prior distribution is easy way for we assume about prior distribution
+ (which is not distribution), but we get post distribution with clear form.
+\end_layout
+
+\begin_layout Paragraph*
+Note: Bayes Tests for One-Sided Nulls with Improper Prior Are 
+\begin_inset Formula $t$
+\end_inset
+
+ Tests.
+ 
+\series medium
+In Example 9.8.5, we saw that the Bayes test for one-sided hypotheses was
+ the level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $t$
+\end_inset
+
+ test for the same hypotheses where 
+\begin_inset Formula $\alpha_{0}=w_{1}/(w_{0}+w_{1})$
+\end_inset
+
+.
+ This holds in general for normal data with improper priors.
+ It also follows that the 
+\begin_inset Formula $p-values$
+\end_inset
+
+ in these cases must be the same as the posterior probabilities that the
+ null hypotheses are true.
+\end_layout
+
+\begin_layout Section*
+Comparing the Means of Two Normal Distributions
+\end_layout
+
+\begin_layout Theorem*
+9.8.2.
+ Suppose that 
+\begin_inset Formula $X_{1},...,X_{m}$
+\end_inset
+
+ form a random sample from a normal distribution with mean 
+\begin_inset Formula $\mu_{1}$
+\end_inset
+
+ and precision 
+\begin_inset Formula $\tau$
+\end_inset
+
+ while 
+\begin_inset Formula $Y_{1},..,Y_{n}$
+\end_inset
+
+ form a random sample from a normal distribution with mean 
+\begin_inset Formula $\mu_{2}$
+\end_inset
+
+ and precision 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+ Suppose that the parameters have the improper prior with 
+\begin_inset Quotes eld
+\end_inset
+
+p.d.f
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\xi(\mu_{1},\mu_{2},\tau)=1/\tau$
+\end_inset
+
+ for 
+\begin_inset Formula $\tau>0$
+\end_inset
+
+.
+ The posterior distribution of 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+(m+n-2)^{1/2}\frac{\mu_{1}-\mu_{2}-(\bar{x}_{m}-\bar{y}_{n})}{(\frac{1}{m}+\frac{1}{n})^{1/2}(s_{x}^{2}+s_{y}^{2})^{1/2}}\text{ (9.8.17)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+is the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m+n-2$
+\end_inset
+
+ degrees of freedom, where 
+\begin_inset Formula $s_{x}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{y}^{2}$
+\end_inset
+
+ are the observed values of 
+\begin_inset Formula $S_{X}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{Y}^{2}$
+\end_inset
+
+, respectively.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Two-Sided Alternatives with Unknown Variance 
+\series medium
+To test the hypothesis that the mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ of a normal distribution is close to 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+, we could specify a specific value 
+\begin_inset Formula $d$
+\end_inset
+
+ and test 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:|\mu-\mu_{0}|\le d
+\]
+
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:|\mu-\mu_{0}|>d
+\]
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If we do not feel comfortable seleting a single value of 
+\begin_inset Formula $d$
+\end_inset
+
+ to represent 
+\begin_inset Quotes eld
+\end_inset
+
+close
+\begin_inset Quotes erd
+\end_inset
+
+, we could compute 
+\begin_inset Formula $Pr(|\mu-\mu_{0}|\le d|x)$
+\end_inset
+
+ for all 
+\begin_inset Formula $d$
+\end_inset
+
+ and draw a plot as we did in Example 9.8.4.
+\end_layout
+
+\begin_layout Section*
+Comparing the Variances of Two Normal Distributions
+\end_layout
+
+\begin_layout Standard
+In order to test hypotheses concerning the variances of two normal distributions
+, we can make use of the posterior distribution of the ratio of the two
+ variances.
+ This ratio if 
+\begin_inset Formula $F$
+\end_inset
+
+ dsitribution with 
+\begin_inset Formula $m-1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+ That is, the posterior distribution 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\tau_{1}s_{x}^{2}/(m-1)}{\tau_{2}s_{y}^{2}/(n-1)}=\frac{s_{x}^{2}/[(m-1)\sigma_{1}^{2}]}{s_{y}^{2}/[(n-1)\sigma_{2}^{2}]}\text{ (9.8.20)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m-1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+From a Bayesian perspective, one chooses a test procedure by minimizing
+ the posteriror expected loss.
+ When the loss has the simple form of (9.8.6), then the Bayes test procedure
+ is to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when its posteior probability is at most 
+\begin_inset Formula $w_{1}/(w_{0}+w_{1})$
+\end_inset
+
+.
+ In many one-sided cases, with improper priors, this procedure turns out
+ to be the same as the most commonly used level 
+\begin_inset Formula $\alpha_{0}=w_{1}/(w_{0}+w_{1})$
+\end_inset
+
+ test.
+ In two-sided cases, as an alternative to testing 
+\begin_inset Formula $H_{0}:\theta=\theta_{0}$
+\end_inset
+
+ against 
+\begin_inset Formula $H_{1}:\theta\neq\theta_{0}$
+\end_inset
+
+, one can draw a plot of 
+\begin_inset Formula $Pr(|\theta-\theta_{0}|\le d|x)$
+\end_inset
+
+ against 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ One the needs to decide which values of 
+\begin_inset Formula $d$
+\end_inset
+
+ count as meaningful differences.
+\end_layout
+
+\begin_layout Chapter*
+9.9.
+ Foundational Isses
+\end_layout
+
+\begin_layout Standard
+We discuss the relationship between significance level and sample size.
+ We also distinguish between results that are significant in the statistical
+ sense and those that are significant in a practical sense.
+\end_layout
+
+\begin_layout Section*
+The relationship between Level of Significance and Sample Size
+\end_layout
+
+\begin_layout Section*
+Statistically Significant Results
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+When we reject a null hypothesis, we say that we have obtained a statistically
+ significant result.
+ The power function of a level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ tests becomes very large, even for parameter values close to the null hypothesi
+s, as the size of the sample increases.
+ For the case of simples hypotheses, the probability of type 
+\begin_inset Formula $II$
+\end_inset
+
+ error can become very samll while the probability of type 
+\begin_inset Formula $I$
+\end_inset
+
+ error stays as large as 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+ 
+\series bold
+One way to avoid this is to let the level of significance decrease as the
+ sample size increases
+\series default
+.
+ If one rejects a null hypothesis at a particular level of significance
+ 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+, one must be careful to check whether the data actually suggest any deviation
+ of pratical importance from the null hypothesis.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body

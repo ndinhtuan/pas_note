@@ -2903,5 +2903,2844 @@ We have
  we can derive to this 2 terms.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+9.5.
+ The 
+\begin_inset Formula $t$
+\end_inset
+
+ test
+\end_layout
+
+\begin_layout Exercise*
+1.
+ 
+\begin_inset Formula $n=10$
+\end_inset
+
+ samples in Example 8.5.4.
+ The hypotheses:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\mu\le1.2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\mu>1.2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+a, Perform the level 
+\begin_inset Formula $\alpha_{0}=0.05$
+\end_inset
+
+ test of these hypotheses
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\bar{x}=1.379$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma^{'}=0.3277$
+\end_inset
+
+.
+ We reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $n^{1/2}(\bar{X}_{n}-\mu_{0})/\sigma^{'}>T_{n-1}^{-1}(1-\alpha_{0})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $T_{9}^{-1}(0.95)=1.833$
+\end_inset
+
+.
+ 
+\begin_inset Formula $n^{1/2}(\bar{X}_{n}-\mu_{0})/\sigma^{'}=3(1.379-1.2)/0.32277=1.6637<1.833$
+\end_inset
+
+.
+ So we don't reject null hypotheses.
+\end_layout
+
+\begin_layout Exercise*
+b.
+ Compute the 
+\begin_inset Formula $p-$
+\end_inset
+
+value.
+ 
+\begin_inset Formula $=1-T_{9}(1.6637)=1-0.925=0.075$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ Nine observations are selected at random from the normal distribution with
+ unknown mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and unknown variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\bar{X}_{n}=22$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}=72$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+a.
+ 
+\begin_inset Formula $H_{0}:\text{\ensuremath{\mu_{0}\le20} }$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{1}:\mu>20$
+\end_inset
+
+.
+ We reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $n^{1/2}(\bar{X}_{n}-\mu_{0})/\sigma^{'}>T_{n-1}^{-1}(1-\alpha_{0})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $T_{n-1}^{-1}(1-\alpha_{0})=T_{8}^{-1}(0.95)=1.86$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n^{1/2}(\bar{X}_{n}-\mu_{0})/\sigma^{'}=0.7<1.86$
+\end_inset
+
+.
+ So we don't reject null hypotheses.
+\end_layout
+
+\begin_layout Standard
+b.
+ Remind : For the two-sided hypothesis, The test has the form 
+\begin_inset Quotes eld
+\end_inset
+
+reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $|U|\ge T_{n-1}^{-1}(1-\alpha_{0}/2)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $U=\frac{n^{1/2}(\bar{X}_{n}-\mu_{0})}{\sigma^{'}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U=0.7$
+\end_inset
+
+.
+ 
+\begin_inset Formula $T_{8}^{-1}(1-\frac{0.05}{2})=T_{8}^{-1}(0.975)=2.304>0.7$
+\end_inset
+
+.
+ So we don't reject null hypotheses.
+\end_layout
+
+\begin_layout Standard
+c.
+ From the data, construct the observed confidence interval for 
+\begin_inset Formula $\mu$
+\end_inset
+
+ with confidence coefficient 0.95.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U\in[-T_{8}^{-1}(-0.975),T_{8}^{-1}(0.975)]$
+\end_inset
+
+
+\begin_inset Formula $=[-2.306,2.306]$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\frac{n^{1/2}(\bar{X}_{n}-\mu_{0})}{\sigma^{'}}\in[-2.306,2.306]$
+\end_inset
+
+, 
+\begin_inset Formula $\mu_{0}\in[\bar{X}_{n}-\frac{\sigma^{'}}{n^{1/2}}2.306,\bar{X}_{n}+\frac{\sigma^{'}}{n^{1/2}}2.306]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+3.
+ 
+\begin_inset Formula $X_{i}=15.6;18.6;18.3;20.1;21.5;18.4;19.1;20.4;19.0$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $n=9$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{X}_{n}=19.0$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma^{'}=[\frac{\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}}{n-1}]^{1/2}=1.653$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\frac{n^{1/2}(\bar{X}_{n}-\mu_{0})}{\sigma^{'}}=-1.81$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\alpha_{0}=0.05$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+We test in two-side test.
+ 
+\begin_inset Formula $H_{0}:\mu=20$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\mu\neq20$
+\end_inset
+
+.
+ 
+\begin_inset Formula $T_{8}^{-1}(1-0.05/2)=2.304>|1.81|$
+\end_inset
+
+.
+ So we dont reject null hypotheses.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+4.
+ 
+\begin_inset Formula $\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}=\sum_{i=1}^{n}X_{i}^{2}-2\bar{X}_{n}\sum_{i=1}^{n}X_{i}+n\bar{X}_{n}=43.7-2\frac{-11.2}{8}11.2-11.2=63.86$
+\end_inset
+
+.
+ So we can find 
+\begin_inset Formula $U$
+\end_inset
+
+, then compare 
+\begin_inset Formula $|U|$
+\end_inset
+
+ with 
+\begin_inset Formula $T_{7}^{-1}(1.-0.1/2)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+5.
+ Conditions of Exercise 4.
+ And this 
+\begin_inset Formula $t$
+\end_inset
+
+ test is not to be symmetric and hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is to be rejected if either 
+\begin_inset Formula $U\le c_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $U\ge c_{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Pr(U\le c_{1})=0.01$
+\end_inset
+
+ and 
+\begin_inset Formula $Pr(U\ge c_{2})=0.09$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From condition, we reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $-T_{8}^{-1}(0.99)\le U\le T_{8}^{-1}(0.91)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+From Exercise 
+\begin_inset Formula $4$
+\end_inset
+
+, 
+\begin_inset Formula $U=\frac{n^{1/2}(\bar{X}_{n}-\mu_{0})}{\sigma^{'}}=\frac{\sqrt{8}(-11.2/8-0)}{\sqrt{63.86}}=-3.964$
+\end_inset
+
+.
+ 
+\begin_inset Formula $-T_{8}^{-1}(0.99)=-2.896$
+\end_inset
+
+, 
+\begin_inset Formula $T_{8}^{-1}(0.91)=1.397$
+\end_inset
+
+.
+ So we dont reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+6.
+ 
+\begin_inset Formula $\pi(\mu,\sigma^{2}|\delta)=Pr(U\ge c|\delta)=1-T_{n-1}(c|\psi)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\psi=\frac{n^{1/2}(\mu-\mu_{0})}{\sigma}$
+\end_inset
+
+.
+ Becase 
+\begin_inset Formula $\frac{\mu_{1}-\mu_{0}}{\sigma_{1}}=\frac{\mu_{2}-\mu_{0}}{\sigma_{2}}$
+\end_inset
+
+, so 
+\begin_inset Formula $\psi_{1}=\psi_{2}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $T_{n-1}(c|\psi_{1})=T_{n-1}(c|\psi_{2})$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\pi(\mu_{1},\sigma_{1}^{2}|\delta)=\pi(\mu_{2},\sigma_{2}^{2}|\delta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ We can convert 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ to 
+\begin_inset Formula $X_{i}=Y_{i}+\mu_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8.
+ 
+\begin_inset Formula $c=\chi_{n}^{-1}(1-\alpha_{0})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9.
+ We compare 
+\begin_inset Formula $\chi_{9}^{-1}(0.95)$
+\end_inset
+
+ vs 
+\begin_inset Formula $\frac{S_{n}^{2}}{\sigma_{0}^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+10.
+ From 
+\begin_inset Formula $Pr(S_{n}^{2}\le c_{1})=Pr(S_{n}^{2}\ge c_{2})=0.025$
+\end_inset
+
+, 
+\begin_inset Formula $Pr(S_{n}^{2}/\sigma^{2}\le c_{1}/\sigma^{2})=Pr(S_{n}^{2}/\sigma^{2}\ge c_{2}/\sigma^{2})=0.025$
+\end_inset
+
+, but 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ is not symmetric , so 
+\begin_inset Formula $c_{1}=\chi_{9}^{-1}(-0.025)*4=2.18*4$
+\end_inset
+
+ , 
+\begin_inset Formula $c_{2}=\chi_{9}^{-1}(0.975)*4=19.02*4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+12.
+ 
+\begin_inset Formula $p-value=1-T_{n-1}(u)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+13.
+\begin_inset Formula $U=n^{1/2}(\bar{X}_{n}-\mu_{0})/\sigma^{'}$
+\end_inset
+
+, 
+\begin_inset Formula $n=170$
+\end_inset
+
+ .
+ 
+\begin_inset Formula $U=169^{1/2}(3.2-3)/0.3=8.67$
+\end_inset
+
+, 
+\begin_inset Formula $p-value=1-T_{169}(8.67)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+14-16 same for finding 
+\begin_inset Formula $p-value$
+\end_inset
+
+ of two-sided.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+17-18 same for Example 9.5.12.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+9.6 Comparing the Means of Two Normal Distribution
+\end_layout
+
+\begin_layout Exercise*
+1.
+ In Example 9.6.3, On other location, Island Thorns, had five samples 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ with an average aluminum oxide percentage of 
+\begin_inset Formula $\bar{X}=18.18$
+\end_inset
+
+ with 
+\begin_inset Formula $\sum_{i=1}^{5}(X_{i}-\bar{X})^{2}=12.61$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Y_{1},...,Y_{5}$
+\end_inset
+
+ be the five sample from Ashley Rails in Example 9.6.3.
+ Test the null hypothesis that mean aluminum oxide percentages at Ashley
+ Rails and Island Thorns are the same versus the alternative that they are
+ different at level 
+\begin_inset Formula $\alpha_{0}=0.05$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From 
+\series bold
+Theorem 9.6.1.
+ 
+\series default
+
+\begin_inset Formula $U=\frac{(m+n-2)^{1/2}(\bar{X}_{m}-\bar{Y}_{n})}{(\frac{1}{m}+\frac{1}{n})^{1/2}(S_{X}^{2}+S_{Y}^{2})^{1/2}}$
+\end_inset
+
+, the distribution of 
+\begin_inset Formula $U$
+\end_inset
+
+ is the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m+n-2$
+\end_inset
+
+ degrees of freedom.
+ From Eq.
+ (9.6.9), 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ two-sided 
+\begin_inset Formula $t$
+\end_inset
+
+ test rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $|U|\ge c$
+\end_inset
+
+ where 
+\begin_inset Formula $c=T_{m+n-2}^{-1}(1-\alpha_{0}/2)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m=n=5$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{X}_{m}=18.18$
+\end_inset
+
+, 
+\begin_inset Formula $S_{X}^{2}=12.61$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{Y}_{n}=17.32$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{S}_{Y}^{2}=11.01$
+\end_inset
+
+.
+ 
+\begin_inset Formula $U=0.791$
+\end_inset
+
+.
+ 
+\begin_inset Formula $c=T_{8}^{-1}(0.975)=2.306$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $|U|\le c$
+\end_inset
+
+ so we don't reject 
+\begin_inset Formula $H_{0}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+2.
+ 
+\begin_inset Formula $H_{0}:\bar{A}\ge\bar{B}$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\bar{A}\le\bar{B}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+4.
+ 
+\begin_inset Formula $U=\frac{(m+n-2)^{1/2}(\bar{X}_{m}-\bar{Y}_{n})}{(1/m+k/n)^{1/2}(S_{X}^{2}+\frac{S_{Y}^{2}}{k})^{1/2}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $X_{i}\sim N(\mu_{1},\sigma_{1}^{2})$
+\end_inset
+
+, 
+\begin_inset Formula $Y_{i}\sim N(\mu_{1},k\sigma_{1}^{2})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $Z_{1}=\bar{X}_{m}-\bar{Y}_{n}\sim N(0,(1/m+k/n)\sigma_{1}^{2})$
+\end_inset
+
+.
+ So, 
+\begin_inset Formula $Z=\frac{Z_{1}}{(1/m+k/n)^{1/2}\sigma_{1}}\sim N(0,1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $W=(S_{X}^{2}+\frac{S_{Y}^{2}}{k})/\sigma_{1}^{2}\sim\chi_{m+n-2}^{2}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $U=\frac{Z}{\sqrt{\frac{W}{(m+n-2)}}}$
+\end_inset
+
+ is 
+\begin_inset Formula $T$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m+n-2$
+\end_inset
+
+ degree of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+5.
+ Apply fomular 
+\begin_inset Formula $U$
+\end_inset
+
+ of exercise 
+\begin_inset Formula $4$
+\end_inset
+
+ to test.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+6.
+ Change 
+\begin_inset Formula $U=\frac{(m+n-2)^{1/2}(\bar{X}_{m}-\bar{Y}_{n}-\lambda)}{(\frac{1}{m}+\frac{1}{n})^{1/2}(S_{X}^{2}+S_{Y}^{2})^{1/2}.}$
+\end_inset
+
+ is 
+\begin_inset Formula $T$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m+n-2$
+\end_inset
+
+ degree of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ Using 
+\begin_inset Formula $U$
+\end_inset
+
+ in exercise 6, 
+\begin_inset Formula $T_{8}^{-1}(-0.95)\le U\le T_{8}^{-1}(0.95)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9.
+ Imagine Symetry distribution of T distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+10.
+ Test X is Calcium and 
+\begin_inset Formula $Y$
+\end_inset
+
+ is Placebo for testing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+11.
+ 
+\begin_inset Formula $n=43$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{X}_{43}=8.56$
+\end_inset
+
+, 
+\begin_inset Formula $S_{X}^{2}=2745.7$
+\end_inset
+
+.
+ 
+\begin_inset Formula $m=35$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{Y}_{35}=5.551$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{S}_{y}=783.9$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $H_{0}:\mu_{X}\le\mu_{Y}$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\mu_{X}\ge\mu_{Y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $U=\frac{(m+n-2)^{1/2}(\bar{X}_{m}-\bar{Y}_{n})}{(1/m+1/n)^{1/2}(S_{X}^{2}+S_{Y}^{2})^{1/2}}=1.94$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\alpha_{0}=0.01$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+Following Theorem 9.6.1, 
+\begin_inset Formula $\delta$
+\end_inset
+
+ rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $U\ge T_{m+n-2}^{-1}(1-\alpha_{0})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $T_{76}^{-1}(0.99)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+b.
+ Test hypotheses at level of significance 
+\begin_inset Formula $\alpha_{0}=0.01$
+\end_inset
+
+, using Welch's approximate test.
+\end_layout
+
+\begin_layout Exercise*
+Following Welch, he using statistic: 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+V=\frac{\bar{X}_{m}-\bar{Y}_{n}}{(\frac{S_{X}^{2}}{m(m-1)}+\frac{S_{Y}^{2}}{n(n-1)})^{1/2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+having degree of freedoms:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+12.
+ 
+\begin_inset Formula $W=\frac{S_{X}^{2}}{m(m-1)}+\frac{S_{Y}^{2}}{n(n-1)}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mu(W)=\frac{1}{m-1}\mu(\frac{S_{X}^{2}}{m})+\frac{1}{n-1}\mu(\frac{S_{Y}^{2}}{n})$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $\frac{S_{X}^{2}}{m}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{S_{Y}^{2}}{n}$
+\end_inset
+
+ is 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m-1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degree of freedom.
+\end_layout
+
+\begin_layout Exercise*
+From Equation (9.6.11), We already found M.L.E for maximizing denominator, and
+ find 
+\begin_inset Formula $\mu_{1},\mu_{2},\sigma^{2}$
+\end_inset
+
+ in sitatuon 
+\begin_inset Formula $\mu_{1}=\mu_{2}$
+\end_inset
+
+.
+ So it's same Section The Two-Sample 
+\begin_inset Formula $t$
+\end_inset
+
+ Test as a Likelihood Ratio Test.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+The F Distribution
+\end_layout
+
+\begin_layout Exercise*
+1.
+ 
+\begin_inset Formula $\bar{X}_{43}=8.56$
+\end_inset
+
+, 
+\begin_inset Formula $S_{X}^{2}=2745.7$
+\end_inset
+
+; 
+\begin_inset Formula $\bar{Y}_{35}=5.551;S_{Y}^{2}=783.9$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $H_{0}:\sigma_{X}^{2}\ge\sigma_{Y}^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\sigma_{X}^{2}<\sigma_{Y}^{2}$
+\end_inset
+
+.
+ We can write: 
+\begin_inset Formula $H_{0}:\sigma_{Y}^{2}\le\sigma_{X}^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\sigma_{Y}^{2}>\sigma_{X}^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Level significant 
+\begin_inset Formula $\alpha_{0}=0.05$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Theorem 9.7.4.
+ Let 
+\begin_inset Formula $c$
+\end_inset
+
+ be a 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+ quantile of the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m-1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom.
+ 
+\begin_inset Formula $\delta$
+\end_inset
+
+ be test that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ in (9.7.3) when 
+\begin_inset Formula $V\ge c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $34$
+\end_inset
+
+ and 
+\begin_inset Formula $42$
+\end_inset
+
+ degrees of freedom.
+ 
+\begin_inset Formula $c=F_{34,42}^{-1}(0.95).$
+\end_inset
+
+ Then we check whether 
+\begin_inset Formula $V\ge c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+2.
+ Suppose that a random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $3,8$
+\end_inset
+
+ degrees of freedom.
+ Determine value 
+\begin_inset Formula $c:Pr(X>c)=0.975$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $X\sim F_{3,8}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Y=\frac{1}{X}\sim F_{8,3}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Pr(X>c)=P(\frac{1}{X}<\frac{1}{c})=Pr(Y<\frac{1}{c})=0.975$
+\end_inset
+
+.
+ So, 
+\begin_inset Formula $\frac{1}{c}=F_{8,3}^{-1}(0.975)=14.54$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $c=\frac{1}{14.54}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+3.
+ Suppose that a random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ has 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $1,8$
+\end_inset
+
+ degrees of freedom.
+ Use table of 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution to determine the value of 
+\begin_inset Formula $c$
+\end_inset
+
+ such that 
+\begin_inset Formula $Pr(X>c)=0.3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Theorem 9.7.2.
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+ has the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom, then 
+\begin_inset Formula $Y^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom.
+ 
+\begin_inset Formula $Y:Y^{2}=X$
+\end_inset
+
+, so 
+\begin_inset Formula $Y$
+\end_inset
+
+ is 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $8$
+\end_inset
+
+ degree of freedom.
+ 
+\begin_inset Formula $Pr(X>c)=Pr(Y>c^{0.5})+Pr(Y<-c^{0.5})=2T_{8}(-c^{0.5})=0.3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{8}(X>c^{0.5})=0.15$
+\end_inset
+
+, 
+\begin_inset Formula $T_{8}(X\le c^{0.5})=0.85$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $c^{0.5}=1.108$
+\end_inset
+
+.
+ 
+\begin_inset Formula $c=1.108^{2}=1.228$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+4.
+ Suppose that a random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom (
+\begin_inset Formula $n>2)$
+\end_inset
+
+.
+ Show that 
+\begin_inset Formula $E(X)=n/(n-2)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X$
+\end_inset
+
+ is 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution, so 
+\begin_inset Formula $X=\frac{U_{1}/m}{U_{2}/n}$
+\end_inset
+
+ where 
+\begin_inset Formula $U_{1},U_{2}$
+\end_inset
+
+ is 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m,n$
+\end_inset
+
+ degree of freedom.
+ 
+\end_layout
+
+\begin_layout Standard
+https://www.statlect.com/probability-distributions/F-distribution#hid5
+\end_layout
+
+\begin_layout Exercise*
+5.
+ What is the value of the median of the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom when 
+\begin_inset Formula $m=n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Median = 
+\begin_inset Formula $F_{m,m}^{-1}(0.5)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+6.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ has 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ degrees of freedom.
+ Show that the variable 
+\begin_inset Formula $mX/(mX+n)$
+\end_inset
+
+ has the beta distribution with parameters 
+\begin_inset Formula $\alpha=m/2$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta=n/2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Y=\frac{mX}{mX+n}$
+\end_inset
+
+, 
+\begin_inset Formula $X=\frac{nY}{m(Y-1)}$
+\end_inset
+
+, we use function of a random variable.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ Consider two different normal distributions for which both means 
+\begin_inset Formula $\mu_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{2}$
+\end_inset
+
+ and the variances 
+\begin_inset Formula $\sigma_{1}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{2}^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+are unknown, suppose the following hypotheses:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\sigma_{1}^{2}\le\sigma_{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\sigma_{1}^{2}>\sigma_{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Suppose random sample consisting of 
+\begin_inset Formula $16$
+\end_inset
+
+ observations for the first normal distribution yeilds the values 
+\begin_inset Formula $\sum_{i=1}^{16}X_{i}=84$
+\end_inset
+
+, 
+\begin_inset Formula $\sum_{i=1}^{16}X_{i}^{2}=563$
+\end_inset
+
+, and an independent random sample consisting of 
+\begin_inset Formula $10$
+\end_inset
+
+ observations from second normal distribution yeilds the values 
+\begin_inset Formula $\sum_{i=1}^{10}Y_{i}=18$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{i=1}^{10}Y_{i}^{2}=72$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+a.
+ What is MLE's of 
+\begin_inset Formula $\sigma_{1}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{2}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+From Example 7.5.6, M.L.E.
+ of 
+\begin_inset Formula $\theta=(\mu,\sigma^{2})$
+\end_inset
+
+ is 
+\begin_inset Formula $\hat{\theta}=(\hat{\mu},\hat{\sigma^{2}})=(\bar{X}_{n},\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\sigma^{2}=\sum_{i=1}^{n}X_{i}^{2}-2\bar{X}_{n}\sum_{i=1}^{n}X_{i}+\bar{X}_{n}^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+b.
+ We find 
+\begin_inset Formula $F_{15,9}^{-1}(0.95)$
+\end_inset
+
+ and compare with 
+\begin_inset Formula $F=\frac{S_{X}^{2}/15}{S_{Y}^{2}/9}$
+\end_inset
+
+ with this number, if 
+\begin_inset Formula $V\ge c$
+\end_inset
+
+, we can reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8.
+ 
+\begin_inset Formula $H_{0}:\sigma_{1}^{2}\le3\sigma_{2}^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\sigma_{1}^{2}>3\sigma_{2}^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+We change formulate of 
+\begin_inset Formula $V=\frac{S_{X}^{2}/(m-1)}{S_{Y}^{2}/(n-1)}$
+\end_inset
+
+ from (9.7.4) to 
+\begin_inset Formula $V=\frac{S_{X}^{2}/(m-1)}{3S_{Y}^{2}/(n-1)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9.
+ Following (9.7.7), The most convenient choice of 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ is the the makes 
+\begin_inset Formula $Pr(V\le c_{1})=Pr(V\ge c_{2})=\alpha_{0}/2$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ to be 
+\begin_inset Formula $\alpha_{0}/2$
+\end_inset
+
+ and 
+\begin_inset Formula $1-\alpha_{0}/2$
+\end_inset
+
+ quantiles of 
+\begin_inset Formula $F_{15,9}^{-1}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $c_{1}=F_{15,9}^{-1}(0.025)=$
+\end_inset
+
+, 
+\begin_inset Formula $c_{1}=F_{15,9}^{-1}(0.975)=3.77$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+From Example 9.7.2, Determining the 0.05 Quantile of an 
+\begin_inset Formula $F$
+\end_inset
+
+ Distribution, 
+\begin_inset Formula $Pr(X<x)=0.05$
+\end_inset
+
+, 
+\begin_inset Formula $Pr(\frac{1}{X}>\frac{1}{x})=0.05$
+\end_inset
+
+, then 
+\begin_inset Formula $Pr(1/X)=0.95$
+\end_inset
+
+, 
+\begin_inset Formula $X$
+\end_inset
+
+ has 
+\begin_inset Formula $F_{15,9}$
+\end_inset
+
+, so 
+\begin_inset Formula $\frac{1}{X}$
+\end_inset
+
+ has 
+\begin_inset Formula $F_{9,15}$
+\end_inset
+
+, so 
+\begin_inset Formula $\frac{1}{x}=F_{9,15}^{-1}(0.95)=2.59$
+\end_inset
+
+.
+ so 
+\begin_inset Formula $c_{1}=1/2.59=0.386$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+10.
+ 
+\begin_inset Formula $H_{0}:\sigma_{1}^{2}=r\sigma_{2}^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\sigma_{1}^{2}\ne r\sigma_{2}^{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $V_{1}=\frac{S_{X}^{2}/(m-1)}{rS_{Y}^{2}/(n-1)}=\frac{V}{r}$
+\end_inset
+
+ compare with 
+\begin_inset Formula $F_{15,9}^{-1}(0.95)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+11.
+ 
+\begin_inset Formula $V_{1}=\frac{S_{X}^{2}/(m-1)}{rS_{Y}^{2}/(n-1)}$
+\end_inset
+
+ is 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $15$
+\end_inset
+
+, 
+\begin_inset Formula $9$
+\end_inset
+
+ degree of freedoms.
+ 
+\begin_inset Formula $0.95$
+\end_inset
+
+ confidence coefficient is 
+\begin_inset Formula $F_{15,9}^{-1}(0.025)\le V_{1}\le F_{15,9}^{-1}(0.975)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+14.
+ 
+\begin_inset Formula $\sigma_{1}^{2}=2\sigma_{2}^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+9.8.
+ Bayes Test Procedures.
+\end_layout
+
+\begin_layout Exercise*
+1.
+ In certain industrial process can be either in control or out of control,
+ and that at any specified time the prior probability that it will be in
+ control is 
+\begin_inset Formula $0.9$
+\end_inset
+
+, and the prior probability that it will be out control is 
+\begin_inset Formula $0.1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\text{ In control}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\text{ Out of control}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $X$
+\end_inset
+
+ is output of the process is to be taken, 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+P(X|H_{0})\sim N(50,1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+P(X|H_{1})\sim N(52,1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+choose 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+choose 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ true
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1000$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $H_{1}$
+\end_inset
+
+true
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $18000$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Find a test procedure for which the expected loss will be a minimum.
+ For what values of 
+\begin_inset Formula $X$
+\end_inset
+
+ should it be decided that the process is out of control.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We want to minimize loss in equation (9.8.5) 
+\begin_inset Formula $r(\delta)=\xi_{0}w_{0}\alpha(\delta)+\xi_{1}w_{1}\beta(\delta)$
+\end_inset
+
+.
+ Following Theorem 9.2.1, optimal 
+\begin_inset Formula $\delta^{*}$
+\end_inset
+
+ is not reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ whenever 
+\begin_inset Formula $\xi_{0}w_{0}f_{0}(x)>\xi_{1}w_{1}f_{x}(x)$
+\end_inset
+
+, then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f_{0}=\frac{1}{\sqrt{2\pi}}e^{-(x-50)^{2}/2}$
+\end_inset
+
+, 
+\begin_inset Formula $f_{1}=\frac{1}{\sqrt{2\pi}}e^{-(x-52)^{2}/2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\frac{f_{1}(x)}{f_{0}(x)}>\frac{0.9*1000}{0.1*18000}=162$
+\end_inset
+
+, 
+\begin_inset Formula $\xi_{0}=0.9.\xi_{1}=0.1,w_{0}=1000,w_{1}=18000$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{f_{1}(x)}{f_{0}(x)}=\frac{e^{-(x-52)^{2}/2}}{e^{-(x-50)^{2}/2}}>162$
+\end_inset
+
+, 
+\begin_inset Formula $-(x-52)^{2}/2+(x-50)^{2}/2>\log(162)$
+\end_inset
+
+, 
+\begin_inset Formula $4x>2*\log(162)-50^{2}+52^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $x>50.6$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+3.
+ 
+\begin_inset Formula $H_{0}:\text{ Failures are caused by mirror defects}$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\text{ Failures are caused by maor defects}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\xi_{0}=0.8$
+\end_inset
+
+, 
+\begin_inset Formula $\xi_{1}=0.2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+When a failure occurs, 
+\begin_inset Formula $n$
+\end_inset
+
+ independent souding 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ are made on the system.
+ 
+\begin_inset Formula $f(X_{i}|H_{0})\sim Poisson(3)$
+\end_inset
+
+, 
+\begin_inset Formula $f(X_{i}|H_{1})\sim Poisson(7)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+choose 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+choose 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ true
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $400$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $H_{1}$
+\end_inset
+
+true
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2500$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $w_{0}=400$
+\end_inset
+
+, 
+\begin_inset Formula $w_{1}=2500$
+\end_inset
+
+, 
+\begin_inset Formula $f(x_{1},...,x_{n}|\lambda)=\frac{e^{-n\lambda}\lambda^{\sum_{i}X_{i}}}{\prod X_{i}!}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\frac{f(x_{1},..,x_{n}|7)}{f(x_{1},..,x_{n}|3)}=e^{-n4}(\frac{7}{3})^{\sum_{i}X_{i}}>\frac{w_{0}\xi_{o}}{w_{1}\xi_{1}}=\frac{400*0.8}{2500*0.2}=0.64$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\sum_{i}X_{i}>(4n+log(0.64))/log(7/3)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+5.
+ Posterior probability of 
+\begin_inset Formula $\theta=\theta_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+a.
+ 
+\begin_inset Formula $P(\theta=\theta_{0}|X)=\frac{P(X|\theta_{0})P(\theta_{0})}{P(X|\theta_{1})P(\theta_{1})+P(X|\theta_{0})P(\theta_{0})}=\frac{f_{0}(X)\xi_{0}}{f_{0}(X)\xi_{0}+f_{1}(X)\xi_{1}}$
+\end_inset
+
+ (because we just have two 
+\begin_inset Formula $w_{0},w_{1}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Exercise*
+b.
+ When we want minimize (9.8.5) 
+\begin_inset Formula $r(\delta)=\xi_{0}w_{0}\alpha(\delta)+\xi_{1}w_{1}\beta(\delta)$
+\end_inset
+
+, Following Theorem 9.2.1, we reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $\xi_{0}w_{0}f_{0}(x)<\xi_{1}w_{1}f_{1}(x)$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\xi_{1}f(x|\theta_{1})w_{1}}{\xi_{0}f(x|\theta_{0})w_{0}}>1$
+\end_inset
+
+, Following section 
+\series bold
+Tests Based on the Posterior Distribution 
+\series default
+, we choose 
+\begin_inset Formula $d_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $r(d_{0}|x)<r(d_{1}|x)$
+\end_inset
+
+, or 
+\begin_inset Formula $\frac{r(d_{1}|x)}{r(d_{0}|x)}>1$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{w_{1}Pr(H_{1}|x)}{w_{0}Pr(H_{0}|x)}=\frac{w_{1}Pr(x|H_{1})P(H_{1})}{w_{0}P(x|H_{0})P(H_{0})}=\frac{\xi_{1}f(x|\theta_{1})w_{1}}{\xi_{0}f(x|\theta_{0})\xi_{0}}$
+\end_inset
+
+ , it is same as result of minimizing 
+\begin_inset Formula $r(\delta)$
+\end_inset
+
+, so we can conclude.
+\end_layout
+
+\begin_layout Exercise*
+c.As we known, if we tests on Posterior distribution we use: 
+\begin_inset Formula $r(d_{1}|x)>r(d_{0}|x)$
+\end_inset
+
+, 
+\begin_inset Formula $w_{1}(1-P(H_{0}|x))>w_{0}P(H_{0}|x))$
+\end_inset
+
+, then 
+\begin_inset Formula $P(H_{0}|x)<\frac{w_{1}}{w_{0}+w_{1}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+6.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ Suppose that we have a situation in which the Bayes test that reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $Pr(H_{0}\text{ true}|x)\le\alpha_{0}$
+\end_inset
+
+ is the same as level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test of 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ for all 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+ Prove that the 
+\begin_inset Formula $p-value$
+\end_inset
+
+ equals the posterior probability that 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true.
+\end_layout
+
+\begin_layout Exercise*
+
+\series bold
+Remind: 
+\series default
+Level of test is defined in (9.1.6), 
+\begin_inset Formula $p-value=Pr(H_{0}\text{ true}|x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $P-value$
+\end_inset
+
+ is the smallest level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ such that we would reject the null-hypothesis at level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ with the observed data.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $p-values$
+\end_inset
+
+ equals 
+\begin_inset Formula $\sup_{\theta\in\Omega_{0}}\pi(\theta|\delta_{t})=\sup_{\theta\in\Omega_{0}}Pr(T\ge t|\theta)=\sup_{\theta\in\Omega_{0}}Pr(H_{0}\text{ true}|x)$
+\end_inset
+
+ in equation (9.1.12), but 
+\begin_inset Formula $\Omega_{0}=\{\theta_{0}\}$
+\end_inset
+
+ so 
+\begin_inset Formula $\sup_{\theta\in\Omega_{0}}Pr(H_{0}\text{ true}|x)=Pr(H_{0}\text{ true}|x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+10.
+ Apply Theorem 9.8.2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+9.9 Foundational Issues
+\end_layout
+
+\begin_layout Exercise*
+1.
+ Suppose that a single observation 
+\begin_inset Formula $X$
+\end_inset
+
+ is taken from the normal distribution with unknown mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and known variance is 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ Suppose that it is known that the value of 
+\begin_inset Formula $\mu$
+\end_inset
+
+ must be 
+\begin_inset Formula $-5,0,5$
+\end_inset
+
+ and it is desired to test the following hypotheses at the level of significance
+ 
+\begin_inset Formula $0.05$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $H_{0}:\mu=0$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\mu=-5\text{ or }\mu=5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Suppose also that the test procedure to be used specifies rejecting 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $|X|>c$
+\end_inset
+
+, where the constant 
+\begin_inset Formula $c$
+\end_inset
+
+ is chosen so that 
+\begin_inset Formula $Pr(|X|>c|\mu=0)=0.05$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+a.
+ Find the value of 
+\begin_inset Formula $c$
+\end_inset
+
+, and show that if 
+\begin_inset Formula $X=2$
+\end_inset
+
+, then 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ will be rejected.
+\end_layout
+
+\begin_layout Exercise*
+b.
+ Show that if 
+\begin_inset Formula $X=2$
+\end_inset
+
+, then the value of the likelihood function at 
+\begin_inset Formula $\mu=0$
+\end_inset
+
+ is 12.2 times as large as its value at 
+\begin_inset Formula $\mu=5$
+\end_inset
+
+ and is 
+\begin_inset Formula $5.9x10^{9}$
+\end_inset
+
+ times as large as its value at 
+\begin_inset Formula $\mu=-5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+a.
+ 
+\begin_inset Formula $\delta:$
+\end_inset
+
+ Reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $|X|>c$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $Pr(X>c|\mu=0)+Pr(X<-c|\mu=0)=0.05$
+\end_inset
+
+, so 
+\begin_inset Formula $Pr(X>c|\mu=0)=0.05/2=0.025$
+\end_inset
+
+, so 
+\begin_inset Formula $c=F^{-1}(0.975)$
+\end_inset
+
+, 
+\begin_inset Formula $F$
+\end_inset
+
+ is c.d.f of 
+\begin_inset Formula $Normal(0,1)$
+\end_inset
+
+, 
+\begin_inset Formula $c=1.96$
+\end_inset
+
+, 
+\begin_inset Formula $X=2>c=1.96$
+\end_inset
+
+, so 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ will be rejected.
+\end_layout
+
+\begin_layout Standard
+b.
+ pdf of normal distribution: 
+\begin_inset Formula $f(x|\mu)=\frac{1}{\sqrt{2\pi}\sigma}e^{\frac{-(x-\mu)^{2}}{2\sigma^{2}}}$
+\end_inset
+
+, so 
+\begin_inset Formula $\frac{f(2|0)}{f(2|5)}\sim12.2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+3.
+ Conditions of Exercise 2, Suppose now that :
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $H_{0}:\mu\le0$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\mu>0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We compute 
+\begin_inset Formula $p-value$
+\end_inset
+
+ of 
+\begin_inset Formula $\bar{X}_{n}=0.03$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\bar{X}_{n}\sim N(0,\sigma=1/100)$
+\end_inset
+
+, so 
+\begin_inset Formula $p-value=1-F(0.03)$
+\end_inset
+
+ where 
+\begin_inset Formula $F$
+\end_inset
+
+ is cdf of 
+\begin_inset Formula $N(0,1/100)$
+\end_inset
+
+.
+ so 
+\begin_inset Formula $p-value=0.013$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+4.
+ 
+\begin_inset Formula $G=19\pi(0|\delta)+1-\pi(0.5|\delta)=19F(\frac{c_{n}}{1/100})+2-F(\frac{c_{n}-5}{1/100})$
+\end_inset
+
+, We want to minimize 
+\begin_inset Formula $G$
+\end_inset
+
+ we find 
+\begin_inset Formula $\frac{dG}{dc_{n}}=19f(..)*1/100-f(..)*1/100=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+5.
+ 
+\begin_inset Formula $19\pi(0|\delta)=1-\pi(0.5|\delta)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $19\pi(0|\delta)$
+\end_inset
+
+ is increasing function, 
+\begin_inset Formula $1-\pi(0.5|\delta)$
+\end_inset
+
+ is decreasing function so we can solve this equation by derivation left
+ and right part.
+ 
+\end_layout
+
 \end_body
 \end_document
