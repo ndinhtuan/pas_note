@@ -472,5 +472,1796 @@ Testing Hypotheses about a Continuous Distribution
 Likelihood Ratio Tests for Proportions
 \end_layout
 
+\begin_layout Chapter*
+10.3.
+ Contingency Tables
+\end_layout
+
+\begin_layout Standard
+When each observation in our sample is a bivariate discrete random vector
+ (a pair of discrete random variables), then there is a simple way to test
+ the hypothesis that the two random variables are independent.
+ The test is another form of 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test like the ones used earlier in this chapter.
+\end_layout
+
+\begin_layout Section*
+Independence in Contingency Tables 
+\end_layout
+
+\begin_layout Definition*
+10.3.1 Contingency Tables.
+ A table in which each observation is clssified in two or more ways is called
+ a contingency table.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Table 10.12, only two classifications are considered for each student,
+ namely, the curriculum in which he is enrolled and the candidate he prefers.
+ Such a table is called a two-way contingency table.
+\end_layout
+
+\begin_layout Standard
+Furthermore, we shall let 
+\begin_inset Formula $N_{i+}$
+\end_inset
+
+ denote the total number of individuals classified in the 
+\begin_inset Formula $i$
+\end_inset
+
+th row and 
+\begin_inset Formula $N_{+j}$
+\end_inset
+
+ denote the total number of individuals classified in the 
+\begin_inset Formula $j$
+\end_inset
+
+th column.
+\end_layout
+
+\begin_layout Standard
+Thus, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{i+}=\sum_{j=1}^{C}N_{ij}\text{ and }N_{+j}=\sum_{i=1}^{R}N_{ij}\text{ (10.3.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i=1}^{R}\sum_{j=1}^{C}N_{ij}=\sum_{i=1}^{R}N_{i+}=\sum_{j=1}^{C}N_{+j}=n\text{ (10.3.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On the basis of these observations, the following hypotheses are to be tested:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:p_{ij}=p_{i+}p_{+j}\text{ for }i=1,...,R\text{ and }j=1,...,C\text{ (10.3.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset Formula 
+\[
+H_{1}:\text{The hypothesis }H_{0}\text{ is not true}
+\]
+
+\end_inset
+
+The 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ Test of Independence 
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ tests described in Sec.10.2 can be applied to the problem of testing the
+ hypotheses (10.3.3).
+ Each individual in the population from which the sample is taken must belong
+ in one the RC cells of the contingency table.
+ Under the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, the unknown probabilities 
+\begin_inset Formula $p_{ij}$
+\end_inset
+
+ of these cells have been expressed as functions of the unknown parameters
+ 
+\begin_inset Formula $p_{i+}$
+\end_inset
+
+ and 
+\begin_inset Formula $p_{+j}$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\sum_{i=1}^{R}p_{i+}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{j=1}^{C}p_{+j}=1$
+\end_inset
+
+, the actual number of unknown parameters to be estimated when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true is 
+\begin_inset Formula $s=(R-1)+(C-1)$
+\end_inset
+
+, or 
+\begin_inset Formula $s=R+C-2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=1,..,R$
+\end_inset
+
+ and 
+\begin_inset Formula $j=1,...,C$
+\end_inset
+
+ , let 
+\begin_inset Formula $\hat{E_{ij}}$
+\end_inset
+
+ denote the M.L.E., when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true of the expected number of observations that will be classified
+ in the 
+\begin_inset Formula $i$
+\end_inset
+
+th row and the 
+\begin_inset Formula $j$
+\end_inset
+
+th column of the table.
+ In this problem, the statistic 
+\begin_inset Formula $Q$
+\end_inset
+
+ defined by Eq.
+ (10.2.4) will have the following form :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q=\sum_{i=1}^{R}\sum_{j-1}^{C}\frac{(N_{ij}-\hat{E}_{ij})^{2}}{\hat{E}_{ij}}\text{ (10.3.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Furthermore, since the contingency table contains RC cells, and since 
+\begin_inset Formula $s=R+C-2$
+\end_inset
+
+ parameters are to be estimated when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, it follows that when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true and 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+, the c.d.f.
+ of 
+\begin_inset Formula $Q$
+\end_inset
+
+ converges to the c.d.f.
+ of the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution for which the number of degrees of freedom is 
+\begin_inset Formula $RC-1-s=(R-1)(C-1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next, we shall consider the form of the estimator 
+\begin_inset Formula $\hat{E}_{ij}$
+\end_inset
+
+.
+ The expected number of observations in the 
+\begin_inset Formula $i$
+\end_inset
+
+th row and the 
+\begin_inset Formula $j$
+\end_inset
+
+th column is simply 
+\begin_inset Formula $np_{ij}$
+\end_inset
+
+.
+ When 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, 
+\begin_inset Formula $p_{ij}=p_{i+}p_{+j}$
+\end_inset
+
+.
+ Therefore, if 
+\begin_inset Formula $\hat{p}_{i+}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{p}_{+j}$
+\end_inset
+
+ then it follows that 
+\begin_inset Formula $\hat{E}_{ij}=n\hat{p}_{i+}\hat{p}_{+j}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\hat{p}_{i+}=N_{i+}/n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{E}_{ij}=n(\frac{N_{i+}}{n})(\frac{N_{+j}}{n})=\frac{N_{i+}N_{+j}}{n}\text{ (10.3.5)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we substitute this value of 
+\begin_inset Formula $\hat{E}_{ij}$
+\end_inset
+
+ into Eq.
+ (10.3.4), we can calculate the value of 
+\begin_inset Formula $Q$
+\end_inset
+
+ from the observed values of 
+\begin_inset Formula $N_{ij}.$
+\end_inset
+
+The null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ should be rejected if 
+\begin_inset Formula $Q\geq c$
+\end_inset
+
+, where 
+\begin_inset Formula $c$
+\end_inset
+
+ is an appropriately chosen constant.
+ When 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, and the sample size 
+\begin_inset Formula $n$
+\end_inset
+
+ is large, the distribution of 
+\begin_inset Formula $Q$
+\end_inset
+
+ will be approximately 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $(R-1)(C-1)$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+We learned how to test the null hypothesis that two discrete random variables
+ are independent based on a random sample of 
+\begin_inset Formula $n$
+\end_inset
+
+ pairs.
+ First, form a contingency table of the counts for every pair of possible
+ observed values.
+ Then, estimate the two marginal distribution of the two random variables.
+ Under the null hypothesis that the random variables are independent, the
+ expected count for value 
+\begin_inset Formula $i$
+\end_inset
+
+ of the first variable and value 
+\begin_inset Formula $j$
+\end_inset
+
+ of the second variable in 
+\begin_inset Formula $n$
+\end_inset
+
+ times the product the product of the two estimated marginal probabilites.
+ We then form the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ statistic 
+\begin_inset Formula $Q$
+\end_inset
+
+ by summing (observed-expected)
+\begin_inset Formula $^{2}/$
+\end_inset
+
+ expected over all the cells in the contingency table.
+ The degrees of freedom is 
+\begin_inset Formula $(R-1)(C-1)$
+\end_inset
+
+, where 
+\begin_inset Formula $R$
+\end_inset
+
+ is the number of rows in the table and 
+\begin_inset Formula $C$
+\end_inset
+
+ is the number of columns.
+\end_layout
+
+\begin_layout Chapter*
+10.4.
+ Tests of Homogeneity
+\end_layout
+
+\begin_layout Standard
+Imagine that we select subjects from several different populations, and
+ that we observe a discrete random variable for each subject.
+ We might be interested in whether or not the distribution of that discrete
+ random variable is the same in each population.
+ There is a 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test of this hypothesis that is very similar to the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test of independence.
+\end_layout
+
+\begin_layout Section*
+Samples from Several Populations
+\end_layout
+
+\begin_layout Standard
+In general, we shall consider a problem in which random samples are taken
+ from 
+\begin_inset Formula $R$
+\end_inset
+
+ different populations, and each observation in each sample can be classified
+ as one of 
+\begin_inset Formula $C$
+\end_inset
+
+ different types.
+ Thus, the data obtained from the 
+\begin_inset Formula $R$
+\end_inset
+
+ samples,can be represented in an 
+\begin_inset Formula $RxC$
+\end_inset
+
+ table.
+ For 
+\begin_inset Formula $i=1,...,R$
+\end_inset
+
+, and 
+\begin_inset Formula $j=1,..,C$
+\end_inset
+
+, we shall let 
+\begin_inset Formula $p_{ij}$
+\end_inset
+
+ denote the probability that an observation chosen at random from the 
+\begin_inset Formula $i$
+\end_inset
+
+tj population will be of type 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ Thus,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j=1}^{C}p_{ij}=1\text{ for }i=1,...,R
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The hypotheses to be tested are as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:p_{1j}=p_{2j}=...=P_{Rj}\text{ for }j=1,...,C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\text{ The hypothesis }H_{0}\text{ is not true(10.4.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the null hypothesis in (10.4.1) were true, then combining the 
+\begin_inset Formula $R$
+\end_inset
+
+ populations would produce one homogeneous population with regard to the
+ distribution of the random random variables we are studying.
+ For this reason, a test of the hypotheses (10.4.1) is called a test of homogeneit
+y of the 
+\begin_inset Formula $R$
+\end_inset
+
+ distributions.
+\end_layout
+
+\begin_layout Section*
+The 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ Test of Homogeneity
+\end_layout
+
+\begin_layout Standard
+We shall now develop a test procedure for the hypotheses (10.4.1).
+ Suppose for the moment that the probabilities 
+\begin_inset Formula $p_{ij}$
+\end_inset
+
+ are known, and consider the following statistic calculated from the observation
+s in the 
+\begin_inset Formula $i$
+\end_inset
+
+th random sample:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j=1}^{C}\frac{(N_{ij}-N_{i+}p_{ij})^{2}}{N_{i+}p_{ij}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This statistic is just the standard 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ statistic, introduced in Eq.
+ (10.1.2), for the random sample of 
+\begin_inset Formula $N_{i+}$
+\end_inset
+
+ observations from the 
+\begin_inset Formula $ith$
+\end_inset
+
+ population.
+ Therefore, when the sample size 
+\begin_inset Formula $N_{i+}$
+\end_inset
+
+ is large, the distribution of this statistic will be approximately the
+ 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $C-1$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+If we now sum this statistic over the 
+\begin_inset Formula $R$
+\end_inset
+
+ different samples, we obtain the following statistic:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i=1}^{R}\sum_{j=1}^{C}\frac{(N_{ij}-N_{i+}p_{ij})^{2}}{N_{i+}p_{ij}}\text{ (10.4.2)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since the observations in the 
+\begin_inset Formula $R$
+\end_inset
+
+ samples are drawn independently, the distribution of the statistic (10.4.2)
+ will be the distribution of the sum of 
+\begin_inset Formula $R$
+\end_inset
+
+ independent random variables, each of which has approximately the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $C-1$
+\end_inset
+
+ degrees of freedom.
+ Hence, the distribution of the statistic (10.4.2) will be approximately the
+ 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $R(C-1)$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+MLE of 
+\begin_inset Formula $p_{ij}=\hat{p}_{ij}=N_{+j}/n$
+\end_inset
+
+.
+ We obtain the statistic
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q=\sum_{i=1}^{R}\sum_{j=1}^{C}\frac{(N_{ij}-\hat{E}_{ij})^{2}}{\hat{E}_{ij}}\text{ (10.4.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{E}_{ij}=\frac{N_{i+}N_{+j}}{n}\text{ (10.4.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It can be seen that Eqs (10.4.3) and (10.4.4) are precisely the same as Eqs
+ (10.3.4) and (10.3.5).
+ Thus the statistic 
+\begin_inset Formula $Q$
+\end_inset
+
+ to be used for the test of homogeneity in this section is precisely the
+ same as the statistic 
+\begin_inset Formula $Q$
+\end_inset
+
+ to be used for the test of independence in Sec.
+ 10.3.
+ We shall now show that the number of degrees of freedom is also precisely
+ the same for the test of homogeneity as for the test of independence.
+\end_layout
+
+\begin_layout Standard
+Because the distributios of the 
+\begin_inset Formula $R$
+\end_inset
+
+ populations are alike when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, and because 
+\begin_inset Formula $\sum_{j=1}^{C}p_{ij}=1$
+\end_inset
+
+ for this common distribution, we have estimated 
+\begin_inset Formula $C-1$
+\end_inset
+
+ parameters in this problem.
+ Therefore, the statistic 
+\begin_inset Formula $Q$
+\end_inset
+
+ will have approximately the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $R(C-1)-(C-1)=(R-1)(C-1)$
+\end_inset
+
+ degrees of freedom.
+ this number is the same as that found in Sec.
+ 10.3.
+\end_layout
+
+\begin_layout Section*
+Comparing Two or More Proportions
+\end_layout
+
+\begin_layout Section*
+Correlated 2x2 tables
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+When we sample discrete random variables from several populations, we might
+ be interested in the null hypothesis that the distribution of the random
+ variables is the same in all populations.
+ We can perform a 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test of this null hypothesis as follows: Create a new variable with values
+ equal to the names of the different populations.
+ Next, pretend as if each observation consists of the original discrete
+ random variable together with the new 
+\begin_inset Quotes eld
+\end_inset
+
+population name
+\begin_inset Quotes erd
+\end_inset
+
+ variable.
+ Finally, compute the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test statistic 
+\begin_inset Formula $Q$
+\end_inset
+
+ from Sec.
+ 10.3.
+ with the same degrees of freedom.
+ For the type of data considered in this section, the 
+\begin_inset Quotes eld
+\end_inset
+
+population name
+\begin_inset Quotes erd
+\end_inset
+
+ for each observation is known before sampling begin, and hence it is not
+ a random variable.
+ Whether the population name is known ahead of time or is observed as part
+ of the sampled data (as in Sec.
+ 10.3), the mechanics of the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test are the same.
+\end_layout
+
+\begin_layout Paragraph*
+Note: 
+\series medium
+If testing based on divide (interval with normal or discrete with poisson(
+ 10.2.6)), we apply theorem 10.2.2 for testing with p-value k-1 and k-s-1 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ .
+ 
+\series default
+Every parametric testing will be applying 10.2.2 -> Wrong
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note: 
+\series default
+If MLE based on 
+\begin_inset Formula $N_{1},...,N_{k}$
+\end_inset
+
+ then testing based on 
+\begin_inset Formula $\chi_{k-s-1}^{2}$
+\end_inset
+
+.
+ But if M.L.E based on sample : 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ ( 
+\begin_inset Formula $\hat{\mu},\hat{\sigma}$
+\end_inset
+
+), we need to testing between (
+\begin_inset Formula $\chi_{k-s-1}^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\chi_{k-1}^{2}$
+\end_inset
+
+) (For example exercise 5 in Sec.
+ 10.2 - this is based on 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ to compute MLE of parameter of Poisson distribution.
+\end_layout
+
+\begin_layout Chapter*
+10.6.
+ Kolmogorov-Smirnov Test
+\end_layout
+
+\begin_layout Standard
+In Sec.
+ 10.1, we used the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test to test the null hypothesis that a random sample came from a particular
+ continuous distribution against the alternative hypothesis that the sample
+ did not come from that distribution.
+ A more suitable test for these hypotheses is introduced in this section.
+ This test can also be extended to test the null hypothesis that two independent
+ samples from the same distribution against the alternative hypothesis that
+ they came from two different distributions.
+\end_layout
+
+\begin_layout Section*
+The Sample Distribution Function
+\end_layout
+
+\begin_layout Standard
+The first step in trying to answer in Example 10.6.1 is to construct an estimator
+ of the distribution of the random sample that not rely on the assumption
+ that the distribtuion was normal.
+ Suppose that the random variables 
+\begin_inset Formula $X_{1},..,X_{n}$
+\end_inset
+
+ form a random sample from some continuous distribution, and let 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ denote the observed values of 
+\begin_inset Formula $X_{1},....,X_{n}$
+\end_inset
+
+.
+ Sice the observations come from the conitinuous distributon, there is probabili
+ty 
+\begin_inset Formula $0$
+\end_inset
+
+ that any two of the observed values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ will be equal.
+\end_layout
+
+\begin_layout Definition*
+10.6.1.
+ Sample (Empirical) Distribution Function.
+ Let 
+\begin_inset Formula $x_{1},..,x_{n}$
+\end_inset
+
+ be the observed values of a random sample 
+\begin_inset Formula $X_{1},....,X_{n}$
+\end_inset
+
+.
+ For each number 
+\begin_inset Formula $x$
+\end_inset
+
+ 
+\begin_inset Formula $(-\infty<x<\infty)$
+\end_inset
+
+, define the value 
+\begin_inset Formula $F_{n}(x)$
+\end_inset
+
+ as the proportion of observed values in the sample that are less than or
+ equal to 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ In other words, if exactly 
+\begin_inset Formula $k$
+\end_inset
+
+ of the observed values in the sample are less than or equal to 
+\begin_inset Formula $x$
+\end_inset
+
+, then 
+\begin_inset Formula $F_{n}(x)=k/n$
+\end_inset
+
+.
+ The function 
+\begin_inset Formula $F_{n}(x)$
+\end_inset
+
+ defined in this way is called sample distribution function, or simply the
+ sample c.d.f.
+ Sometimes 
+\begin_inset Formula $F_{n}(x)$
+\end_inset
+
+ is called the empirical c.d.f.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now let 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ denote the c.d.f of the distribution from which the random sample 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ was drawn.
+ For each given number 
+\begin_inset Formula $x$
+\end_inset
+
+ (
+\begin_inset Formula $-\infty<x<\infty)$
+\end_inset
+
+, the probability that any particular observation 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ will be less than or equal to 
+\begin_inset Formula $x$
+\end_inset
+
+ is 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ , therefore, it follows from the law of large numbers that as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+, the proportion 
+\begin_inset Formula $F_{n}(x)$
+\end_inset
+
+ of observation in the sample that are less than or equal 
+\begin_inset Formula $x$
+\end_inset
+
+ will converge in the probability to 
+\begin_inset Formula $F(x)$
+\end_inset
+
+.
+ In symbols,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{n}(x)\rightarrow_{p}F(x)\text{ for }-\infty<x<\infty\text{ (10.6.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The relation (10.6.1) expresses the fact that at each point 
+\begin_inset Formula $x$
+\end_inset
+
+, the sample c.d.f 
+\begin_inset Formula $F_{n}(x)$
+\end_inset
+
+ will converge to the actual c.d.f 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ of the distribution from which the random sample was taken.
+\end_layout
+
+\begin_layout Theorem*
+10.6.1.
+ Glivenko-Cantelli Lemma.
+ Let 
+\begin_inset Formula $F_{n}$
+\end_inset
+
+ be the sample c.d.f.
+ from an i.i.f.
+ sample 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ from from the c.d.f 
+\begin_inset Formula $F$
+\end_inset
+
+.
+ Define
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+D_{n}=\sup_{-\infty<x<\infty}|F_{n}(x)-F(x)|\text{ (10.6.2)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Then 
+\begin_inset Formula $D_{n}\rightarrow^{p}0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+A value of 
+\begin_inset Formula $D_{n}$
+\end_inset
+
+ is illustrated in Fig.
+ 10.3.
+ Before the values of 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ have been observed, the value of 
+\begin_inset Formula $D_{n}$
+\end_inset
+
+ is a random variable.
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Graphics
+	filename 10.6.D_n.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Theorem 10.6.1 implies that when the sample size 
+\begin_inset Formula $n$
+\end_inset
+
+ is large, the sample c.d.f.
+ 
+\begin_inset Formula $F_{n}(x)$
+\end_inset
+
+ is quite likely to be close to the c.d.f.
+ 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ over the entire real line.
+ In this sense, when the c.d.f.
+ 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ is unknown, the sample c.d.f 
+\begin_inset Formula $F_{x}(x)$
+\end_inset
+
+ can be considered to be an estimator of 
+\begin_inset Formula $F(x)$
+\end_inset
+
+.
+ In another sense, however, 
+\begin_inset Formula $F_{n}(x)$
+\end_inset
+
+ is not a very reasonable estimator of 
+\begin_inset Formula $F(x)$
+\end_inset
+
+.
+ As authors explained earlier, 
+\begin_inset Formula $F_{n}(x)$
+\end_inset
+
+ will be the c.d.f.
+ of a discrete distribution that is concentrated on 
+\begin_inset Formula $n$
+\end_inset
+
+ points, whereas we are assuming in this section that the unknown c.d.f.
+ 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ is the c.d.f.
+ of a continuous distribution.
+ Some type of smoothed version of 
+\begin_inset Formula $F_{n}(x)$
+\end_inset
+
+, from which the jumps have been removed, might yield a reasonable estimator
+ of 
+\begin_inset Formula $F(x)$
+\end_inset
+
+, but we shall not purse this topic further here.
+\end_layout
+
+\begin_layout Section*
+The Kolmogorov-Smirnov Test of a Simple Hypothesis
+\end_layout
+
+\begin_layout Standard
+Suppose now that we wish to test the simple null hypothesis that the unknown
+ c.d.f.
+ 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ is actually a particular continuos c.d.f.
+ 
+\begin_inset Formula $F^{*}(x)$
+\end_inset
+
+ against the general alternative that the actual c.d.f.
+ is not 
+\begin_inset Formula $F^{*}(x)$
+\end_inset
+
+.
+ In other words, syppose that we wish to test the following hypotheses:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:F(x)=F^{*}(x)\text{\text{ for }-\ensuremath{\infty<x<\infty}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\text{ the hypothesis }H_{0}\text{ is not true (10.6.3)}
+\]
+
+\end_inset
+
+This problem is a nonparametric problem because the unknown distribution
+ from which the random sample is taken might be any continuous distribution.
+\end_layout
+
+\begin_layout Standard
+In Sec.
+ 10.1, we described how the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ test of goodness-of-fit can be used to test hypothesis having he form (10.6.3).
+ That test, however, requires grouping the observations into a finite number
+ of intervals in arbitrary manner.
+ We shall now describe a test of the hypotheses (10.6.3) that does not require
+ such grouping.
+\end_layout
+
+\begin_layout Standard
+As before, we shall let 
+\begin_inset Formula $F_{n}(x)$
+\end_inset
+
+ denote the sample c.d.f.
+ Also, we shall now let 
+\begin_inset Formula $D_{n}^{*}$
+\end_inset
+
+ denote the following statistic:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{n}^{*}=\sup_{-\infty<x<\infty}|F_{n}(x)-F^{*}(x)|\text{ (10.6.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In other words, 
+\begin_inset Formula $D_{n}^{*}$
+\end_inset
+
+ is the maximum difference between the sample c.d.f.
+ 
+\begin_inset Formula $F_{n}(x)$
+\end_inset
+
+ and the hypothesized c.d.f.
+ 
+\begin_inset Formula $F^{*}(x)$
+\end_inset
+
+.
+ When the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ in (10.6.3.) is true, the probability distribution of 
+\begin_inset Formula $D_{n}^{*}$
+\end_inset
+
+ will be a certain distribution that is same for every possible contunuous
+ c.d.f 
+\begin_inset Formula $F^{*}(x)$
+\end_inset
+
+ and does not depend on the particular c.d.f.
+ 
+\begin_inset Formula $F^{*}(x)$
+\end_inset
+
+ being studied in a specific problem.
+ Tables of this distribution, for various values of sample size 
+\begin_inset Formula $n$
+\end_inset
+
+, have been developed and are presented in many published collections of
+ statistical tables.
+ 
+\end_layout
+
+\begin_layout Standard
+It follows from the Glivenko-Catelli lemma that the value of 
+\begin_inset Formula $D_{n}^{*}$
+\end_inset
+
+ will tend to be small if the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, and 
+\begin_inset Formula $D_{n}^{*}$
+\end_inset
+
+ will tend to be larger if the actual c.d.f.
+ 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ is different from 
+\begin_inset Formula $F^{*}(x).$
+\end_inset
+
+ Therefore, a reasonable test procedure for the hypotheses (10.6.3) is to
+ reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $n^{1/2}D_{n}^{*}>c$
+\end_inset
+
+, where 
+\begin_inset Formula $c$
+\end_inset
+
+ is an appropriate constant.
+\end_layout
+
+\begin_layout Standard
+It is convient to express the test procedure in terms of 
+\begin_inset Formula $n^{1/2}D_{n}^{*}$
+\end_inset
+
+ rather than simple 
+\begin_inset Formula $D_{n}^{*},$
+\end_inset
+
+ because of the following result
+\end_layout
+
+\begin_layout Theorem*
+10.6.2.
+ If the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, then for each given value 
+\begin_inset Formula $t>0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}Pr(n^{1/2}D_{n}^{*}\le t)=1-2\sum_{i=1}^{\infty}(-1)^{i-1}e^{-2i^{2}t^{2}}\text{ (10.6.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus, if the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, then as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+, the c.d.f.
+ of 
+\begin_inset Formula $n^{1/2}D_{n}^{*}$
+\end_inset
+
+ will converge to the c.d.f.
+ given by the infinite series on the right side on Eq.
+ (10.6.5).
+ For each value of 
+\begin_inset Formula $t>0$
+\end_inset
+
+, we shall let 
+\begin_inset Formula $H(t)$
+\end_inset
+
+ denote the value on the right side of Eq.
+ (10.6.5).
+ The values of 
+\begin_inset Formula $H(t)$
+\end_inset
+
+ are given Table 10.32.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename cdf of H.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+10.6.2.
+ Kolmogorov-Smirnov test.
+ A test procedure that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $n^{1/2}D_{n}^{*}\ge c$
+\end_inset
+
+ is called a Kolmogorov-Smirnov test.
+\end_layout
+
+\begin_layout Standard
+So in this situation, we focus on random variable 
+\begin_inset Formula $n^{1/2}D_{n}^{*}$
+\end_inset
+
+, and table 10.32 show cdf of 
+\begin_inset Formula $n^{1/2}D_{n}^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+The Kolmogorov-Smirnov Test for Two Samples
+\end_layout
+
+\begin_layout Standard
+Consider a problem in which a random sample of 
+\begin_inset Formula $m$
+\end_inset
+
+ observations 
+\begin_inset Formula $X_{1},...,X_{m}$
+\end_inset
+
+ is taken from a distribution for which the c.d.f.
+ 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ is unknown, and an independent random sample of 
+\begin_inset Formula $n$
+\end_inset
+
+ observations 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ is taken from another distribution for which the c.d.f.
+ 
+\begin_inset Formula $G(x)$
+\end_inset
+
+ is also unknown.
+ We shall assume that both 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $G(x)$
+\end_inset
+
+ are continuous functions and that it is desired to test the hypothesis
+ that these functions are identical, without specifying their common form.
+ Thus, the following hypotheses are to be tested:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:F(x)=G(x)\text{ for }-\infty<x<\infty
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\text{ The hypothesis }H_{0}\text{\text{ is not true.}(10.6.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We shall let 
+\begin_inset Formula $F_{m}(x)$
+\end_inset
+
+ denote the sample c.d.f calculated from the observed values of 
+\begin_inset Formula $X_{1},...,X_{m}$
+\end_inset
+
+ and let 
+\begin_inset Formula $G_{n}(x)$
+\end_inset
+
+ denote the sample c.d.f.
+ calculated from the observed values of 
+\begin_inset Formula $Y_{1},...,Y_{n}.$
+\end_inset
+
+ Furthermore, we shall consifer the statistic 
+\begin_inset Formula $D_{mn},$
+\end_inset
+
+which is defined as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{mn}=\sup_{-\infty<x<\infty}|F_{m}(x)-G_{n}(x)|\text{ (10.6.7)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The value of 
+\begin_inset Formula $D_{mn}$
+\end_inset
+
+ is illustrated in Fig.
+ 10.5.
+ for a typical example in which 
+\begin_inset Formula $m=5$
+\end_inset
+
+ and 
+\begin_inset Formula $n=3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 10.6D_mn.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true and 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $G(x)$
+\end_inset
+
+ are identical functions, the sample c.d.f.'s 
+\begin_inset Formula $F_{m}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $G_{n}(x)$
+\end_inset
+
+ will tend to be close to each other, In face, when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, it follows from the Glivenko-Cantelli lemma that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{mn}\rightarrow^{p}0\text{ as both }m\rightarrow\infty\text{ and }n\rightarrow\infty\text{ (10.6.8)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It seems reasonable, therefore, to use a test procedure that specified rejecting
+ 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when 
+\begin_inset Formula $D_{mn}$
+\end_inset
+
+ is large.
+ The following theorem, whose proof is beyond the scope of this text, gives
+ us the asymptotic distribution of 
+\begin_inset Formula $D_{mn}$
+\end_inset
+
+, which we can use to construct an approximate test.
+\end_layout
+
+\begin_layout Theorem*
+10.6.3.
+ Two-Sample Kolmogorov-Smirnov Statistic.
+ For each value of 
+\begin_inset Formula $t>0$
+\end_inset
+
+, let 
+\begin_inset Formula $H(t)$
+\end_inset
+
+ denote the right side of Eq.
+ (10.6.5).
+ If the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ in (10.6.6) is true, then 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\lim_{m\rightarrow\infty,n\rightarrow\infty}Pr[(\frac{mn}{m+n})^{1/2}D_{mn}\le t]=H(t)\text{ (10.6.9)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Values of the function 
+\begin_inset Formula $H(t)$
+\end_inset
+
+ are given in Table 10.32.
+ The large-sample approcimate test of the hypotheses in (10.6.6) makes use
+ of the statistic in (10.6.9).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+10.6.3.
+ Two-Sample Kolmogorov-Smirnov Test.
+ A test procedure that rejects 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ when
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+(\frac{mn}{m+n})^{1/2}D_{mn}\ge c\text{ (10.6.10)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+where 
+\begin_inset Formula $c$
+\end_inset
+
+ is an appropriate constant, is called a Kolmogorov-Smirnov two-sample test.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+We instroduced Kolmogorov-Smirnov tests for testing the null hypotheses
+ that a random sample arose from particualr distribution and that two independen
+t random samples arose from the same distribution.
+ For the one-sample test, we compute 
+\begin_inset Formula $D_{n},$
+\end_inset
+
+ the largest different between the sample c.d.f.
+ and the null hypothesis c.d.f., and we reject the null hypothesis at level
+ 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ in 
+\begin_inset Formula $n^{1/2}D_{n}^{*}\ge H^{-1}(1-\alpha_{0})$
+\end_inset
+
+, where 
+\begin_inset Formula $H$
+\end_inset
+
+ is the c.d.f shown in Table 10.32.
+ For the two-sample test, we compute 
+\begin_inset Formula $D_{mn},$
+\end_inset
+
+the largest different between the two sample c.d.f.'s from the two different
+ samples.
+ We then reject the null hypothesis that the two samples arose from the
+ same distribution at level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $(mn/(m+n))^{1/2}D_{mn}\ge H^{-1}(1-\alpha_{0})$
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
