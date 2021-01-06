@@ -1677,37 +1677,7 @@ b, Because distribution of
 
 \end_layout
 
-\begin_layout Exercise*
-17.
- Sample 
-\begin_inset Formula $IQR=\tilde{\theta}_{0.75,n}-\tilde{\theta}_{0.25,n}$
-\end_inset
-
-, Following Theorem 10.7.1, 
-\begin_inset Formula $\tilde{\theta}_{0.75,n}$
-\end_inset
-
- will be approximate normal distribution 
-\begin_inset Formula $N(\theta_{0.75},0.75(1-0.75)/[nf^{2}(\theta_{0.75})])$
-\end_inset
-
-.
- Similarly, 
-\begin_inset Formula $\tilde{\theta}_{0.25,n}\sim N(\theta_{0.25},0.25*0.75/[nf^{2}(\theta_{0.25})])$
-\end_inset
-
-, so 
-\begin_inset Formula $\tilde{\theta}_{0.75,n}-\tilde{\theta}_{0.25,n}\sim N(\theta_{3/4}-\theta_{1/4},0.5*0.75/[nf^{2}(\theta_{0.25})])$
-\end_inset
-
- because distribution symmetric, 
-\begin_inset Formula $\theta_{3/4}-\theta_{1/2}=\theta_{1/2}-\theta_{1/4}$
-\end_inset
-
-, so 
-\begin_inset Formula $f(\theta_{3/4})=f(\theta_{1/4})$
-\end_inset
-
+\begin_layout Standard
 
 \end_layout
 

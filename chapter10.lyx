@@ -2260,7 +2260,97 @@ the largest different between the two sample c.d.f.'s from the two different
 \begin_inset Formula $(mn/(m+n))^{1/2}D_{mn}\ge H^{-1}(1-\alpha_{0})$
 \end_inset
 
+ 
+\end_layout
 
+\begin_layout Section*
+10.7.
+ Robust Estimation
+\end_layout
+
+\begin_layout Standard
+Exercise 9 prove that the M.L.E of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is indeed the sample median when the sample comes from a Laplace distribution.
+ 
+\end_layout
+
+\begin_layout Standard
+We also like the derivative to flatten out like the Laplace case for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ near the extremes so that the actual values of the extreme observations
+ do not affect the estimate.
+ A pdf with these properties is the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{k}(x|\theta,\sigma)=c_{k}e^{h_{k}([x-\theta]/\sigma)}\text{(10.7.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Comparison of the Estimators
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from the normal distribution with mean 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, the probability of 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+ and the probability distribution of each of the robust estimators described
+ in this chapter will be symmetric with respect to the value 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Therefore, the mean of each these estimators will be 
+\begin_inset Formula $\theta$
+\end_inset
+
+, the M.S.E.
+ of each estimator will be equal its variance, and this M.S.E.
+ will have a certain constant value for each estimator regardless of the
+ true value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Summaration
+\end_layout
+
+\begin_layout Itemize
+To say that the new estimators are more robust, we mean that they perform
+ well compared to the old estimators, in terms of 
+\series bold
+M.S.E.
+ 
+\series default
+, regardless of which distribution gives rise to the data.
 \end_layout
 
 \end_body
