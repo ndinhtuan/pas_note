@@ -1,0 +1,1029 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+11.
+ Regression 
+\end_layout
+
+\begin_layout Standard
+In Sec.
+ 11.1, we introduced the method of least squares.
+ This method computes coefficients for a linear function to predict one
+ variable 
+\begin_inset Formula $y$
+\end_inset
+
+ based on other variables 
+\begin_inset Formula $x_{1},...,x_{k}$
+\end_inset
+
+.
+ In this section, we assume that 
+\begin_inset Formula $y$
+\end_inset
+
+ values are observed values of a collection of random variables.
+ In this case, there is a statistical model in which the method of least
+ squares turns out to produce the maximum likelihood estimates of the parameters
+ of the models.
+\end_layout
+
+\begin_layout Example*
+11.2.1 If we learn the boiling point 
+\begin_inset Formula $x$
+\end_inset
+
+ of water and want to compute the conditional distribution of the unknown
+ pressure 
+\begin_inset Formula $Y$
+\end_inset
+
+, is there a statistical model that allows us to say what the (conditional)
+ distribution of pressure is given that the boiling point is 
+\begin_inset Formula $x$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this section, we shall describe a statistical model for problems such
+ as the one in Example 11.2.1.
+ Fitting this statistical model will make use of the method of least squares.
+ We shall study problems in which we are interested in learning about the
+ conditional distribution of some random variable 
+\begin_inset Formula $Y$
+\end_inset
+
+ for given values of some other variables 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+.
+ The variables 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ may be random variables whose values are to be observed in an experiment
+ along with the values of 
+\begin_inset Formula $Y$
+\end_inset
+
+, or they maybe control variables whose values are to be chosen by the experimen
+ter.
+ In general, some of these variables might be random variables, and some
+ might be control variables.
+ In any case, we can study the conditional distribution of 
+\begin_inset Formula $Y$
+\end_inset
+
+ given 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+.
+ We begin with some terminalogy.
+\end_layout
+
+\begin_layout Definition*
+11.2.1.
+ Response/Predictor/Regression.
+ The variables 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ are called predictors, and the random variable 
+\begin_inset Formula $Y$
+\end_inset
+
+ is called response.
+ The condition expectation of 
+\begin_inset Formula $Y$
+\end_inset
+
+ given values 
+\begin_inset Formula $x_{1},...,x_{k}$
+\end_inset
+
+ of 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ is called the regression function of 
+\begin_inset Formula $Y$
+\end_inset
+
+ on 
+\begin_inset Formula $X_{1},....,X_{k}$
+\end_inset
+
+ or simply the regression of 
+\begin_inset Formula $Y$
+\end_inset
+
+ on 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The regression of 
+\begin_inset Formula $Y$
+\end_inset
+
+ on 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ is a function of the values 
+\begin_inset Formula $x_{1},...,x_{k}$
+\end_inset
+
+ of 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+.
+ In symbols, this function is 
+\begin_inset Formula $E(Y|x_{1},...,x_{k})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In this chapter, we shall assume that the regression function 
+\begin_inset Formula $E(Y|x_{1},...,x_{k})$
+\end_inset
+
+ is a linear function having the following form: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(Y|x_{1},...,x_{k})=\beta_{0}+\beta_{1}x_{1}+....+\beta_{k}x_{k}\text{ (11.2.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The coefficients 
+\begin_inset Formula $\beta_{0},...,\beta_{k}$
+\end_inset
+
+ in Eq.
+ (11.2.1) are called regression coefficients.
+ We shall suppose that these regression coefficients are unknown.
+ Therefore, they are to be regared as parameters whose values whose values
+ are to be estimated.
+ We shall suppose also that 
+\begin_inset Formula $n$
+\end_inset
+
+ vectiors of observations are obtained.
+ For 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+, we shall assume that the 
+\begin_inset Formula $i$
+\end_inset
+
+th vector 
+\begin_inset Formula $(x_{i1},..,x_{ik},y)$
+\end_inset
+
+ consist of a set of controlled or observed values of 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ and the corresponding observed value of 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+One ser of estimators of the regression coefficients 
+\begin_inset Formula $\beta_{0},...,\beta_{k}$
+\end_inset
+
+ that can be calculated from these observations is set of values 
+\begin_inset Formula $\hat{\beta}_{0},...,\hat{\beta}_{k}$
+\end_inset
+
+ that are obtained by the method of least squares, as described in Sec.
+ 11.1.
+ We shall now specify some further assumptions about the conditional distributon
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+ given 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ in order to be able to determine in greater detail the properties of these
+ least-squares estimators.
+\end_layout
+
+\begin_layout Section*
+Simple Linear Regression
+\end_layout
+
+\begin_layout Paragraph*
+Assunption 11.2.1 .
+ 
+\series medium
+Predictor is known.
+ Either the values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ are known ahead od time or they are the observed values of random variables
+ 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ on whose values we condition before computing the joint distribution of
+ 
+\begin_inset Formula $(Y_{1},...,Y_{n})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.2.2.
+ 
+\series medium
+Normality.
+ For 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ the conditional distribution of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ given the values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ is a normal distribution.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.2.3.
+ 
+\series medium
+Linear Mean.
+ There are parameters 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ such that the conditional mean of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ given the values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ has the form 
+\begin_inset Formula $\beta_{0}+\beta_{1}x_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.2.4.
+ 
+\series medium
+Common Variance.
+ There is a parameter 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ such that the conditional variance of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ given the values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ is 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,..,n$
+\end_inset
+
+ .
+ This assumption is often called homoscedasticity.
+ Random variables with different variances are called heteroscedastic.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.2.5.
+ 
+\series medium
+Independence.
+ The random variables 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are independent given the observed 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Asummptions 11.2.1-11.2.5 specify the conditional joint distribution of 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ given the vector 
+\begin_inset Formula $\mathbf{x}=(x_{1},...,x_{n})$
+\end_inset
+
+ and the parameters 
+\begin_inset Formula $\beta_{0},\beta_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ In particular, the conditional joint p.d.f.
+ of 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{n}(\mathbf{y}|\mathbf{x},\beta_{0},\beta_{1},\sigma^{2})=\frac{1}{(2\pi\sigma^{2})^{n/2}}exp[\frac{-1}{2\sigma^{2}}\sum_{i=1}^{n}(y_{i}-\beta_{0}-\beta_{1}x_{i})^{2}].(11.2.2)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can now find the M.L.E.'s of 
+\begin_inset Formula $\beta_{0},\beta_{1},$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+11.2.1.
+ Simple Linear Regression M.L.E.'s.
+ Assume Assumptions 11.2.1-11.2.5.
+ The M.L.E's of 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ are the least-squares estimates, and the M.L.E.
+ of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\sigma}^{2}=\frac{1}{n}\sum_{i=1}^{n}(y_{i}-\hat{\beta}_{0}-\hat{\beta}_{1}x_{i})^{2}\text{(11.2.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+The Distribution of the Least-Squares Estimators
+\end_layout
+
+\begin_layout Standard
+The estimators are 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\beta}_{1}=\frac{\sum_{i=1}^{n}(Y_{i}-\bar{y})(x_{i}-\bar{x})}{\sum_{i=1}^{n}(x_{i}-\bar{x})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\beta}_{0}=\bar{Y}-\hat{\beta}_{1}\bar{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\bar{Y}=\bar{Y}-\hat{\beta}_{1}\bar{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is convenient, both for this section and the next, to introduce the symbol
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s_{x}=(\sum_{i=1}^{n}(x_{i}-\bar{x})^{2})^{1/2}\text{(11.2.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+11.2.2.
+ Distributions of Least-Squares Estimators.
+ Under Assumptions 11.2.1-11.2.5, the distribution of 
+\begin_inset Formula $\hat{\beta}_{1}$
+\end_inset
+
+ is normal distribution with mean 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}/s_{x}^{2}$
+\end_inset
+
+.
+ The distribution of 
+\begin_inset Formula $\hat{\beta}_{0}$
+\end_inset
+
+ is normal distribution with mean 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and variance
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\sigma^{2}(\frac{1}{n}+\frac{\bar{x}^{2}}{s_{x}^{2}})\text{ (11.2.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Finally, the covariance of 
+\begin_inset Formula $\hat{\beta}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{0}$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+Cov(\hat{\beta}_{0},\hat{\beta}_{1})=-\frac{\bar{x}\sigma^{2}}{s_{x}^{2}}\text{ (11.2.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+(All of the distributonal statements in this theorem are conditional on
+ 
+\begin_inset Formula $X_{i}=x_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ if 
+\begin_inset Formula $X_{1},..,X_{n}$
+\end_inset
+
+ are random variables.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A simple corolary to Theorem 11.2.2 is that 
+\begin_inset Formula $\hat{\beta}_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{1}$
+\end_inset
+
+ are, respectively, unbiased estimators of the corresponding parameters
+ 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To complete the description of the joint distribution of 
+\begin_inset Formula $\hat{\beta_{0}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta_{1}}$
+\end_inset
+
+, it will be shown in Sec.
+ 11.3 that this joint distribution is the bivariate normal distribution for
+ which the means, variances, and covariance are as stated in Theorem 11.2.2.
+\end_layout
+
+\begin_layout Section*
+Prediction
+\end_layout
+
+\begin_layout Example*
+11.2.4.
+ Predicting Pressure from the Boiling Point of Water.
+ In Example 11.2.1, Forbes was trying to find a way to use the boiling point
+ of water to estimatr the barometric pressure.
+ Suppose that a traveler measures the boiling point of water to be 201.5
+ degrees.
+ What estimate of barometric pressure should the give and how much uncertainty
+ is there about estimate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose tht 
+\begin_inset Formula $n$
+\end_inset
+
+ pairs of observations 
+\begin_inset Formula $(x_{1},Y_{1}),...,(x_{n},Y_{n})$
+\end_inset
+
+ are to be obtained in a problem of simple linear regression, and on the
+ basis of these 
+\begin_inset Formula $n$
+\end_inset
+
+ pairs, it is necessary to predict the value of an independent observation
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+ that will be obtained when certain specified value 
+\begin_inset Formula $x$
+\end_inset
+
+ is assigned to the control variable.
+ Since the observation 
+\begin_inset Formula $Y$
+\end_inset
+
+ will have the normal distribution with mean 
+\begin_inset Formula $\beta_{0}+\beta_{1}x$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, it is natural to use 
+\begin_inset Formula $\hat{Y}=\hat{\beta}_{0}+\hat{\beta}_{1}x$
+\end_inset
+
+ as the predicted value of 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ We shall now determine the M.S.E.
+ 
+\begin_inset Formula $E[(\hat{Y}-Y)^{2}]$
+\end_inset
+
+ of this prediction, where both 
+\begin_inset Formula $\hat{Y}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are random variables.
+ 
+\end_layout
+
+\begin_layout Theorem*
+11.2.3.
+ M.S.E of Prediction.
+ In the prediction problem just described,
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+E[(\hat{Y}-Y)]=\sigma^{2}[1+\frac{1}{n}+\frac{(x-\bar{x})^{2}}{s_{x}^{2}}]\text{ (11.2.11)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example*
+11.2.5.
+ The M.S.E.
+ 
+\begin_inset Formula $1.0628\sigma^{2}$
+\end_inset
+
+ can be interpreted as follows: If we knew the values of 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ and tried to predict 
+\begin_inset Formula $Y$
+\end_inset
+
+, the M.S.E.
+ would be 
+\begin_inset Formula $Var(Y)=\sigma^{2}$
+\end_inset
+
+.
+ Having to estimate 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ only costs us an additional 
+\begin_inset Formula $0.0628\sigma^{2}$
+\end_inset
+
+ in M.S.E.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Note: M.S.E.
+ of Prediction Increases as 
+\begin_inset Formula $x$
+\end_inset
+
+ Moves Away from Observed Data.
+ 
+\series medium
+The M.S.E.
+ in Eq.
+ (11.2.11) increases as 
+\begin_inset Formula $x$
+\end_inset
+
+ moves away from 
+\begin_inset Formula $\bar{x}$
+\end_inset
+
+, and it is smallest when 
+\begin_inset Formula $x=\bar{x}$
+\end_inset
+
+.
+ This indicates that it is harder to predict 
+\begin_inset Formula $Y$
+\end_inset
+
+ when 
+\begin_inset Formula $x$
+\end_inset
+
+ it not near center the center of the observed values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ .
+ Indeed, if 
+\begin_inset Formula $x$
+\end_inset
+
+ is larger than largest observed 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ or smaller that the smallest one, it is quite difficult to predict 
+\begin_inset Formula $Y$
+\end_inset
+
+ with much precision.
+ Such predictions outside the range of the observed data are called 
+\emph on
+extrapolations.
+\end_layout
+
+\begin_layout Standard
+Linearlity can then be checked by visual inspection of the plotted points
+ and the fitting of a polynomial of degree two or higher.
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Standard
+We considered the following statistical model.
+ The values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ are assumed known.
+ The random variables 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are independent with 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ having the normal distribution with mean 
+\begin_inset Formula $\beta_{0}+\beta_{1}x_{i}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Here, 
+\begin_inset Formula $\beta_{0},\beta_{1},$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ are unkown parameters .
+ These are the assumptions of the simple linear regression model.
+ Under this model, the joint distribution of the least-squares estimators
+ 
+\begin_inset Formula $\hat{\beta}_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{1}$
+\end_inset
+
+ is a bivariate normal distribution with 
+\begin_inset Formula $\hat{\beta}_{i}$
+\end_inset
+
+ having mean 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,2$
+\end_inset
+
+.
+ The variances are given in Eqs.
+ (11.2.5) and (11.2.9).
+ The covariance is given in Eq.
+ (11.2.6).
+ If we consider predicting a future 
+\begin_inset Formula $Y$
+\end_inset
+
+ value with corresponding predictor 
+\begin_inset Formula $x$
+\end_inset
+
+, we might use the prediction 
+\begin_inset Formula $\hat{Y}=\hat{\beta}_{0}+\hat{\beta}_{1}x$
+\end_inset
+
+.
+ In this case, 
+\begin_inset Formula $Y-\hat{Y}$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $0$
+\end_inset
+
+ and variance given by Eq.
+ (11.2.11)
+\end_layout
+
+\end_body
+\end_document

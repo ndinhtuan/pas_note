@@ -1,0 +1,378 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Chapter 11.
+ Linear Statistical Models 
+\end_layout
+
+\begin_layout Chapter*
+11.1 The Method of Least Squares 
+\end_layout
+
+\begin_layout Standard
+When each observation from an experiment is a pair of numbers, it is often
+ important to try to predict one of the numbers from the other.
+ Least squares is a method for constructing a predictor of one of the variables
+ from the other by making use of sample of observed pairs.
+\end_layout
+
+\begin_layout Section*
+Fitting a Straight Line.
+\end_layout
+
+\begin_layout Section*
+The Least-Squares Line
+\end_layout
+
+\begin_layout Standard
+One method of constructing a straight line to fit observed values is called
+ the method of least squares, which chooses the line to minimize the sum
+ of the squares of the vertical deviations of all the points from the line.
+ We shall now study the method of least squares in more detail.
+\end_layout
+
+\begin_layout Theorem*
+11.1.1.
+ Least Squares.
+ Let 
+\begin_inset Formula $(x_{1},y_{1}),...,(x_{n},y_{n})$
+\end_inset
+
+ be a set of n points.
+ The straight line that minimizes the sum of the squares of the vertical
+ deviations of all the points from the line has the following slope and
+ intercept:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\beta}_{1}=\frac{\sum_{i=1}^{n}(y_{i}-\bar{y})(x_{i}-\bar{x})}{\sum_{i=1}^{n}(x_{i}-\bar{x})^{2}}\text{ (11.1.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\beta}_{0}=\bar{y}-\hat{\beta}_{1}\bar{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+where 
+\begin_inset Formula $\bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+So 
+\begin_inset Formula $y=\beta_{0}+\beta_{1}x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+11.1.1 Least-Squares Line.
+ Let 
+\begin_inset Formula $\hat{\beta}_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{1}$
+\end_inset
+
+ be as defined in (11.1.1).
+ The line defined by the equation 
+\begin_inset Formula $y=\hat{\beta}_{0}+\hat{\beta}_{1}x$
+\end_inset
+
+ is called the least-squares line.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Fitting a Polynomial by the Method of Least Squares
+\end_layout
+
+\begin_layout Standard
+Suppose now that instead of simply fitting a straight line to 
+\begin_inset Formula $n$
+\end_inset
+
+ plotted points, we wish to fit polynomial of degree 
+\begin_inset Formula $k$
+\end_inset
+
+ (
+\begin_inset Formula $k\ge2)$
+\end_inset
+
+.
+ Such a polynomial will have the following form: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\beta_{0}+\beta_{1}x+\beta_{2}x^{2}+...+\beta_{k}x^{k}\text{ (11.1.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As before, these equations in Eq.
+ (11.1.8) are called the normal equations.
+ If the normal equations have a unique solution, that solution provides
+ the minimum value for 
+\begin_inset Formula $Q$
+\end_inset
+
+ (in Eq (11.1.17)).
+ A necessary and sufficient condition for unique solution is that the determinan
+t of the 
+\begin_inset Formula $(k+1)(k+1)$
+\end_inset
+
+ matrix formed by the coefficients of 
+\begin_inset Formula $\beta_{0},...,\beta_{k}$
+\end_inset
+
+ in Eq.
+ (11.1.8) is not zero.
+\end_layout
+
+\begin_layout Section*
+Fitting a Linear Function of Several Variables.
+\end_layout
+
+\begin_layout Standard
+Suppose that for each patient 
+\begin_inset Formula $i$
+\end_inset
+
+ 
+\begin_inset Formula $(i=1,...,n)$
+\end_inset
+
+ we measure her reaction 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ to drug 
+\begin_inset Formula $B$
+\end_inset
+
+, her reaction 
+\begin_inset Formula $x_{i1}$
+\end_inset
+
+ to drug 
+\begin_inset Formula $A$
+\end_inset
+
+, and also her values 
+\begin_inset Formula $x_{i2},...,x_{ik}$
+\end_inset
+
+ for the other variables.
+ Suppose also that in order to fit these observed values for 
+\begin_inset Formula $n$
+\end_inset
+
+ patients, we wish to consider a linear function having the form 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\beta+\beta_{1}x_{1}+....+\beta_{n}x_{n}(11.1.11)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It should be noted that the problem of fitting a polynomial of degree 
+\begin_inset Formula $k$
+\end_inset
+
+ involving only one variable, as specified by Eq.
+ (11.1.6), can be regarded as a special case of the problem of fitting a linear
+ function involving serveral variables, as specified by Eq.
+ (11.1.11).
+ To make Eq.(11.1.11) applicable to the problem of fitting a polynomial having
+ the form given in Eq.
+ (11.1.16), we define the 
+\begin_inset Formula $k$
+\end_inset
+
+ variables 
+\begin_inset Formula $x_{1},...,x_{k}$
+\end_inset
+
+ simply as 
+\begin_inset Formula $x_{1}=x,x_{2}=x^{2},...,x_{k}=x^{k}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Standard
+The method of least squares allows the calculation of a predictor for one
+ variable (
+\begin_inset Formula $y)$
+\end_inset
+
+ based on one or more other variables (
+\begin_inset Formula $x_{1},...,x_{k}$
+\end_inset
+
+) of the form 
+\begin_inset Formula $\beta_{0}+\beta_{1}x_{1}+....+\beta_{k}x_{k}$
+\end_inset
+
+.
+ The coefficients 
+\begin_inset Formula $\beta_{0},...,\beta_{k}$
+\end_inset
+
+ are chosen so that the sum of squared difference between observed values
+ of 
+\begin_inset Formula $y$
+\end_inset
+
+ and observed values of 
+\begin_inset Formula $\beta+\beta_{1}x_{1}+....+\beta_{k}x_{k}$
+\end_inset
+
+ is as small as possible.
+ Algebraic formaluas for the coefficients are given for the case 
+\begin_inset Formula $k=1$
+\end_inset
+
+, but most statistic computer software will calculate the coefficients more
+ easily.
+\end_layout
+
+\end_body
+\end_document

@@ -1711,5 +1711,687 @@ b, Because distribution of
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+10.8.
+ Sign and Rank Tests.
+ 
+\end_layout
+
+\begin_layout Exercise*
+1.
+ Suppose 
+\begin_inset Formula $(X_{1},Y_{1}),...,(X_{n},Y_{n})$
+\end_inset
+
+ are i.i.d.
+ pairs of random variables with a continous joint distribution.
+ Let 
+\begin_inset Formula $p=Pr(X_{i}\le Y_{i})$
+\end_inset
+
+, and suppose that we want to test the hypotheses
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:p\le1/2;H_{1}:p>1/2\text{ (10.8.7)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Describe a version of the sign test to use the testing these hypotheses
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose that for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+, 
+\begin_inset Formula $W_{i}=1$
+\end_inset
+
+ if 
+\begin_inset Formula $X_{i}\le Y_{i}$
+\end_inset
+
+, else 
+\begin_inset Formula $W_{i}=0$
+\end_inset
+
+ if 
+\begin_inset Formula $X_{i}>Y_{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $p=Pr(X_{i}\le Y_{i})=Pr(W_{i}=1)$
+\end_inset
+
+.
+ So, Like section bellow example 10.8.1 we suppose 
+\begin_inset Formula $T=W_{1}+...+W_{n}.$
+\end_inset
+
+ And we reject null hypothesis if 
+\begin_inset Formula $T$
+\end_inset
+
+ is too large.
+ 
+\series bold
+Bernoulli testing.
+\end_layout
+
+\begin_layout Standard
+Then, Making use of Example 9.1.9, and inverse to section bellow example 10.8.1,
+ We choose smallest 
+\begin_inset Formula $c$
+\end_inset
+
+such that 
+\begin_inset Formula $Pr(W\ge c|p=p_{0})\le\alpha_{0}$
+\end_inset
+
+, then 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ is significent level of this test.
+\end_layout
+
+\begin_layout Exercise*
+2.
+ Consider data in Example 10.8.4.
+ Test hypotheses (10.8.2) using Kolmogorov-Smirnov
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Find 
+\begin_inset Formula $D_{mn}=\sup_{x}|F_{n}(x)-G_{n}(x)|$
+\end_inset
+
+.
+ Then, computing 
+\begin_inset Formula $(\frac{mn}{m+n})^{1.2}D_{mn}$
+\end_inset
+
+ then we have 
+\begin_inset Formula $H$
+\end_inset
+
+ of it from table 10.32, so we conclude 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ with that.
+\end_layout
+
+\begin_layout Exercise*
+3.
+ Using 
+\begin_inset Formula $t-test$
+\end_inset
+
+ to anwser exercise 2.
+ From theorem 9.6.1, computing 
+\begin_inset Formula $U=\frac{(m+n-2)^{1/2}(\bar{X}_{m}-\bar{Y}_{n})}{(\frac{1}{m}+\frac{1}{n})^{1/2}(S_{X}^{2}+S_{Y}^{2})^{1/2}}$
+\end_inset
+
+ and it is 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m+n-2$
+\end_inset
+
+ degrees of freedom, so that we can compute corresponding (two-sided) tail
+ area.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+4.
+ Compute 
+\begin_inset Formula $S$
+\end_inset
+
+ equal sum rank of 
+\begin_inset Formula $A$
+\end_inset
+
+ and compute 
+\begin_inset Formula $E(S)=\frac{m(m+n+1)}{2},Var(S)=\frac{mn(m+n+1)}{12}$
+\end_inset
+
+, 
+\begin_inset Formula $S$
+\end_inset
+
+ will be approximately normal distribution when 
+\begin_inset Formula $m,n$
+\end_inset
+
+ tend to infinite, So we can compute corresponding (two-sided) tail area
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+5,6 is similar to Exercise 2, 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ 
+\begin_inset Formula $f(x)=g(x-\theta)$
+\end_inset
+
+ show 
+\begin_inset Formula $F^{-1}(p)=\theta+G^{-1}(p)$
+\end_inset
+
+ for 
+\begin_inset Formula $0<p<1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose that 
+\begin_inset Formula $f(x)=g(x-\theta)=p$
+\end_inset
+
+, so 
+\begin_inset Formula $p=f(x)\rightarrow x=F^{-1}(p)$
+\end_inset
+
+; and 
+\begin_inset Formula $g(x-\theta)=p\rightarrow x-\theta=G^{-1}(p)\rightarrow x=\theta+G^{-1}(p)$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $F^{-1}(p)=\theta+G^{-1}(p)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8.
+ Consider again the conditions of Exercise 
+\begin_inset Formula $7$
+\end_inset
+
+, 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ sampled from 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ , 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ sampled from 
+\begin_inset Formula $g(x)$
+\end_inset
+
+, and 
+\begin_inset Formula $g(x-\theta)=f(\theta)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+Describe how to carry out a one-sided Wilcoxon-Mann-Whitney ranks test of
+ the following hypotheses
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\theta\le0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\theta>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We assume again statistic 
+\begin_inset Formula $S$
+\end_inset
+
+ of sum of rank sample from 
+\begin_inset Formula $X$
+\end_inset
+
+, then we have Eq.
+ (10.8.3) and Eq.
+ (10.8.4)
+\end_layout
+
+\begin_layout Standard
+We remind the testing (10.8.2), the test specifies rejecting 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $|S-(1/2)m(m+n+1)|\ge c$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In this situation, if 
+\begin_inset Formula $\theta\le0$
+\end_inset
+
+, then we will have 
+\begin_inset Formula $S<\mu(S)$
+\end_inset
+
+, because 
+\begin_inset Formula $f(x)=g(x-\theta)$
+\end_inset
+
+, distribution of 
+\begin_inset Formula $g$
+\end_inset
+
+ will concentrate 
+\series bold
+above
+\series default
+ distribution of 
+\begin_inset Formula $f$
+\end_inset
+
+, so sum of rank of 
+\begin_inset Formula $X$
+\end_inset
+
+ will be larger than the average rank of combine two sample 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ .
+ So The test spevidies rejecting 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $S-\mu(S)\ge c$
+\end_inset
+
+.
+ 
+\begin_inset Formula $c=[Var(S)]^{1/2}\Phi^{-1}(\alpha_{0})$
+\end_inset
+
+ makes the test have level of significance 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+ Otherwise, 
+\begin_inset Formula $\theta>0$
+\end_inset
+
+, then we will have 
+\begin_inset Formula $S>\mu(S)$
+\end_inset
+
+, so 
+\begin_inset Formula $c=[Var(S)]^{1/2}\Phi^{-1}(1-\alpha_{0})$
+\end_inset
+
+ makes the test have level of significance 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+9.
+ Consider again the conditions of Exercise 
+\begin_inset Formula $9$
+\end_inset
+
+.
+ Describe how to use the Wilcoxon-Mann-Whitney ranks test to determine a
+ confidence interval for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ cofficient 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+.
+ We can see 
+\begin_inset Formula $g(x-\theta)$
+\end_inset
+
+ like 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ shifting a distance 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ So we need to 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+normalize
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series default
+observed value of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+, In particular, we should minus observed sample of from distribution 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ (
+\begin_inset Formula $Y$
+\end_inset
+
+) to 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ And then, we perform two-sided Wilcoxon-Mann-Whitney normally.
+ Particularly, we sort 
+\begin_inset Formula $X_{1},....,X_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y_{1}-\theta,Y_{2}-\theta,....,Y_{m}-\theta$
+\end_inset
+
+ .-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+11.
+ 
+\begin_inset Formula $U$
+\end_inset
+
+ denote number of these pairs for which the value of the 
+\begin_inset Formula $X$
+\end_inset
+
+ component is greater than of 
+\begin_inset Formula $Y$
+\end_inset
+
+ component.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $S$
+\end_inset
+
+ is sum of rank assigned to 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+.
+ Particularly, 
+\begin_inset Formula $S=\sum_{i}R(X_{i})$
+\end_inset
+
+, 
+\begin_inset Formula $R(X_{i})$
+\end_inset
+
+ is rank of 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $R(X_{i})=A+B$
+\end_inset
+
+, with 
+\begin_inset Formula $A$
+\end_inset
+
+ is number of sample 
+\begin_inset Formula $Y$
+\end_inset
+
+, that are smaller than 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ (
+\series bold
+external)
+\series default
+, and 
+\begin_inset Formula $B$
+\end_inset
+
+ is number of sample 
+\begin_inset Formula $X$
+\end_inset
+
+ that are smaller than 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ (
+\series bold
+internal)
+\series default
+.
+ Easy to see, 
+\begin_inset Formula $\sum_{i\rightarrow m}A=U$
+\end_inset
+
+, 
+\begin_inset Formula $B=\sum_{i\rightarrow m}i=\frac{1}{2}m(m+1)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+12.
+ Prove that Eq.
+ (10.8.5): 
+\begin_inset Formula $E(S)=nmPr(X_{1}\ge Y_{1})+\frac{m(m+1)}{2}$
+\end_inset
+
+ gives mean of 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ From exercise 
+\begin_inset Formula $11$
+\end_inset
+
+, 
+\begin_inset Formula $S=U+\frac{1}{2}m(m+1)$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $E(S)=E(U)+\frac{m(m+1)}{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E(U)$
+\end_inset
+
+ is the expectation of the pair having value of 
+\begin_inset Formula $X$
+\end_inset
+
+ component is greater than 
+\begin_inset Formula $Y$
+\end_inset
+
+ component.
+ 
+\begin_inset Formula $E(U)=Pr(X_{i}>Y_{i})mn$
+\end_inset
+
+, 
+\begin_inset Formula $mn$
+\end_inset
+
+ is number of Decarterian components.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+14.
+ Under the conditions of Exercise 12 and 13, suppose further that 
+\begin_inset Formula $F=G$
+\end_inset
+
+.
+ Prove that (10.8.5) and (10.8.6) agree with (10.8.3) and (10.8.4).
+ If 
+\begin_inset Formula $F=G$
+\end_inset
+
+, then it's equally that 
+\begin_inset Formula $X_{i}\leq Y_{i}$
+\end_inset
+
+, or 
+\begin_inset Formula $Pr(X_{i}\leq Y_{i})=1/2$
+\end_inset
+
+ ?????
+\end_layout
+
 \end_body
 \end_document
