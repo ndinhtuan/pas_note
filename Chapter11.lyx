@@ -1,0 +1,6605 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+11.
+ Regression 
+\end_layout
+
+\begin_layout Standard
+In Sec.
+ 11.1, we introduced the method of least squares.
+ This method computes coefficients for a linear function to predict one
+ variable 
+\begin_inset Formula $y$
+\end_inset
+
+ based on other variables 
+\begin_inset Formula $x_{1},...,x_{k}$
+\end_inset
+
+.
+ In this section, we assume that 
+\begin_inset Formula $y$
+\end_inset
+
+ values are observed values of a collection of random variables.
+ In this case, there is a statistical model in which the method of least
+ squares turns out to produce the maximum likelihood estimates of the parameters
+ of the models.
+\end_layout
+
+\begin_layout Example*
+11.2.1 If we learn the boiling point 
+\begin_inset Formula $x$
+\end_inset
+
+ of water and want to compute the conditional distribution of the unknown
+ pressure 
+\begin_inset Formula $Y$
+\end_inset
+
+, is there a statistical model that allows us to say what the (conditional)
+ distribution of pressure is given that the boiling point is 
+\begin_inset Formula $x$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this section, we shall describe a statistical model for problems such
+ as the one in Example 11.2.1.
+ Fitting this statistical model will make use of the method of least squares.
+ We shall study problems in which we are interested in learning about the
+ conditional distribution of some random variable 
+\begin_inset Formula $Y$
+\end_inset
+
+ for given values of some other variables 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+.
+ The variables 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ may be random variables whose values are to be observed in an experiment
+ along with the values of 
+\begin_inset Formula $Y$
+\end_inset
+
+, or they maybe control variables whose values are to be chosen by the experimen
+ter.
+ In general, some of these variables might be random variables, and some
+ might be control variables.
+ In any case, we can study the conditional distribution of 
+\begin_inset Formula $Y$
+\end_inset
+
+ given 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+.
+ We begin with some terminalogy.
+\end_layout
+
+\begin_layout Definition*
+11.2.1.
+ Response/Predictor/Regression.
+ The variables 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ are called predictors, and the random variable 
+\begin_inset Formula $Y$
+\end_inset
+
+ is called response.
+ The condition expectation of 
+\begin_inset Formula $Y$
+\end_inset
+
+ given values 
+\begin_inset Formula $x_{1},...,x_{k}$
+\end_inset
+
+ of 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ is called the regression function of 
+\begin_inset Formula $Y$
+\end_inset
+
+ on 
+\begin_inset Formula $X_{1},....,X_{k}$
+\end_inset
+
+ or simply the regression of 
+\begin_inset Formula $Y$
+\end_inset
+
+ on 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The regression of 
+\begin_inset Formula $Y$
+\end_inset
+
+ on 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ is a function of the values 
+\begin_inset Formula $x_{1},...,x_{k}$
+\end_inset
+
+ of 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+.
+ In symbols, this function is 
+\begin_inset Formula $E(Y|x_{1},...,x_{k})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In this chapter, we shall assume that the regression function 
+\begin_inset Formula $E(Y|x_{1},...,x_{k})$
+\end_inset
+
+ is a linear function having the following form: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(Y|x_{1},...,x_{k})=\beta_{0}+\beta_{1}x_{1}+....+\beta_{k}x_{k}\text{ (11.2.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The coefficients 
+\begin_inset Formula $\beta_{0},...,\beta_{k}$
+\end_inset
+
+ in Eq.
+ (11.2.1) are called regression coefficients.
+ We shall suppose that these regression coefficients are unknown.
+ Therefore, they are to be regared as parameters whose values whose values
+ are to be estimated.
+ We shall suppose also that 
+\begin_inset Formula $n$
+\end_inset
+
+ vectiors of observations are obtained.
+ For 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+, we shall assume that the 
+\begin_inset Formula $i$
+\end_inset
+
+th vector 
+\begin_inset Formula $(x_{i1},..,x_{ik},y)$
+\end_inset
+
+ consist of a set of controlled or observed values of 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ and the corresponding observed value of 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+One ser of estimators of the regression coefficients 
+\begin_inset Formula $\beta_{0},...,\beta_{k}$
+\end_inset
+
+ that can be calculated from these observations is set of values 
+\begin_inset Formula $\hat{\beta}_{0},...,\hat{\beta}_{k}$
+\end_inset
+
+ that are obtained by the method of least squares, as described in Sec.
+ 11.1.
+ We shall now specify some further assumptions about the conditional distributon
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+ given 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ in order to be able to determine in greater detail the properties of these
+ least-squares estimators.
+\end_layout
+
+\begin_layout Section*
+Simple Linear Regression
+\end_layout
+
+\begin_layout Paragraph*
+Assunption 11.2.1 .
+ 
+\series medium
+Predictor is known.
+ Either the values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ are known ahead od time or they are the observed values of random variables
+ 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ on whose values we condition before computing the joint distribution of
+ 
+\begin_inset Formula $(Y_{1},...,Y_{n})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.2.2.
+ 
+\series medium
+Normality.
+ For 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ the conditional distribution of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ given the values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ is a normal distribution.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.2.3.
+ 
+\series medium
+Linear Mean.
+ There are parameters 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ such that the conditional mean of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ given the values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ has the form 
+\begin_inset Formula $\beta_{0}+\beta_{1}x_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.2.4.
+ 
+\series medium
+Common Variance.
+ There is a parameter 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ such that the conditional variance of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ given the values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ is 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,..,n$
+\end_inset
+
+ .
+ This assumption is often called homoscedasticity.
+ Random variables with different variances are called heteroscedastic.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.2.5.
+ 
+\series medium
+Independence.
+ The random variables 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are independent given the observed 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Asummptions 11.2.1-11.2.5 specify the conditional joint distribution of 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ given the vector 
+\begin_inset Formula $\mathbf{x}=(x_{1},...,x_{n})$
+\end_inset
+
+ and the parameters 
+\begin_inset Formula $\beta_{0},\beta_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ In particular, the conditional joint p.d.f.
+ of 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{n}(\mathbf{y}|\mathbf{x},\beta_{0},\beta_{1},\sigma^{2})=\frac{1}{(2\pi\sigma^{2})^{n/2}}exp[\frac{-1}{2\sigma^{2}}\sum_{i=1}^{n}(y_{i}-\beta_{0}-\beta_{1}x_{i})^{2}].(11.2.2)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can now find the M.L.E.'s of 
+\begin_inset Formula $\beta_{0},\beta_{1},$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+11.2.1.
+ Simple Linear Regression M.L.E.'s.
+ Assume Assumptions 11.2.1-11.2.5.
+ The M.L.E's of 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ are the least-squares estimates, and the M.L.E.
+ of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\sigma}^{2}=\frac{1}{n}\sum_{i=1}^{n}(y_{i}-\hat{\beta}_{0}-\hat{\beta}_{1}x_{i})^{2}\text{(11.2.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+The Distribution of the Least-Squares Estimators
+\end_layout
+
+\begin_layout Standard
+The estimators are 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\beta}_{1}=\frac{\sum_{i=1}^{n}(Y_{i}-\bar{y})(x_{i}-\bar{x})}{\sum_{i=1}^{n}(x_{i}-\bar{x})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\beta}_{0}=\bar{Y}-\hat{\beta}_{1}\bar{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\bar{Y}=\bar{Y}-\hat{\beta}_{1}\bar{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is convenient, both for this section and the next, to introduce the symbol
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s_{x}=(\sum_{i=1}^{n}(x_{i}-\bar{x})^{2})^{1/2}\text{(11.2.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+11.2.2.
+ Distributions of Least-Squares Estimators.
+ Under Assumptions 11.2.1-11.2.5, the distribution of 
+\begin_inset Formula $\hat{\beta}_{1}$
+\end_inset
+
+ is normal distribution with mean 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}/s_{x}^{2}$
+\end_inset
+
+.
+ The distribution of 
+\begin_inset Formula $\hat{\beta}_{0}$
+\end_inset
+
+ is normal distribution with mean 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and variance
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\sigma^{2}(\frac{1}{n}+\frac{\bar{x}^{2}}{s_{x}^{2}})\text{ (11.2.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Finally, the covariance of 
+\begin_inset Formula $\hat{\beta}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{0}$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+Cov(\hat{\beta}_{0},\hat{\beta}_{1})=-\frac{\bar{x}\sigma^{2}}{s_{x}^{2}}\text{ (11.2.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+(All of the distributonal statements in this theorem are conditional on
+ 
+\begin_inset Formula $X_{i}=x_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ if 
+\begin_inset Formula $X_{1},..,X_{n}$
+\end_inset
+
+ are random variables.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A simple corolary to Theorem 11.2.2 is that 
+\begin_inset Formula $\hat{\beta}_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{1}$
+\end_inset
+
+ are, respectively, unbiased estimators of the corresponding parameters
+ 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To complete the description of the joint distribution of 
+\begin_inset Formula $\hat{\beta_{0}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta_{1}}$
+\end_inset
+
+, it will be shown in Sec.
+ 11.3 that this joint distribution is the bivariate normal distribution for
+ which the means, variances, and covariance are as stated in Theorem 11.2.2.
+\end_layout
+
+\begin_layout Section*
+Prediction
+\end_layout
+
+\begin_layout Example*
+11.2.4.
+ Predicting Pressure from the Boiling Point of Water.
+ In Example 11.2.1, Forbes was trying to find a way to use the boiling point
+ of water to estimatr the barometric pressure.
+ Suppose that a traveler measures the boiling point of water to be 201.5
+ degrees.
+ What estimate of barometric pressure should the give and how much uncertainty
+ is there about estimate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose tht 
+\begin_inset Formula $n$
+\end_inset
+
+ pairs of observations 
+\begin_inset Formula $(x_{1},Y_{1}),...,(x_{n},Y_{n})$
+\end_inset
+
+ are to be obtained in a problem of simple linear regression, and on the
+ basis of these 
+\begin_inset Formula $n$
+\end_inset
+
+ pairs, it is necessary to predict the value of an independent observation
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+ that will be obtained when certain specified value 
+\begin_inset Formula $x$
+\end_inset
+
+ is assigned to the control variable.
+ Since the observation 
+\begin_inset Formula $Y$
+\end_inset
+
+ will have the normal distribution with mean 
+\begin_inset Formula $\beta_{0}+\beta_{1}x$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, it is natural to use 
+\begin_inset Formula $\hat{Y}=\hat{\beta}_{0}+\hat{\beta}_{1}x$
+\end_inset
+
+ as the predicted value of 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ We shall now determine the M.S.E.
+ 
+\begin_inset Formula $E[(\hat{Y}-Y)^{2}]$
+\end_inset
+
+ of this prediction, where both 
+\begin_inset Formula $\hat{Y}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are random variables.
+ 
+\end_layout
+
+\begin_layout Theorem*
+11.2.3.
+ M.S.E of Prediction.
+ In the prediction problem just described,
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+E[(\hat{Y}-Y)]=\sigma^{2}[1+\frac{1}{n}+\frac{(x-\bar{x})^{2}}{s_{x}^{2}}]\text{ (11.2.11)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example*
+11.2.5.
+ The M.S.E.
+ 
+\begin_inset Formula $1.0628\sigma^{2}$
+\end_inset
+
+ can be interpreted as follows: If we knew the values of 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ and tried to predict 
+\begin_inset Formula $Y$
+\end_inset
+
+, the M.S.E.
+ would be 
+\begin_inset Formula $Var(Y)=\sigma^{2}$
+\end_inset
+
+.
+ Having to estimate 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ only costs us an additional 
+\begin_inset Formula $0.0628\sigma^{2}$
+\end_inset
+
+ in M.S.E.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Note: M.S.E.
+ of Prediction Increases as 
+\begin_inset Formula $x$
+\end_inset
+
+ Moves Away from Observed Data.
+ 
+\series medium
+The M.S.E.
+ in Eq.
+ (11.2.11) increases as 
+\begin_inset Formula $x$
+\end_inset
+
+ moves away from 
+\begin_inset Formula $\bar{x}$
+\end_inset
+
+, and it is smallest when 
+\begin_inset Formula $x=\bar{x}$
+\end_inset
+
+.
+ This indicates that it is harder to predict 
+\begin_inset Formula $Y$
+\end_inset
+
+ when 
+\begin_inset Formula $x$
+\end_inset
+
+ it not near center the center of the observed values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ .
+ Indeed, if 
+\begin_inset Formula $x$
+\end_inset
+
+ is larger than largest observed 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ or smaller that the smallest one, it is quite difficult to predict 
+\begin_inset Formula $Y$
+\end_inset
+
+ with much precision.
+ Such predictions outside the range of the observed data are called 
+\emph on
+extrapolations.
+\end_layout
+
+\begin_layout Standard
+Linearlity can then be checked by visual inspection of the plotted points
+ and the fitting of a polynomial of degree two or higher.
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Standard
+We considered the following statistical model.
+ The values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ are assumed known.
+ The random variables 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are independent with 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ having the normal distribution with mean 
+\begin_inset Formula $\beta_{0}+\beta_{1}x_{i}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Here, 
+\begin_inset Formula $\beta_{0},\beta_{1},$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ are unkown parameters .
+ These are the assumptions of the simple linear regression model.
+ Under this model, the joint distribution of the least-squares estimators
+ 
+\begin_inset Formula $\hat{\beta}_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{1}$
+\end_inset
+
+ is a bivariate normal distribution with 
+\begin_inset Formula $\hat{\beta}_{i}$
+\end_inset
+
+ having mean 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,2$
+\end_inset
+
+.
+ The variances are given in Eqs.
+ (11.2.5) and (11.2.9).
+ The covariance is given in Eq.
+ (11.2.6).
+ If we consider predicting a future 
+\begin_inset Formula $Y$
+\end_inset
+
+ value with corresponding predictor 
+\begin_inset Formula $x$
+\end_inset
+
+, we might use the prediction 
+\begin_inset Formula $\hat{Y}=\hat{\beta}_{0}+\hat{\beta}_{1}x$
+\end_inset
+
+.
+ In this case, 
+\begin_inset Formula $Y-\hat{Y}$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $0$
+\end_inset
+
+ and variance given by Eq.
+ (11.2.11)
+\end_layout
+
+\begin_layout Chapter*
+11.3 Statistical Ingerence in Simple Linear Regression
+\end_layout
+
+\begin_layout Standard
+Many of the inference procedures introduced in Chapters 8 and 9 that were
+ used for samples from a normal distribution can be extended to the simple
+ linear regression model.
+ The theorems that allowed us to conclude that various statistics had 
+\begin_inset Formula $t$
+\end_inset
+
+ distributions will continue to apply in the regression case.
+\end_layout
+
+\begin_layout Theorem*
+11.3.1.
+ Suppose that the random variables 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are independent, and each has a normal distribution with the same variance
+ 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $A$
+\end_inset
+
+ is an orthogonal 
+\begin_inset Formula $nxn$
+\end_inset
+
+ matrix and 
+\begin_inset Formula $Z=AY$
+\end_inset
+
+, then the random variables 
+\begin_inset Formula $\text{ }Z_{1},...,Z_{n}$
+\end_inset
+
+ also are independent, and each has a normal distribution with variance
+ 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In a problem of simple linear regression, the observations 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ satisfy the conditions of Theorem 11.3.1 Therefore, the coordinates of the
+ random vector 
+\begin_inset Formula $Z=AY$
+\end_inset
+
+ will be independent, and each will have a normal distribution with variance
+ 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ We can use these facts to find the joint distribution of 
+\begin_inset Formula $(\hat{\beta}_{0},\hat{\beta}_{1},\hat{\sigma})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+11.3.2.
+ In the simple linear regression problem described above, the joint distribution
+ of 
+\begin_inset Formula $(\hat{\beta}_{0},\hat{\beta}_{1})$
+\end_inset
+
+ is the bivariate normal distribution for which the means, variances, and
+ covariance are as stated in Theorem 11.2.2.
+ Also, if 
+\begin_inset Formula $n\ge3$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{\sigma}^{2}$
+\end_inset
+
+ is independent of 
+\begin_inset Formula $(\hat{\beta}_{0},\hat{\beta}_{1})$
+\end_inset
+
+ and 
+\begin_inset Formula $n\hat{\sigma}^{2}/\sigma^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-2$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tests of Hypotheses about the Regression Coefficients.
+\end_layout
+
+\begin_layout Standard
+It will be convinient, for the remainder of the discussion of simple linear
+ regression, to let 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma^{'}=(\frac{S^{2}}{n-2})^{1/2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+ from 
+\begin_inset Formula $(11.3.9)$
+\end_inset
+
+ 
+\begin_inset Formula $S^{2}=\sum_{i=1}^{n}(Y_{i}-\hat{\beta}_{0}-\hat{\beta}_{1}x_{i})^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Tests of Hypotheses about a Linear Combination of 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $c_{0},c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{*}$
+\end_inset
+
+ be specified numbers, where at least one of 
+\begin_inset Formula $c_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ is nonzero, and suppose that we are interested in testing the following
+ hypotheses :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:c_{0}\beta_{0}+c_{1}\beta_{1}=c_{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:c_{0}\beta_{0}+c_{1}\beta_{1}\neq c_{*}\text{ (11.3.13)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We shall derive a test of these hypothese based on the random variables
+ 
+\begin_inset Formula $c_{0}\hat{\beta_{0}}+c_{1}\hat{\beta}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\text{ }\sigma^{'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+11.3.3.
+ For each 
+\begin_inset Formula $0<\alpha_{0}<1$
+\end_inset
+
+, a level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test of the hypotheses 
+\begin_inset Formula $(11.3.13)$
+\end_inset
+
+ is to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $|U_{01}|\ge T_{n-2}^{-1}(1-\alpha_{0}/2)$
+\end_inset
+
+ , where
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\text{ }U_{01}=[\frac{c_{0}^{2}}{n}+\frac{(c_{0}\bar{x}-c_{1})^{2}}{s_{x}^{2}}]^{-1/2}(\frac{c_{0}\hat{\beta}_{0}+c_{1}\hat{\beta}_{1}-c_{*}}{\sigma^{'}})\text{ (11.3.14)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+and 
+\begin_inset Formula $T_{n-2}^{-1}$
+\end_inset
+
+ is the quantile function of the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-2$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From (11.2.10): 
+\begin_inset Formula $Var(T)=\sigma^{2}(\frac{c_{0}^{2}}{n}+\frac{(c_{0}\bar{x}-c_{1})^{2}}{s_{x}^{2}})$
+\end_inset
+
+, if we have 
+\begin_inset Formula $T=c_{0}\hat{\beta}_{0}+c_{1}\hat{\beta}_{1}+c_{*}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Subsection*
+Tests of One-Sided Hypotheses 
+\series medium
+The same derivation just finished can also be used to form tests of hypotheses
+ such as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:c_{0}\beta_{0}+c_{1}\beta_{1}\le c_{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:c_{0}\beta_{0}+c_{1}\beta_{1}>c_{*}\text{ (11.3.16)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+or 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:c_{0}\beta_{0}+c_{1}\beta_{1}\ge c_{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:c_{0}\beta_{0}+c_{1}\beta_{1}<c_{*}\text{ (11.3.17)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+11.3.4.
+ A level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test of 
+\begin_inset Formula $(11.3.16)$
+\end_inset
+
+ is to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $U_{01}\ge T_{n-1}^{-1}(1-\alpha_{0})$
+\end_inset
+
+.
+ A level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test of 
+\begin_inset Formula $(11.3.17)$
+\end_inset
+
+ if to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $U_{01}\le-T_{n-2}^{-1}(1-\alpha_{0})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We shall next present examples of how to test several common hypotheses
+ concerning 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ by making use of the fact that 
+\begin_inset Formula $U_{01}$
+\end_inset
+
+ in Eq.
+ 
+\begin_inset Formula $(11.3.14)$
+\end_inset
+
+ has the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-2$
+\end_inset
+
+ degrees of freedom.
+ These examples will correspond to setting 
+\begin_inset Formula $c_{0},c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{*}$
+\end_inset
+
+ equal to specific values.
+\end_layout
+
+\begin_layout Subsection*
+Tests of Hypotheses about 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ 
+\series medium
+Let 
+\begin_inset Formula $\beta_{0}^{*}$
+\end_inset
+
+ be a specified number 
+\begin_inset Formula $(-\infty<\beta_{0}^{*}<\infty)$
+\end_inset
+
+, and suppose that it is desired to test the following hypotheses about
+ the regression coefficient 
+\begin_inset Formula $\beta_{0}:$
+\end_inset
+
+
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\beta_{0}=\beta_{0}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\beta_{0}\neq\beta_{0}^{*}\text{ (11.3.18)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The hypotheses are the same as those in Eq.
+ (11.3.13) if we make the substitutions 
+\begin_inset Formula $c_{0}=1,c_{1}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{*}=\beta_{0}^{*}$
+\end_inset
+
+.
+ If we substitute these values into the formlua for 
+\begin_inset Formula $U_{01}$
+\end_inset
+
+ in Eq.
+ (11.3.14), we obtain the following random variabel, 
+\begin_inset Formula $U_{0}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U_{0}=\frac{\hat{\beta}_{0}-\beta_{*}}{\sigma^{'}[\frac{1}{n}+\frac{\bar{x}^{2}}{s_{x}^{2}}]^{1/2}}\text{ (11.3.19)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which then has the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-2$
+\end_inset
+
+ degrees of freedom if 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true.
+\end_layout
+
+\begin_layout Subsection*
+Test of Hypotheses about 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ 
+\series medium
+Let 
+\begin_inset Formula $\beta_{1}^{*}$
+\end_inset
+
+ be a specified number 
+\begin_inset Formula $(-\infty<\beta_{1}^{*}<\infty)\text{ }$
+\end_inset
+
+, and suppose that it is desired to test the following hypotheses aboit
+ the regression coefficient 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\beta_{1}=\beta_{1}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\beta_{1}\ne\beta_{1}^{*}\text{ (11.3.21)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These hypotheses are the same as those in Eq.
+ (11.3.13) if we make the substituations 
+\begin_inset Formula $c_{0}=0,c_{1}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{*}=\beta_{1}^{*}$
+\end_inset
+
+.
+ If we substitute these values into the formula for 
+\begin_inset Formula $U_{01}$
+\end_inset
+
+ in Eq.
+ (11.3.14), we obtain the following random variable, 
+\begin_inset Formula $U_{1}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U_{1}=s_{x}\frac{\hat{\beta}_{1}-\beta_{1}^{*}}{\sigma^{'}}\text{\text{ (11.3.22)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Which then has the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-2$
+\end_inset
+
+ degrees of freedom if 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true.
+\end_layout
+
+\begin_layout Subsection*
+Tests of Hypotheses about the Mean of a Future Observation 
+\series medium
+Suppose that we are interested in testing the hypothesis that the regression
+ line 
+\begin_inset Formula $y=\beta_{0}+\beta_{1}x$
+\end_inset
+
+ passes through a particular point 
+\begin_inset Formula $(x^{*},y^{*})$
+\end_inset
+
+ , where 
+\begin_inset Formula $x^{*}\ne0\text{ }$
+\end_inset
+
+.
+ In other words, suppose that we are interested in testing the following
+ hypotheses :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\beta_{0}+\beta_{1}x^{*}=y^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\beta_{0}+\beta_{1}x^{*}\ne y^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These hypotheses have the same form as the hypothese (11.3.13) with 
+\begin_inset Formula $c_{0}=1,c_{1}=x^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{*}=y^{*}$
+\end_inset
+
+.
+ Hence, they can be tested by carrying out a 
+\begin_inset Formula $t$
+\end_inset
+
+ test with 
+\begin_inset Formula $n-2$
+\end_inset
+
+ degrees of freedom that is based on the statistic 
+\begin_inset Formula $U_{01}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Confidence Intervals 
+\end_layout
+
+\begin_layout Standard
+A confidence interval for 
+\begin_inset Formula $\beta_{0},\beta_{1}$
+\end_inset
+
+ or any linear combination of the two can be obtained from the corresponding
+ test procedure
+\end_layout
+
+\begin_layout Theorem*
+11.3.5.
+ Let 
+\begin_inset Formula $c_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ be scalar constants that are not both 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ The open interval between the two random variables 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+c_{0}\hat{\beta}_{0}+c_{1}\hat{\beta}_{1}+/-\sigma^{'}[\frac{c_{0}^{2}}{n}+\frac{(c_{0}\bar{x}-c_{1})^{2}}{s_{x}^{2}}]^{1/2}T_{1/2}(1-\frac{\alpha_{0}}{2})\text{ (11.3.23)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+is a coefficient 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+ confidence interval for 
+\begin_inset Formula $c_{0}\beta_{0}+c_{1}\beta_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Prediction Intervals 
+\series medium
+On page 703, we discussed predicting a new 
+\begin_inset Formula $Y$
+\end_inset
+
+ value (independent of the observed data) when we knew the corresponding
+ value of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Suppose that we want an interval that should contain 
+\begin_inset Formula $Y$
+\end_inset
+
+ with some specified probability 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+ .
+ We can construct such an interval by considering the joint distribution
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{Y}=\hat{\beta}_{0}+\hat{\beta_{1}}x$
+\end_inset
+
+, and 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+11.3.6.
+ In the simple linear regression problem, let 
+\begin_inset Formula $Y$
+\end_inset
+
+ be a new observation with predictor 
+\begin_inset Formula $x$
+\end_inset
+
+ such that 
+\begin_inset Formula $Y$
+\end_inset
+
+ is independent of 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\hat{Y}=\hat{\beta}_{0}+\hat{\beta}_{1}x$
+\end_inset
+
+.
+ Then the probability that 
+\begin_inset Formula $Y$
+\end_inset
+
+ is between the following tworandom variables is 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{Y}+/-T_{n-2}^{-1}(1-\frac{\alpha_{0}}{2})\sigma^{'}[1+\frac{1}{n}+\frac{(x-\bar{x})^{2}}{s_{x}^{2}}]^{1/2}\text{ (11.3.25)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+11.3.1 Prediction Interval.
+ The random interval whose endpoints are given by (11.3.25) is called a coefficien
+t 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+ prediction interval for 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+The Analysis of Residuals
+\end_layout
+
+\begin_layout Standard
+Whenever a statistical analysis is carried out, it is important to verify
+ that the observed data appear to satisfy the assumptions on which the analysis
+ is based.
+ For example, in the statistical analysis of a problem of simple linear
+ regression, we have assumed that the regression of 
+\begin_inset Formula $Y$
+\end_inset
+
+ on 
+\begin_inset Formula $X$
+\end_inset
+
+ is a linear function and that the observations 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are independent.
+ The M.L.E's of 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ and the tests of hypotheses about 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ were developed on the basis of these assumptions, but the data were not
+ examined to find out wheter or not these assumptions were reasonable.
+ 
+\end_layout
+
+\begin_layout Standard
+One way to make a quick and informal check of these assumptions is to examine
+ the discrepancies between the observed values 
+\begin_inset Formula $y_{1},...,y_{n}$
+\end_inset
+
+ and the fitted regression line.
+\end_layout
+
+\begin_layout Definition*
+11.3.2.
+ Residuals/Fitted Values.
+ For 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ the observed values of 
+\begin_inset Formula $\hat{y}_{i}=\hat{\beta}_{0}+\hat{\beta}_{1}x_{i}$
+\end_inset
+
+ are called the fitted values.
+ For 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+, the observed values of 
+\begin_inset Formula $e_{i}=y_{i}-\hat{y}_{i}$
+\end_inset
+
+ are called the residuals.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Spevifically, suppose that the 
+\begin_inset Formula $n$
+\end_inset
+
+ points 
+\begin_inset Formula $(x_{i},e_{i})$
+\end_inset
+
+, for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ are plotted in the 
+\begin_inset Formula $xe-$
+\end_inset
+
+plane.
+ It must be true (see Exercise 
+\begin_inset Formula $4$
+\end_inset
+
+ at the end of Sec.
+ 11.1) that 
+\begin_inset Formula $\sum_{i=1}^{n}e_{i}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{i=1}^{n}x_{i}e_{i}=0$
+\end_inset
+
+.
+ However subject to these restrictions, the positive and negative residuals
+ should be scattered randomly among the points 
+\begin_inset Formula $(x_{i},e_{i})$
+\end_inset
+
+ .
+ If the positive residuals 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ tend to be concentrated at either the extreme values of 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ or the central values of 
+\begin_inset Formula $x_{i},$
+\end_inset
+
+ then either the assumption that the regression of 
+\begin_inset Formula $Y$
+\end_inset
+
+ on 
+\begin_inset Formula $X$
+\end_inset
+
+ is a linear function or the assumption that the observations 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are independent may be violated.
+ In fact, if the plot of the points 
+\begin_inset Formula $(x_{i},e_{i})$
+\end_inset
+
+ exhibits type of regular pattern, the assumptions may be violated.
+\end_layout
+
+\begin_layout Subsection*
+Note: Both Models Cannot Be Correct In Example 11.3.6.
+ (
+\series medium
+From Example 11.3.6 and its tables.
+\series default
+) 
+\series medium
+It cannot be the case that both the mean of pressure and the mean of the
+ logarithm of pressure are linear functions of boiling point.
+ When the residual plot in Fig.
+ 11.9.
+ revealed a curved shape, we began to suspect that the mean of pressure
+ was not a linear function of boiling point.
+ In this case, the probabilistic calculations performed in Examples 11.2.2,
+ 11.2.5, and 11.3.3 become suspect as well.
+\end_layout
+
+\begin_layout Subsection*
+Note: What to Do with Outliers 
+\series medium
+The data point with 
+\begin_inset Formula $X=204.6$
+\end_inset
+
+ in Example 11.3.6 makes it difficult to interprete the results of the regression
+ analysis.
+ Forbes (1857) labels this point 
+\begin_inset Quotes eld
+\end_inset
+
+Evidently a mistake
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Generally, when such data points appear in our datasets, we should try
+ to verify whether they were collected under the same conditions as the
+ remaining data.
+ Sometimes the process by which the data are collected changes during the
+ experiment.
+ If the removal of the outlier makes a noticeable difference to the analysis,
+ then that observation must be dealt with.
+ If it not possible to show that the observation should be removed based
+ on how it was collected, it might be that the distribution of the 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ values is different from a normal distribution.
+ It might be that the distribution has higher probability of producing extremely
+ large deviations from the mean.
+ In this case, one might have to resort to robust regression procedures
+ similars to the robust procedures described in Sec.
+ 10.7.
+ Interested readers should consult Hampel et al.
+ (1986) or Rousseeuw and Leroy (1987)
+\end_layout
+
+\begin_layout Subsection*
+Normal Quantile Plots.
+ 
+\series medium
+Another plot that is helpful is assessing the assumptions of the regression
+ model is the normal quantile plot, sometimes called a normal scores plot
+ or a normal Q-Q plot.
+ Assume that the residuals are reasonable estimates of 
+\begin_inset Formula $\varepsilon=Y_{i}-(\beta_{0}+\beta_{1}x_{i})$
+\end_inset
+
+.
+ Each 
+\begin_inset Formula $\varepsilon_{i}$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $0$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ according to the linear regression model.
+ The normal quantile plot compares quantiles of a normal distribution with
+ ordered values of the residuals.
+ Let 
+\begin_inset Formula $r_{1}\le r_{2}\le....\le r_{n}$
+\end_inset
+
+ be the residuals ordered from smallest to largest.
+ The points that we plot are 
+\begin_inset Formula $(\Phi^{-1}(1/[n+1]),r_{i})$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ where 
+\begin_inset Formula $\Phi^{-1}$
+\end_inset
+
+ is the standard normal quantile function.
+ The numbers 
+\begin_inset Formula $\Phi^{-1}(i/[n+1])$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ are 
+\begin_inset Formula $n$
+\end_inset
+
+ quantiles of the standard normal distribtion that divide the standard normal
+ distribution into intervals of equal probability, including the intervals
+ below the first quantile and above the last one.
+ 
+\series default
+If the plotted points lie roughly along the line 
+\begin_inset Formula $y=x$
+\end_inset
+
+, then roughly 25 percent of the residuals lie below the 0.25 quantile of
+ the standard normal distribution, and roughly 80 percent of the residuals
+ below the 0.8 quantile, and so on.
+ 
+\series medium
+If the points lie on a different line 
+\begin_inset Formula $y=ax+b$
+\end_inset
+
+, then we could multiply the first coordinate of each point by 
+\begin_inset Formula $a$
+\end_inset
+
+ and add 
+\begin_inset Formula $b$
+\end_inset
+
+ to the first coordinate.
+ This would make the new points lie on the line 
+\begin_inset Formula $y=x$
+\end_inset
+
+, and the first coordinate of each point is now a quantile of the normal
+ distribution with mean 
+\begin_inset Formula $b$
+\end_inset
+
+ and variance 
+\begin_inset Formula $a^{2}$
+\end_inset
+
+.
+ So, we examine the normal quantile plot to see how close the points are
+ to lying on a straight line.
+ We don't care which line it is, because we only care whether the data look
+ like they come from some normal distribution.
+ We fit the regression model to help decide which normal distribution.
+\end_layout
+
+\begin_layout Section*
+Inference about Both 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ simultenously
+\end_layout
+
+\begin_layout Subsection*
+Tests of Hypotheses about Both 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ .
+ 
+\series medium
+Suppose next that 
+\begin_inset Formula $\beta_{0}^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}^{*}$
+\end_inset
+
+ are given numbers and that we are interested in testing the following hypothese
+s about the values of 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\beta_{0}=\beta_{0}^{*}\text{ and }\beta_{1}=\beta_{1}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\text{ The hypothesis }H_{0}\text{ is not true (11.3.27)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These hypotheses are not special case of 
+\begin_inset Formula $(11.3.13)$
+\end_inset
+
+; hence, we shall not be able to test these hypotheses using 
+\begin_inset Formula $U_{01}$
+\end_inset
+
+ from Eq.
+ (11.3.14).
+ Instead, we shall derive the likelihood ratio test procedure for the hypotheses
+ (11.3.27).
+\end_layout
+
+\begin_layout Standard
+The likelihood function 
+\begin_inset Formula $f_{n}(y|x,\beta_{0},\beta_{1},\sigma^{2})$
+\end_inset
+
+ is given by Eq.
+ (11.2.2).
+ We know from Sec.
+ 11.2.
+ that the likelihood function attains its maximum value when 
+\begin_inset Formula $\beta_{0},\beta_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ are equal to the M.L.E.
+ 's 
+\begin_inset Formula $\hat{\beta}_{0},\hat{\beta}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\sigma}^{2}$
+\end_inset
+
+, as given by Eq.
+ (11.1.1) and Eq.
+ (11.2.3).
+ 
+\end_layout
+
+\begin_layout Standard
+When the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, the values of 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ must be 
+\begin_inset Formula $\beta_{0}^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}^{*}$
+\end_inset
+
+, respectively.
+\end_layout
+
+\begin_layout Standard
+So we have likelihood ratio test
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Lambda(y|x)=\frac{\sup_{\sigma^{2}}f_{n}(y|x,\beta_{0}^{*},\beta_{1}^{*},\sigma^{2})}{\sup_{\beta_{0},\beta_{1},\sigma^{2}}f_{n}(y|x,\beta_{0},\beta_{1},\sigma^{2})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Alternative Tests and Confidence Sets 
+\series medium
+The hypotheses (11.3.27) are a special case of (9.1.26), and they can be tested
+ by the same method outlined immediately after (9.1.26), and they can be tested
+ by the same method outlined immediately after (9.1.26).
+ The resulting test leads to alternative confidence set for the pair 
+\begin_inset Formula $(\beta_{0},\beta_{1})$
+\end_inset
+
+.
+ The alternative level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ tests of (11.3.27) merely combines the two level 
+\begin_inset Formula $\alpha_{0}/2$
+\end_inset
+
+ tests of (11.3.20) and (11.3.21).
+ To be specific, the alternative level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test 
+\begin_inset Formula $\delta$
+\end_inset
+
+ of (11.3.27) if to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if either
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|U_{0}|\geq T_{n-2}^{-1}(1-\frac{\alpha_{0}}{4})\text{ or }|U_{1}|\ge T_{n-2}^{-1}(1-\frac{\alpha_{0}}{4})\text{ or both},(11.3.35)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $U_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $U_{1}$
+\end_inset
+
+ are, respectively, the statistics in (11.3.19) and (11.3.22) that would be
+ used for testing (11.3.20) and (11.3.21).
+\end_layout
+
+\begin_layout Theorem*
+11.3.7.
+ Suppose that we are interested in forming simultaneous confidence intervals
+ for several parameters 
+\begin_inset Formula $\theta_{1},...,\theta_{n}$
+\end_inset
+
+ .
+ For each 
+\begin_inset Formula $i$
+\end_inset
+
+, let 
+\begin_inset Formula $(A_{i},B_{i})$
+\end_inset
+
+ be a coefficient 
+\begin_inset Formula $1-\alpha_{i}$
+\end_inset
+
+ confidence interval for 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+.
+ Then the probability that all 
+\begin_inset Formula $n$
+\end_inset
+
+ confidence intervals simultaneously cover their corresponding parameters
+ is at least 
+\begin_inset Formula $1-\sum_{i=1}^{n}\alpha_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Without any specification of which alternatives are most important to detect,
+ one might choose the elliptical test.
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Standard
+For constants 
+\begin_inset Formula $c_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ that are not both 
+\begin_inset Formula $0$
+\end_inset
+
+, we saw that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+[\frac{c_{0}^{2}}{n}+\frac{(c_{0}\bar{x}-c_{1})^{2}}{s_{x}^{2}}]^{-1/2}\frac{c_{0}\hat{\beta}_{0}+c_{1}\hat{\beta}_{1}-(c_{0}\beta_{0}+c_{1}\beta_{1})}{\sigma^{;}}\text{ (11.3.38)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+has t distribution with 
+\begin_inset Formula $n-2$
+\end_inset
+
+ degrees of freedom under the assumptions of simple linear regression.
+ We can use the random variable in (11.3.38) to test hypotheses about or to
+ construct confidence intervals for 
+\begin_inset Formula $\beta_{0},\beta_{1}$
+\end_inset
+
+ or linear combinations of the two.
+ We also learned how to from a prediction interval for a future observation
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+ when the corresponding value for 
+\begin_inset Formula $X$
+\end_inset
+
+ is known.
+\end_layout
+
+\begin_layout Standard
+Tests about both 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ simultaneously are based on the statistic 
+\begin_inset Formula $U^{2}$
+\end_inset
+
+ in Eq.
+ (11.3.32), which has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $2$
+\end_inset
+
+ and 
+\begin_inset Formula $n-2$
+\end_inset
+
+ degrees of freedom when the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ in Eq.
+ (11.3.27) is true.
+ A confidence band for the entire regression line 
+\begin_inset Formula $y=\beta_{0}+\beta_{1}x$
+\end_inset
+
+ (a collection of confidence intervals, one for each 
+\begin_inset Formula $x$
+\end_inset
+
+, such that all of the intervals simultaneously cover the true values of
+ 
+\begin_inset Formula $\beta_{0}+\beta_{1}x$
+\end_inset
+
+ with probability 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+ ) is given by Eq.
+ (11.3.33).
+ The intervals in the confidence band are wider than the individual confidence
+ intervals with each separate 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It is good practice to plot residuals from a regression against the predictor
+ 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Such plots can reveal evidence of departures from the assumptions that
+ underly the distribution theory developed in this section.
+ In particular, one should look for patterns and unusual points in the plot
+ of residuals.
+ Plots of residuals against 
+\begin_inset Formula $X$
+\end_inset
+
+ help reveal departures from the assumed form of the mean of 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ Plots of sorted residuals against normal quantiles help reveal departures
+ from the assumptions that the distribution of each 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ is normal.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note: We have two ways to create band confidence for regression line (based
+ on 11.3.25 with 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution equaiton or (11.3.34) equation with 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution ).
+ 
+\series default
+Narrower band is with 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution.
+ And Wider band is with 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution, because it has more restrictive requirement.
+ Explaination is at page 723, after equation (11.3.34)
+\end_layout
+
+\begin_layout Section*
+11.5 The General Linear Model and Multiple Regression 
+\end_layout
+
+\begin_layout Standard
+The simple linear regression model can be extended to allow the mean of
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+to be a function of several predictor variables.
+ Much of the resulting distribution theory, is very similar to the simple
+ regression case.
+ 
+\end_layout
+
+\begin_layout Section*
+The General Linear Model 
+\end_layout
+
+\begin_layout Standard
+In this section, we shall study regression problems in which the observations
+ 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ satisfy assumptions like Assumptions 11.2.1-11.2.5 that were made in Sections
+ 11.2 and 11.3.
+ In particular, we shal again assume that each observation 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ has a normal distribution, that the observations 
+\begin_inset Formula $Y_{1},....,Y_{n}$
+\end_inset
+
+ are independent, and that the observations 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ have same variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Instead of a single predictor being associated with each 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+, we assume that a 
+\begin_inset Formula $p-$
+\end_inset
+
+dimensional vector 
+\begin_inset Formula $z_{i}=(z_{i0},...,z_{ip-1})$
+\end_inset
+
+ is associated with each 
+\begin_inset Formula $Y_{i}.$
+\end_inset
+
+ The assumptions that we make now be restated 
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.5.1 
+\series medium
+Predictor is known.
+ Either the vectors 
+\begin_inset Formula $z_{1},...,z_{2}$
+\end_inset
+
+ are known ahead of time, or they are observed values of random vectors
+ 
+\begin_inset Formula $Z_{1},...,Z_{n}$
+\end_inset
+
+ on whose values we condition before computing the joint distribution of
+ 
+\begin_inset Formula $(Y_{1},...,Y_{n})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.5.2 
+\series medium
+Normality.
+ For 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ the conditrional distribution of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ given the vectors 
+\begin_inset Formula $z_{1},...,z_{n}$
+\end_inset
+
+ is normal distribution.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.5.3 
+\series medium
+Linear Mean.
+ There is a vector of parameters 
+\begin_inset Formula $\beta=(\beta_{0},...,\beta_{p-1})$
+\end_inset
+
+ such that the conditional mean of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ given the values 
+\begin_inset Formula $z_{1},...,z_{n}$
+\end_inset
+
+ has the form 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z_{i0}\beta_{0}+z_{i1}\beta_{1}+...+z_{ip-1}\beta_{p-1}\text{ (11.5.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.5.4 
+\series medium
+Common Variance.
+ There is a parameter 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ such that the conditional variance of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ given the values 
+\begin_inset Formula $z_{1},...,z_{n}$
+\end_inset
+
+ is 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Assumption 11.5.5 
+\series medium
+Independence.
+ The random variables 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are independent given the observed 
+\begin_inset Formula $z_{1},....,z_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The generalization that we introduce here is that the mean of each observation
+ 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ is a linear combination of 
+\begin_inset Formula $p$
+\end_inset
+
+ unknown parameters 
+\begin_inset Formula $\beta_{0},...,\beta_{p-1}$
+\end_inset
+
+ as in (11.5.1).
+ Each value 
+\begin_inset Formula $z_{ij}$
+\end_inset
+
+ either mayube fixed by the experimenter before the experiment is started
+ or may be observed in the experiment along with the value of 
+\begin_inset Formula $Y_{i}.$
+\end_inset
+
+ In the latter case, Eq.
+ (11.5.1) gives the conditional mean of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ given the observed 
+\begin_inset Formula $z_{ij}$
+\end_inset
+
+ values.
+\end_layout
+
+\begin_layout Definition*
+11.5.1 General Linear Model.
+ The statistical model in which the observations 
+\begin_inset Formula $Y_{1},..,Y_{n}$
+\end_inset
+
+ satisfy Assumptions 11.5.1-11.5.5 is called the general linear model.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Definition 11.5.1, the term linear refers to the fact that the expectation
+ of each observation 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ is a linear function of the unknown parameters 
+\begin_inset Formula $\beta_{0},...,\beta_{p-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Many different types of regression problems are examples of general linear
+ models.
+ For example, in a problem of simple linear regression, 
+\begin_inset Formula $E(Y_{i})=\beta_{0}+\beta_{1}x_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+ This expectation can be represented in the form given in Eq.
+ (11.5.1), with 
+\begin_inset Formula $p=2$
+\end_inset
+
+, by letting 
+\begin_inset Formula $z_{i0}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{i1}=x_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+ Similarly, if the regression of 
+\begin_inset Formula $Y$
+\end_inset
+
+ on 
+\begin_inset Formula $X$
+\end_inset
+
+ is a polynomial of degree 
+\begin_inset Formula $k$
+\end_inset
+
+, then, for 
+\begin_inset Formula $i=1,..,n$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(Y_{i})=\beta_{0}+\beta_{1}x_{i}+....+\beta_{k}x_{i}^{k}.(11.5.2)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this case, 
+\begin_inset Formula $p=k+1$
+\end_inset
+
+ and 
+\begin_inset Formula $E(Y_{i})$
+\end_inset
+
+ can be represented in the form given in Eq.
+ (11.5.1) by letting 
+\begin_inset Formula $z_{ij}=x_{i}^{j}$
+\end_inset
+
+ for 
+\begin_inset Formula $j=0,...,k$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+As a final example, consider a problem in which the regression of 
+\begin_inset Formula $Y$
+\end_inset
+
+ on 
+\begin_inset Formula $k$
+\end_inset
+
+ variables 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ is a function like that given in Eq.
+ (11.2.1).
+ A problem of this type is called a problem of 
+\series bold
+multiple linear regression
+\series default
+ because we are considering the regression of 
+\begin_inset Formula $Y$
+\end_inset
+
+ of 
+\begin_inset Formula $k$
+\end_inset
+
+ variables 
+\begin_inset Formula $X_{1},..,X_{k}$
+\end_inset
+
+, rather than on just a single variable 
+\begin_inset Formula $X$
+\end_inset
+
+, and we are assuming also that this regression, we obtain 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors of observations 
+\begin_inset Formula $(x_{i1},...,x_{ik},Y_{i})$
+\end_inset
+
+, for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+ Here 
+\begin_inset Formula $x_{ij}$
+\end_inset
+
+ is the observed value of the variable 
+\begin_inset Formula $X_{j}$
+\end_inset
+
+ for the 
+\begin_inset Formula $i$
+\end_inset
+
+th observation.
+ Then 
+\begin_inset Formula $E(Y_{i})$
+\end_inset
+
+ is given by the relation 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(Y_{i})=\beta_{0}+\beta_{1}x_{i1}+...+\beta_{k}x_{ik}\text{ (11.5.3)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This expectation can also be represented in the form given in Eq.
+ (11.5.1), with 
+\begin_inset Formula $p=k+1$
+\end_inset
+
+, by letting 
+\begin_inset Formula $z_{i0}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{ij}=x_{ij}$
+\end_inset
+
+ for 
+\begin_inset Formula $j=1,...,k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Maximum Likelihood Estimators
+\end_layout
+
+\begin_layout Standard
+We shall now describe a procedure for determining the MLE in Eq.
+ (11.5.4)
+\end_layout
+
+\begin_layout Standard
+If we substitute 
+\begin_inset Formula $\hat{\beta}_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=0,...,p-1$
+\end_inset
+
+ in the formula for 
+\begin_inset Formula $Q$
+\end_inset
+
+ in Eq.
+ (11.5.5), we obtain
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S^{2}=\sum_{i=1}^{n}(Y_{i}-z_{i0}\hat{\beta}_{0}-...-z_{ip-1}\hat{\beta}_{p-1})\text{ (11.5.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eq.
+ (11.5.6) is the natural generalization of Eq.
+ (11.3.9) to the multiple regression case.
+ It can be shown using the same method outlined in the proof of Theorem
+ 11.2.1 that the M.L.E of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ in the general linear model is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\sigma}^{2}=\frac{S^{2}}{n}\text{ (11.5.7)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Explicit Form of the Estimators 
+\end_layout
+
+\begin_layout Standard
+In order to derive the explicit form and the properties of the estimator
+ 
+\begin_inset Formula $\hat{\beta}_{0},...,\hat{\beta}_{p-1},$
+\end_inset
+
+ it is convenient to use the notation and techniques of vectos and matrices.
+ We shall let 
+\begin_inset Formula $n*p$
+\end_inset
+
+ matrix 
+\begin_inset Formula $Z$
+\end_inset
+
+ be defined as follows: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z=\begin{array}{cccc}
+Z_{10} &  &  & Z_{1p-1}\\
+Z_{20} &  &  & ...\\
+.... &  &  & ...\\
+Z_{n0} & .... & .. & Z_{np-1}
+\end{array}\text{ (11.5.9)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This matrix 
+\begin_inset Formula $Z$
+\end_inset
+
+ distringuishes one regression problem from another, because the entries
+ in 
+\begin_inset Formula $Z$
+\end_inset
+
+ determine the particular linear combinations of the unknown parameters
+ 
+\begin_inset Formula $\beta_{0},...,\beta_{p-1}$
+\end_inset
+
+ that are relevant in a given problem.
+\end_layout
+
+\begin_layout Definition*
+11.5.2.
+ Design Matrix.
+ The matrix 
+\begin_inset Formula $Z$
+\end_inset
+
+ in Eq.
+ (11.5.9) for a general linear model is called the designed matrix of the
+ model.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The name 
+\begin_inset Quotes eld
+\end_inset
+
+design matrix
+\begin_inset Quotes erd
+\end_inset
+
+ comes from the case in which the 
+\begin_inset Formula $z_{ij}$
+\end_inset
+
+ are chosen by the experimenter to achieve a well-designed experiment.
+ It should be kept in mind, however, that some or all of the entries in
+ 
+\begin_inset Formula $Z$
+\end_inset
+
+ maybe simply the observed values of certain variables, and may not actually
+ be controlled by the experimenter.
+\end_layout
+
+\begin_layout Standard
+We shall also let 
+\begin_inset Formula $y$
+\end_inset
+
+ be the 
+\begin_inset Formula $n*1$
+\end_inset
+
+ vector of observed values of 
+\begin_inset Formula $Y_{1},...,Y_{n},$
+\end_inset
+
+ 
+\begin_inset Formula $\boldsymbol{\beta}$
+\end_inset
+
+ be the 
+\begin_inset Formula $p*1$
+\end_inset
+
+ vector of parameters, and 
+\begin_inset Formula $\hat{\boldsymbol{\beta}}$
+\end_inset
+
+ be the 
+\begin_inset Formula $p*1$
+\end_inset
+
+ vector of estimates.
+ The vectors may be represented as follows 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{y}=\left[\begin{array}{c}
+y_{1}\\
+.\\
+.\\
+y_{n}
+\end{array}\right]$
+\end_inset
+
+, 
+\begin_inset Formula $\boldsymbol{\beta}=\left[\begin{array}{c}
+\beta_{0}\\
+.\\
+.\\
+\beta_{p-1}
+\end{array}\right]$
+\end_inset
+
+, and 
+\begin_inset Formula $\boldsymbol{\hat{\beta}}=\left[\begin{array}{c}
+\hat{\beta}_{0}\\
+.\\
+.\\
+\hat{\beta}_{p-1}
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The transpose of a vector or matrix 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+ will be denoted by 
+\begin_inset Formula $\boldsymbol{v}^{'}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+11.5.1 General Linear Model Estimatos.
+ The least squares estimator (and M.L.E) of 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\boldsymbol{\hat{\beta}=(Z^{'}Z)^{-1}Z^{'}Y}\text{ (11.5.10)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It follows from Eq.
+ (11.5.10) that each of the estimators 
+\begin_inset Formula $\hat{\beta}_{0},...,\hat{\beta}_{p-1}$
+\end_inset
+
+ will be a linear combination of the coordinates 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ of the vector 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+.
+ Since each of these coordinates has a normal distribution and they are
+ independent, it follows that each estimator 
+\begin_inset Formula $\hat{\beta}_{j}$
+\end_inset
+
+ will also have a normal distribution.
+ Indeed, the entire vector 
+\begin_inset Formula $\boldsymbol{\hat{\beta}}$
+\end_inset
+
+ has a joint normal distribution (called a multivariate normal distribution),
+ which is a generalization of the bivariate normal distribution to more
+ than two coordinates.
+\end_layout
+
+\begin_layout Standard
+If a vector 
+\begin_inset Formula $\boldsymbol{\hat{\beta}}$
+\end_inset
+
+ has a multivariate normal distribution, then every linear combination of
+ the coordinates of 
+\begin_inset Formula $\boldsymbol{\hat{\beta}}$
+\end_inset
+
+ has a normal distribution.
+ Indeed, every collection of linear combinations of the coordinates of 
+\begin_inset Formula $\boldsymbol{\hat{\beta}}$
+\end_inset
+
+ has a multivariate normal distribution.
+\end_layout
+
+\begin_layout Section*
+Mean Vector and Covariance Matrix 
+\end_layout
+
+\begin_layout Standard
+We shall now derive the means, variances, and covariances of 
+\begin_inset Formula $\hat{\beta}_{0},...,\hat{\beta}_{p-1}.$
+\end_inset
+
+ Suppose that 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+ is an n-dimensional random vector with coordinates 
+\begin_inset Formula $Y_{1},..,Y_{n}$
+\end_inset
+
+.
+ Thus, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y=\left[\begin{array}{c}
+Y_{1}\\
+.\\
+.\\
+Y_{n}
+\end{array}\right]\text{ (11.5.13)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The expectation 
+\begin_inset Formula $E(\boldsymbol{Y})$
+\end_inset
+
+ of this random vector is defined to be the n-dimensional vector whose coordinat
+es are the expectations of individual coordinates of 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+.
+ Hence,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(\boldsymbol{Y})=\left[\begin{array}{c}
+E(Y_{1})\\
+.\\
+.\\
+E(Y_{n})
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+11.5.3.
+ Mean Vector/Covariance Matrix.
+ If 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+ is a random vector, then the vector 
+\begin_inset Formula $E(\boldsymbol{Y})$
+\end_inset
+
+ is called the mean vector of 
+\begin_inset Formula $\boldsymbol{Y}.$
+\end_inset
+
+ The covariance matrix of 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+ is defined to be the nxn matrix such that, for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ and 
+\begin_inset Formula $j=1,...,n$
+\end_inset
+
+ , the element in the ith row and jth column is 
+\begin_inset Formula $Cov(Y_{i},Y_{j}).$
+\end_inset
+
+ We shall let 
+\begin_inset Formula $Cov(\boldsymbol{Y})$
+\end_inset
+
+ denote this covariance matrix 
+\end_layout
+
+\begin_layout Definition*
+For example, if 
+\begin_inset Formula $Cov(Y_{i},Y_{j})=\sigma_{ij}$
+\end_inset
+
+ for all i and j, then 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula $Cov(\boldsymbol{Y})=\left[\begin{array}{ccc}
+\sigma_{11} & . & \sigma_{1n}\\
+. & . & .\\
+. & . & .\\
+\sigma_{n1} & . & \sigma_{nn}
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+For 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+, 
+\begin_inset Formula $Var(Y_{i})=Cov(Y_{i},Y_{i})=\sigma_{ii}$
+\end_inset
+
+.
+ Therefore, the 
+\begin_inset Formula $n$
+\end_inset
+
+ diagonal elements of the matrix 
+\begin_inset Formula $Cov(\boldsymbol{Y})$
+\end_inset
+
+ are the variances of 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+.
+ Furthermore, since 
+\begin_inset Formula $Cov(Y_{i},Y_{j})=Cov(Y_{j},Y_{i})$
+\end_inset
+
+, then 
+\begin_inset Formula $\sigma_{ij}=\sigma_{ji}$
+\end_inset
+
+.
+ Therefore, the matrix 
+\begin_inset Formula $Cov(\boldsymbol{Y})$
+\end_inset
+
+ must be symmetric.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The mean vector and the covariance matrix of the random vector 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+ in the general linear model can easily be determined.
+ It follows from Eq.
+ (11.5.1) that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(\boldsymbol{Y})=\boldsymbol{Z\beta}\text{ (11.5.14)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also, the coordinates 
+\begin_inset Formula $Y_{1},..,Y_{n}$
+\end_inset
+
+ of 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+ are independent, and the variance of each of these coordinates if 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Therefore, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Cov(\boldsymbol{Y})=\sigma^{2}\boldsymbol{I}\text{ (11.5.15)}
+\]
+
+\end_inset
+
+ Where 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ is the nxn identify matrix .
+\end_layout
+
+\begin_layout Theorem*
+11.5.2 Suppose that 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+ is an n-dimensional random vector as specified by Eq.
+ (11.5.13), for which the mean vector 
+\begin_inset Formula $E(\boldsymbol{Y})$
+\end_inset
+
+ and the covariance matrix 
+\begin_inset Formula $Cov(\boldsymbol{Y})$
+\end_inset
+
+ exists.
+ Suppose also that 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ is pxn matrix whose elements are constants, and that 
+\begin_inset Formula $\boldsymbol{W}$
+\end_inset
+
+ is a p-dimensional random vector defined by the relation 
+\begin_inset Formula $\boldsymbol{W=AY}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $E(\boldsymbol{W})=\boldsymbol{A}E(\boldsymbol{Y})$
+\end_inset
+
+ and 
+\begin_inset Formula $Cov(\boldsymbol{W})=\boldsymbol{A}Cov(\boldsymbol{Y})\boldsymbol{A}^{'}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The means, the variances, and the covariances of the estimators 
+\begin_inset Formula $\hat{\beta}_{0},...,\hat{\beta}_{p-1}$
+\end_inset
+
+ can be obtained by applying Theorem 11.5.2.
+\end_layout
+
+\begin_layout Theorem*
+11.5.3.
+ In the general linear model, 
+\begin_inset Formula $E(\boldsymbol{\hat{\beta}})=\boldsymbol{\beta}$
+\end_inset
+
+ , and 
+\begin_inset Formula $Cov(\boldsymbol{\hat{\beta}})=\sigma^{2}(\boldsymbol{Z^{'}Z})^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus, 
+\begin_inset Formula $E(\hat{\beta}_{j})=\beta_{j}$
+\end_inset
+
+ for 
+\begin_inset Formula $j=0,...,p-1$
+\end_inset
+
+, and for 
+\begin_inset Formula $j=1,...,n$
+\end_inset
+
+, 
+\begin_inset Formula $Var(\hat{\beta}_{j})$
+\end_inset
+
+ equals 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ times the 
+\begin_inset Formula $j$
+\end_inset
+
+th diagonal entry of the matrix 
+\begin_inset Formula $(\boldsymbol{Z^{'}Z})^{-1}$
+\end_inset
+
+.
+ Also, for 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+, 
+\begin_inset Formula $Cov(\hat{\beta}_{i},\hat{\beta}_{j})$
+\end_inset
+
+ will be equal to 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ time the entry in the 
+\begin_inset Formula $ith$
+\end_inset
+
+ row and 
+\begin_inset Formula $j$
+\end_inset
+
+th column of the matrix 
+\begin_inset Formula $(\boldsymbol{Z^{'}Z})^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+The Joint Distribution of the Estimators 
+\end_layout
+
+\begin_layout Standard
+Let the random variable 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+ be defined as Eq.
+ (11.5.6).
+ The sum of square 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+ can also be represented in the following form: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S^{2}=\boldsymbol{(Y-Z\hat{\beta})^{'}(Y-Z\hat{\beta})}\text{ (11.5.18)}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+The method in the proof of Theorem 11.3.2 can be extended by making use of
+ methods in order to prove the following two faces.
+ First, 
+\begin_inset Formula $S^{2}/\sigma^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom.
+ Second, 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+ and the random vector 
+\begin_inset Formula $\hat{\boldsymbol{\beta}}$
+\end_inset
+
+ are independent.
+\end_layout
+
+\begin_layout Standard
+From Eq.
+ (11.5.7), we see that 
+\begin_inset Formula $\hat{\sigma}^{2}=S^{2}/n$
+\end_inset
+
+.
+ Hence, the random variable 
+\begin_inset Formula $n\hat{\sigma}^{2}/\sigma^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom, and the estimators 
+\begin_inset Formula $\hat{\sigma}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\boldsymbol{\beta}}$
+\end_inset
+
+ are independent.
+\end_layout
+
+\begin_layout Standard
+The following result summarizes what we have proven and stated without proof
+ concerning the joint distribution of 
+\begin_inset Formula $\hat{\boldsymbol{\beta}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\sigma}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Corollary*
+11.5.1.
+ Let entries in the symmetric pxp matrix 
+\begin_inset Formula $(\boldsymbol{Z^{'}Z})^{-1}$
+\end_inset
+
+ be denoted as follows:
+\end_layout
+
+\begin_layout Corollary*
+\begin_inset Formula 
+\[
+(\boldsymbol{Z^{'}Z})^{-1}=\left[\begin{array}{ccc}
+\zeta_{00} & ... & \zeta_{0p-1}\\
+... & ... & ...\\
+\zeta_{p-1,0} & ... & \zeta_{p-1p-1}
+\end{array}\right]\text{ (11.5.19)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that 
+\begin_inset Formula $\boldsymbol{\hat{\beta}}$
+\end_inset
+
+ is also independent of 
+\begin_inset Formula $\sigma^{'^{2}}$
+\end_inset
+
+ from Eq.
+ (11.5.8)
+\end_layout
+
+\begin_layout Section*
+Testing Hypotheses
+\end_layout
+
+\begin_layout Standard
+Suppose that it is desired to test the hypothesis that one of the regression
+ coefficients 
+\begin_inset Formula $\beta_{j}$
+\end_inset
+
+ has a particular value 
+\begin_inset Formula $\beta_{j}^{*}$
+\end_inset
+
+ .
+ In other words, suppose that the following hypotheses are to be tested:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\beta_{j}=\beta_{j}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\beta_{j}\neq\beta_{j}^{*}\text{ (11.5.20)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $Var(\hat{\beta}_{j})=\zeta_{jj}\sigma^{2}$
+\end_inset
+
+, it follows that when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, the foloowing random variable 
+\begin_inset Formula $W_{j}$
+\end_inset
+
+ will have standard normal distribution:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W_{j}=\frac{(\hat{\beta}_{j}-\beta_{j}^{*})}{\zeta_{jj}^{1/2}\sigma}
+\]
+
+\end_inset
+
+ Furthermore, since the random variabel 
+\begin_inset Formula $S^{2}/\sigma^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedomes, and since 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{j}$
+\end_inset
+
+ are independent, it follows that when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, the following random variable 
+\begin_inset Formula $W_{j}$
+\end_inset
+
+ will have the standard normal distribution: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W_{j}=\frac{(\hat{\beta}_{j}-\beta_{j}^{*})}{\zeta_{jj}^{1/2}\sigma}
+\]
+
+\end_inset
+
+ Futhermore, since the random variable 
+\begin_inset Formula $S^{2}/\sigma^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom, and since 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{j}$
+\end_inset
+
+ are indepedent.
+ it follows that when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, the following random variable 
+\begin_inset Formula $U_{j}$
+\end_inset
+
+ will have 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n=p$
+\end_inset
+
+ degrees of freedom:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U_{j}=\frac{W_{j}}{[\frac{1}{n-p}(\frac{S^{2}}{\sigma^{2}})]^{1/2}}=\frac{(\hat{\beta}_{j}-\beta_{j}^{*})}{(\zeta_{jj})^{1/2}\sigma^{'}}\text{ (11.5.21)}
+\]
+
+\end_inset
+
+ The level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test of the hypotheses (!1.5.20) specifies that the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ should be rejected if 
+\begin_inset Formula $|U_{j}|\ge T_{n-p}^{-1}(1-\alpha_{0}/2)$
+\end_inset
+
+.
+ Furthermore, if 
+\begin_inset Formula $u$
+\end_inset
+
+ is value of 
+\begin_inset Formula $U_{j}$
+\end_inset
+
+ observed in a given problem, the corresponding p-value is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(U_{j}\ge|u|)+P(U_{j}\le-|u|)\text{ (11.5.22)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tests for one-sided hypotheses can be derived in a similar fashion.
+ 
+\end_layout
+
+\begin_layout Standard
+Problems of testing hypotheses that specify the values of two coefficients
+ 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Power of the Test: 
+\series medium
+If the null hypothesis in (11.5.20) is false, then the statistic 
+\begin_inset Formula $U_{j}$
+\end_inset
+
+ has the noncentral 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom and noncentrality parameter 
+\begin_inset Formula $\psi=(\beta_{j}-\beta_{j}^{*})/(\zeta_{jj}^{1/2}\sigma)$
+\end_inset
+
+.
+ Plots such ac those in Figures 9.12 and 9.14 or computer programs can be
+ used to calculate the power of the 
+\begin_inset Formula $t$
+\end_inset
+
+ test for specific parameter values.
+ 
+\end_layout
+
+\begin_layout Section*
+Prediction 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\boldsymbol{z^{'}}=(z_{0},...,z_{p-1})$
+\end_inset
+
+ be a vector of predictors for a future observation 
+\begin_inset Formula $Y.$
+\end_inset
+
+ We wish to predict 
+\begin_inset Formula $Y$
+\end_inset
+
+ using 
+\begin_inset Formula $\boldsymbol{\hat{Y}=z^{'}\hat{\beta}}$
+\end_inset
+
+, and we want to know the M.S.E.
+ We shall assume that 
+\begin_inset Formula $Y$
+\end_inset
+
+ is independent of the observed data.
+ This makes 
+\begin_inset Formula $Y$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{Y}$
+\end_inset
+
+ independent.
+ We can write
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{Y}=\boldsymbol{z^{'}\hat{\beta}}=\boldsymbol{z^{'}(Z^{'}Z)^{-1}Z^{-1}Y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so that 
+\begin_inset Formula $\hat{Y}$
+\end_inset
+
+ is a linear combination of the original data 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+.
+ Since the coordinates of 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+ are independent normal random variables, Theorem 11.3.1 tells us that 
+\begin_inset Formula $\hat{Y}$
+\end_inset
+
+ has a normal distribution.
+ The mean of 
+\begin_inset Formula $\hat{Y}$
+\end_inset
+
+ is easily seen to be
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(\hat{Y})=\boldsymbol{z^{'}}E(\boldsymbol{\hat{\beta}})=\boldsymbol{z^{'}\beta}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The variance of 
+\begin_inset Formula $\hat{Y}$
+\end_inset
+
+ is obtained from Theorem 11.5.2:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Var(\hat{Y})=\boldsymbol{z^{'}(Z^{'}Z)^{-1}Z^{-1}Cov(Y)Z(Z^{'}Z)^{-1}z}=\boldsymbol{z^{'}(Z^{'}Z)^{-1}z}\sigma^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $Y$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $\boldsymbol{z^{'}\beta}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ and is independent of 
+\begin_inset Formula $\hat{Y}$
+\end_inset
+
+, it follows that 
+\begin_inset Formula $Y-\hat{Y}$
+\end_inset
+
+ has the normal distribution with mean 
+\begin_inset Formula $0$
+\end_inset
+
+ and variance 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Var(Y-\hat{Y})=Var(\hat{Y})+Var(Y)=\sigma^{2}[1+\boldsymbol{z^{'}(Z^{'}Z)^{-1}z}]\text{ (11.5.24)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $Y-\hat{Y}$
+\end_inset
+
+ has mean 
+\begin_inset Formula $0$
+\end_inset
+
+, Eq.
+ (11.5.24) is also the M.S.E.
+ for using 
+\begin_inset Formula $\hat{Y}$
+\end_inset
+
+ to predict 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We can also form a prediction interval for 
+\begin_inset Formula $Y$
+\end_inset
+
+ just as we did in (11.3.25).
+ AS we did there, define
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z=\frac{Y-\hat{Y}}{\sigma[1+\boldsymbol{z^{'}(Z^{'}Z)^{-1}}z]^{1/2}},W=\frac{S^{2}}{\sigma^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $Z$
+\end_inset
+
+ has the standard normal distribution independent of 
+\begin_inset Formula $W$
+\end_inset
+
+, which has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom.
+ Hence, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{Z}{(W/[n-p])^{1/2}}=\frac{Y-\hat{Y}}{\sigma^{'}[1+\boldsymbol{z^{'}(Z^{'}Z)^{-1}z}]^{1/2}}
+\]
+
+\end_inset
+
+ has the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom.
+ It follows that the interval with the following endpoints has probability
+ 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+ of contraining 
+\begin_inset Formula $Y$
+\end_inset
+
+, prior to observing the data:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{Y}+/-T_{n-1}^{-1}(1-\frac{\alpha_{0}}{2})\sigma^{'}[1+\boldsymbol{z^{'}(Z^{'}Z)^{-1}z}]^{1/2}\text{ (11.5.25)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Multiple 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In a problem of multiple linear regression, we are typically interested
+ in determining how well the variables 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ explain the observed variation in the random variable 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ The variation among the 
+\begin_inset Formula $n$
+\end_inset
+
+ observed values 
+\begin_inset Formula $y_{1},...,y_{n}$
+\end_inset
+
+ of 
+\begin_inset Formula $Y$
+\end_inset
+
+ can be measured by the value of 
+\begin_inset Formula $\sum_{i=1}^{n}(y_{i}-\bar{y})^{2}$
+\end_inset
+
+ , which is the sum of the squares of the deviation of 
+\begin_inset Formula $y_{1},...,y_{n}$
+\end_inset
+
+ from the average 
+\begin_inset Formula $\bar{y}$
+\end_inset
+
+.
+ Similarly, after the regression of 
+\begin_inset Formula $Y$
+\end_inset
+
+ on 
+\begin_inset Formula $X_{1},...,X_{k}$
+\end_inset
+
+ has been fitted from the data, the variation among the 
+\begin_inset Formula $n$
+\end_inset
+
+ observed values of 
+\begin_inset Formula $Y$
+\end_inset
+
+ that is still present can be measured by the sum of the squares of the
+ deviations of 
+\begin_inset Formula $y_{1},...,y_{n}$
+\end_inset
+
+ from the fitted regression.
+ This sum of squares will be equal to the value of 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+ in Eq.
+ (11.5.6) calculated from the observed values, i.e., 
+\begin_inset Formula $S^{2}=\sum_{i=1}^{n}(y_{i}-\hat{y}_{i})^{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $\text{\ensuremath{\hat{y}_{i}=\hat{\beta}_{0}+\hat{\beta}_{1}x_{i1}+...+\hat{\beta}_{k}x_{ik}}.}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+It now follows that the proportion of the variation among the observed values
+ 
+\begin_inset Formula $y_{1},...,y_{n}$
+\end_inset
+
+ that remains unexplained by the fitted regression is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\sum_{i=1}^{n}(y_{i}-\hat{y}_{i})^{2}}{\sum_{i=1}^{n}(y_{i}-\bar{y})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In turn, the proportion of the variation among the observed values 
+\begin_inset Formula $y_{1},...,y_{n}$
+\end_inset
+
+ that is explained by the fitted regression is given by the following value
+ 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R^{2}=1-\frac{\sum_{i=1}^{n}(y_{i}-\hat{y}_{i})^{2}}{\sum_{i=1}^{n}(y_{i}-\bar{y})^{2}}\text{ (11.5.26)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The value of 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+ must lie in the interval 
+\begin_inset Formula $0\le R^{2}\le1$
+\end_inset
+
+.
+ When 
+\begin_inset Formula $R^{2}=0$
+\end_inset
+
+, the least squares estimates have the values 
+\begin_inset Formula $\hat{\beta}_{0}=\bar{y}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{1}=...=\hat{\beta}_{k}=0$
+\end_inset
+
+.
+ In this case, the fitted regression function is just the constant function
+ 
+\begin_inset Formula $y=\bar{y}$
+\end_inset
+
+.
+ When 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+ is close to 
+\begin_inset Formula $1$
+\end_inset
+
+, the variation of the observed values of 
+\begin_inset Formula $Y$
+\end_inset
+
+ around the fitted regression function is much smaller than their variation
+ around 
+\begin_inset Formula $\bar{y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Analysis of Residuals 
+\end_layout
+
+\begin_layout Standard
+In Sec.
+ 11.3, we described some plots for assessing whether or not the assumptions
+ of the simple linear regression model seem to be met.
+ These same plots, together eith some others, are also useful in the general
+ linear model.
+ Recall that, in general, the residuals are the values 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e_{i}=y_{i}-\hat{y}_{i}=y_{i}-z_{i0}\beta_{0}-...-z_{ip-1}\beta_{p-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another plot that is useful in multiple regression cases in a plot of residuals
+ against fitted values, 
+\begin_inset Formula $\hat{y}_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+ This plot helps to reveal dependence between the mean and variance of 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ (Recall that 
+\begin_inset Formula $\hat{y}_{i}$
+\end_inset
+
+ is an estimate of the mean of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+).
+ If the residuals are more spread out at one end or the other of this plot,
+ it suggest that the variance of 
+\begin_inset Formula $Y$
+\end_inset
+
+ changes as the mean changes, which violates the assumption that all observation
+s have the same variance.
+ The left plot in Fig.
+ 11.19 is a plot of residuals against fitted values for the unemployment
+ data.
+ It appears that the residuals corresponding to low fitted values are mote
+ spread out than those corresponding to high fitted values.
+\end_layout
+
+\begin_layout Standard
+If the time of each measurement is available, as in Examples 11.5.1 and 11.5.4,
+ it makes sense to plot residuals against time to see if there is any time
+ dependence not captured by the model.
+ Since time was one of the predictors in each of these examples, we will
+ plot residuals against time when we plot residuals against the predictors.
+ In addition to plotting the residuals against time, we can also plot the
+ nearby residuals against each other to see if small ones tend to occure
+ together and/or if large ones tend to occure together.
+ Let 
+\begin_inset Formula $v_{1},...,v_{n}$
+\end_inset
+
+ be the residuals ordered by time.
+ We can plot the 
+\begin_inset Formula $n-1$
+\end_inset
+
+ points 
+\begin_inset Formula $(v_{1},v_{2}),(v_{2},v_{3}),....,(v_{n-1},v_{n})$
+\end_inset
+
+.
+ If there plotted points follow a patern, it suggests that there is dependence
+ between observations that are close together in time, called serial dependence.
+ This would violate the assumption that the observations are independent.
+ The right plot in Fig.
+ 11.19 is the plot of consecutive paris of residuals for the unemployment
+ data.
+ The points in this plot cluster in opposite cornets, suggesting serial
+ dependence, although the small smaple size makes it difficult to be certain.
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Standard
+In the general linear model, we assume that the mean of each observation
+ 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ can be expressed as 
+\begin_inset Formula $z_{i0}\hat{\beta}_{0}+....+z_{ip-1}\hat{\beta}_{p-1}$
+\end_inset
+
+, where 
+\begin_inset Formula $\beta_{0},...,\beta_{p-1}$
+\end_inset
+
+ are unknown parameters and 
+\begin_inset Formula $z_{i0},...,z_{ip-1}$
+\end_inset
+
+ are the observed values of predictors.
+ These predictors can be control variables, other variables that are measured
+ along with 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ , or functions of such variables.
+ Least-squares estimators of the parameters are denoted 
+\begin_inset Formula $\hat{\beta}_{0},....,\hat{\beta}_{p-1}$
+\end_inset
+
+, and they can be calculated according to Eq.
+ (11.5.10) or by using a computer.
+ The variance of each 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ is assumed to be the same value 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Every linear combination of combination of the least-squares estimators
+ has a normal distribution and is independent of the unbiased estimator
+ 
+\begin_inset Formula $\sigma^{'2}$
+\end_inset
+
+ of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ given in Eq.
+ (11.5.8).
+ 
+\end_layout
+
+\begin_layout Standard
+For testing hypotheses about a single 
+\begin_inset Formula $\beta_{j}$
+\end_inset
+
+, the statistic 
+\begin_inset Formula $U_{j}$
+\end_inset
+
+ in Eq.
+ (11.5.21) has the 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom given that the null hypothesis is true.
+ For predicting a future 
+\begin_inset Formula $Y$
+\end_inset
+
+ value, we can form prediction intervals using the endpoints given by (11.5.25).
+ We should always plot the residuals 
+\begin_inset Formula $y_{i}-\hat{y}_{i}$
+\end_inset
+
+ against the predictors, fitted values 
+\begin_inset Formula $\hat{y}_{i}$
+\end_inset
+
+, and time (if available) to check on the assumptions of the linear regression
+ model.
+ 
+\series bold
+Patterns in these plots can suggest violations of the assumption about the
+ form of the mean of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ and/or the constant variance assumption
+\series default
+.
+ We should also make a normal quantile plot.
+ Deviations from a straight line in this plot suggest that the 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ values might not have a normal distribution, although violations of the
+ assumptions about the mean and variance can also cause patterns in this
+ plot.
+ If observation time is available, we should also plot pairs of consecutive
+ residuals to look for serial dependence.
+ 
+\end_layout
+
+\begin_layout Chapter*
+11.6.
+ Analysis of Variance 
+\end_layout
+
+\begin_layout Standard
+In Sec.
+ 9.6, we studied methods for comparing the means of two normal distributions.
+ In this section, we shall consider experiments in which we need to compare
+ the means of two or more normal distributions.
+ The theory behind the methods developed here is based entirely on results
+ from the general model in Sec.
+ 11.5 
+\end_layout
+
+\begin_layout Section*
+The One-Way Layout 
+\end_layout
+
+\begin_layout Standard
+In this section and in the remainder of this chaper, we shall study a topic
+ known as the analysis of variance, abbreviated ANOVA.
+ Problems of ANOVA are actually problems of multiple regression in which
+ the design matrix 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+ has a very special form.
+ In other words, the study of ANOVA can be placed within the framework of
+ the general linear model (Definition 11.5.1), if we continue to make the
+ basic assumptions for such a model: The observations that are obtained
+ are independently and normally distributed; all these observations have
+ the same variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+; and the mean of each observation can be represented as a linear combination
+ of certain unknown parameters.
+\end_layout
+
+\begin_layout Standard
+We shall begin our study of ANOVA by considering a problem known as the
+ one-way layout.
+ In this problem, it is assumed that random samples from 
+\begin_inset Formula $p$
+\end_inset
+
+ different normal distributon are available, each of these distributions
+ has the same variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, and the means of the 
+\begin_inset Formula $p$
+\end_inset
+
+ distributions are to be compared on the basis of the observed values in
+ the samples.
+ This problem as considered for two populations 
+\begin_inset Formula $(p=2)$
+\end_inset
+
+ in Sec.
+ 9.6, and the results to be presented here for an arbitrary value of 
+\begin_inset Formula $p$
+\end_inset
+
+ will generalize those presented in Sec.
+ 9.6.
+ Specifically, we shall now make the following assumption: For 
+\begin_inset Formula $i=1,...,p$
+\end_inset
+
+, the random variables 
+\begin_inset Formula $Y_{i1},...,Y_{in_{i}}$
+\end_inset
+
+, form a random sample of 
+\begin_inset Formula $n_{i}$
+\end_inset
+
+ observations from the normal distribution with mean 
+\begin_inset Formula $\mu_{i}$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ , and the values of 
+\begin_inset Formula $\mu_{1},...,\mu_{p}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ are unknown.
+\end_layout
+
+\begin_layout Standard
+In this problem, the sample size 
+\begin_inset Formula $n_{1},...,n_{p}$
+\end_inset
+
+ are not necessarily the same.
+ We shall let 
+\begin_inset Formula $n=\sum_{i=1}^{p}n_{i}$
+\end_inset
+
+ denote the total numbder of observation in the 
+\begin_inset Formula $p$
+\end_inset
+
+ samples, and we shall assume that all 
+\begin_inset Formula $n$
+\end_inset
+
+ observations are independent.
+\end_layout
+
+\begin_layout Section*
+Partitioning a Sum of Squares 
+\end_layout
+
+\begin_layout Standard
+Hypotheses:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\mu_{1}=...=\mu_{p}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\text{ The hypothesis \ensuremath{H_{0}} is not true }\text{ (11.6.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{Tot}^{2}=\sum_{i=1}^{p}\sum_{j=1}^{n_{i}}(Y_{ij}-\bar{Y}_{++})^{2}\text{ (11.6.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will partition the above sum of squares into two smaller sums of squares,
+ each of which will be associated with a certain type of variation among
+ the 
+\begin_inset Formula $n$
+\end_inset
+
+ observations.
+ Not that 
+\begin_inset Formula $S_{Tot}^{2}/n$
+\end_inset
+
+ would be M.L.E of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ if we believed that all of the observations came from a single normal distribut
+ion rather than from 
+\begin_inset Formula $p$
+\end_inset
+
+ different normal distributions.
+ This means that we can interpret 
+\begin_inset Formula $S_{Tot}^{2}$
+\end_inset
+
+ as an overall measure of variation between the 
+\begin_inset Formula $n$
+\end_inset
+
+ obervations.
+ One of the smaller sums of squares into which we shall partition 
+\begin_inset Formula $S_{Tot}^{2}$
+\end_inset
+
+ will measure the variation between the observations within each of the
+ samples.
+ The test of the hypotheses 
+\begin_inset Formula $(11.6.5)$
+\end_inset
+
+ that we shall develop will be based on the ratio of these two measures
+ of variation.
+ For this reason, the name analysis of variance has been used to describe
+ this problem and other related problems.
+ 
+\end_layout
+
+\begin_layout Theorem*
+11.6.1 Partitioning the Sum of Squares.
+ Let 
+\begin_inset Formula $S_{Tot}^{2}$
+\end_inset
+
+ be as defined in Eq.
+ (11.6.6).
+ Then 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+S_{Tot}^{2}=S_{Resid}^{2}+S_{Betw}^{2}\text{ (11.6.7)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Where 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+S_{Reid}^{2}=\sum_{i=1}^{p}\sum_{j=1}^{n_{i}}(Y_{ij}-\bar{Y}_{i+})^{2}\text{ and }S_{Betw}^{2}=\sum_{i=1}^{p}n_{i}(\bar{Y}_{i+}-\bar{Y}_{++})^{2}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Furthermore, 
+\begin_inset Formula $S_{Resid}^{2}/\sigma^{2}$
+\end_inset
+
+ has 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom and is independent of 
+\begin_inset Formula $S_{Betw}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+As we noted earlier, 
+\begin_inset Formula $S_{Tot}^{2}$
+\end_inset
+
+ can be regarded as the total variation of the observations around their
+ overall mean.
+ Similarly, 
+\begin_inset Formula $S_{Resid}^{2}$
+\end_inset
+
+ can be regared as the total variation of the observations around their
+ particular sample means, or the total residual variation within the samples.
+ Also, 
+\begin_inset Formula $S_{Betw}^{2}$
+\end_inset
+
+ can be regarded as the total variation of the sample means around the overall
+ mean, or the variation between the sample means.
+ Thus, the total variation 
+\begin_inset Formula $S_{Tot}^{2}$
+\end_inset
+
+ has been partitioned into two independent components, 
+\begin_inset Formula $S_{Resid}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{Betw}^{2}$
+\end_inset
+
+, which represent different types of variations.
+ This partitioning is often summarized in a table, which is called the ANOVA
+ table for the one-way layout and is presented here as Table 11.16.
+\end_layout
+
+\begin_layout Standard
+The numbers in the 
+\begin_inset Quotes eld
+\end_inset
+
+Mean square
+\begin_inset Quotes erd
+\end_inset
+
+ column of Table 11.16 are just the sums of squares divided by the degrees
+ of freedom.
+ They are used for testing the hypothese (11.6.5).
+ The degrees of freedom in the 
+\begin_inset Quotes eld
+\end_inset
+
+Between samples
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Total
+\begin_inset Quotes erd
+\end_inset
+
+ rows will turn out to be degrees of freedom for random variables with 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution if the null hypothesis in (11.6.5) is true.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Note: The Residual Mean Square is the Same as the Unbiased Estimator of
+ 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ in the Regression Setting.
+ 
+\series medium
+We began this section by expressing the one-way layout as a multiple linear
+ regression problem with data vector 
+\begin_inset Formula $\mathbf{Y}$
+\end_inset
+
+ and design matrix 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+.
+ Compare the M.L.E of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{\sigma}^{2}$
+\end_inset
+
+ in Eq.
+ (11.6.4), to the residual mean square in Table 11.16 to see that the two differ
+ only in the constant in the denominator.
+ The M.L.E in 
+\begin_inset Formula $S_{Resid}^{2}/n$
+\end_inset
+
+, while the residual mean square is 
+\begin_inset Formula $S_{Resid}^{2}/(n-p)$
+\end_inset
+
+.
+ Recall that this last ratio call 
+\begin_inset Formula $\sigma^{'^{2}}$
+\end_inset
+
+ in Sec.
+ 11.5, and is unbiased estimator of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Testing Hypotheses
+\end_layout
+
+\begin_layout Standard
+In order to test the hypotheses (11.6.5), we need a test statistic that will
+ tend to be larger if 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ is true than it is if 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true.
+ We also need to know the distribution of the test statistic when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true.
+\end_layout
+
+\begin_layout Theorem*
+11.6.2.
+ Suppose that 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ in (11.6.5) is true.
+ Then 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+U^{2}=\frac{S_{Betw}^{2}/(p-1)}{S_{Resid}^{2}/(n-p)}\text{ (11.6.9)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $p-1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is not true, so that at least two of the 
+\begin_inset Formula $u_{i}$
+\end_inset
+
+ values are different, then the expectation of the numerator of 
+\begin_inset Formula $U^{2}$
+\end_inset
+
+ will be larger than it would be if 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ were true.
+ The distribution of the denominator of 
+\begin_inset Formula $U^{2}$
+\end_inset
+
+ remains the same regardless of whether or not 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true.
+ A sensible level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test of the hypotheses 
+\begin_inset Formula $(11.6.5)$
+\end_inset
+
+ would then be to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $U^{2}\ge F_{p-1,n-p}^{-1}(1-\alpha_{0})$
+\end_inset
+
+, where 
+\begin_inset Formula $F_{p-1,n-p}^{-1}$
+\end_inset
+
+ is the quantile function for the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $p-1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom.
+ It can be shown that this test is also the level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ likelihood ratio test procedure (Exercise 12).
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Power of the Test 
+\series medium
+If the null hypothesis in (11.6.5) is false, then the statistic 
+\begin_inset Formula $U^{2}$
+\end_inset
+
+ in Eq.
+ (11.6.9) has a distribution known as noncentral 
+\begin_inset Formula $F$
+\end_inset
+
+.
+ For more details on the power function, consult a more advanced text such
+ Scheffe (1959, chapter 2)
+\end_layout
+
+\begin_layout Section*
+Analysis of Residuals 
+\end_layout
+
+\begin_layout Standard
+Since the one-way layout is special case of general linear model, we make
+ the assumptions of the general linear model when we perform the one-way
+ ANOVA calculations, we should also compute residuals and plot them to see
+ if the assumptions appear reasonable.
+ The residuals are the values 
+\begin_inset Formula $e_{ij}=Y_{ij}-\bar{Y}_{i+}$
+\end_inset
+
+, for 
+\begin_inset Formula $j=1,...,n_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $i=1,...,p$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Standard
+The one-way layout can be considered as a general linear model, and we can
+ use the methods of Sec.
+ 11.5 to fit the model.
+ However, the hypotheses of most interest in the one-way layout are (11.6.5).
+ These hypotheses concern more than one linear combination of regression
+ coefficients, and they are not a special case of hypotheses that we learned
+ how to test in Sec.
+ 11.5.
+ To test these new hypotheses, we developed the analysis of variance (ANOVA)
+ and the ANOVA table.
+ The test statistic is 
+\begin_inset Formula $U^{2}$
+\end_inset
+
+ in Eq.
+ (11.6.9), which has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $p-1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom if 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true.
+ The level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test of 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $U^{2}$
+\end_inset
+
+ is greater than the 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+ quantile of the appropriate 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Chapter*
+11.7.
+ The two-way Layout
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E(Y_{ij})=\theta_{i}+\psi_{j}\text{ for }j=1,...,I\text{ and }j=1,...,J\text{ (11.7.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eq.
+ (11.7.1) is called an assumption of additivity of the effects of the factors.
+\end_layout
+
+\begin_layout Standard
+The following assumptions is equaivalent to the assumption of additivity
+\end_layout
+
+\begin_layout Theorem*
+11.7.1.
+ Define 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\bar{Y}_{i+}=\frac{1}{J}\sum_{j=1}^{J}Y_{ij}\text{ for }i=1,...,I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\bar{Y}_{+j}=\frac{1}{I}\sum_{i=1}^{I}Y_{ij}\text{ for }j=1,...,J\text{ (11.7.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\bar{Y}_{++}=\frac{1}{IJ}\sum_{i=1}^{I}\sum_{j=1}^{J}Y_{ij}=\frac{1}{I}\sum_{i=1}^{I}\bar{Y}_{i+}=\frac{1}{J}\sum_{j=1}^{J}\bar{Y}_{+j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Then the M.L.E's (an least-squares estimators) of 
+\begin_inset Formula $\mu,\alpha_{1},...,\alpha_{I}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1},...,\beta_{J}$
+\end_inset
+
+ are as follows:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\mu}=\bar{Y}_{++}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\alpha}_{i}=\bar{Y}_{i+}-\bar{Y}++\text{ for }i=1,..,I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\beta}_{j}=\bar{Y}_{+j}-\bar{Y}_{++}\text{ for }j=1,..,J\text{ (11.7.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+The M.L.E.
+ of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ will be 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\sigma}^{2}=\frac{1}{IJ}\sum_{i=1}^{I}\sum_{j=1}^{J}(Y_{ij}-\hat{\mu}-\hat{\alpha}_{i}-\hat{\beta}_{j})^{2}=\frac{1}{IJ}\sum_{i=1}^{I}\sum_{j=1}^{J}(Y_{ij}-\hat{Y}_{ij})^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $E(Y_{ij})=\mu+\alpha_{i}+\beta_{j}$
+\end_inset
+
+, the M.L.E of 
+\begin_inset Formula $E(Y_{ij})$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{Y}_{ij}=\bar{Y}_{i+}+\bar{Y}_{+j}-\bar{Y}_{++}=\hat{\mu}+\hat{\alpha}_{i}+\hat{\beta}_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is also called the fitted value for 
+\begin_inset Formula $Y_{ij}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Partitioning the Sum of Squares
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{Tot}^{2}=\sum_{i=1}^{I}\sum_{j=1}^{J}(Y_{ij}-\bar{Y}_{++})^{2}\text{ (11.7.7)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+11.7.2.
+ Partitioning the Sum of Squares.
+ Let 
+\begin_inset Formula $S_{Tot}^{2}$
+\end_inset
+
+ be as defined in Eq.
+ (11.7.7).
+ Then 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+S_{Tot}^{2}=S_{Resid}^{2}+S_{A}^{2}+S_{B}^{2}\text{ (11.7.8)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+where 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+S_{Resid}^{2}=\sum_{i=1}^{I}\sum_{j=1}^{J}(Y_{ij}-\bar{Y}_{i+}-\bar{Y}_{+j}+\bar{Y}_{++})^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+S_{A}^{2}=J\sum_{i=1}^{I}(\bar{Y}_{i+}-\bar{Y}_{++})^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+S_{B}^{2}=I\sum_{j=1}^{J}(\bar{Y}_{+j}-\bar{Y}_{++})^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Furthermore, 
+\begin_inset Formula $S_{Resid}^{2}/\sigma^{2}$
+\end_inset
+
+ has 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $(I-1)(J-1)$
+\end_inset
+
+ degrees of freedom, and the three component sums of squares are mutually
+ independent.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+11.7.3.
+ Consider the following hypotheses:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+H_{0}:\alpha_{i}=0\text{ for }i=1,...,I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+H_{1}:\text{ The hypothesis }H_{0}\text{ is not true}\text{ (11.7.11)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+If 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, then the following random variable has 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $I-1$
+\end_inset
+
+ and 
+\begin_inset Formula $(I-1)(J-1)$
+\end_inset
+
+ degrees of freedom:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+U_{A}^{2}=\frac{S_{A}^{2}}{(I-1)\sigma^{'^{2}}}\text{ (11.7.12)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Similarly, suppose next the following hypotheses are to be tested :
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+H_{0}:\beta_{j}=0\text{ for }j=1,...,J
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+H_{1}:\text{ The hypothesis }H_{0}\text{ is not true}\text{(11.7.13)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+When the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, the following statistic has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $J-1$
+\end_inset
+
+ and 
+\begin_inset Formula $(I-1)(J-1)$
+\end_inset
+
+ degree of freedom:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+U_{B}^{2}=\frac{S_{B}^{2}}{(J-1)\sigma^{'^{2}}}\text{ (11.7.14)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Finally, suppose that the following hypothese are to be tested:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+H_{0}:\alpha_{i}=0\text{ for }i=1,..,I,\text{ and }\beta_{j}=0\text{ for }j=1,...,J,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+H_{1}:\text{ The hypothesis }H_{0}\text{ is not true (11.7.15)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+When the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, the following statistic has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $I+J-2$
+\end_inset
+
+ and 
+\begin_inset Formula $(I-1)(J-1)$
+\end_inset
+
+ degrees of freedom:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+U_{A+B}^{2}=\frac{S_{A}^{2}+S_{B}^{2}}{(I+J-2)\sigma^{'2}}\text{ (11.7.16)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+For each case above, a level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ test of the hypotheses is to reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if the corresponding statistic 
+\begin_inset Formula $(U_{A}^{2},U_{B}^{2},\text{ or }U_{A+B}^{2})$
+\end_inset
+
+ is at least as large as the 
+\begin_inset Formula $1-\alpha_{0}$
+\end_inset
+
+ quantile of the corresponding 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Standard
+The two-way layout can be considered as a general linear model, but the
+ hypotheses of interest concern more than one linear combination of the
+ regression coefficients.
+ An ANOVA table was developed for the two-way layout that can be used for
+ forming test statistics for various hypotheses.
+ When we have only one observation at each combination of factor levels,
+ we assume that the effects of the two factors are additive.
+ Then we can test the two null hypotheses that each of the two factors make
+ no difference to the means of the observations.
+ These tests make use of the test statistics 
+\begin_inset Formula $U_{A}^{2}$
+\end_inset
+
+ in Eq.(11.7.12) and 
+\begin_inset Formula $U_{B}^{2}$
+\end_inset
+
+ in Eq.
+ (11.7.14).
+ If the corresponding null hypotheses are true, each of these statistics
+ has an 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Standard
+To sum up, They assume 
+\begin_inset Formula $E[Y_{ij}]=\mu+\alpha_{i}+\beta_{j}$
+\end_inset
+
+ with 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{j}$
+\end_inset
+
+ are two influenced term of two factor (in two-way), that effect on observations
+, And they want to make hypothesis on this :
+\begin_inset Formula $\alpha_{i}=0$
+\end_inset
+
+ mean factor 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ dont influence to mean of observation 
+\begin_inset Formula $(=\mu$
+\end_inset
+
+ for all observations)
+\end_layout
+
+\begin_layout Chapter*
+11.8 The two-way layout with replications 
+\end_layout
+
+\begin_layout Standard
+Suppose that we obtain more than one observation in each cell of a two-way
+ layout.
+ In addition to testing hypotheses about the separate effects of the two
+ factors, we can also test the hypothesis that the additivity assumption
+ (11.7.3) holds.
+ However, the interpretations of the separate effects of the two factors
+ are more complicated if the additivity assumption fails.
+ When the additivity assumption fails, we say that there is interaction
+ between the two factors.
+ 
+\end_layout
+
+\begin_layout Section*
+The Two-Way Layout with 
+\begin_inset Formula $K$
+\end_inset
+
+ observation in Each Cell
+\end_layout
+
+\begin_layout Standard
+We continue to assume that all the observations are independent, each observatio
+n has a normal distribution, and all the observations have the same variance
+ 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In order to identify and discuss the effects of the two factors, and to
+ examine the possibility that these effects are additive, it is helpful
+ to replace the parameters 
+\begin_inset Formula $\theta_{ij}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,I$
+\end_inset
+
+ and 
+\begin_inset Formula $j=1,...,J$
+\end_inset
+
+ , with a new set of parameters 
+\begin_inset Formula $\mu,\alpha_{i},\beta_{j}$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma_{ij}$
+\end_inset
+
+.
+ These new parameters are defined by the following relations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\theta_{ij}=\mu+\alpha_{i}+\beta_{j}+\gamma_{ij}\text{ for }i=1,...,I\text{ and }j=1,...,J\text{ (11.8.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i=1}^{I}\alpha_{i}=0,\sum_{j=1}^{J}\beta_{j}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i=1}^{I}\gamma_{ij}=0\text{ for }j=1,...,J\text{ (11.8.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j=1}^{J}\gamma_{ij}=0\text{ for }j=1,..,I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+11.8.1.
+ The M.L.E's (and least-squares estimators) of 
+\begin_inset Formula $\mu,\alpha_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{j}$
+\end_inset
+
+ are as follows:
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\mu}=\bar{Y}_{+++}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\alpha}_{i}=\bar{Y}_{i++}-\bar{Y}_{+++}\text{ for }i=1,...,I\text{ (11.8.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\beta}_{j}=\bar{Y}_{+j+}-\bar{Y}_{+++}\text{ for }j=1,...,J
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Also, for 
+\begin_inset Formula $i=1,...,I$
+\end_inset
+
+ and 
+\begin_inset Formula $j=1,...,J$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\hat{\gamma}_{ij}=\bar{Y}_{ij+}-(\hat{\mu}+\hat{\alpha}_{i}+\hat{\beta}_{j})=\bar{Y}_{ij+}-\bar{Y}_{i++}-\bar{Y}_{+j+}+\bar{Y}_{+++}\text{(11.8.7)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Also, for all values of 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $E(\hat{\mu})=\mu,E(\hat{\beta}_{j})=\beta_{j}$
+\end_inset
+
+ and 
+\begin_inset Formula $E(\hat{\gamma}_{ij})=\gamma_{ij}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Partitioning the Sum of Squares
+\end_layout
+
+\begin_layout Standard
+Consider now the total sum of squares, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{Tot}^{2}=\sum_{i=1}^{I}\sum_{1}^{J}\sum_{k=1}^{K}(Y_{ijk}-\bar{Y}_{+++})^{2}\text{ (11.8.8)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+11.8.2.
+ Let 
+\begin_inset Formula $S_{Tot}^{2}$
+\end_inset
+
+ be as defined in Eq.
+ (11.8.8).
+ Then 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+S_{Tot}^{2}=S_{A}^{2}+S_{B}^{2}+S_{Int}^{2}+S_{Resid}^{2}\text{ (11.8.9)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+where 
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+S_{A}^{2}=JK\sum_{i=1}^{I}(\bar{Y}_{i++}-\bar{Y}_{+++})^{2}\text{ (11.8.10)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+S_{B}^{2}=IK\sum_{j=1}^{J}(\bar{Y}_{+j+}-\bar{Y}_{+++})^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+S_{Int}^{2}=K\sum_{i=1}^{I}\sum_{j=1}^{J}(\bar{Y}_{ij+}-\bar{Y}_{i++}-\bar{Y}_{+j+}+\bar{Y}_{+++})^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+S_{Resid}^{2}=\sum_{i=1}^{I}\sum_{j=1}^{J}\sum_{k=1}^{K}(Y_{ijk}-\bar{Y}_{ij+})^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+In addition, 
+\begin_inset Formula $S_{Resid}^{2}/\sigma^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $IJ(K-1)$
+\end_inset
+
+ degrees of freedom.
+ If all 
+\begin_inset Formula $\alpha_{1}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $S_{A}^{2}/\sigma^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $I-1$
+\end_inset
+
+ degrees of freedom.
+ If all 
+\begin_inset Formula $\beta_{j}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $S_{B}^{2}/\sigma^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $J-1$
+\end_inset
+
+ degrees of freedom.
+ If all 
+\begin_inset Formula $\gamma_{ij}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $S_{Int}^{2}/\sigma^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution 
+\begin_inset Formula $(I-1)(J-1)$
+\end_inset
+
+ degrees of freedom.
+ The four sums of squares are mutually independent.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Testing Hypothesis
+\end_layout
+
+\begin_layout Standard
+As mentioned before, the effects of the factors 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are additive if and only if all the interactions 
+\begin_inset Formula $\gamma_{ij}$
+\end_inset
+
+ vanish.
+ Hence, 
+\series bold
+to test whether the effects of the factors are additive
+\series default
+, we must test the following hypotheses:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\gamma_{ij}=0\text{ for }i=1,...,I\text{ and }j=1,...,J\text{ (11.8.11)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\text{ The hypothesis }H_{0}\text{\text{ is not true}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, the following random variable 
+\begin_inset Formula $U_{AB}^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $(I-1)(J-1)$
+\end_inset
+
+ and 
+\begin_inset Formula $IJ(K-1)$
+\end_inset
+
+ degrees of freedom:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U_{AB}^{2}=\frac{IJ(K-1)S_{Int}^{2}}{(I-1)(J-1)S_{Resid}^{2}}\text{ (11.8.12)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is also the ratio of the interaction mean square to the residual mean
+ square.
+ 
+\end_layout
+
+\begin_layout Standard
+The null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ would be rejected at level 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+ if 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U_{AB}^{2}\ge F_{(I-1)(J-1),IJ(K-1)}^{-1}(1-\alpha_{0}),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $F_{(I-1)(J-1),IJ(K-1)}^{-1}$
+\end_inset
+
+ is the quantile function of the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $(I-1)(J-1)$
+\end_inset
+
+ and 
+\begin_inset Formula $IJ(K-1)$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+If the null hypothesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ in (11.8.11) is not rejected, we might be interested in testing the following
+ hypotheses:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\alpha_{i}=0\text{ and }\gamma_{ij}=0\text{ for }i=1,...,I\text{ and }j=1,....,J\text{ (11.8.13)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\text{ The hypothesis }H_{0}\text{ is not true}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+According to Theorem 11.8.2, if 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true, then 
+\begin_inset Formula $S_{A}^{2}/\sigma^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{Int}^{2}/\sigma^{2}$
+\end_inset
+
+ are independent having 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $I-1$
+\end_inset
+
+ and 
+\begin_inset Formula $(I-1)(J-1)$
+\end_inset
+
+ degrees of freedom, respectively.
+ It follows that, when 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ in 
+\begin_inset Formula $(11.8.13)$
+\end_inset
+
+ is true, the following random variable 
+\begin_inset Formula $U_{A}^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $I-1+(I-1)(J-1)=(I-1)J$
+\end_inset
+
+ and 
+\begin_inset Formula $IJ(K-1)$
+\end_inset
+
+ degrees of freedom:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U_{A}^{2}=\frac{IJ(K-1)[S_{A}^{2}+S_{Int}^{2}]}{(I-1)JS_{Resid}^{2}}\text{ (11.8.14)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+The Two-Way Layout with Unequal Numbers of Obervations in the Cells
+\end_layout
+
+\begin_layout Standard
+As usual, we shall let 
+\begin_inset Formula $\bar{Y}_{ij+}$
+\end_inset
+
+ denote the average of the observations in the 
+\begin_inset Formula $(i,j)$
+\end_inset
+
+ cell.
+ It can then be shown that for 
+\begin_inset Formula $i=1,..,I$
+\end_inset
+
+ and 
+\begin_inset Formula $j=1,..,J$
+\end_inset
+
+, the M.L.E.'s, or least-squares estimators, are as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\mu}=\frac{1}{IJ}\sum_{i=1}^{I}\sum_{j=1}^{J}\bar{Y}_{ij+},\hat{\alpha}=\frac{1}{J}\sum_{j=1}^{J}\bar{Y}_{ij+}-\hat{\mu}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\beta}_{j}=\frac{1}{I}\sum_{i=1}^{I}\bar{Y}_{ij+}-\hat{\mu},\hat{\gamma}_{ij+}=\bar{Y}_{ij+}-\hat{\mu}-\hat{\alpha}_{i}-\hat{\beta}_{j}\text{ (11.8.19)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These estimators are intuitively reasonable and analogous to those given
+ in Eqs.
+ (11.8.6) and (11.8.7).
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Standard
+We extended the analysis of the two-way layout to cases in which we have
+ equal numbers of observations at all combinations of levels of the two
+ factors.
+ One additional null hypothesis that we can test in this case is that effects
+ of the two factors are additive.
+ (We assumed that the effects were additive when we had only one observation
+ per cell.) If we reject the null hypothesis, we typically do not test any
+ further hypotheses.
+ If we don't reject this null hypothesis, we might still be interested in
+ whether one of the two factors has any effect at all on the means of the
+ observations.
+ Even if we do not first test the null hypothesis that the effects of the
+ two factors are additive, we might still be interested in whether one of
+ the factors has an effect.
+ The precise form of a test of one of these last hypotheses depends on whether
+ we first test that the effects 
+\series bold
+are additive
+\series default
+ 
+\begin_inset Formula $(\gamma_{ij}=0)$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

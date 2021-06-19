@@ -1,0 +1,2258 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+11.
+\end_layout
+
+\begin_layout Chapter*
+11.
+ Least squares error
+\end_layout
+
+\begin_layout Exercise*
+1.
+ Prove that 
+\begin_inset Formula $\sum_{i=1}^{n}(c_{1}x_{i}+c_{2})^{2}=c_{1}^{2}\sum_{i=1}^{n}(x_{i}-\bar{x})^{2}+n(c_{1}\bar{x}+c_{2})^{2}.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sum_{i=1}^{n}(c_{1}x_{i}+c_{2})^{2}=\sum_{i=1}^{n}(c_{1}x_{i}-c_{1}\bar{x}+c_{1}\bar{x}+c_{2})^{2}=c_{1}\sum_{i=1}^{n}(x_{i}-\bar{x}_{n})^{2}+2\sum_{i=1}^{n}(c_{1}x_{i}-c_{1}\bar{x})(c_{1}\bar{x}+c_{2})+(c_{1}\bar{x}+c_{2})^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We consider 
+\begin_inset Formula $2\sum_{i=1}^{n}(c_{1}x_{i}-c_{1}\bar{x})(c_{1}\bar{x}+c_{2})=2(c_{1}\bar{x}+c_{2})(c_{1}\sum_{i=1}^{n}x_{i}-c_{1}\sum_{i=1}^{n}\bar{x})=2(c_{1}\bar{x}+c_{2})0=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+So concluded.
+\end_layout
+
+\begin_layout Exercise*
+3.
+ Show that the least-squares line 
+\begin_inset Formula $y=\hat{\beta}_{0}+\hat{\beta}_{1}x\text{ }(1)$
+\end_inset
+
+ passes 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+through the point (
+\begin_inset Formula $\bar{x},\bar{y})$
+\end_inset
+
+.
+ From Eq.
+ (11.1.1) 
+\begin_inset Formula $\hat{\beta}_{0}=\bar{y}-\hat{\beta}_{1}\bar{x}$
+\end_inset
+
+, replace 
+\begin_inset Formula $(\bar{x},\bar{y})$
+\end_inset
+
+ to Eq.
+ (1), 
+\begin_inset Formula $\bar{y}=\bar{y}-\hat{\beta}_{1}\bar{x}+\hat{\beta}_{1}\bar{x}$
+\end_inset
+
+, It's clear that's true.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8.
+ Prove error can be 0, so it will fit all 
+\begin_inset Formula $k+1$
+\end_inset
+
+ points.
+ 
+\end_layout
+
+\begin_layout Exercise*
+Maybe : 
+\begin_inset Formula $y=\sum_{i=1}^{k}\beta_{i}x^{k}$
+\end_inset
+
+ will have 
+\begin_inset Formula $k-1$
+\end_inset
+
+ extreme value, so it will have ability pass through 
+\begin_inset Formula $k+1$
+\end_inset
+
+ point: parabol having 
+\begin_inset Formula $1$
+\end_inset
+
+ extreme value, can fit perfectly to 
+\begin_inset Formula $3$
+\end_inset
+
+ points.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+11.2 Regression
+\end_layout
+
+\begin_layout Exercise*
+1.
+ Show that the M.L.E.
+ of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is given by Eq.
+ (11.2.3)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+11.3 Statistical Inference In Simple Linear Regression 
+\end_layout
+
+\begin_layout Exercise*
+1.
+ Problem of simple linear regression, 
+\begin_inset Formula $10$
+\end_inset
+
+ pairs of observed values of 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ given Table 11.9 are obtained.
+ The the following hypotheses at the level of significance 
+\begin_inset Formula $0.05$
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\beta_{0}=0.7
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\beta_{0}\neq0.7
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From 
+\begin_inset Formula $(11.3.18)$
+\end_inset
+
+, this hypotheses are same Eq.
+ 
+\begin_inset Formula $(11.3.13)$
+\end_inset
+
+ if we make the substitutions 
+\begin_inset Formula $c_{0}=1,c_{1}=0,c_{*}=\beta_{0}^{*}$
+\end_inset
+
+.
+ And we obtrain the following random variable, 
+\begin_inset Formula $U_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U_{0}=\frac{\hat{\beta}_{0}-\beta_{0}^{*}}{\sigma^{'}[\frac{1}{n}+\frac{\bar{x}^{2}}{s_{x}^{2}}]^{1/2}}\text{ (11.3.19)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which has 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-2$
+\end_inset
+
+ degrees of freedom if 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\beta}_{0}=\bar{Y}-\bar{x}\hat{\beta}_{1}=0.4352$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\beta}_{1}=\frac{\sum_{i=1}^{n}(x_{i}-\bar{x})Y_{i}}{s_{x}^{2}}=0.14721$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s_{x}=(\sum_{i=1}^{n}(x_{i}-\bar{x})^{2})^{1/2}=0.916$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sigma^{'}=(\frac{S^{2}}{n-2})^{1/2}=4.02$
+\end_inset
+
+ from (11.3.12) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta_{0}^{*}=0.7$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S^{2}=\sum_{i=1}^{n}(Y_{i}-\hat{\beta}_{0}-\hat{\beta}_{1}x_{i})^{2}=129.26$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $U_{0}=-6.695$
+\end_inset
+
+ (coded) 
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula $\alpha=0.05$
+\end_inset
+
+, we have 
+\begin_inset Formula $T_{7}^{-1}(1-\alpha/2)=T_{7}^{-1}(0.975)=2.365$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $|U_{0}|=6.695<2.365$
+\end_inset
+
+, so rejected 
+\end_layout
+
+\begin_layout Exercise*
+2.
+ Test regression line passes through origin of xyplane .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Making use of Eq.
+ (11.3.20), this test is equivalent : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\beta_{0}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\beta_{0}\neq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similar to Exercise 1, with replacing 
+\begin_inset Formula $\beta_{0}^{*}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+3.
+ Slope 
+\begin_inset Formula $=1$
+\end_inset
+
+, that is related to Eq.
+ (11.3.21) 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\beta_{1}=\beta_{1}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\beta_{1}=\beta_{1}^{*}\text{ (11.3.21)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+So we have the statistic 
+\begin_inset Formula $U_{1}=s_{x}\frac{\hat{\beta}_{1}-\beta_{1}^{*}}{\sigma^{'}}$
+\end_inset
+
+ have 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-2$
+\end_inset
+
+ degrees of freedom if 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is true.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+4.
+ Testing the hypothesis that the regression line is horizontal, It means
+ that 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\beta_{1}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\beta_{1}\neq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+We again use statistic from (11.3.22) 
+\begin_inset Formula $U_{1}=s_{x}\frac{\hat{\beta_{1}}-\beta_{1}^{*}}{\sigma^{'}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+5.
+ Test the following hypotheses at the level of significance 0.1: 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\beta_{1}=5\beta_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\beta_{1}\neq5\beta_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is equivalent to 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:5\beta_{0}-\beta_{1}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:5\beta_{0}-\beta_{1}\neq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This test of hypotheses is about a linear combination of 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+For this type, we apply Theorem 11.3.3 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U_{01}=[\frac{c_{0}^{2}}{n}+\frac{(c_{0}\bar{x}-c_{1})^{2}}{s_{x}^{2}}]^{-1/2}(\frac{c_{0}\hat{\beta}_{0}+c_{1}-c_{*}}{\sigma^{'}})\text{ (11.3.14)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+has 
+\begin_inset Formula $T_{n-2}^{-1}$
+\end_inset
+
+ is the quantile function of 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-2$
+\end_inset
+
+ degrees of freedom.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $c_{0}=5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $c_{1}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $c_{*}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U_{01}=0.664$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{7}^{-1}(0.95)=1.895$
+\end_inset
+
+ .
+ So 
+\begin_inset Formula $|U_{01}|<T_{7}^{-1}(1-\alpha_{0}/2)$
+\end_inset
+
+.
+ So don't reject test
+\end_layout
+
+\begin_layout Exercise*
+6.
+ Similar to 
+\begin_inset Formula $5$
+\end_inset
+
+, with hypothesis:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\beta_{1}+\beta_{0}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\beta_{1}+\beta_{0}\neq1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ 
+\begin_inset Formula $D=\hat{\beta}_{0}+\hat{\beta}_{1}\bar{x}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Cov(D,\hat{\beta}_{1})=E[D\hat{\beta}_{1}]-E[D]E[\hat{\beta}_{1}]$
+\end_inset
+
+ 
+\begin_inset Formula $=E[\hat{\beta}_{0}\hat{\beta}_{1}+\hat{\beta}_{1}^{2}\bar{x}]-E[\hat{\beta}_{0}+\hat{\beta}_{1}\bar{X}]E[\hat{\beta}_{1}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $=E[\hat{\beta}_{0}\hat{\beta}_{1}]+\bar{X}E(\hat{\beta_{1}^{2}})-\beta_{0}\beta_{1}-\beta_{1}^{2}\bar{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $=Cov(\hat{\beta}_{0},\hat{\beta}_{1})+E[\hat{\beta}_{1}]E[\hat{\beta}_{0}]+\bar{x}E(\hat{\beta}_{1}^{2})-\beta_{0}\beta_{1}-\beta_{1}^{2}\bar{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $=\frac{-\bar{x}\sigma^{2}}{s_{x}^{2}}+\beta_{0}\beta_{1}+\bar{x}\frac{\sigma^{2}}{s_{x}^{2}}-\beta_{0}\beta_{1}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+(Applied 
+\begin_inset Formula $Cov(\hat{\beta_{1}},\hat{\beta}_{0})$
+\end_inset
+
+ from Theorem 11.2.2)
+\end_layout
+
+\begin_layout Exercise*
+Now, we want to prove 
+\begin_inset Formula $D$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{1}$
+\end_inset
+
+ are independent .
+ First, from Theorem 5.6.7 and 
+\begin_inset Formula $\hat{\beta}_{i}$
+\end_inset
+
+ has normal distribution so 
+\begin_inset Formula $D$
+\end_inset
+
+ have normal distribution.
+ 
+\end_layout
+
+\begin_layout Exercise*
+suppose 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is corelation of 
+\begin_inset Formula $D$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta}_{1}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\rho=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+From Theorem 
+\begin_inset Formula $5.10.1$
+\end_inset
+
+, we can easily prove exists 
+\begin_inset Formula $Z_{1},Z_{2}$
+\end_inset
+
+ such th at 
+\begin_inset Formula $X_{1}=D$
+\end_inset
+
+ , 
+\begin_inset Formula $X_{2}=\hat{\beta}_{1}$
+\end_inset
+
+ have parameters 
+\begin_inset Formula $\mu_{1},\mu_{2},\sigma_{1},\sigma_{2},\rho=0$
+\end_inset
+
+.
+ So joint distribution of 
+\begin_inset Formula $D,\hat{\beta}_{1}$
+\end_inset
+
+ 
+\begin_inset Formula $f(D,\hat{\beta}_{1})$
+\end_inset
+
+ have form of bivariate normal distribution, Moreover covariance 
+\begin_inset Formula $\rho=0$
+\end_inset
+
+, So these 2 variables are independent.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+ Because 
+\begin_inset Formula $D$
+\end_inset
+
+ is normal distribution so, from Corrolary 8.2.1, 
+\begin_inset Formula $\frac{Q^{2}}{\sigma^{2}}$
+\end_inset
+
+ has chisquare distribution with 2 degree of freedom.
+\end_layout
+
+\begin_layout Exercise*
+9.
+ From eq.
+ (11.3.32)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+10,11, 12.
+ From Theorem 11.3.5
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+13, 14.
+ From Theorem 11.3.6
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+16.
+ Let 
+\begin_inset Formula $U$
+\end_inset
+
+ be as degined by Eq.
+ (11.3.32) and let 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ be fixed positive constant.
+ For all observed values 
+\begin_inset Formula $(x_{i},y_{i})$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ the set points 
+\begin_inset Formula $(\beta_{0}^{*},\beta_{1}^{*})$
+\end_inset
+
+ such that 
+\begin_inset Formula $U^{2}<\gamma$
+\end_inset
+
+ is the interior of an ellipse in the 
+\begin_inset Formula $\beta_{0}^{*}\beta_{1}^{*}-$
+\end_inset
+
+plane.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U^{2}<\gamma\rightarrow Q^{2}<a\rightarrow n(\hat{\beta}_{0}-\beta_{0}^{*})^{2}+(\sum_{i=1}^{n}x_{i}^{2})(\hat{\beta}_{1}-\beta_{1}^{*})^{2}+2n\bar{x}(\hat{\beta}_{0}-\beta_{o}^{*})(\hat{\beta}_{1}-\beta_{1}^{*})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see final equation has form of hyperbola equation.
+ So not ellipse ?????
+\end_layout
+
+\begin_layout Exercise*
+17.
+ From data of table 11.9, we replace value for each term in 
+\begin_inset Formula $U^{2}=\frac{\frac{1}{2}Q^{2}}{\sigma^{'^{2}}}$
+\end_inset
+
+.
+ and from confidence coefficient 0.95, we have 
+\begin_inset Formula $\alpha_{0}=0.05$
+\end_inset
+
+, therefore we can compute 
+\begin_inset Formula $F_{2,n-2}^{-1}(1-\alpha_{0})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+18.
+ a.
+ Confidence band in equation (11.3.33) (based on 
+\begin_inset Formula $F-$
+\end_inset
+
+ distribution)
+\end_layout
+
+\begin_layout Exercise*
+b.
+ Confidence for regression line at the ppont 
+\begin_inset Formula $x$
+\end_inset
+
+ in equation (11.3.34) (based on 
+\begin_inset Formula $f-$
+\end_inset
+
+distribtion) with 
+\begin_inset Formula $c_{1}=x$
+\end_inset
+
+.
+ Fig 11.13
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+19.
+ 
+\begin_inset Formula $cS^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $S$
+\end_inset
+
+ in equation (11.3.9).
+ find 
+\begin_inset Formula $c$
+\end_inset
+
+ for 
+\begin_inset Formula $cS$
+\end_inset
+
+ will be an unbiased estimator of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $c=\frac{1}{n-2}$
+\end_inset
+
+.
+ Easily can see: 
+\begin_inset Formula $E(\frac{S^{2}}{n-2})=E(\frac{S^{2}}{\sigma^{2}}\frac{\sigma^{2}}{n-2})$
+\end_inset
+
+=
+\begin_inset Formula $E(\frac{S^{2}}{\sigma^{2}})\frac{\sigma^{2}}{n-2}$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $\frac{S^{2}}{\sigma^{2}}$
+\end_inset
+
+ has 
+\begin_inset Formula $\chi_{n-2}^{2}$
+\end_inset
+
+so 
+\begin_inset Formula $E[\frac{S^{2}}{\sigma^{2}}]=n-2$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $E[cS^{2}]=\sigma^{2}$
+\end_inset
+
+so 
+\begin_inset Formula $cS^{2}$
+\end_inset
+
+ is unbiased estimator of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+20.
+ Equation (11.3.24) or (11.3.25)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+21 code.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+23.
+ Prove in 9.5.1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+25.
+ Narrow band is with 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution.
+ And Wider band is with 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution, because it has more restrictive requirement.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+11.5.
+ The general linear Model and Multiple Regression 
+\end_layout
+
+\begin_layout Exercise*
+1.
+ Show that the M.L.E of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ in the general linear model is given by Eq.
+ (11.5.7)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eq.
+ (11.5.7): 
+\begin_inset Formula $\hat{\sigma}^{2}=\frac{S^{2}}{n}$
+\end_inset
+
+ with 
+\begin_inset Formula $S^{2}=\sum_{i=1}^{n}(Y_{i}-z_{i0}\hat{\beta}_{0}-...-z_{ip-1}\hat{\beta}_{p-1})^{2}$
+\end_inset
+
+ (11.5.6)
+\end_layout
+
+\begin_layout Standard
+Using Eq.
+ (11.5.4), then apply maximum likelihood for this function with parameter
+ 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ : 
+\begin_inset Formula $\frac{\partial L}{\partial\sigma}=0$
+\end_inset
+
+, then we will have result.
+\end_layout
+
+\begin_layout Exercise*
+2.
+ Prove that 
+\begin_inset Formula $\sigma^{'^{2}}$
+\end_inset
+
+ , defined in Eq.
+ (11.5.8), is an unbiased estimator of 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ You may assume that 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S^{2}/\sigma^{2}=\sum_{i=1}^{n}(Y_{i}-z_{i0}\hat{\beta}_{0}-...-z_{ip-1}\hat{\beta}_{p-1})^{2}/\sigma^{2}\sim\chi_{n-p}$
+\end_inset
+
+, so 
+\begin_inset Formula $E[S^{2}/\sigma^{2}]=n-p$
+\end_inset
+
+, and 
+\begin_inset Formula $E[S^{2}]=(n-p)\sigma^{2}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $E[S^{2}/(n-p)]=\sigma^{2}$
+\end_inset
+
+ .
+ So 
+\begin_inset Formula $\sigma^{'^{2}}$
+\end_inset
+
+ is unbiased estimator.
+\end_layout
+
+\begin_layout Exercise*
+3.
+ Show that the M.L.E of 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is 
+\begin_inset Formula $\hat{\beta}=\frac{\sum_{i=1}^{n}x_{i}Y_{i}}{\sum_{i=1}^{n}x_{i}^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is similar to solution of exercise 1.
+ We can derive from Eq.
+ (11.5.4) 
+\begin_inset Formula $\frac{1}{(2\pi\sigma^{2})^{n/2}}exp[\frac{-1}{2\sigma^{2}}\sum_{i=1}^{n}(y_{i}-x_{i0}\beta_{0}-...-x_{ip-1}\beta_{p-1})^{2}]=L$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\frac{\partial L}{\partial\beta_{i}}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+4.
+ From 
+\begin_inset Formula $Y=\beta X$
+\end_inset
+
+, we replace in equation if 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+.
+ then we will have result.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+5.
+ 
+\begin_inset Formula $\hat{\beta}=\frac{\sum_{i=1}^{n}x_{i}Y_{i}}{\sum_{i=1}^{n}x_{i}^{2}}=5.126$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{\sigma}^{2}=\frac{S^{2}}{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+6.
+ For the conditions of Exercise 5 and the data in Table 11.14, carry out
+ a test of the following hypotheses:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\beta=10
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\beta\neq10
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $Z=X=[0.6,1.0,....]$
+\end_inset
+
+, then 
+\begin_inset Formula $\beta=ZZ^{'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ Consider a regression problem in which a patient's reaction 
+\begin_inset Formula $Y$
+\end_inset
+
+ to a new drug 
+\begin_inset Formula $B$
+\end_inset
+
+ is to be related to his reaction 
+\begin_inset Formula $X$
+\end_inset
+
+ to a standard drug 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Suppose that for each value 
+\begin_inset Formula $x$
+\end_inset
+
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+, the regression function is a polynomial of the form 
+\begin_inset Formula $E(Y)=\beta_{0}+\beta_{1}x+\beta_{2}x^{2}$
+\end_inset
+
+ .
+ Suppose also that 
+\begin_inset Formula $10$
+\end_inset
+
+ pairs of observed values are as shown in Table 11.1 on page 690.
+ Under the standard assumptions of the general linear model, determine the
+ values of the M.L.E.'s 
+\begin_inset Formula $\hat{\beta}_{0},\hat{\beta}_{1},\hat{\beta}_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\sigma}^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+code.
+ 
+\end_layout
+
+\begin_layout Exercise*
+8.
+ For the conditions of Exercise 
+\begin_inset Formula $7$
+\end_inset
+
+ and the data in Table 11.1, determine the values of 
+\begin_inset Formula $Var(\hat{\beta}_{0}),Var(\hat{\beta}_{1}),Var(\hat{\beta}_{2}),Cov(\hat{\beta}_{i},\hat{\beta}_{j})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Var(\hat{\beta}_{j})$
+\end_inset
+
+ equals 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ times the 
+\begin_inset Formula $j$
+\end_inset
+
+th diagonal entry of the matrix 
+\begin_inset Formula $(Z^{'}Z)^{-1}$
+\end_inset
+
+, And 
+\begin_inset Formula $Cov(\hat{\beta}_{i},\hat{\beta}_{j})$
+\end_inset
+
+ will be equal to 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ times the entry in the 
+\begin_inset Formula $i$
+\end_inset
+
+th row and 
+\begin_inset Formula $j$
+\end_inset
+
+th column of the matrix 
+\begin_inset Formula $(Z^{'}Z)^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+9 For the conditions of Exercise 
+\begin_inset Formula $7$
+\end_inset
+
+ and the data in Table 11.1, carry out a test of the following hypotheses:
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\beta_{2}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\beta_{2}\ne0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(Z'Z)^{-1}:$
+\end_inset
+
+
+\begin_inset Graphics
+	filename img/zeta_11.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sigma^{'2}=(\frac{S^{2}}{n})=\frac{n-p}{n}\hat{\sigma^{2}}=\frac{10}{7}0.937$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Eq.
+ (11.5.21), 
+\begin_inset Formula $U_{1}$
+\end_inset
+
+ have 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $n-p=10-3=7$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U_{2}=\frac{(\hat{\beta}_{2}-\beta_{j}^{*})}{(\zeta_{jj})^{1/2}\sigma^{'}}=\frac{0.013-0}{0.014^{1/2}\sigma^{'}}=0.095$
+\end_inset
+
+, min of x following table of t distribution is 0.13 ~ p=0.55, so tail area
+ is 0.9.
+\end_layout
+
+\begin_layout Exercise*
+11.
+ For this conditions of Exercise 
+\begin_inset Formula $7$
+\end_inset
+
+ and the data given in Table 11.1, determine the value of 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+, as defined by Eq.
+ (11.5.26)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R^{2}=1-\frac{\sum_{i=1}^{n}(y_{i}-\hat{y}_{i})^{2}}{\sum_{i=1}^{n}(y_{i}-\bar{y})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Coded, result = 0.644
+\end_layout
+
+\begin_layout Exercise*
+12.
+ 
+\begin_inset Formula $\hat{\beta}=(Z^{'}Z)^{'}Z^{'}Y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+13.
+ Like exercise 8
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+14, 15.
+ Like exercise 9
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+16, like 11.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+17.
+ Consider the general linear model in which the observations 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+ are independent and have normal distributions with the same variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ and in which 
+\begin_inset Formula $E(Y_{i})$
+\end_inset
+
+ is given by Eq.
+ (11.5.1).
+ Let the matrx 
+\begin_inset Formula $(Z^{'}Z)^{-1}$
+\end_inset
+
+ be defined by Eq.
+ (11.5.19).
+ For all values of 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ such that 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ , let the random variable 
+\begin_inset Formula $A_{ij}$
+\end_inset
+
+ be defined as follows:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+A_{ij}=\hat{\beta}_{i}-\frac{\zeta_{ij}}{\zeta_{jj}}\hat{\beta}_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Show that 
+\begin_inset Formula $Cov(\hat{\beta}_{j},A_{ij})=0$
+\end_inset
+
+, and explain why 
+\begin_inset Formula $\hat{\beta}_{j}$
+\end_inset
+
+ and 
+\begin_inset Formula $A_{ij}$
+\end_inset
+
+ are therefore independent
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Cov(\hat{\beta}_{j},\hat{\beta}_{i}-\frac{\zeta_{ij}}{\zeta_{jj}}\hat{\beta}_{j})=Cov(\hat{\beta}_{j},\hat{\beta}_{i})-\frac{\zeta_{ij}}{\zeta_{jj}}Cov(\hat{\beta}_{j},\hat{\beta}_{j})=\sigma^{2}\zeta_{ji}-\zeta_{ij}\sigma^{2}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+18.
+ For the conditions of Exercise 17, show that 
+\begin_inset Formula $Var(A_{ij})=[\zeta_{ii}-(\zeta_{ij}^{2}/\zeta_{jj})]\sigma^{2}$
+\end_inset
+
+ .
+ Also show that the following random variable 
+\begin_inset Formula $W^{2}$
+\end_inset
+
+ has the 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ distribution with two degrees of freedom:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+W^{2}=\frac{\zeta_{jj}(\hat{\beta}_{i}-\beta_{i})^{2}+\zeta_{ii}(\hat{\beta}_{j}-\beta_{j})^{2}-2\zeta_{ij}(\hat{\beta}_{i}-\beta_{i})(\hat{\beta}_{j}-\beta_{j})}{(\zeta_{ii}\zeta_{jj}-\zeta_{ij}^{2})\sigma^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{ij}=\hat{\beta}_{i}-\frac{\zeta_{ij}}{\zeta_{jj}}\hat{\beta}_{j}\rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $Var(A_{ij})=Var(\hat{\beta}_{i})+\frac{\zeta_{ij}^{2}}{\zeta_{jj}^{2}}Var(\hat{\beta}_{j})=\sigma^{2}\zeta_{ii}-\frac{\zeta_{ij}^{2}}{\zeta_{jj}^{2}}\sigma^{2}\zeta_{jj}\rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\sigma^{2}(\zeta_{ii}-\frac{\zeta_{ij}^{2}}{\zeta_{jj}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hint: We prove 
+\begin_inset Formula $W^{2}=\frac{(\hat{\beta}_{j}-\beta_{j})^{2}}{\zeta_{jj}\sigma^{2}}+\frac{[A_{ij}-E(A_{ij})]^{2}}{Var(A_{ij})}$
+\end_inset
+
+ , we should prove numerator 
+\begin_inset Formula $=Var(A_{ij})(\hat{\beta}_{j}-\beta_{j})^{2}+\zeta_{jj}\sigma^{2}*[A_{ij}-E(A_{ij})]^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+19.
+ Consider again the conditions of Exercises 
+\begin_inset Formula $17$
+\end_inset
+
+ and 
+\begin_inset Formula $18$
+\end_inset
+
+ , and let the random variable 
+\begin_inset Formula $\sigma^{'}$
+\end_inset
+
+ be as defined Eq.
+ (11.5.8).
+ 
+\end_layout
+
+\begin_layout Exercise*
+a.
+ Show that the random variable 
+\begin_inset Formula $\sigma^{2}W^{2}/(2\sigma^{'^{2}})$
+\end_inset
+
+ has the 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with two and 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Exercise*
+b.
+ For every two given numbers 
+\begin_inset Formula $\beta_{i}^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{j}^{*}$
+\end_inset
+
+ describe how to carry out a test of the following hypotheses:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{0}:\beta_{i}=\beta_{i}^{*}\text{ and }\beta_{j}=\beta_{j}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+H_{1}:\text{ The hypothesis }H_{0}\text{ is not true.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+a.
+ 
+\begin_inset Formula $\sigma^{2}W^{2}/(2\sigma^{'^{2}})=\frac{W^{2}/2}{\sigma^{'2}(n-2)/[\sigma^{2}(n-2)]}\text{ .}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We previously prove that 
+\begin_inset Formula $W^{2}$
+\end_inset
+
+ has 
+\begin_inset Formula $\text{ }\chi_{2}\text{ }$
+\end_inset
+
+ , 
+\end_layout
+
+\begin_layout Standard
+So now, we prove 
+\begin_inset Formula $\frac{\sigma^{'^{2}}(n-2)}{\sigma^{2}}\text{ . }$
+\end_inset
+
+ has 
+\begin_inset Formula $\chi\text{ distribution}$
+\end_inset
+
+ with 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degree
+\end_layout
+
+\begin_layout Standard
+Come back to 
+\series bold
+Theorem 11.3.2
+\series default
+, this is situation with 2 parameter, in our sitution there are 
+\begin_inset Formula $p\text{ parameter.}$
+\end_inset
+
+ Then we can conclude that 
+\begin_inset Formula $\sigma^{2}W^{2}/(2\sigma^{'^{2}})$
+\end_inset
+
+ has 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with two and 
+\begin_inset Formula $n-p$
+\end_inset
+
+ degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+b.
+ We come back to Section 
+\begin_inset Quotes eld
+\end_inset
+
+Inference about both 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ Simultenously, especially in 
+\series bold
+Eq.
+ (11.3.27)
+\end_layout
+
+\begin_layout Standard
+we shall derive the likelihood ratio test procedure.
+\end_layout
+
+\begin_layout Exercise*
+22.
+ Consider a problem of simple linear regression as describe in Sec.
+ 11.2, and let 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+ be defined by (11.5.26) of this section.
+ Show that 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+R^{2}=\frac{[\sum_{i=1}^{n}(x_{i}-\bar{x})(y_{i}-\bar{y})]^{2}}{[\sum_{i=1}^{n}(x_{i}-\bar{x})][\sum_{i=1}^{n}(y_{i}-\bar{y})^{2}]}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+23.
+ 
+\begin_inset Formula $X=[x_{1},...,x_{n}]$
+\end_inset
+
+, 
+\begin_inset Formula $Y=[y_{1},...,y_{n}]$
+\end_inset
+
+.
+ 
+\begin_inset Formula $X+Y=[x_{1}+y_{1},...,x_{n}+y_{n}]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $E(X+Y)=[E(x_{1}+y_{1}),...,E(x_{n}+y_{n})]=[E(x_{1})+E(y_{1}),...,E(x_{n})+E(y_{n})]$
+\end_inset
+
+
+\begin_inset Formula $=[E(x_{1}),...,E(x_{n})]+[E(y_{1}),...,E(y_{n})]=E(X)+E(Y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+24.
+ Suppose 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are independent 
+\begin_inset Formula $n-$
+\end_inset
+
+dimensional random vectors for which the covariance matrices 
+\begin_inset Formula $Cov(X)$
+\end_inset
+
+ and 
+\begin_inset Formula $Cov(Y)$
+\end_inset
+
+ exist.
+ Show that 
+\begin_inset Formula $Cov(X+Y)=Cov(X)+Cov(Y)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Cov(X+Y)=Cov([x_{1}+y_{1},...,x_{n}+y_{n}])$
+\end_inset
+
+, 
+\begin_inset Formula $Cov_{ij}=Cov(x_{i}+y_{i},x_{j}+y_{j})(1)$
+\end_inset
+
+, Following exercise 5 of chapter 4.6, 
+\begin_inset Formula $Cov_{ij}=Cov(x_{i},x_{j})+Cov(y_{i},y_{j})$
+\end_inset
+
+, so 
+\begin_inset Formula $Cov(X+Y)=Cov(X)+Cov(Y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+25.
+ Suppose that 
+\begin_inset Formula $Y$
+\end_inset
+
+ is a three-dimensional random vector with coordinates 
+\begin_inset Formula $Y_{1},Y_{2},Y_{3}$
+\end_inset
+
+ and suppose that the covariance matrix of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is as follows:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\[
+Cov(Y)=\left[\begin{array}{ccc}
+9 & -3 & 0\\
+-3 & 4 & 0\\
+0 & 0 & 5
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Var(Y_{1})=Cov(Y_{1},Y_{1})=9$
+\end_inset
+
+, 
+\begin_inset Formula $Var(Y_{2})=Cov(Y_{2},Y_{2})=4$
+\end_inset
+
+, 
+\begin_inset Formula $Var(Y_{3})=Cov(Y_{3},Y_{3})=5$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Var(3Y_{1}+Y_{2}-2Y_{3}+8)=9Var(Y_{1})+Var(Y_{2})+4Var(Y_{3})+2*3*Cov(Y_{1},Y_{2})-2*3*2*Cov(Y_{1},Y_{3})-2*2*Cov(Y_{2},Y_{3})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=81+4+20+6*-3-12*0-4*0=105-18=87$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+27.
+ Because fitted value if function of predictor 
+\begin_inset Formula $X$
+\end_inset
+
+, so their variance is similar, and then their shape look same.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+11.6 Analysis of Variance 
+\end_layout
+
+\begin_layout Exercise*
+1.
+ In a one-way layout, show that 
+\begin_inset Formula $\bar{Y}_{i+}$
+\end_inset
+
+ is the least-squares estimator of 
+\begin_inset Formula $\mu_{i}$
+\end_inset
+
+ by showing that the 
+\begin_inset Formula $i$
+\end_inset
+
+th coordinate of the vector 
+\begin_inset Formula $\mathbf{(Z^{'}Z)^{-1}Z^{'}Y}$
+\end_inset
+
+ is 
+\begin_inset Formula $\bar{Y}_{i+}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
