@@ -2263,5 +2263,691 @@ the largest different between the two sample c.d.f.'s from the two different
 
 \end_layout
 
+\begin_layout Chapter*
+10.7.
+ Robust Estimation
+\end_layout
+
+\begin_layout Standard
+In many statistical problems, we might not feel comfortable assuming that
+ the distribution of our data 
+\begin_inset Formula $X$
+\end_inset
+
+ is a member of a single parametric family.
+ Suppose that we consider using an estimator 
+\begin_inset Formula $T=r(X)$
+\end_inset
+
+ of some parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ It might be that 
+\begin_inset Formula $T$
+\end_inset
+
+ has good properties if 
+\begin_inset Formula $X$
+\end_inset
+
+ is a random sample from, say, a normal distribution.
+ On the other hand, we might be concerned about how 
+\begin_inset Formula $T$
+\end_inset
+
+ would behave if 
+\begin_inset Formula $X$
+\end_inset
+
+ were actually a sample from a different distribution.
+ In this section, we introduce a new class of distributions and several
+ new statistics.
+ We then compare the behaviors of these statistics (and some old ones) when
+ the data arise from one of the new distributions (and from some old ones).
+ An estimator is called robust if it performs well compared to other estimators,
+ regardless of the distribution that gives ries to the data.
+\end_layout
+
+\begin_layout Standard
+In this section, we shall define a class of distributions called contaminated
+ normals that we shall use for assessing the performance of various estimators.
+ We shall also introduce special types of robust estimators known as trimmed
+ means and 
+\begin_inset Formula $M-$
+\end_inset
+
+estimatos.
+\end_layout
+
+\begin_layout Section*
+Contaminated Normal Distributions.
+\end_layout
+
+\begin_layout Standard
+For example, suppose the the bulk of the data in which we are interested
+ comprise a sample from the normal distribution with unknown mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ But suppose that, for each observation, there is a small probability 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ that the observation actually comes from a different distribution with
+ p.d.f.
+ 
+\begin_inset Formula $g$
+\end_inset
+
+.
+ That is, the pd.f.
+ of our observable data is actually
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(x)=(1-\epsilon)(2\pi\sigma^{2})^{-1/2}exp(-\frac{1}{2\sigma^{2}}[x-\mu]^{2})+\epsilon g(x).\text{ (10.7.1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+Contaminated Normal Distributions.
+ A distribution whose p.d.f.
+ has the form of Eq.
+ (10.7.1) is called a constaminated normal, and the distribution with p.d.f.
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ is called contaminating distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Trimmed Means
+\end_layout
+
+\begin_layout Definition*
+10.7.2 Trimmed Means.
+ for each positive integer 
+\begin_inset Formula $k$
+\end_inset
+
+ such that 
+\begin_inset Formula $k<n/2$
+\end_inset
+
+, ignore the 
+\begin_inset Formula $k$
+\end_inset
+
+ smallest observatons 
+\begin_inset Formula $Y_{1},...,Y_{k}$
+\end_inset
+
+ and the 
+\begin_inset Formula $k$
+\end_inset
+
+ largest observations 
+\begin_inset Formula $Y_{n},Y_{n-1},...,Y_{n-k+1}$
+\end_inset
+
+ in the sample.
+ The average of the remaining 
+\begin_inset Formula $n-2k$
+\end_inset
+
+ intermediate observations is called the 
+\begin_inset Formula $k$
+\end_inset
+
+th level trimmed mean.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Clearly, the 
+\begin_inset Formula $k$
+\end_inset
+
+th level trimmed mean can be represented as a weighted average of the order
+ statistics having the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{n-2k}\sum_{i=k+1}^{n-k}Y_{i}\text{ (10.7.4)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The sample median is an example of a trimmed mean.
+ When 
+\begin_inset Formula $n$
+\end_inset
+
+ is odd, the sample median is the 
+\begin_inset Formula $[(n-1)/2]th$
+\end_inset
+
+ level trimmed mean.
+ When 
+\begin_inset Formula $n$
+\end_inset
+
+ is even, it is the 
+\begin_inset Formula $[(n-2)/2]$
+\end_inset
+
+ th level trimmed mean.
+ In either case, the sample median is the 
+\begin_inset Formula $k$
+\end_inset
+
+th level trimmed mean, where 
+\begin_inset Formula $k$
+\end_inset
+
+ is lower bound of 
+\begin_inset Formula $(n-1)/2$
+\end_inset
+
+ is the largest integer less than or equal to 
+\begin_inset Formula $(n-1)/2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Robust Estimation of Scale
+\end_layout
+
+\begin_layout Standard
+In addition to the median of a distribution, there are other parameters
+ that might be worth estimating even when we are not willing to model our
+ data as arising from a particular parametric family.
+ For example, scale parameters might be valuable for giving an idea how
+ spread out a distribution is.
+ The standard deviation, if it exists, is one such measure.
+ The general class of scale parameters is defined here.
+\end_layout
+
+\begin_layout Definition*
+10.7.3.
+ Scale Parameters.
+ An arbitrary parameter 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is a scale parameter for the distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ if, for all 
+\begin_inset Formula $a>0$
+\end_inset
+
+ and all real 
+\begin_inset Formula $b$
+\end_inset
+
+, the corresponding parameter for the distribution of 
+\begin_inset Formula $aX+b$
+\end_inset
+
+ is 
+\begin_inset Formula $a\sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Although the standard deviation is a scale parameter, there are many distributio
+ns (such as the Cauchy) for ehich the standard deviation does not exists.There
+ are alternative measures of spread to the standard deviation that exist
+ and are finite for all distributions.
+\end_layout
+
+\begin_layout Standard
+One scale parameter that exists for every distribution is the interquartile
+ range (IQR) as defined in Definition 4.3.2.
+ An estimator of the IQA if the sample IQR, the difference between the 0.75
+ and 0.25 sample quantiles.
+ (Sample quantiles are just quantiles of the sample c.d.f.)
+\end_layout
+
+\begin_layout Standard
+Another scale parameer that exists for every random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ is the median absolute deviation.
+\end_layout
+
+\begin_layout Definition*
+10.7.4.
+ Median Absolute Deviation.
+ The median absolute deviation of a random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ is the median of the distribution of 
+\begin_inset Formula $|X-m|$
+\end_inset
+
+, where 
+\begin_inset Formula $m$
+\end_inset
+
+ is the median of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If this distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ is symmetric around its median, then the median absolute deivation is one-half
+ of the IQR.
+ For asymmetric distributions, the median absolute deviation is the half-length
+ of the symmetric interval around the media that contain 50 percent of distribut
+ion.
+ The sample median absolute deviation is the sample median of the values
+ 
+\begin_inset Formula $|X_{i}-M_{n}|$
+\end_inset
+
+, where 
+\begin_inset Formula $M_{n}$
+\end_inset
+
+ is the sample media of 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+M-Estimators of the Median
+\end_layout
+
+\begin_layout Standard
+The sample mean is heavily influenced by one extreme observation.
+ For example, if one observation 
+\begin_inset Formula $x$
+\end_inset
+
+ in the sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ in replaced by 
+\begin_inset Formula $x+\Delta$
+\end_inset
+
+, the sample mean changes by 
+\begin_inset Formula $\Delta/n$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is large, this will be a big change.
+ The sample median, on the other hand, is influenced very little, or not
+ at all, by a change in one observation.
+ However, the sample median is inefficient in that it makes use of very
+ few of the observed values.
+ Trimmed means are one attempt to compromise between the sample median and
+ the sample mean by forming estimators estimators that make use of more
+ than just the one or two observations in the middle of sample while maintaining
+ insensitiviry to extrme observations.
+ There are other estimators are M.L.E's of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ under different assumptions about the p.d.f.
+ of the observations.
+\end_layout
+
+\begin_layout Standard
+The sample mean is the M.L.E of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ if we assume that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a normal distribution with mean (and median)
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and arbitrary variance.
+ The sample median is also an M.L.E.
+ it is the M.L.E of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ It is the M.L.E.
+ of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ if we assume that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from one of the following distributions.
+\end_layout
+
+\begin_layout Definition*
+10.7.5 Laplace Distributions.
+ Let 
+\begin_inset Formula $\sigma>0$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta$
+\end_inset
+
+ be real numbers.
+ Th distribution whose p.d.f.
+ is 
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+f(x|\theta,\sigma)=\frac{1}{2\sigma}e^{-|x-\theta|/\sigma}\text{ (10.7.5)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+is called the Laplace distribution with parameters 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition*
+It would be nice to have a compromise between these two types of behavior
+ withour arbitrarily discarding a fixed amount of data.
+ We would like the derivative of the logarithm of the likelihood to be approxima
+tly proportional to 
+\begin_inset Formula $\sum(x_{i}-\theta)$
+\end_inset
+
+ for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ near middle of the data, where the summation is only over the middle observatio
+ns.
+ This will allow the estimator to make use of more data than just the very
+ middle observation.
+ Also, we would like the derivative to flatten out like the laplace case
+ for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ near the extremes so that the actual values of the extreme observations
+ do not affect the estimate.
+ A pdf with theses properties is the following:
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+g_{k}(x|\theta,\sigma)=c_{k}e^{h_{k}([c-\theta]/\sigma)}\text{ (10.7.6)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition*
+where 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is a scale number,
+\end_layout
+
+\begin_layout Definition*
+\begin_inset Formula 
+\[
+h_{k(y)}=\begin{cases}
+-0.5y^{2} & \text{if}-k<y<k\\
+0.5k^{2}-k|y| & \text{otherwise}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We see that 
+\begin_inset Formula $k$
+\end_inset
+
+ can be chosen to reflect how many multiples of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ a data value can be away from 
+\begin_inset Formula $\theta$
+\end_inset
+
+ before we think that it starts to lose importance for estimating 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Typical choices are 
+\begin_inset Formula $1\le k\le2.5$
+\end_inset
+
+.
+ If we suppose that 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ form a random sample from a distribution with pdf 
+\begin_inset Formula $g_{k}(x|\theta,\sigma)$
+\end_inset
+
+, the MLE of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ can be a compromise between the sample media and the sample mean.
+\end_layout
+
+\begin_layout Definition*
+10.7.6.
+ M-Estimators.
+ The M.L.E of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ under the assumption that the data have p.d.f.
+ 
+\begin_inset Formula $g_{k}$
+\end_inset
+
+ in Eq.
+ (10.7.6) is called an M-estimators.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Note: Simultaneous M-Esimators Exist for the Median and Scale parameters.
+ 
+\series medium
+It is possible to estimate the median and a scale parameter simultaneously
+ using a method very similar to that described for M-estimators.
+ That is, instead of just picking a value for 
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+ in the M-esitmator algorith,, we can construct a more complicated algorithm
+ that estimates both the median and a scale parameter.
+ 
+\end_layout
+
+\begin_layout Section*
+Comparison of the Estimators
+\end_layout
+
+\begin_layout Standard
+It is acknowledged that a robust estimator will perform better than 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+in a situation of the type just described.
+ However, if 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ actually do form a random sample from a normal distribution, then 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+will perform better than a robust estimator.
+ Since we are typically not certain which situation obtains in a particular
+ problem, it is important to know how much larger the M.S.E.
+ of a robust estimator will be than the M.S.E.
+ of 
+\begin_inset Formula $\bar{X}_{n}$
+\end_inset
+
+ when the actual distribution is normal.
+ In other words, it is important to known how much is lost if we use robust
+ estimator when the actual distributio is normal.
+\end_layout
+
+\begin_layout Standard
+If there is reason to believe that p.d.f.
+ 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is approximately by normal, then 
+\begin_inset Formula $\theta$
+\end_inset
+
+ might be estimated by using s trimmed mean, which is obtained by omitting
+ about 10 or 15 percent of the observed values at each end of the ordered
+ sample.
+ Alternatively, an M-estimator with 
+\begin_inset Formula $k=2$
+\end_inset
+
+ or 
+\begin_inset Formula $2.5$
+\end_inset
+
+ could be used.
+ If the p.d.f.
+ 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ might be far from normal or if several of the observations might be outliers,
+ then the sample median might be used to estimate 
+\begin_inset Formula $\theta$
+\end_inset
+
+, or one could be used an M-estimator with 
+\begin_inset Formula $k=1$
+\end_inset
+
+ or 
+\begin_inset Formula $1.5$
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
