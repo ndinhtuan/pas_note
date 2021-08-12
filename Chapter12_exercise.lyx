@@ -1,0 +1,2181 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+12.1
+\end_layout
+
+\begin_layout Exercise*
+5.
+ c) 
+\begin_inset Formula $P(X,Y)=P(X)P(Y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+12.2 Why is Simulation Useful ?
+\end_layout
+
+\begin_layout Exercise*
+2.
+ In example, following Eq.
+ (12.2.6), 
+\begin_inset Formula $v=\frac{\hat{\sigma}^{2}}{\epsilon^{2}(1-\gamma)}$
+\end_inset
+
+, with 
+\begin_inset Formula $\epsilon=0.01,\gamma=0.95$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+6.b.
+ Determine an appropriate:
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $X\sim Beta(3.5,3.7),Y\sim Beta(1.8,4.2)$
+\end_inset
+
+.
+ Find distribution of 
+\begin_inset Formula $\frac{X}{X+Y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Remind: 
+\begin_inset Formula $Beta(\alpha,\beta)=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+From Theorem 5.8.4, we can have 
+\begin_inset Formula $\frac{X}{X+Y}$
+\end_inset
+
+ will have beta distribution with parameter: 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+and 
+\begin_inset Formula $\sigma^{2}=\frac{\alpha\beta}{(\alpha+\beta)^{2}(\alpha+\beta+1)}$
+\end_inset
+
+ (from Theorem 5.3.8)
+\end_layout
+
+\begin_layout Exercise*
+So we can find appropriate number 
+\begin_inset Formula $v=\frac{\sigma^{2}}{\epsilon^{2}(1-\gamma)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9
+\end_layout
+
+\begin_layout Standard
+Reminder: 
+\end_layout
+
+\begin_layout Standard
+Following Eq.
+ (3.6.12): 
+\end_layout
+
+\begin_layout Standard
+If we have p.d.f of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is 
+\begin_inset Formula $f_{2}(y)$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{1}(x|y)$
+\end_inset
+
+ is conditional p.d.f of 
+\begin_inset Formula $X$
+\end_inset
+
+ given 
+\begin_inset Formula $Y=y$
+\end_inset
+
+.
+ Then p.d.f of 
+\begin_inset Formula $X$
+\end_inset
+
+ is 
+\begin_inset Formula $f_{1}(x)=\int_{-\infty}^{\infty}g_{1}(x|y)f_{2}(y)dy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Eq (5.7.10):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int_{0}^{\infty}x^{\alpha-1}exp(\beta x)dx=\frac{\Gamma(\alpha)}{\beta^{\alpha}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In Example 12.2.12
+\end_layout
+
+\begin_layout Standard
+We have 
+\begin_inset Formula $f(x|\mu)=\mu e^{-\mu x};f(\mu)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x},\beta=1,\alpha=3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So based on Eq (3.6.12): 
+\begin_inset Formula $f(x)=\int_{-\infty}^{\infty}\mu e^{-\mu x}\frac{\beta^{\alpha}}{\Gamma(\alpha)}\mu^{\alpha-1}e^{-\beta\mu}d\mu$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{1}{\Gamma(3)}\int_{0}^{\infty}\mu e^{-\mu x}\mu^{2}e^{-\mu}d(\mu)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $=\frac{1}{\Gamma(3)}\int_{0}^{\infty}\mu^{3}e^{-\mu(\alpha+1)}d\text{\ensuremath{\mu}}$
+\end_inset
+
+ based on Eq.
+ (5.7.10):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x)=\frac{1}{\Gamma(3)}\frac{\Gamma(4)}{(x+1)^{4}}=\frac{3}{(x+1)^{4}}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $F(x)=\int f(x)=\frac{-1}{(x+1)^{3}}=0.5\rightarrow x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+10.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+a.
+ Median of Exponential distribution is 
+\begin_inset Formula $\frac{\ln2}{\lambda}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+b.
+ with 
+\begin_inset Formula $\lambda=1$
+\end_inset
+
+, M.S.E of sample median is 
+\begin_inset Formula $\theta=E[(Y-\frac{\ln2}{\lambda})]^{2}=E[(Y-ln2)]^{2}$
+\end_inset
+
+.
+ So In general, with 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, MSE 
+\begin_inset Formula $=\frac{1}{\lambda^{2}}E[(Y-ln2)]^{2}=\frac{\theta}{\lambda^{2}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+c.
+ Simulation method for estimating 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Generate 
+\begin_inset Formula $v$
+\end_inset
+
+ of 
+\begin_inset Formula $n$
+\end_inset
+
+ sample for 
+\begin_inset Formula $i=1,...,v$
+\end_inset
+
+ find 
+\begin_inset Formula $Y^{i}$
+\end_inset
+
+ is median sample of that 
+\begin_inset Formula $n$
+\end_inset
+
+ sample.
+ Then We compute 
+\begin_inset Formula $Z_{i}=(Y^{i}-ln2/\lambda)^{2}$
+\end_inset
+
+.
+ Then compute 
+\begin_inset Formula $\bar{Z}=\frac{1}{n}\sum Z_{i}$
+\end_inset
+
+.
+ (From Example 12.2.6)
+\end_layout
+
+\begin_layout Exercise*
+12.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apply 
+\begin_inset Formula $Var(aX+bY+c)=a^{2}Var(X)+b^{2}Var(Y)+2abCov(X,Y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula $aX+bY+c$
+\end_inset
+
+ in this situation equals 
+\begin_inset Formula $g(\bar{Y},\bar{W})=g(E(Y),E(W))+g_{1}(E(Y),E(W))(\bar{Y}-E(Y))+g_{2}(E(Y),E(W))(\bar{W}-E(W))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+13.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z=g(Y,W)=\bar{W}-\bar{Y}^{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $g_{1}=\frac{\partial g}{\partial Y}=-2Y$
+\end_inset
+
+.
+ 
+\begin_inset Formula $g_{2}=\frac{\partial g}{\partial W}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apply exercise 12 but get 
+\begin_inset Formula $y_{0}=\bar{Y}$
+\end_inset
+
+, 
+\begin_inset Formula $w_{0}=\bar{W}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $g(y,w)=g_{1}(\bar{Y},\bar{W})^{2}\sigma_{YY}+2g_{1}(\bar{Y},\bar{W})g_{2}(\bar{Y},\bar{W})\sigma_{yw}+g_{2}(\bar{Y},\bar{W})\sigma_{ww}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=4\bar{Y}^{2}\sigma_{YY}-4\bar{Y}\sigma_{YW}+\sigma_{WW}$
+\end_inset
+
+.
+ From Example 12.2.10, 
+\begin_inset Formula $\sigma_{YY}=Z\text{ }$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{YW}=C$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{WW}=V$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+So we have result.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Note: 
+\series medium
+From Exercise 12, 13 we can conclude if we have to compute variance of function
+ of 2 variables we can use Taylor expansion as exercise 12 to separate joint
+ distribution to one distribution, then we can compute variance for each
+ term based on individual variance (maybe we have to compute extra covariance).
+\end_layout
+
+\begin_layout Exercise*
+14.
+ Generating 
+\begin_inset Formula $n$
+\end_inset
+
+ sample , then compute 
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+ of 
+\begin_inset Formula $n$
+\end_inset
+
+ elements.
+ Compute 
+\begin_inset Formula $\mu=\bar{X}$
+\end_inset
+
+, them compute 
+\begin_inset Formula $E((X-\mu)^{3})=\frac{1}{n}(X_{i}-\bar{X})^{3}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+12.3 Simulating Specific Distribution
+\end_layout
+
+\begin_layout Exercise*
+2.
+ 
+\begin_inset Formula $U_{1},...,U_{n}$
+\end_inset
+
+ is uniform distribution on the interval 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+ Convert to 
+\begin_inset Formula $n$
+\end_inset
+
+ uniform distribution on the interval 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+: 
+\begin_inset Formula $U_{x}a+b-a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+3.
+ In this exercise, the two most important part is generating sample from
+ two distributions: 
+\begin_inset Formula $g_{1}(x)=\frac{1}{2x^{1/2}}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{2}(x)=\frac{1}{2(1-x)^{1/2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+First, we have to find c.d.f 
+\begin_inset Formula $G$
+\end_inset
+
+ for each density function, then we find its 
+\begin_inset Formula $x=G^{-1}(y)=f(y)$
+\end_inset
+
+, finally 
+\begin_inset Formula $f(y)$
+\end_inset
+
+ of 
+\begin_inset Formula $y$
+\end_inset
+
+ having uniform disitribution on 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ will be simulated.
+\end_layout
+
+\begin_layout Exercise*
+For 
+\begin_inset Formula $g_{1}(x)=\frac{1}{2x^{1/2}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $G(x)=x^{1/2}.$
+\end_inset
+
+ 
+\begin_inset Formula $G^{-1}(y)=y^{2}$
+\end_inset
+
+.
+ So if generating 
+\begin_inset Formula $y$
+\end_inset
+
+ from uniform distribution on 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+, 
+\begin_inset Formula $y^{2}$
+\end_inset
+
+ will have distribution 
+\begin_inset Formula $g_{1}(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+Similarly, 
+\begin_inset Formula $1-y^{2}$
+\end_inset
+
+ have 
+\begin_inset Formula $g_{2}(x)$
+\end_inset
+
+ distirbution, with 
+\begin_inset Formula $y$
+\end_inset
+
+ having uniform distribution on 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+6.
+ a.
+ Laplace distribution with parameters are 
+\begin_inset Formula $1,1$
+\end_inset
+
+: 
+\begin_inset Formula $f(x|1,1)=\frac{1}{2}e^{-|x-1|}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+c.d.f 
+\begin_inset Formula $G(x)=\begin{cases}
+\frac{1}{2}exp(x-1) & x\le1\\
+1-\frac{1}{2}exp(-x+1) & x\ge1
+\end{cases}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $G^{-1}(y)=\begin{cases}
+1+log(2y) & log(2y)\le0\\
+1-log(1-2y) & log(1-2y)\le0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+if 
+\begin_inset Formula $y\in Uniform[0,1]$
+\end_inset
+
+ them 
+\begin_inset Formula $G^{-1}(Y)$
+\end_inset
+
+ will have Laplace distribution.
+ This is way to simulate Laplace: First we simulate 
+\begin_inset Formula $Y$
+\end_inset
+
+ in uniform 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+, if 
+\begin_inset Formula $log(2y)\le0$
+\end_inset
+
+ them 
+\begin_inset Formula $1+log(2y)$
+\end_inset
+
+ will be coresponding value sampling in Laplace distribution, otherwise,
+ if 
+\begin_inset Formula $log(1-2y)\le0$
+\end_inset
+
+, then 
+\begin_inset Formula $1-log(1-2y)$
+\end_inset
+
+ will be sample value.
+\end_layout
+
+\begin_layout Exercise*
+b.
+ To sample normal we find 
+\begin_inset Formula $k$
+\end_inset
+
+ for 
+\begin_inset Formula $\frac{f(x)}{g(x)}\le k$
+\end_inset
+
+ , with 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is normal distribution and 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ is laplace distribution.
+ 
+\begin_inset Formula $\frac{f(x)}{g(x)}\sim\frac{e^{-x^{2}/2}}{e^{-x}}=A$
+\end_inset
+
+ , maxinmize 
+\begin_inset Formula $A$
+\end_inset
+
+ with find derivation of A equals 
+\begin_inset Formula $0$
+\end_inset
+
+ with find 
+\begin_inset Formula $x=1$
+\end_inset
+
+ , then 
+\begin_inset Formula $k=e^{1/2}$
+\end_inset
+
+.
+ So we apply procedure similar to section after 12.3.3.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ F-formation have form: 
+\begin_inset Formula $\frac{X/n}{Y/m}$
+\end_inset
+
+ with 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ have 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ freedom is 
+\begin_inset Formula $n,m$
+\end_inset
+
+.
+ So we simulate 
+\begin_inset Formula $n$
+\end_inset
+
+ normal distribution value: 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ .
+ Similarly, 
+\begin_inset Formula $Y_{1,},...,Y_{m}$
+\end_inset
+
+.
+ Then simulate for 
+\begin_inset Formula $F_{n,m}:\frac{(\sum_{i}X_{i})/n}{(\sum_{j}Y_{j})/m}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8.
+ c.
+ 
+\begin_inset Formula $v=[\Phi^{-1}(\frac{1+\gamma}{2})\frac{\sigma}{\epsilon}]^{2}\sim[\Phi^{-1}(\frac{1+\gamma}{2})\frac{\hat{\sigma}}{\epsilon}]^{2}$
+\end_inset
+
+.
+ But we didn't know c.d.f 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ of 
+\begin_inset Formula $|X-Y|$
+\end_inset
+
+.
+ With 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ is two 
+\begin_inset Formula $t$
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ We use simulation Monte-Carlo 
+\begin_inset Formula $Z=\frac{1}{n}\sum_{i}^{n}|X_{i}-Y_{i}|$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $Z$
+\end_inset
+
+ have approximately normal distribution with 
+\begin_inset Formula $\mu=E(|X-Y|)$
+\end_inset
+
+ (Central limit theorem), then 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ is c.d.f.
+ of standard normal distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9.
+ We have to find 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ such that 
+\begin_inset Formula $kg(x)\ge f(x)$
+\end_inset
+
+ ??
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+10.
+ Using uniform distribution to simulate 
+\begin_inset Formula $n$
+\end_inset
+
+ sample in discrete distribution for 4 elements 
+\begin_inset Formula $i=1,2,3,4$
+\end_inset
+
+.
+ Then, posterior distribution of 
+\begin_inset Formula $P_{i}$
+\end_inset
+
+ is beta distribution with parameters : 
+\begin_inset Formula $\alpha_{0}+x_{i}$
+\end_inset
+
+ , 
+\begin_inset Formula $\beta_{0}+n_{i}-x_{i}$
+\end_inset
+
+ , as defined in Example 12.2.3 
+\begin_inset Formula $(n_{1}+n_{2}+n_{3}+n_{4}=n)$
+\end_inset
+
+.
+ From exercise we have 
+\begin_inset Formula $\alpha_{0}=1,\beta_{0}=1$
+\end_inset
+
+, so we have 
+\begin_inset Formula $4$
+\end_inset
+
+ distribution.
+ Then use simulation for beta in Example.
+ 12.3.3 to simulate 
+\begin_inset Formula $5000$
+\end_inset
+
+ vector and then, compute 
+\begin_inset Formula $\hat{p}_{1\_max}=\frac{n_{1\_max}}{n}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $n_{1\_max}$
+\end_inset
+
+ is number vector having 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+ max.
+\end_layout
+
+\begin_layout Exercise*
+b.
+ Compute number of sample 
+\begin_inset Formula $n$
+\end_inset
+
+ such that, 
+\begin_inset Formula $P(|Z-p_{1\_max}|\le0.01)\ge0.95$
+\end_inset
+
+, with 
+\begin_inset Formula $Z=\hat{p}_{1\_max}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Z$
+\end_inset
+
+ have approximately normal distribution with mean 
+\begin_inset Formula $p_{1\_max}$
+\end_inset
+
+ .
+ Now want to compute 
+\begin_inset Formula $n$
+\end_inset
+
+ we have to compute simulated variance of 
+\begin_inset Formula $Z$
+\end_inset
+
+.
+ This is similar to Exercise 8.b.
+ Then apply formular (12.2.4) and (12.2.5).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+11.
+ 
+\begin_inset Formula $\chi_{m}^{2}\sim\Gamma(m/2,1/2)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+13.
+ ???
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+14.
+ Coded.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $D_{n,i}^{*}$
+\end_inset
+
+ is 
+\begin_inset Formula $\sup_{-\infty<x<\infty}|F(x)-F^{*}(x)|$
+\end_inset
+
+ (From Eq.
+ (10.6.4)) of 
+\begin_inset Formula $G_{v,i}(x)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Pr(|G_{v,i}-G_{i}|\le0.0082\text{ }|\text{ }\forall x)=Pr(D_{n,i}^{*}\le0.0082)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+Apply Eq.
+ (10.6.5) we can compue 
+\begin_inset Formula $Pr(D_{n,i}^{*}\le t/n^{1/2})$
+\end_inset
+
+ with 
+\begin_inset Formula $t=0.0082$
+\end_inset
+
+ 
+\begin_inset Formula $n=60000$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+Then 
+\begin_inset Formula $Pr(|G_{v,i}-G_{i}|\le0.0082\text{ }|\text{ }\forall x;\forall i)=Pr(D_{n,i}^{*}\le t/n^{1/2})^{3}$
+\end_inset
+
+.
+ I already coded and with 
+\begin_inset Formula $n=20000$
+\end_inset
+
+ replace in Eq.
+ (10.6.5) we compute 
+\begin_inset Formula $Pr(|G_{v,i}-G_{i}|\le0.0082\text{ }|\text{ }\forall x;\forall i)=0.99812$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+12.4 Importance Sampling 
+\end_layout
+
+\begin_layout Exercise*
+1.
+ In Eq.
+ (12.4.1), importance function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is unifrom distributribtuon and 
+\begin_inset Formula $\frac{g(x)}{f(x)}=(b-a)g(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+2.
+ Suppose we do importance sampling 
+\begin_inset Formula $\int g(x)f(x)dx$
+\end_inset
+
+ with importance function 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\begin_inset Formula $\int\frac{g(x)f(x)}{f(x)}f(x)dx=\int g(x)f(x)dx$
+\end_inset
+
+.
+ Then following inportance sampling simulation, we sample 
+\begin_inset Formula $X^{i}$
+\end_inset
+
+ from distribution 
+\begin_inset Formula $f$
+\end_inset
+
+ and compute average of 
+\begin_inset Formula $g(X^{i})$
+\end_inset
+
+.
+ It is same procedure of 
+\begin_inset Formula $a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+3.
+ 
+\begin_inset Formula $f(x)=\frac{(n/2)c^{n/2}}{x^{n/2+1}}$
+\end_inset
+
+ if 
+\begin_inset Formula $x>c$
+\end_inset
+
+.
+ 
+\begin_inset Formula $F(x)=-c^{n/2}x^{-n/2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $F^{-1}(y)=c/\sqrt[n/2]{y}$
+\end_inset
+
+.
+ So if we sample 
+\begin_inset Formula $y$
+\end_inset
+
+ form uniform distribution 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ 
+\begin_inset Formula $F^{-1}(y)$
+\end_inset
+
+ will have distribution 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+b.
+ 
+\begin_inset Formula $Pr(Y>c)=\int_{c}^{\infty}g(y)dy$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+with 
+\begin_inset Formula $g(y)$
+\end_inset
+
+ is distribution for 
+\begin_inset Formula $F$
+\end_inset
+
+ distribution with 
+\begin_inset Formula $m,n$
+\end_inset
+
+ degree of freedom.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $g(x)=\frac{\Gamma[\frac{1}{2}(m+n)]m^{m/2}n^{n/2}}{\Gamma(\frac{1}{2}m)\Gamma(\frac{1}{2}n)}\frac{x^{m/2-1}}{(mx+n)^{(m+n)/2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\frac{g(x)}{f(x)}$
+\end_inset
+
+ have one term denpending on 
+\begin_inset Formula $x$
+\end_inset
+
+ : 
+\begin_inset Formula $\frac{x^{m/2+n/2}}{(mx+n)^{(m+n)/2}}$
+\end_inset
+
+ we can see this term approximately constant.
+ So 
+\begin_inset Formula $g(x)/f(x)$
+\end_inset
+
+ is close a constant.
+ 
+\end_layout
+
+\begin_layout Exercise*
+So we perform steps same part after Eq.
+ (12.4.2).
+ First sample 
+\begin_inset Formula $x$
+\end_inset
+
+ having distribution 
+\begin_inset Formula $f(x)$
+\end_inset
+
+, for all 
+\begin_inset Formula $x>c$
+\end_inset
+
+, compute 
+\begin_inset Formula $g(x)/f(x)$
+\end_inset
+
+ and the get average.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+4.
+ 
+\begin_inset Formula $\int_{0}^{\infty}\log(1+x)\exp(-x)dx$
+\end_inset
+
+.
+ Exponential distribution with parameter 
+\begin_inset Formula $1$
+\end_inset
+
+: 
+\begin_inset Formula $f(x)=e^{-x}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $g(x)=\log(1+x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+Simulating 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ from exponential distribution 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ then compute 
+\begin_inset Formula $g(X_{i})$
+\end_inset
+
+ .
+ Finally, we compute 
+\begin_inset Formula $\frac{\sum_{i}X_{i}}{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+c.
+ method in a) with be more efficient because 
+\begin_inset Formula $f(x)/g(x)$
+\end_inset
+
+ nearer a constant than method in b).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+5.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eq.
+ (12.4.5): 
+\begin_inset Formula $h(x_{2})=\frac{(2\pi\sigma_{2}^{2})^{-1/2}\exp(\frac{-1}{2\sigma_{2}^{2}}(x_{2}-\mu_{2})^{2})}{\Phi(\frac{c_{2}-\mu_{2}}{\sigma_{2}})}$
+\end_inset
+
+.
+ To prove Eq.(12.4.6) 
+\begin_inset Formula $W=\mu_{2}+\sigma_{2}\Phi^{-1}[U\Phi(\frac{c_{2}-\mu_{2}}{\sigma_{2}})]$
+\end_inset
+
+, we need to prove 
+\begin_inset Formula $W=H^{-1}(U)$
+\end_inset
+
+ with 
+\begin_inset Formula $H$
+\end_inset
+
+ is c.d.f of 
+\begin_inset Formula $h(x_{2})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+From Eq.
+ (12.4.5), 
+\begin_inset Formula $H(x)=\frac{\Phi(\frac{x_{2}-\mu_{2}}{\sigma_{2}})}{\Phi((c_{2}-\mu_{2})/\sigma_{2})}=y$
+\end_inset
+
+.
+ then 
+\begin_inset Formula $H^{-1}(y)=\mu_{2}+\sigma_{2}\Phi^{-1}[y\Phi((c_{2}-\mu_{2})/\sigma_{2})]$
+\end_inset
+
+.
+ So if 
+\begin_inset Formula $y$
+\end_inset
+
+ is uniform distribution on the interval 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+, then 
+\begin_inset Formula $H^{-1}(y)=W$
+\end_inset
+
+ has p.d.f 
+\begin_inset Formula $h$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+6.
+ With important function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+, we have to find antiderivative of 
+\begin_inset Formula $e^{-0.5x^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+7.
+ a.
+ Depends on example 12.3.2 and equation 12.3.4.
+ We know how to simulate 
+\begin_inset Formula $X_{1},X_{2}$
+\end_inset
+
+ from 
+\begin_inset Formula $U_{1},U_{2}$
+\end_inset
+
+ having uniform distribution 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+, 
+\begin_inset Formula $f(u_{1},u_{2})=1$
+\end_inset
+
+.
+ Then we simulate 10000 sample vector (
+\begin_inset Formula $X_{1},X_{2})$
+\end_inset
+
+, finally compute proportion of it.
+\end_layout
+
+\begin_layout Exercise*
+b.
+ For method in example 12.4.3 we simulate this probability only from single
+ unform variable 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+8., 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+9.
+ 
+\begin_inset Formula $F$
+\end_inset
+
+ is a conitnuous strictly increasing c.d.f.
+ with p.d.f.
+ 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $V$
+\end_inset
+
+ have the uniform distribution on interval 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ with 
+\begin_inset Formula $0\le a<b\le1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+Because 
+\begin_inset Formula $F$
+\end_inset
+
+ is continuous strictly increasing function, so 
+\begin_inset Formula $F^{-1}$
+\end_inset
+
+ is also continous strictlt increasing function.
+ So if 
+\begin_inset Formula $V\in[a,b]$
+\end_inset
+
+, each 
+\begin_inset Formula $v$
+\end_inset
+
+ in 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ will be corresponding a value 
+\begin_inset Formula $x=F^{-1}(v)$
+\end_inset
+
+ and 
+\begin_inset Formula $x\in[F^{-1}(a),F^{-1}(b)]$
+\end_inset
+
+ because it is continuous strictly increasing function.
+ So p.d.f.
+ 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ in this interval 
+\begin_inset Formula $=\frac{f(x)}{F(F^{-1}(b))-F(F^{-1}(a))}=\frac{f(x)}{b-a}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+10.
+ From equation 
+\begin_inset Formula $f_{j}(x)=kf(x)$
+\end_inset
+
+ for each interval 
+\begin_inset Formula $i$
+\end_inset
+
+ we can easily simulate 
+\begin_inset Formula $200$
+\end_inset
+
+ elements from each intervals.
+ Then with each interval we compute 
+\begin_inset Formula $\bar{\theta}_{i}=(\sum_{j}\theta_{i}^{i})/200$
+\end_inset
+
+, finally, we sum all 
+\begin_inset Formula $\bar{\theta}_{i}$
+\end_inset
+
+ togother to get final value.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+11.
+ 
+\begin_inset Formula $X^{*}=X_{J}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f_{i}=Pr(X^{*}|J=j)$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $Pr(X^{*})=\sum_{j=1}^{k}Pr(X^{*}|J=j)P(J=j)=\sum_{j=1}^{k}f_{j}(X^{*})\frac{1}{k}.$
+\end_inset
+
+ Because we divide value of 
+\begin_inset Formula $x$
+\end_inset
+
+ into distinct interval 
+\begin_inset Formula $[j-1,j]$
+\end_inset
+
+ for all 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ so 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+ only is in one interval , or we can say for all 
+\begin_inset Formula $k$
+\end_inset
+
+ interval, only one interval 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+ is in and it have probability on that interval, we call that interval 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+ belongs is 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ So, 
+\begin_inset Formula $\sum_{j=1}^{k}f_{j}(X^{*})\frac{1}{k}=f_{a}(X^{*})\frac{1}{k}=kf(x)\frac{1}{k}=f(x)$
+\end_inset
+
+.
+ So we can conclude 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $X$
+\end_inset
+
+ have same distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+12.
+ a.
+ 
+\begin_inset Formula $W_{u}$
+\end_inset
+
+ is Laplace distribution with parameters: 
+\begin_inset Formula $\theta=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma=0.1u^{1/2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+so p.d.f of 
+\begin_inset Formula $W_{u}$
+\end_inset
+
+ is 
+\begin_inset Formula $f(x)=\frac{5}{u^{1/2}}e^{-|x|/(0.1u^{1/2})}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+m.g.f of 
+\begin_inset Formula $W_{u}$
+\end_inset
+
+ : 
+\begin_inset Formula $\psi(t)=E(e^{tX})=\int e^{tx}\frac{5}{u^{1/2}}e^{-|x|/(0.1u^{1/2})}dx$
+\end_inset
+
+ 
+\begin_inset Formula $=\int_{0}^{+\infty}\frac{5}{u^{1/2}}e^{x(t-10u^{-1/2})}dx+\int_{-\infty}^{0}\frac{5}{u^{1/2}}e^{x(t+10u^{-1/2})}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+with condition 
+\begin_inset Formula $-10u^{-1/2}<t<10u^{-1/2}$
+\end_inset
+
+ we can compute above equation is 
+\begin_inset Formula $\frac{-100}{t^{2}u-100}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+b.
+ From exercise 6.
+ of chapter 12.3 we can simulate laplace distribution from 2 method (uniform
+ with intergral distribution method or accept/reject method).
+ With simulation standard error is 
+\begin_inset Formula $\hat{\sigma}/\sqrt{v}$
+\end_inset
+
+, we compute 
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+ through 
+\begin_inset Formula $v$
+\end_inset
+
+ element we simulated.
+\end_layout
+
+\begin_layout Exercise*
+c.
+ 
+\begin_inset Formula $f(w_{1}|S_{1}>S_{0})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $S_{u}=S_{0}e^{\alpha u+w_{u}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $S_{u}>S_{0}\rightarrow\alpha u+w_{u}>0\rightarrow w_{u}>-\alpha u$
+\end_inset
+
+.
+ With 
+\begin_inset Formula $u=1$
+\end_inset
+
+, 
+\begin_inset Formula $w_{1}>-\alpha$
+\end_inset
+
+.
+ We can compute 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ from 
+\begin_inset Formula $r=0.06$
+\end_inset
+
+ based on exercise 15.a) of Sec 12.2.
+ Then we only simulation 
+\begin_inset Formula $x$
+\end_inset
+
+ from 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ having Laplace distribution if 
+\begin_inset Formula $x>-\alpha$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+13.
+ 
+\begin_inset Formula $Z=\frac{1}{v}\sum_{i=1}^{v}Y^{(i)}+kc$
+\end_inset
+
+.
+ If we consider 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ as importance sampling.
+ 
+\begin_inset Formula $\int g(x)dx=\int\frac{g(x)}{f(x)}f(x)dx=E[\frac{g(x)}{f(x)}]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\int h(x)dx=\int\frac{h(x)}{f(x)}f(x)dx=E(\frac{h(x)}{f(x)})=c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $E(Z)=E[\frac{1}{v}\sum_{i=1}^{v}Y^{(i)}+kc]=\frac{1}{v}\sum_{i=1}^{v}\{E[W^{(i)}]-kE[V^{(i)}]\}+kc\text{ (1)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $E[W^{(i)}]=E(\frac{g(x)}{f(x)})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E[V^{(i)}]=E[\frac{h(x)}{f(x)}]=c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+so 
+\begin_inset Formula $(1)=E(\frac{g(x)}{f(x)})-kc+kc=E(\frac{g(x)}{f(x)})=\int g(x)dx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+b.
+ 
+\begin_inset Formula $Var(Z)=Var(Y^{(i)})/v=\sigma_{w}^{2}+k^{2}\sigma_{v}^{2}-2k\rho$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\rho=Cov(W,V)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Then we use derivation to get 
+\begin_inset Formula $k$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can use control variates and antithetic variates to reduce simulation
+ variance 
+\end_layout
+
+\begin_layout Chapter*
+12.5.
+ Markov Chain Monte Carlo
+\end_layout
+
+\begin_layout Exercise*
+9.
+ Use Table 12.7 run, says 1000 iteration Markov Chain Monte Carlo and compute
+ 
+\begin_inset Formula $\beta_{0},\beta_{1},\eta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+10.
+ a, b, c Find condition of 
+\begin_inset Formula $\mu$
+\end_inset
+
+ given 
+\begin_inset Formula $\tau$
+\end_inset
+
+, 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+..., 
+\begin_inset Formula $X_{i},...$
+\end_inset
+
+ it is same Example 
+\begin_inset Formula $12.5.5$
+\end_inset
+
+, we consider 
+\begin_inset Formula $p.d.f$
+\end_inset
+
+ of parameter and data as function of 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and other elements are fixed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+11.
+ b, see Exercise 10.e.
+ After simulating sequence of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ we compute sample mean of 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ , following 10.e, it is posterior of 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ ...
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+12.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $X_{1},....,X_{n}$
+\end_inset
+
+ are i.i.d with the normal distribution having mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and precision 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+So 
+\begin_inset Formula $p.d.f$
+\end_inset
+
+ 
+\begin_inset Formula $f(X_{i}|\mu,\tau)=(\frac{\tau}{2\pi})^{1/2}exp[-\frac{1}{2}\tau(x-\mu)^{2}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Joint 
+\begin_inset Formula $p.d.f.$
+\end_inset
+
+ 
+\begin_inset Formula $f_{n}(X_{1},....,X_{n}|\mu,\tau)=(\frac{\tau}{2\pi})^{n/2}exp[-\frac{1}{2}\tau\sum_{i=1}^{n}(x_{i}-\mu)^{2}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Prior of 
+\begin_inset Formula $\mu$
+\end_inset
+
+is 
+\begin_inset Formula $f_{\mu}=\frac{1}{\sqrt{2\pi\gamma_{0}}}exp[-\frac{1}{2\gamma_{0}}(\mu-\mu_{0})^{2}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Prior of 
+\begin_inset Formula $\tau$
+\end_inset
+
+ is 
+\begin_inset Formula $f_{\tau}=\frac{\beta_{0}^{\alpha_{0}}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta\tau}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\mu,\tau$
+\end_inset
+
+ is independent so 
+\begin_inset Formula $f(\mu,\tau)=f(\mu)f(\tau)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+The posterior p.d.f of the parameters is 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\xi(\mu,\tau|X_{1},....,X_{n})\varpropto f(X_{1},....,X_{n}|\mu,\tau)f_{u}f_{\tau}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $=(\frac{\tau}{2\pi})^{n/2}exp[-\frac{1}{2}\tau\sum_{i=1}^{n}(x_{i}-\mu)^{2}\frac{1}{\sqrt{2\pi\gamma_{0}}}exp[-\frac{1}{2\gamma_{0}}(\mu-\mu_{0})^{2}\frac{\beta_{0}^{\alpha_{0}}}{\Gamma(\alpha)}\tau^{\alpha_{0}-1}e^{-\beta_{0}\tau}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+If we see 
+\begin_inset Formula $\xi(\mu,\tau|X_{1},...,X_{n})$
+\end_inset
+
+ as function of 
+\begin_inset Formula $\tau$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is a constant, the term include 
+\begin_inset Formula $\tau$
+\end_inset
+
+ remains: 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula $\tau^{n/2+\alpha_{0}-1}exp[\tau(-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{2}-\beta_{0})]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+So it likely forms Gamma distribution with 
+\begin_inset Formula $\alpha_{1}=n/2+\alpha_{0}$
+\end_inset
+
+ , 
+\begin_inset Formula $\beta_{1}=\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{2}+\beta_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Similar to 
+\begin_inset Formula $\mu$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Exercise*
+And finally, we perform gibbling method for 
+\begin_inset Formula $\mu,\tau$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

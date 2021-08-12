@@ -1,0 +1,299 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+12.1 What is Simulation
+\end_layout
+
+\begin_layout Standard
+Simulation is a way to use high-speed computer to substitute for analytical
+ calculation.
+ The law of large number tells us that if we observe a large sample of i.i.d.
+ random variables with finite mean, then the average of these random variables
+ should be close to their mean.
+ If we can get a computer to produce such a large i.i.d.
+ sample, then we can average the random variables instead of trying (and
+ possibly failing) to calculate their mean analytically.
+ For a specific problem, one needs to figure out what types of random variables
+ one needs, how to make a computer produce them, and how many one needs
+ in order to have any confidence in the numerical result.
+ Each of these issues will be addressed to some extent in this chapter.
+ 
+\end_layout
+
+\begin_layout Section*
+Proof of Concept
+\end_layout
+
+\begin_layout Standard
+We begin with some simple examples of simulation to answer questions that
+ we can already answer analytically just to show that simulation does what
+ it advertises.
+ Also, these simple examples will raise some of the issues to which one
+ must attend then trying to answer more difficult questions using simulation.
+\end_layout
+
+\begin_layout Section*
+Examples in which Simulation Might Help
+\end_layout
+
+\begin_layout Standard
+Next, we present some examples where the basic questions are relatively
+ simple to describe, by analytic solution would be tedious at best.
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Standard
+Suppose that we want to know the mean of some function 
+\begin_inset Formula $g$
+\end_inset
+
+ of a random variable or random vector 
+\begin_inset Formula $W$
+\end_inset
+
+.
+ For instance, in Example 
+\begin_inset Formula $12.1.3$
+\end_inset
+
+ we can let 
+\begin_inset Formula $W=(X,Y)$
+\end_inset
+
+ and 
+\begin_inset Formula $g(W)=|X-Y|$
+\end_inset
+
+ .
+ If a computer can supply a large number of i.i.d.
+ random variables (or random vectors) with the distribution of 
+\begin_inset Formula $W$
+\end_inset
+
+, one can use the average of the simulated values of 
+\begin_inset Formula $g(W)$
+\end_inset
+
+ to approximate the mean of 
+\begin_inset Formula $g(X)$
+\end_inset
+
+.
+ One muse be careful to take the variability in 
+\begin_inset Formula $g(W)$
+\end_inset
+
+ into account when deciding how much confidence to place in the approximation.
+\end_layout
+
+\begin_layout Chapter*
+12.2 Why is Simulation Useful ?
+\end_layout
+
+\begin_layout Standard
+Statistical simulations are used to estimate features of distributions such
+ as means of functions, quantiles, and other features that we cannot compute
+ in closed form.
+ When using a simulation estimator, it is good to compute a measure of how
+ precise the estimator is, in addition to the estimate itself.
+\end_layout
+
+\begin_layout Section*
+Examples of Simulation 
+\end_layout
+
+\begin_layout Section*
+Assessing Uncertainty about Simulation Results
+\end_layout
+
+\begin_layout Standard
+We should always attempt to assess the uncertainty in a simulation.
+ This uncertainty is most easily assessed via the simulation variance of
+ the simulated quantity.
+ The smaller the simulation variance is, the more certain we can be that
+ our estimator 
+\begin_inset Formula $Z$
+\end_inset
+
+ is close to what we are trying to estimate.
+ But we need to estimate or bound the simulation before we can assess the
+ amount of uncertainty.
+ How we estimate the simulation variance of a result 
+\begin_inset Formula $Z$
+\end_inset
+
+ depends on whether 
+\begin_inset Formula $Z$
+\end_inset
+
+ is an average of simulated values.
+ The square root of our estimate of the simulation variance will be called
+ the simulation standard error, and it is estimate of the simulation standard
+ deviation of 
+\begin_inset Formula $Z$
+\end_inset
+
+.
+ The simulation standard error is a popular way to summarize uncertainty
+ about a simulation for two reasons.
+ Firsts, it has the same units of measurement as the quantity that was estimated
+ (unlike the simulation variance).
+ Second, the simulation standard error is useful for saying how likely it
+ is that the simulation estimator is close to the parameter being estimated.
+ We shall explain this second point in more detail after we show how to
+ calculate the simulation standard error in several common cases.
+\end_layout
+
+\begin_layout Section*
+Summary 
+\end_layout
+
+\begin_layout Standard
+If we wish to compute the expected value 
+\begin_inset Formula $\theta$
+\end_inset
+
+ of some random variable 
+\begin_inset Formula $Y$
+\end_inset
+
+, but cannot perform the necessary calculation in closed form, we can use
+ simulation.
+ In general, we would simulate a large random sample 
+\begin_inset Formula $Y^{(1)},...,Y^{(v)}$
+\end_inset
+
+ from the same distribution as 
+\begin_inset Formula $Y$
+\end_inset
+
+, and then compute the sample mean 
+\begin_inset Formula $Z$
+\end_inset
+
+ as our estimator.
+ We can also estimate a quantile 
+\begin_inset Formula $\theta_{p}$
+\end_inset
+
+ of a distribution in a similar fashion.
+ If 
+\begin_inset Formula $Y^{(1)},...,Y^{(v)}$
+\end_inset
+
+ is a large sample from the distribution, we can compute the sample 
+\begin_inset Formula $p$
+\end_inset
+
+ quantile 
+\begin_inset Formula $Z$
+\end_inset
+
+.
+ It is always a good idea to compute some measure of how good a simulation
+ estimator is.
+ One common measure is the simulation standard error of 
+\begin_inset Formula $Z$
+\end_inset
+
+, an estimate of the standard deviation of the simulation distribution of
+ 
+\begin_inset Formula $Z$
+\end_inset
+
+.
+ Alternatively, one could perform enough simulations to make sure that the
+ probability is high that the 
+\begin_inset Formula $Z$
+\end_inset
+
+ is close to the parameter being estimated.
+\end_layout
+
+\end_body
+\end_document
